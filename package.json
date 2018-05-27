@@ -1,0 +1,26 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "watch": {
+    "webpack": "js/*.js"
+  },
+  "scripts": {
+    "start": "http-server",
+    "webpack": "webpack || exit 1",
+    "watch": "npm-watch"
+  },
+  "author": "Jezzamon",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "http-server": "^0.11.1",
+    "npm-watch": "^0.3.0",
+    "reload": "^2.2.2",
+    "webpack": "^3.11.0"
+  }
+}

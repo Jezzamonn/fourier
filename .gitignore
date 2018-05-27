@@ -1,0 +1,3 @@
+node_modules/
+.DS_STORE
+# We don't ignore promo/ or build/ here just because we want them to stay empty in the repo
