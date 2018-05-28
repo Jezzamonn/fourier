@@ -9,7 +9,8 @@
   "scripts": {
     "start": "http-server",
     "webpack": "webpack || exit 1",
-    "watch": "npm-watch"
+    "watch": "npm-watch",
+    "reload": "reload -b"
   },
   "author": "Jezzamon",
   "license": "ISC",

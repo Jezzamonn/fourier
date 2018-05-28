@@ -11,11 +11,14 @@ To build everything manually you can use `npm run webpack`.
 `npm start`
 This brings up a local webserver from which you can view your changes in a browser. You can also check it out on a phone through clever networking stuff (i.e. being on the same wifi network and finding your computer's local IP address)
 
-## Automatically Build & Update
-For a smoother dev flow, building stuff can be done *automatically*! Cool! The following command will check for any files changing and will rebuild everything.
+## Automatically Build & Refresh
+For a smoother dev flow, building stuff can be done *automatically*! Cool!
+
+The following command will check for any files changing and will rebuild everything:
 `npm run watch`
 
-You typically need a hard refresh in the browser window after things build. Maybe I could also make the browser refresh automatically?? Maybe that's not a good idea?
+To then get the page to automatically reload on change, instead of using `npm start` you can use:
+`npm run reload`
 
 ---
 
