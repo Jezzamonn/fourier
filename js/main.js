@@ -1,4 +1,4 @@
-// TODO: Import something here
+import Controller from './controller.js';
 
 let canvas = document.getElementById('canvas');
 let context = canvas.getContext('2d');
@@ -11,8 +11,10 @@ let scale = 1;
 let centerX = SIZE / 2;
 let centerY = SIZE / 2;
 
+let controller;
+
 function init() {
-	// TODO: Specific initialization stuff here
+	controller = new Controller();
 
 	handleResize();
 	// Set up event listeners.
@@ -29,19 +31,23 @@ function everyFrame() {
 }
 
 function update() {
-	// TODO: Some specific updating logic
+	controller.update();
 }
 
 function render() {
 	context.clearRect(0, 0, canvas.width, canvas.height);
 
-	// TODO: Some rendering logic
+	// You can also pass in other stuff here depend on how you want to resize
+	controller.render(context, scale, centerX, centerY);
 }
 
 function handleResize(evt) {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 
+	// Math.max -> no borders (will cut off edges of the thing)
+	// Math.min -> show all (with borders)
+	// There are other options too :)
 	scale = Math.min(canvas.width, canvas.height) / SIZE;
 	// Changing the `0.5` here changes what point it resizes around.
 	centerX = 0.5 * canvas.width / scale;
