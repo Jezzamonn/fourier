@@ -8,7 +8,7 @@ export default class Controller {
 		// TODO: Some updating logic
 	}
 
-	render(context, scale, xOffset, yOffset) {
+	render(context) {
 		// TODO: Some rendering logic
 	}
 

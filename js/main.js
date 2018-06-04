@@ -6,10 +6,7 @@ let context = canvas.getContext('2d');
 // Currently assuming square proportions.
 const SIZE = 500;
 
-// Variables relating to resizing.
 let scale = 1;
-let centerX = SIZE / 2;
-let centerY = SIZE / 2;
 
 let controller;
 
@@ -35,10 +32,15 @@ function update() {
 }
 
 function render() {
+	// Clear the previous frame
+	context.resetTransform();
 	context.clearRect(0, 0, canvas.width, canvas.height);
 
-	// You can also pass in other stuff here depend on how you want to resize
-	controller.render(context, scale, centerX, centerY);
+	// Set origin to middle and scale canvas
+	context.translate(canvas.width / 2, canvas.height / 2);
+	context.scale(scale);
+
+	controller.render(context);
 }
 
 function handleResize(evt) {
@@ -49,9 +51,6 @@ function handleResize(evt) {
 	// Math.min -> show all (with borders)
 	// There are other options too :)
 	scale = Math.min(canvas.width, canvas.height) / SIZE;
-	// Changing the `0.5` here changes what point it resizes around.
-	centerX = 0.5 * canvas.width / scale;
-	centerY = 0.5 * canvas.height / scale;
 
 	render();
 }
