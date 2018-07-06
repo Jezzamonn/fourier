@@ -38,14 +38,20 @@ function render() {
 
 	// Set origin to middle and scale canvas
 	context.translate(canvas.width / 2, canvas.height / 2);
-	context.scale(scale);
+	context.scale(scale, scale);
 
 	controller.render(context);
 }
 
 function handleResize(evt) {
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+	let pixelRatio = window.devicePixelRatio || 1;
+	let width = window.innerWidth;
+	let height = window.innerHeight;
+
+	canvas.width = width * pixelRatio;
+	canvas.height = height * pixelRatio;
+	canvas.style.width = width + 'px';
+	canvas.style.height = height + 'px';
 
 	// Math.max -> no borders (will cut off edges of the thing)
 	// Math.min -> show all (with borders)
