@@ -11,7 +11,7 @@
 	gtag('config', 'UA-105814606-2');
     </script>
     
-	<title></title>
+	<title>{{TITLE}}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -27,11 +27,11 @@
 	<meta name="theme-color" content="#ffffff">
 	
 	<!-- Stuff for Facebook/Twitter -->
-	<meta property="og:url"                content="http://www.jezzamon.com/triangles" />
+	<meta property="og:url"                content="http://www.jezzamon.com/{{PATH}}" />
 	<meta property="og:type"               content="website" />
-	<meta property="og:title"              content="Triangles" />
+	<meta property="og:title"              content="{{TITLE}}" />
 	<meta property="og:description"        content="&hellip;" />
-	<meta property="og:image"              content="http://www.jezzamon.com/triangles/preview.png" />
+	<meta property="og:image"              content="http://www.jezzamon.com/{{PATH}}/preview.png" />
 	<meta property="og:image:type"         content="image/png" />
 	<meta property="og:image:width"        content="1200" />
 	<meta property="og:image:height"       content="630" />
@@ -41,7 +41,7 @@
 </head>
 <body>
 <div id="content">
-	<canvas id="canvas" width="600" height="400"></canvas>
+	<canvas id="canvas" width="500" height="500"></canvas>
 </div>
 <script src="build/main.bundle.js"></script>
 </body>
