@@ -4,7 +4,7 @@ export default class Controller {
 
 	}
 
-	update() {
+	update(dt) {
 		// TODO: Some updating logic
 	}
 
