@@ -11,6 +11,16 @@ export function slurp(val1, val2, amt) {
     return (val2 - val1) * amt + val1;
 }
 
+export function experp(val1, val2, amt) {
+    return Math.exp(
+        slurp(
+            Math.log(val1),
+            Math.log(val2),
+            amt
+        )
+    )
+}
+
 export function clampedSlurp(val1, val2, amt) {
     if (amt < 0) {
         return val1;
