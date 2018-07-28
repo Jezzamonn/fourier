@@ -1,4 +1,5 @@
 import Controller from './controller.js';
+import DrawController from './draw-controller.js';
 
 let lastTime;
 let controllers;
@@ -7,7 +8,7 @@ let mousePosition;
 function init() {
 	lastTime = Date.now();
 	controllers = [];
-	controllers.push(new Controller('canvas'));
+	controllers.push(new DrawController('canvas'));
 
 	document.addEventListener('mousemove', handleMouseEvent);
 	document.addEventListener('mousedown', handleMouseEvent);
