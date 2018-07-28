@@ -10,7 +10,7 @@
     "start": "http-server",
     "webpack": "webpack || exit 1",
     "watch": "npm-watch",
-    "reload": "reload -b -w build"
+    "reload": "reload -b"
   },
   "author": "Jezzamon",
   "license": "ISC",
