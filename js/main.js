@@ -10,13 +10,14 @@ function init() {
 	controllers = [];
 	controllers.push(new DrawController('canvas'));
 
-	document.addEventListener('mousemove', handleMouseEvent);
-	document.addEventListener('mousedown', handleMouseEvent);
-	document.addEventListener('mouseup', handleMouseEvent);
-	// We can handle these all the same actually.
-	document.addEventListener('touchmove', handleTouchEvent);
-	document.addEventListener('touchstart', handleTouchEvent);
-	document.addEventListener('touchend', handleTouchEvent);
+	// We can handle these all the same really.
+	document.addEventListener('mousemove', updateMousePosition);
+	document.addEventListener('mousedown', updateMousePosition);
+	document.addEventListener('mouseup', updateMousePosition);
+
+	document.addEventListener('touchmove', updateTouchPosition);
+	document.addEventListener('touchstart', updateTouchPosition);
+	document.addEventListener('touchend', updateTouchPosition);
 
 	// Kick off the update loop
 	window.requestAnimationFrame(everyFrame);
@@ -46,11 +47,11 @@ function render() {
 	});
 }
 
-function handleMouseEvent(evt) {
+function updateMousePosition(evt) {
 	mousePosition = {x: evt.clientX, y: evt.clientY};
 }
 
-function handleTouchEvent(evt) {
+function updateTouchPosition(evt) {
 	mousePosition = {x: evt.touches[0].clientX, y: evt.touches[0].clientY};
 	evt.preventDefault();
 }

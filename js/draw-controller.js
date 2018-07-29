@@ -4,31 +4,53 @@ export default class DrawController extends Controller {
 
 	constructor(id, width, height) {
         super(id, width, height);
-        this.point = null;
-	}
+        this.points = [];
+        this.drawing = false;
+
+        canvas.addEventListener('mousedown', () => this.startDrawing());
+        canvas.addEventListener('touchstart', () => this.stopDrawing());
+
+        document.addEventListener('mouseup', () => this.stopDrawing());
+        document.addEventListener('touchend', () => this.stopDrawing);
+    }
+
+    startDrawing() {
+        this.points = [];
+        this.drawing = true;
+    }
+
+    stopDrawing() {
+        this.drawing = false;
+    }
 
 	update(dt, mousePosition) {
-        if (!mousePosition) {
+        if (!mousePosition || !this.drawing) {
             return;
         }
-        // 👨‍💻 <( Don't mutate this pls )
+
+        // TODO: Some minimum point length
         let canvasPosition = canvas.getBoundingClientRect();
-        this.point = {
+        let point = {
             x: mousePosition.x - canvasPosition.x,
             y: mousePosition.y - canvasPosition.y,
         }
+        this.points.push(point)
 	}
 
 	render() {
-		this.clear();
+        this.clear();
 
-        if (this.point) {
-            this.context.beginPath();
-            this.context.strokeStyle = 'black';
-            this.context.moveTo(0, 0);
-            this.context.lineTo(this.point.x, this.point.y);
-            this.context.stroke();
+        this.context.beginPath();
+        this.context.strokeStyle = 'black';
+        for (let i = 0; i < this.points.length; i ++) {
+            if (i == 0) {
+                this.context.moveTo(this.points[i].x, this.points[i].y);
+            }
+            else {
+                this.context.lineTo(this.points[i].x, this.points[i].y);
+            }
         }
+        this.context.stroke();
 	}
 
 }
