@@ -23,5 +23,8 @@
     "npm-watch": "^0.3.0",
     "reload": "^2.3.0",
     "webpack": "^3.11.0"
+  },
+  "dependencies": {
+    "fft.js": "^4.0.3"
   }
 }
