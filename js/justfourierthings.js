@@ -14,10 +14,12 @@ export function getFourierData(points, numPoints) {
     
     const fftData = [];
     for (let i = 0; i < numPoints; i ++) {
-        const x = out[2 * i];
-        const y = out[2 * i + 1];
+        // to reorder the frequencies a little nicer, we pick from the front and back altermatively
+        const j = i % 2 == 0 ? i / 2 : numPoints - ((i+1) / 2);
+        const x = out[2 * j];
+        const y = out[2 * j + 1];
         fftData.push({
-            freq: i,
+            freq: j,
             // a little expensive
             amplitude: Math.sqrt(x * x + y * y) / numPoints,
             // a lottle expensive :(

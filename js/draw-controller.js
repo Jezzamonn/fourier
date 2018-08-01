@@ -40,6 +40,10 @@ export default class DrawController extends Controller {
             case 'y':
                 this.redo();
                 break;
+            case 'p':
+                // "print"
+                console.log(this.path);
+                break;
         }
         if (evt.key.toLowerCase == 'z') {
             this.undo();
@@ -71,7 +75,6 @@ export default class DrawController extends Controller {
     }
 
     undo() {
-        console.log('undo');
         let newIndex = this.curUndoIndex - 1;
         if (newIndex < 0) {
             newIndex = 0;
@@ -87,7 +90,6 @@ export default class DrawController extends Controller {
     }
 
     redo() {
-        console.log('redo');
         let newIndex = this.curUndoIndex + 1;
         if (newIndex > this.undoIndexes.length - 1) {
             newIndex = this.undoIndexes.length - 1;
