@@ -1,3 +1,4 @@
 node_modules/
 .DS_STORE
+.vscode/
 # We don't ignore promo/ or build/ here just because we want them to stay empty in the repo
