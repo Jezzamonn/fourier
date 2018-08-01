@@ -1,5 +1,5 @@
-import Controller from './controller.js';
 import DrawController from './draw-controller.js';
+import EpicyclesController from './epicycles-controller.js';
 
 let lastTime;
 let controllers;
@@ -8,7 +8,19 @@ let mousePosition;
 function init() {
 	lastTime = Date.now();
 	controllers = [];
-	controllers.push(new DrawController('canvas'));
+	let drawZone = new DrawController('drawzone', 500, 500);
+	let circles = new EpicyclesController('plaincircles', 500, 500);
+	circles.animate = false;
+	let epicycles = new EpicyclesController('circlezone', 500, 500);
+	drawZone.onDrawingStart = () => {
+		circles.setPath([]);
+		epicycles.setPath([]);
+	}
+	drawZone.onDrawingEnd = () => {
+		circles.setPath(drawZone.path);
+		epicycles.setPath(drawZone.path);
+	}
+	controllers.push(drawZone, circles, epicycles);
 
 	// We can handle these all the same really.
 	document.addEventListener('mousemove', updateMousePosition);
