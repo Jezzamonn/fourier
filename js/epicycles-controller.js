@@ -1,5 +1,7 @@
 import Controller from "./controller";
 import { getFourierData } from "./justfourierthings";
+import { grey } from "./color";
+import { easeInOut, clamp, smallEaseInOut } from "./util";
 
 const numPoints = 1024;
  
@@ -31,14 +33,28 @@ export default class EpicyclesController extends Controller {
             return;
         }
         const period = 5;
-        this.animAmt += dt / period;
+        this.animAmt += (dt / period) % 1;
 
-        while (this.niceAnimAmt < this.animAmt) {
+        while (this.animAmt > 1) {
+            this.animAmt --;
+            this.niceAnimAmt --;
+            this.fourierPath = [];
+        }
+
+        // some max iterations to stop it from hanging
+        for (let i = 0; i < 20; i ++) {
+            if (this.niceAnimAmt >= this.doEasing(this.animAmt)) {
+                break;
+            }
             this.niceAnimAmt += 1 / numPoints;
 
             this.addToPath();
         }
-     }
+    }
+
+    doEasing(amt) {
+        return smallEaseInOut(amt, 0.05, 0.2);
+    }
     
     addToPath() {
         if (this.fourierData.length == 0) {
@@ -62,25 +78,19 @@ export default class EpicyclesController extends Controller {
 	render() {
         this.clear();
 
-        this.renderCircles();
         this.renderPath(this.fourierPath);
+        this.renderCircles();
     }
 
-    renderPath(path, close=false) {
-        this.context.beginPath();
-        this.context.strokeStyle = 'black';
-        for (let i = 0; i < path.length; i ++) {
-            if (i == 0) {
-                this.context.moveTo(path[i].x, path[i].y);
-            }
-            else {
-                this.context.lineTo(path[i].x, path[i].y);
-            }
+    renderPath(path) {
+        for (let i = 0; i < path.length - 1; i ++) {
+            this.context.beginPath();
+            this.context.strokeStyle = 'black'
+            this.context.lineWidth = 2;
+            this.context.moveTo(path[i].x, path[i].y);
+            this.context.lineTo(path[i+1].x, path[i+1].y);
+            this.context.stroke();
         }
-        if (close) {
-            this.context.closePath();
-        }
-        this.context.stroke();
     }
 
     renderCircles() {
@@ -94,12 +104,18 @@ export default class EpicyclesController extends Controller {
             if (i == 0) {
                 continue; // we skip the first one because we just don't care about rendering the constant term
             }
+            if (amplitude < 1) {
+                continue; // skip the really tiny ones
+            }
             this.context.beginPath();
             this.context.strokeStyle = 'black';
+            this.context.globalAlpha = 0.7;
+            this.context.lineWidth = 1;
             this.context.moveTo(runningX, runningY);
             this.context.arc(runningX, runningY, amplitude, angle - Math.PI, angle + Math.PI);
             this.context.stroke();
         }
+        this.context.globalAlpha = 1;
     }
 
 }

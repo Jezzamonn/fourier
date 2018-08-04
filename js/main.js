@@ -9,6 +9,7 @@ function init() {
 	lastTime = Date.now();
 	controllers = [];
 	let drawZone = new DrawController('drawzone', 500, 500);
+	window.drawZone = drawZone;
 	let circles = new EpicyclesController('plaincircles', 500, 500);
 	circles.animate = false;
 	let epicycles = new EpicyclesController('circlezone', 500, 500);

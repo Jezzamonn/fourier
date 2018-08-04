@@ -29,6 +29,11 @@ export default class DrawController extends Controller {
         return this.points.slice(0, this.pathEndIndex);
     }
 
+    setPoints(points) {
+        this.points = points;
+        this.stopDrawing();
+    }
+
     /**
      * @param {KeyboardEvent} evt 
      */
@@ -44,9 +49,6 @@ export default class DrawController extends Controller {
                 // "print"
                 console.log(this.path);
                 break;
-        }
-        if (evt.key.toLowerCase == 'z') {
-            this.undo();
         }
     }
 
@@ -142,6 +144,7 @@ export default class DrawController extends Controller {
     drawPoints(path) {
         this.context.beginPath();
         this.context.strokeStyle = 'black';
+        this.context.lineWidth = 2;
         for (let i = 0; i < path.length; i ++) {
             if (i == 0) {
                 this.context.moveTo(path[i].x, path[i].y);
