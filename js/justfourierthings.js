@@ -26,6 +26,7 @@ export function getFourierData(points, numPoints) {
             phase: Math.atan2(y, x),
         });
     }
+    // fftData.sort((a, b) => b.amplitude - a.amplitude);
     return fftData;
 }
 
