@@ -13,8 +13,8 @@ export default class DrawController extends Controller {
         // Lengths of the paths after we've undone to certain points
         this.undoIndexes = [0];
         this.drawing = false;
-        this.onDrawingStart = null;
-        this.onDrawingEnd = null;
+        this.onDrawingStart = [];
+        this.onDrawingEnd = [];
 
         this.canvas.addEventListener('mousedown', () => this.startDrawing());
         this.canvas.addEventListener('touchstart', () => this.stopDrawing());
@@ -59,10 +59,8 @@ export default class DrawController extends Controller {
         this.points = this.path;
         this.undoIndexes = this.undoIndexes.slice(0, this.curUndoIndex + 1)
 
-        if (this.onDrawingStart) {
-            this.onDrawingStart();
-        }
-     }
+        this.onDrawingStart.forEach(fn => fn());
+    }
 
     stopDrawing() {
         this.drawing = false;
@@ -71,9 +69,7 @@ export default class DrawController extends Controller {
         this.undoIndexes.push(this.points.length);
         this.pathEndIndex = this.undoIndexes[this.curUndoIndex];
 
-        if (this.onDrawingEnd) {
-            this.onDrawingEnd();
-        }
+        this.onDrawingEnd.forEach(fn => fn());
     }
 
     undo() {
@@ -85,9 +81,7 @@ export default class DrawController extends Controller {
             this.curUndoIndex = newIndex;
             this.pathEndIndex = this.undoIndexes[this.curUndoIndex];
 
-            if (this.onDrawingEnd) {
-                this.onDrawingEnd();
-            }
+            this.onDrawingEnd.forEach(fn => fn());
         }
     }
 
@@ -100,9 +94,7 @@ export default class DrawController extends Controller {
             this.curUndoIndex = newIndex;
             this.pathEndIndex = this.undoIndexes[this.curUndoIndex];
 
-            if (this.onDrawingEnd) {
-                this.onDrawingEnd();
-            }
+            this.onDrawingEnd.forEach(fn => fn());
         }
    }
 

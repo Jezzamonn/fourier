@@ -8,20 +8,30 @@ let mousePosition;
 function init() {
 	lastTime = Date.now();
 	controllers = [];
-	let drawZone = new DrawController('drawzone', 500, 500);
-	window.drawZone = drawZone;
-	let circles = new EpicyclesController('plaincircles', 500, 500);
-	circles.animate = false;
-	let epicycles = new EpicyclesController('circlezone', 500, 500);
-	drawZone.onDrawingStart = () => {
-		circles.setPath([]);
-		epicycles.setPath([]);
+
+	let drawZone, circles, epicycles;
+	if (hasElement('drawzone')) {
+		drawZone = new DrawController('drawzone', 500, 500);
+		window.drawZone = drawZone;
+		controllers.push(drawZone);
 	}
-	drawZone.onDrawingEnd = () => {
-		circles.setPath(drawZone.path);
-		epicycles.setPath(drawZone.path);
+	if (hasElement('plaincircles')) {
+		circles = new EpicyclesController('plaincircles', 500, 500);
+		circles.animate = false;
+		if (drawZone) {
+			drawZone.onDrawingStart.push(() => circles.setPath([]));
+			drawZone.onDrawingEnd.push(() => circles.setPath(drawZone.path));
+		}
+		controllers.push(circles);
 	}
-	controllers.push(drawZone, circles, epicycles);
+	if (hasElement('circlezone')) {
+		epicycles = new EpicyclesController('circlezone', 500, 500);
+		if (drawZone) {
+			drawZone.onDrawingStart.push(() => epicycles.setPath([]));
+			drawZone.onDrawingEnd.push(() => epicycles.setPath(drawZone.path));
+		}
+		controllers.push(epicycles);
+	}
 
 	// We can handle these all the same really.
 	document.addEventListener('mousemove', updateMousePosition);
@@ -34,6 +44,10 @@ function init() {
 
 	// Kick off the update loop
 	window.requestAnimationFrame(everyFrame);
+}
+
+function hasElement(id) {
+	return document.getElementById(id) != null;
 }
 
 // TODO: Make tweak this to allow frame skipping for slow computers. Maybe.

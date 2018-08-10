@@ -104,7 +104,7 @@ export default class EpicyclesController extends Controller {
             if (i == 0) {
                 continue; // we skip the first one because we just don't care about rendering the constant term
             }
-            if (amplitude < 1) {
+            if (amplitude < 0.5) {
                 continue; // skip the really tiny ones
             }
             this.context.beginPath();
