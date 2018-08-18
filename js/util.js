@@ -86,7 +86,3 @@ export function to2dIsometric(x, y, z, xzAngle=0, yAngle=0) {
     // Just return the x and y
     return {x: transformed.subset(math.index(0)), y: transformed.subset(math.index(1))};
 }
-
-console.log(to2dIsometric(1, 0, 0, 0, 0));
-console.log(to2dIsometric(1, 0, 0, Math.PI, 0));
-console.log(to2dIsometric(1, 0, 0, 2 * Math.PI, 0));

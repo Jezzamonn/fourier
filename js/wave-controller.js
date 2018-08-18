@@ -25,31 +25,20 @@ export default class WaveController extends Controller {
         this.context.beginPath();
         this.context.strokeStyle = 'black';
         this.context.lineWidth = 1;
-        // for (let i = 0; i < 100; i ++ ) {
-        //     let amt = i / 99;
-        //     let x = amt;
-        //     let y = 0.5 + 0.25 * Math.sin(2 * Math.PI * 2 * (amt + this.animAmt));
-        //     let z = 0.5 * amt;
 
-        //     if (i == 0) {
-        //         this.context.moveTo(x * this.width, (y - z) * this.height);
-        //     }
-        //     else {
-        //         this.context.lineTo(x * this.width, (y - z) * this.height);
-        //     }
-        // }
+    
+        for (let i = 0; i < 100; i ++ ) {
+            let amt = i / 99;
+            let x = 0.7 * (amt - 0.5);
+            let y = 0.25 * Math.sin(2 * Math.PI * 2 * (amt + this.animAmt));
 
-        this.moveTo3d(this.context, -50, -50,  50);
-        this.lineTo3d(this.context,  50, -50,  50);
-        this.lineTo3d(this.context,  50,  50,  50);
-        this.lineTo3d(this.context, -50,  50,  50);
-        this.context.closePath();
-
-        this.moveTo3d(this.context, -50, -50, -50);
-        this.lineTo3d(this.context,  50, -50, -50);
-        this.lineTo3d(this.context,  50,  50, -50);
-        this.lineTo3d(this.context, -50,  50, -50);
-        this.context.closePath();
+            if (i == 0) {
+                this.moveTo3d(this.context, x * this.width, y * this.height, 0);
+            }
+            else {
+                this.lineTo3d(this.context, x * this.width, y * this.height, 0);
+            }
+        }
 
         this.context.stroke();
     }
