@@ -1,5 +1,6 @@
 import DrawController from './draw-controller.js';
 import EpicyclesController from './epicycles-controller.js';
+import WaveController from './wave-controller.js';
 
 let lastTime;
 let controllers;
@@ -9,7 +10,7 @@ function init() {
 	lastTime = Date.now();
 	controllers = [];
 
-	let drawZone, circles, epicycles;
+	let drawZone, circles, epicycles, waves;
 	if (hasElement('drawzone')) {
 		drawZone = new DrawController('drawzone', 500, 500);
 		window.drawZone = drawZone;
@@ -31,6 +32,10 @@ function init() {
 			drawZone.onDrawingEnd.push(() => epicycles.setPath(drawZone.path));
 		}
 		controllers.push(epicycles);
+	}
+	if (hasElement('wave')) {
+		waves = new WaveController('wave', 500, 500);
+		controllers.push(waves);
 	}
 
 	// We can handle these all the same really.
