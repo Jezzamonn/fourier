@@ -31,10 +31,10 @@ export default class WaveController extends Controller {
             const amt = i / 99;
             const spiralRadius = 0.2 * this.height;
             const x = 0.7 * this.width * (amt - 0.5);
-            const y = spiralRadius * Math.sin(2 * Math.PI * (3 * amt + 2 * this.animAmt));
-            const z = spiralRadius * Math.cos(2 * Math.PI * (3 * amt + 2 * this.animAmt));
+            const y = spiralRadius * Math.sin(2 * Math.PI * (3 * amt - 4 * this.animAmt));
+            const z = spiralRadius * Math.cos(2 * Math.PI * (3 * amt - 4 * this.animAmt));
 
-            const rotateAngle = -Math.PI / 2 * easeInOut(sinEaseInOut(2 * this.animAmt), 3);
+            const rotateAngle = -Math.PI / 2 * easeInOut(sinEaseInOut(2 * this.animAmt), 4);
 
             const points = to2dIsometric(x, y, z, rotateAngle, 0);
             if (amt == 0) {
