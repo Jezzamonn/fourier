@@ -18,8 +18,9 @@ export function getFourierData(points, numPoints) {
         const j = i % 2 == 0 ? i / 2 : numPoints - ((i+1) / 2);
         const x = out[2 * j];
         const y = out[2 * j + 1];
+        const freq = ((j + numPoints / 2) % numPoints) - numPoints / 2;
         fftData.push({
-            freq: j,
+            freq: freq,
             // a little expensive
             amplitude: Math.sqrt(x * x + y * y) / numPoints,
             // a lottle expensive :(

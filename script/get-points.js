@@ -9,5 +9,5 @@ for (let i = 0; i < numPoints; i ++) {
 }
 
 // Turn into a string of things
-let s = points.reduce((s, point) => s + point.x + ',' + point.y + '\n');
+let s = points.reduce((s, point) => s + point.x + ',' + point.y + ',\n');
 console.log(s);

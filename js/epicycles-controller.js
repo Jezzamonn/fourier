@@ -19,6 +19,7 @@ export default class EpicyclesController extends Controller {
 
         this.animAmt = 0;
         this.niceAnimAmt = 0;
+        this.period = 5;
     }
 
     setPath(path) {
@@ -32,28 +33,22 @@ export default class EpicyclesController extends Controller {
         if (!this.animate) {
             return;
         }
-        const period = 5;
-        this.animAmt += (dt / period) % 1;
+        this.animAmt += (dt / this.period) % 1;
 
         while (this.animAmt > 1) {
             this.animAmt --;
             this.niceAnimAmt --;
-            this.fourierPath = [];
         }
 
         // some max iterations to stop it from hanging
         for (let i = 0; i < 20; i ++) {
-            if (this.niceAnimAmt >= this.doEasing(this.animAmt)) {
+            if (this.niceAnimAmt >= this.animAmt) {
                 break;
             }
             this.niceAnimAmt += 1 / numPoints;
 
             this.addToPath();
         }
-    }
-
-    doEasing(amt) {
-        return smallEaseInOut(amt, 0.05, 0.2);
     }
     
     addToPath() {
@@ -86,7 +81,7 @@ export default class EpicyclesController extends Controller {
         for (let i = 0; i < path.length - 1; i ++) {
             this.context.beginPath();
             this.context.strokeStyle = 'black'
-            this.context.lineWidth = 2;
+            this.context.lineWidth = 1;
             this.context.moveTo(path[i].x, path[i].y);
             this.context.lineTo(path[i+1].x, path[i+1].y);
             this.context.stroke();

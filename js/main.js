@@ -2,11 +2,12 @@ import DrawController from './draw-controller.js';
 import EpicyclesController from './epicycles-controller.js';
 import WaveController from './wave-controller.js';
 import Conductor from './conductor.js';
+import titlePoints from './title-points.js';
 
 let conductor = null;
 
 function init() {
-	let drawZone, circles, epicycles, waves;
+	let drawZone, circles, epicycles, waves, fourierTitle;
 	let controllers = [];
 	if (hasElement('drawzone')) {
 		drawZone = new DrawController('drawzone', 500, 500);
@@ -33,6 +34,15 @@ function init() {
 	if (hasElement('wave')) {
 		waves = new WaveController('wave', 500, 500);
 		controllers.push(waves);
+	}
+	if (hasElement('fouriertitle')) {
+		fourierTitle = new EpicyclesController('fouriertitle', 500, 500);
+		fourierTitle.setPath(
+			titlePoints.map(p => {
+				return {x: p.x * 0.9, y: p.y * 0.9}
+			}));
+		fourierTitle.period = 15;
+		controllers.push(fourierTitle);
 	}
 
 	conductor = new Conductor(controllers);
