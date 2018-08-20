@@ -1,7 +1,7 @@
 import Controller from "./controller";
 import { to2dIsometric, easeInOut, sinEaseInOut } from "./util";
 
-export default class WaveController extends Controller {
+export default class ComplexSinusoidController extends Controller {
 
 	constructor(id, width, height) {
         super(id, width, height);
