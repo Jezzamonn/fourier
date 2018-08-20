@@ -7,7 +7,7 @@ export function getFourierData(points, numPoints) {
     }
     const fft = new FFT(numPoints);
     
-    const inputPoints = fftFriendly2dPoints(points, numPoints);
+    const inputPoints = resampleData(points, numPoints);
      
     const out = fft.createComplexArray();
     fft.transform(out, inputPoints);
@@ -31,8 +31,7 @@ export function getFourierData(points, numPoints) {
     return fftData;
 }
 
-function fftFriendly2dPoints(points, numSamples) {
-    // TODO?: Make these based off space, not time
+function resampleData(points, numSamples) {
     let newPoints = [];
     for (let i = 0; i < numSamples; i ++) {
         let position = points.length * (i / numSamples);
