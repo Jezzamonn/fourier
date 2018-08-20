@@ -10,7 +10,7 @@
     "start": "http-server",
     "webpack": "webpack || exit 1",
     "watch": "npm-watch",
-    "reload": "reload -b"
+    "reload": "reload -b -w build"
   },
   "author": "Jezzamon",
   "license": "ISC",
@@ -26,6 +26,6 @@
   },
   "dependencies": {
     "fft.js": "^4.0.3",
-    "mathjs": "^5.1.0"
+    "matrix-multiplication": "^0.5.2"
   }
 }

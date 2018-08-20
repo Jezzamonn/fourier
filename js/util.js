@@ -1,4 +1,4 @@
-import math from 'mathjs'
+import matrixMultiplication from 'matrix-multiplication';
 
 export function easeInOut(t, amt=2) {
     let tPow = Math.pow(t, amt);
@@ -69,20 +69,21 @@ export function clamp(amt, val1, val2) {
 
 // TODO? Redesign so this generates a function?
 export function to2dIsometric(x, y, z, xzAngle=0, yAngle=0) {
+    const mul = matrixMultiplication()(3);
     // s/o to wikipedia for these rotation matrices
-    const xzRotateMatrix = math.matrix([
-        [Math.cos(xzAngle), 0, -Math.sin(xzAngle)],
-        [0, 1, 0],
-        [Math.sin(xzAngle), 0, Math.cos(xzAngle)]
-    ])
-    const yRotateMatrix = math.matrix([
-        [1, 0, 0],
-        [0, Math.cos(yAngle), Math.sin(yAngle)],
-        [0, -Math.sin(yAngle), Math.cos(yAngle)]
-    ])
-    const transformMatrix = math.multiply(yRotateMatrix, xzRotateMatrix);
+    const xzRotateMatrix = [
+        Math.cos(xzAngle), 0, -Math.sin(xzAngle),
+        0, 1, 0,
+        Math.sin(xzAngle), 0, Math.cos(xzAngle)
+    ];
+    const yRotateMatrix = [
+        1, 0, 0,
+        0, Math.cos(yAngle), Math.sin(yAngle),
+        0, -Math.sin(yAngle), Math.cos(yAngle)
+    ];
+    const transformMatrix = mul(yRotateMatrix, xzRotateMatrix);
 
-    const transformed = math.multiply(transformMatrix, [x, y, z]);
+    const transformed = mul(transformMatrix, [x, y, z]);
     // Just return the x and y
-    return {x: transformed.subset(math.index(0)), y: transformed.subset(math.index(1))};
+    return {x: transformed[0], y: transformed[1]};
 }
