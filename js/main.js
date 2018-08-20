@@ -3,6 +3,7 @@ import EpicyclesController from './epicycles-controller.js';
 import ComplexSinusoidController from './complex-sinusoid.js';
 import Conductor from './conductor.js';
 import { titlePoints } from './title-points.js';
+import WaveController from './wave-controller.js';
 
 let conductor = null;
 
@@ -33,6 +34,10 @@ function init() {
 	}
 	if (hasElement('complexsinusoid')) {
 		waves = new ComplexSinusoidController('complexsinusoid', 500, 500);
+		controllers.push(waves);
+	}
+	if (hasElement('wave')) {
+		waves = new WaveController('wave', 500, 500);
 		controllers.push(waves);
 	}
 	if (hasElement('fouriertitle')) {
