@@ -1,5 +1,5 @@
-import Controller from "./controller";
-import { to2dIsometric, easeInOut, sinEaseInOut } from "./util";
+import Controller from "../controller";
+import { to2dIsometric, easeInOut, sinEaseInOut } from "../util";
 
 export default class ComplexSinusoidController extends Controller {
 

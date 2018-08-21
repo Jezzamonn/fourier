@@ -1,7 +1,5 @@
-import Controller from "./controller";
-import { getFourierData } from "./justfourierthings";
-import { grey } from "./color";
-import { easeInOut, clamp, smallEaseInOut } from "./util";
+import Controller from "../controller";
+import { getFourierData } from "../justfourierthings";
 
 const numPoints = 1024;
  

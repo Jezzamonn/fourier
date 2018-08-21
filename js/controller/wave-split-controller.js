@@ -1,5 +1,5 @@
-import Controller from "./controller";
-import { to2dIsometric, easeInOut, sinEaseInOut, clampedSlurp, clamp, slurp } from "./util";
+import Controller from "../controller";
+import { easeInOut, clamp, slurp } from "../util";
 
 export default class WaveSplitController extends Controller {
 
