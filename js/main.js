@@ -5,6 +5,7 @@ import Conductor from './conductor.js';
 import { titlePoints } from './title-points.js';
 import WaveController from './controller/wave-controller.js';
 import WaveSplitController from './controller/wave-split-controller.js';
+import SquareWaveSplitController from './controller/square-wave-split-controller.js';
 
 let conductor = null;
 
@@ -43,6 +44,10 @@ function init() {
 	}
 	if (hasElement('wavesplit')) {
 		waves = new WaveSplitController('wavesplit', 500, 500);
+		controllers.push(waves);
+	}
+	if (hasElement('squarewavesplit')) {
+		waves = new SquareWaveSplitController('squarewavesplit', 500, 500);
 		controllers.push(waves);
 	}
 	if (hasElement('fouriertitle')) {
