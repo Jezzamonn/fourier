@@ -1,10 +1,10 @@
-import DrawController from './draw-controller.js';
-import EpicyclesController from './epicycles-controller.js';
-import ComplexSinusoidController from './complex-sinusoid.js';
+import DrawController from './controller/draw-controller.js';
+import EpicyclesController from './controller/epicycles-controller.js';
+import ComplexSinusoidController from './controller/complex-sinusoid-controller.js';
 import Conductor from './conductor.js';
 import { titlePoints } from './title-points.js';
-import WaveController from './wave-controller.js';
-import WaveSplitController from './wave-split-controller.js';
+import WaveController from './controller/wave-controller.js';
+import WaveSplitController from './controller/wave-split-controller.js';
 
 let conductor = null;
 
