@@ -4,6 +4,7 @@ import ComplexSinusoidController from './complex-sinusoid.js';
 import Conductor from './conductor.js';
 import { titlePoints } from './title-points.js';
 import WaveController from './wave-controller.js';
+import WaveSplitController from './wave-split-controller.js';
 
 let conductor = null;
 
@@ -38,6 +39,10 @@ function init() {
 	}
 	if (hasElement('wave')) {
 		waves = new WaveController('wave', 500, 500);
+		controllers.push(waves);
+	}
+	if (hasElement('wavesplit')) {
+		waves = new WaveSplitController('wavesplit', 500, 500);
 		controllers.push(waves);
 	}
 	if (hasElement('fouriertitle')) {
