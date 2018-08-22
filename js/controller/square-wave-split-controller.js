@@ -58,7 +58,8 @@ export default class SquareWaveSplitController extends Controller {
             const index = i % this.wavePoints.length;
 
             const x = this.width * xAmt;
-            const y = waveTop + waveHeight * this.wavePoints[index];
+            const fullWaveAmt = this.wavePoints[index];
+            const y = waveTop + waveHeight * fullWaveAmt;
 
             if (i == 0) {
                 this.context.moveTo(x, y);
@@ -69,20 +70,28 @@ export default class SquareWaveSplitController extends Controller {
         }
         this.context.stroke();
 
+        const splitAmt = easeInOut(clamp(4 * this.animAmt, 0, 1), 3);
+        let fadeAmt = 2 * this.animAmt;
+        if (fadeAmt > 1) {
+            fadeAmt = 2 - fadeAmt;
+        }
+        fadeAmt = easeInOut(clamp(4 * fadeAmt, 0, 1));
+
         // Draw its little babies
         this.context.beginPath();
-        // TODO: The global alpha thing
+        this.context.globalAlpha = fadeAmt;
         const numBabies = Math.min(20, this.fourierData.length);
         for (let babe = 0; babe < numBabies; babe ++) {
-            const wavePosition = slurp(waveTop, waveBottom, (babe + 1) / numBabies);
+            const wavePosition = slurp(waveTop, slurp(waveTop, waveBottom, (babe + 1) / numBabies), splitAmt);
             const waveData = this.fourierData[babe];
             for (let xAmt = startXAmt, i = startI; xAmt <= 1 + step; xAmt += step, i ++) {
                 const index = i % this.wavePoints.length;
                 const indexAmt = index / this.wavePoints.length;
     
                 const x = this.width * xAmt;
+                const fullWaveAmt = this.wavePoints[index];
                 const sineAmt = waveData.amplitude * Math.cos(2 * Math.PI * waveData.freq * indexAmt + waveData.phase);
-                const y = wavePosition + waveHeight * sineAmt;
+                const y = wavePosition + waveHeight * slurp(fullWaveAmt, sineAmt, splitAmt);
     
                 if (i == 0) {
                     this.context.moveTo(x, y);
@@ -93,7 +102,6 @@ export default class SquareWaveSplitController extends Controller {
             }
         }
         this.context.stroke();
-
-
+        this.context.globalAlpha = 1;
     }
 }
