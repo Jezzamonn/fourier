@@ -6,11 +6,12 @@ import { titlePoints } from './title-points.js';
 import WaveController from './controller/wave-controller.js';
 import WaveSplitController from './controller/wave-split-controller.js';
 import SquareWaveSplitController from './controller/square-wave-split-controller.js';
+import { getWave, squareWave } from './wave-things.js';
 
 let conductor = null;
 
 function init() {
-	let drawZone, circles, epicycles, waves, fourierTitle;
+	let drawZone;
 	let controllers = [];
 	if (hasElement('drawzone')) {
 		drawZone = new DrawController('drawzone', 500, 500);
@@ -18,7 +19,7 @@ function init() {
 		controllers.push(drawZone);
 	}
 	if (hasElement('plaincircles')) {
-		circles = new EpicyclesController('plaincircles', 500, 500);
+		let circles = new EpicyclesController('plaincircles', 500, 500);
 		circles.animate = false;
 		if (drawZone) {
 			drawZone.onDrawingStart.push(() => circles.setPath([]));
@@ -27,7 +28,7 @@ function init() {
 		controllers.push(circles);
 	}
 	if (hasElement('circlezone')) {
-		epicycles = new EpicyclesController('circlezone', 500, 500);
+		let epicycles = new EpicyclesController('circlezone', 500, 500);
 		if (drawZone) {
 			drawZone.onDrawingStart.push(() => epicycles.setPath([]));
 			drawZone.onDrawingEnd.push(() => epicycles.setPath(drawZone.path));
@@ -35,23 +36,24 @@ function init() {
 		controllers.push(epicycles);
 	}
 	if (hasElement('complexsinusoid')) {
-		waves = new ComplexSinusoidController('complexsinusoid', 500, 500);
-		controllers.push(waves);
+		let controller = new ComplexSinusoidController('complexsinusoid', 500, 500);
+		controllers.push(controller);
 	}
 	if (hasElement('wave')) {
-		waves = new WaveController('wave', 500, 500);
-		controllers.push(waves);
+		let controller = new WaveController('wave', 500, 500);
+		controllers.push(controller);
 	}
 	if (hasElement('wavesplit')) {
-		waves = new WaveSplitController('wavesplit', 500, 500);
-		controllers.push(waves);
+		let controller = new WaveSplitController('wavesplit', 500, 500);
+		controllers.push(controller);
 	}
 	if (hasElement('squarewavesplit')) {
-		waves = new SquareWaveSplitController('squarewavesplit', 500, 500);
-		controllers.push(waves);
+		let controller = new SquareWaveSplitController('squarewavesplit', 500, 500);
+		controller.setPath(getWave(squareWave, 128));
+		controllers.push(controller);
 	}
 	if (hasElement('fouriertitle')) {
-		fourierTitle = new EpicyclesController('fouriertitle', 500, 500);
+		let fourierTitle = new EpicyclesController('fouriertitle', 500, 500);
 		fourierTitle.setPath(
 			titlePoints.map(p => {
 				return {x: p.x * 0.9, y: p.y * 0.9}
