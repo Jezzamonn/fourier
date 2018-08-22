@@ -21,7 +21,7 @@ export default class SquareWaveSplitController extends Controller {
     setPath(path) {
         this.wavePoints = path;
         // Calculate fourier points, and drop the small things.
-        this.fourierData = getRealFourierData(path).filter(p => p.amplitude > 0);
+        this.fourierData = getRealFourierData(path).filter(p => p.amplitude > 0.001);
     }
 
 	update(dt, mousePosition) {
@@ -90,7 +90,7 @@ export default class SquareWaveSplitController extends Controller {
     
                 const x = this.width * xAmt;
                 const fullWaveAmt = this.wavePoints[index];
-                const sineAmt = waveData.amplitude * Math.cos(2 * Math.PI * waveData.freq * indexAmt + waveData.phase);
+                const sineAmt = 2 * waveData.amplitude * Math.cos(2 * Math.PI * waveData.freq * indexAmt + waveData.phase);
                 const y = wavePosition + waveHeight * slurp(fullWaveAmt, sineAmt, splitAmt);
     
                 if (i == 0) {

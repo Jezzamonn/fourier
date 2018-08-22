@@ -4,7 +4,6 @@ import ComplexSinusoidController from './controller/complex-sinusoid-controller.
 import Conductor from './conductor.js';
 import { titlePoints } from './title-points.js';
 import WaveController from './controller/wave-controller.js';
-import WaveSplitController from './controller/wave-split-controller.js';
 import SquareWaveSplitController from './controller/square-wave-split-controller.js';
 import { getWave, squareWave } from './wave-things.js';
 
@@ -43,13 +42,9 @@ function init() {
 		let controller = new WaveController('wave', 500, 500);
 		controllers.push(controller);
 	}
-	if (hasElement('wavesplit')) {
-		let controller = new WaveSplitController('wavesplit', 500, 500);
-		controllers.push(controller);
-	}
 	if (hasElement('squarewavesplit')) {
 		let controller = new SquareWaveSplitController('squarewavesplit', 500, 500);
-		controller.setPath(getWave(squareWave, 128));
+		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + Math.sin(6 * Math.PI * t), 128));
 		controllers.push(controller);
 	}
 	if (hasElement('fouriertitle')) {
