@@ -1,5 +1,5 @@
 import Controller from "../controller";
-import { getFourierData } from "../justfourierthings";
+import { getFourierData, resample2dData } from "../justfourierthings";
 
 const numPoints = 1024;
  
@@ -24,7 +24,7 @@ export default class EpicyclesController extends Controller {
         this.animAmt = 0;
         this.niceAnimAmt = 0;
         this.fourierPath = [];
-        this.fourierData = getFourierData(path, numPoints);
+        this.fourierData = getFourierData(resample2dData(path, numPoints));
     }
 
 	update(dt, mousePosition) {
