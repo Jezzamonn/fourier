@@ -1,11 +1,16 @@
 import Controller from "../controller";
 
-export default class WaveController extends Controller {
+export default class WaveSplitController extends Controller {
 
 	constructor(id, width, height) {
         super(id, width, height);
         
         this.animAmt = 0;
+        this.wavePoints = [];
+    }
+
+    setPath(path) {
+        this.wavePoints = path;
     }
 
 	update(dt, mousePosition) {
@@ -20,18 +25,28 @@ export default class WaveController extends Controller {
     }
 
     renderWave() {
-        this.context.translate(0, this.context.canvas.height / 2);
-        this.context.beginPath();
+        if (this.wavePoints.length == 0) {
+            return;
+        }
         this.context.strokeStyle = 'black';
         this.context.lineWidth = 1;
 
-    
-        for (let i = 0; i < 100; i ++ ) {
-            const amt = i / 99;
-            const timeAmt = amt + this.animAmt;
-            const waveHeight = 0.3 * 0.5 * this.height;
-            const x = this.width * amt;
-            const y = waveHeight * (Math.sin(2 * Math.PI * timeAmt) + 0.5 * Math.sin(2 * Math.PI * 8 * timeAmt));
+        const waveHeight = 0.2 * 0.5 * this.height;
+        const wavePos = 0.5 * this.context.canvas.height;
+
+        let startXAmt = -this.animAmt;
+        let startI = 0;
+        // (I think the wavelength of the wave can be configured by changing the 1 here)
+        const step = 1 / (this.wavePoints.length);
+        // TODO: Skip drawing the start things that are already defined.
+
+        this.context.beginPath();
+        for (let xAmt = startXAmt, i = startI; xAmt <= 1 + step; xAmt += step, i ++) {
+            const index = i % this.wavePoints.length;
+
+            const x = this.width * xAmt;
+            const fullWaveAmt = this.wavePoints[index];
+            const y = wavePos + waveHeight * fullWaveAmt;
 
             if (i == 0) {
                 this.context.moveTo(x, y);
@@ -40,7 +55,6 @@ export default class WaveController extends Controller {
                 this.context.lineTo(x, y);
             }
         }
-
         this.context.stroke();
     }
 }

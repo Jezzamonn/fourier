@@ -2,13 +2,7 @@ import Controller from "../controller";
 import { easeInOut, clamp, slurp } from "../util";
 import { getRealFourierData } from "../justfourierthings";
 
-function beThereBeSquare(val) {
-    const normVal = val % 1;
-
-    return (normVal < 0.5) ? 1 : 0;
-}
-
-export default class SquareWaveSplitController extends Controller {
+export default class WaveSplitController extends Controller {
 
 	constructor(id, width, height) {
         super(id, width, height);
