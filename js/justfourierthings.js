@@ -63,7 +63,8 @@ export function getRealFourierData(points) {
         fftData.push({
             freq: freq,
             // a little expensive
-            amplitude: Math.sqrt(x * x + y * y) / numPoints,
+            // Also we gotta multiply this by 2 to account for the other side that
+            amplitude: 2 * Math.sqrt(x * x + y * y) / numPoints,
             // a lottle expensive :(
             phase: Math.atan2(y, x),
         });

@@ -10,12 +10,25 @@ export default class WaveSplitController extends Controller {
         this.animAmt = 0;
         this.wavePoints = [];
         this.fourierPoints = [];
+
+        this.waveTop = 0;
+        this.waveBottom = 0;
+        this.totalHeight = 0;
     }
 
     setPath(path) {
         this.wavePoints = path;
         // Calculate fourier points, and drop the small things.
         this.fourierData = getRealFourierData(path).filter(p => p.amplitude > 0.001);
+
+        // Calculate the heights of the main wave and all the sine things
+        this.waveTop = Math.min(...path);
+        this.waveBottom = Math.max(...path);
+
+        // Total height. Start with the main wave...
+        this.totalHeight = this.waveBottom - this.waveTop;
+        // Then add all the sine thingos
+        this.fourierData.forEach((el) => this.totalHeight += 2 * el.amplitude);
     }
 
 	update(dt, mousePosition) {
@@ -36,9 +49,15 @@ export default class WaveSplitController extends Controller {
         this.context.strokeStyle = 'black';
         this.context.lineWidth = 1;
 
-        const waveHeight = 0.2 * 0.5 * this.height;
-        const waveTop = 0.2 * this.context.canvas.height;
-        const waveBottom = 0.8 * this.context.canvas.height;
+        const numBabies = Math.min(50, this.fourierData.length);
+        const top = 0.1 * this.context.canvas.height;
+        const bottom = 0.9 * this.context.canvas.height;
+        // TODO: also incorporate into the frequencies to scale that too?
+        const sizeMultiple = (bottom - top) / this.totalHeight;
+        const spacingMultiplier = 0.8;
+
+        // Running thing that says where to draw each wave.
+        let curWavePos = 0;
 
         let startXAmt = -this.animAmt;
         let startI = 0;
@@ -47,13 +66,14 @@ export default class WaveSplitController extends Controller {
         // TODO: Skip drawing the start things that are already defined.
 
         // Draw the main boy
+        curWavePos -= this.waveTop;
         this.context.beginPath();
         for (let xAmt = startXAmt, i = startI; xAmt <= 1 + step; xAmt += step, i ++) {
             const index = i % this.wavePoints.length;
 
             const x = this.width * xAmt;
             const fullWaveAmt = this.wavePoints[index];
-            const y = waveTop + waveHeight * fullWaveAmt;
+            const y = top + sizeMultiple * (curWavePos + spacingMultiplier * fullWaveAmt);
 
             if (i == 0) {
                 this.context.moveTo(x, y);
@@ -63,8 +83,9 @@ export default class WaveSplitController extends Controller {
             }
         }
         this.context.stroke();
+        curWavePos += this.waveBottom;
 
-        const splitAmt = easeInOut(clamp(4 * this.animAmt, 0, 1), 3);
+        const splitAmt = easeInOut(clamp(4 * this.animAmt, 0, 1), 4);
         let fadeAmt = 2 * this.animAmt;
         if (fadeAmt > 1) {
             fadeAmt = 2 - fadeAmt;
@@ -72,20 +93,22 @@ export default class WaveSplitController extends Controller {
         fadeAmt = easeInOut(clamp(4 * fadeAmt, 0, 1));
 
         // Draw its little babies
-        this.context.beginPath();
-        this.context.globalAlpha = fadeAmt;
-        const numBabies = Math.min(20, this.fourierData.length);
         for (let babe = 0; babe < numBabies; babe ++) {
-            const wavePosition = slurp(waveTop, slurp(waveTop, waveBottom, (babe + 1) / numBabies), splitAmt);
+            let babeAmt = babe / (numBabies - 1);
             const waveData = this.fourierData[babe];
+            curWavePos += waveData.amplitude;
+            const wavePosition = slurp(-this.waveTop, curWavePos, splitAmt);
+
+            this.context.beginPath();
+            this.context.globalAlpha = fadeAmt * (1 - babeAmt);
             for (let xAmt = startXAmt, i = startI; xAmt <= 1 + step; xAmt += step, i ++) {
                 const index = i % this.wavePoints.length;
                 const indexAmt = index / this.wavePoints.length;
     
                 const x = this.width * xAmt;
                 const fullWaveAmt = this.wavePoints[index];
-                const sineAmt = 2 * waveData.amplitude * Math.cos(2 * Math.PI * waveData.freq * indexAmt + waveData.phase);
-                const y = wavePosition + waveHeight * slurp(fullWaveAmt, sineAmt, splitAmt);
+                const sineAmt = waveData.amplitude * Math.cos(2 * Math.PI * waveData.freq * indexAmt + waveData.phase);
+                const y = top + sizeMultiple * (wavePosition + spacingMultiplier * slurp(fullWaveAmt, sineAmt, splitAmt));
     
                 if (i == 0) {
                     this.context.moveTo(x, y);
@@ -94,8 +117,9 @@ export default class WaveSplitController extends Controller {
                     this.context.lineTo(x, y);
                 }
             }
+            curWavePos += waveData.amplitude;
+            this.context.stroke();
+            this.context.globalAlpha = 1;
         }
-        this.context.stroke();
-        this.context.globalAlpha = 1;
     }
 }

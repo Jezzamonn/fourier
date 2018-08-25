@@ -41,7 +41,7 @@ function init() {
 	}
 	if (hasElement('square-wave-split')) {
 		let controller = new WaveSplitController('square-wave-split');
-		controller.setPath(getWave(squareWave, 128));
+		controller.setPath(getWave(squareWave, 256));
 		controllers.push(controller);
 	}
 
