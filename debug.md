@@ -1,0 +1,1 @@
+<canvas id='square-wave-split' width=500 height=500></canvas>

@@ -5,6 +5,7 @@
   "main": "index.js",
   "watch": {
     "makehtml": "content.md",
+    "makedebughtml": "debug.md",
     "webpack": "js/**/*.js",
     "cp": "css/styles.css"
   },
@@ -12,6 +13,7 @@
     "start": "http-server",
     "webpack": "webpack || exit 1",
     "makehtml": "showdown makehtml -i content.md -o /tmp/content.html && sed '/{{CONTENT}}/ {\nr /tmp/content.html\nd\n}' template.html > build/index.html",
+    "makedebughtml": "showdown makehtml -i debug.md -o /tmp/debug.html && sed '/{{CONTENT}}/ {\nr /tmp/debug.html\nd\n}' template.html > build/debug.html",
     "cp": "cp -r css build/",
     "build": "npm run webpack && npm run makehtml && npm run cp",
     "watch": "npm-watch",
