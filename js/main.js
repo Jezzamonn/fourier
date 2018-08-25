@@ -10,45 +10,13 @@ import { getWave, squareWave } from './wave-things.js';
 let conductor = null;
 
 function init() {
-	let drawZone;
+
 	let controllers = [];
-	if (hasElement('drawzone')) {
-		drawZone = new DrawController('drawzone', 500, 500);
-		window.drawZone = drawZone;
-		controllers.push(drawZone);
-	}
-	if (hasElement('plaincircles')) {
-		let circles = new EpicyclesController('plaincircles', 500, 500);
-		circles.animate = false;
-		if (drawZone) {
-			drawZone.onDrawingStart.push(() => circles.setPath([]));
-			drawZone.onDrawingEnd.push(() => circles.setPath(drawZone.path));
-		}
-		controllers.push(circles);
-	}
-	if (hasElement('circlezone')) {
-		let epicycles = new EpicyclesController('circlezone', 500, 500);
-		if (drawZone) {
-			drawZone.onDrawingStart.push(() => epicycles.setPath([]));
-			drawZone.onDrawingEnd.push(() => epicycles.setPath(drawZone.path));
-		}
-		controllers.push(epicycles);
-	}
-	if (hasElement('complexsinusoid')) {
-		let controller = new ComplexSinusoidController('complexsinusoid', 500, 500);
-		controllers.push(controller);
-	}
-	if (hasElement('wave')) {
-		let controller = new WaveController('wave', 500, 500);
-		controllers.push(controller);
-	}
-	if (hasElement('squarewavesplit')) {
-		let controller = new WaveSplitController('squarewavesplit', 500, 500);
-		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + Math.sin(6 * Math.PI * t), 128));
-		controllers.push(controller);
-	}
-	if (hasElement('fouriertitle')) {
-		let fourierTitle = new EpicyclesController('fouriertitle', 500, 500);
+	// Controllers that we may need to refer to elsewhere
+	let drawZone;
+
+	if (hasElement('fourier-title')) {
+		let fourierTitle = new EpicyclesController('fourier-title');
 		fourierTitle.setPath(
 			titlePoints.map(p => {
 				return {x: p.x * 0.9, y: p.y * 0.9}
@@ -56,6 +24,51 @@ function init() {
 		fourierTitle.period = 15;
 		controllers.push(fourierTitle);
 	}
+	if (hasElement('combo-sine-wave')) {
+		let controller = new WaveController('combo-sine-wave');
+		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + Math.sin(6 * Math.PI * t), 128));
+		controllers.push(controller);
+	}
+	if (hasElement('combo-sine-wave-split')) {
+		let controller = new WaveSplitController('combo-sine-wave-split');
+		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + Math.sin(6 * Math.PI * t), 128));
+		controllers.push(controller);
+	}
+	if (hasElement('square-wave')) {
+		let controller = new WaveController('square-wave');
+		controller.setPath(getWave(squareWave, 128));
+		controllers.push(controller);
+	}
+	if (hasElement('square-wave-split')) {
+		let controller = new WaveSplitController('square-wave-split');
+		controller.setPath(getWave(squareWave, 128));
+		controllers.push(controller);
+	}
+
+	if (hasElement('complex-sinusoid')) {
+		let controller = new ComplexSinusoidController('complex-sinusoid');
+		controllers.push(controller);
+	}
+	if (hasElement('complex-sinusoid-turn')) {
+		let controller = new ComplexSinusoidController('complex-sinusoid-turn');
+		controllers.push(controller);
+	}
+	
+	if (hasElement('draw-zone')) {
+		drawZone = new DrawController('draw-zone');
+		window.drawZone = drawZone;
+		controllers.push(drawZone);
+	}
+	if (hasElement('circle-zone')) {
+		let epicycles = new EpicyclesController('circle-zone', 500, 500);
+		if (drawZone) {
+			drawZone.onDrawingStart.push(() => epicycles.setPath([]));
+			drawZone.onDrawingEnd.push(() => epicycles.setPath(drawZone.path));
+		}
+		controllers.push(epicycles);
+	}
+
+	
 
 	conductor = new Conductor(controllers);
 	conductor.start();

@@ -1,5 +1,6 @@
 [ Cool eye catch fourier transform animation hook ✅ ]
-<canvas id='fouriertitle'></canvas>
+
+<canvas id='fourier-title' width=500 height=500></canvas>
 
 # Fourier transforms. What the heck are they???
 
@@ -11,22 +12,21 @@ Put simply, Fourier transform is a way of changing something into a bunch of sin
 
 Let’s start with a simple examples and work our way up. Here’s a wave pattern. (It repeats forever?)
 
-[ simple sum of two sine waves ✅ ]
+<canvas id='combo-sine-wave' width=500 height=500></canvas>
 
 This pattern wavy pattern here can be split up into sine waves.
 
-[ rotate into 3d and split it into two things… or in 2D? ✅ ]
+<canvas id='combo-sine-wave-split' width=500 height=500></canvas>
 
 That example might seem kind of obvious. But we can actually it that with any line like that.
 
 Let's take a look at this guy. It’s called a square wave.
 
-[ Square wave ✅ ]
+<canvas id='square-wave' width=500 height=500></canvas>
 
 It doesn’t look like we can make it out of sine waves, but if we have enough we can do it.
 
-[ Square wave split into things. Interactive = change how many waves there are ✅ ]
-<canvas id='squarewavesplit'></canvas>
+<canvas id='square-wave-split' width=500 height=500></canvas>
 
 This process works like that for any repeating line. Give it a go, try draw your own!
 
@@ -50,7 +50,7 @@ Now at the start, I said it splits intos into sine waves. The thing is, the sine
 
 If we take a look from the side, they look like sine waves. From front on, though, these look like circles.
 
-[ Animation of 3D sinusoid going 2D to being a circle? ✅  With a slider you can control? ]
+<canvas id='complex-sinusoid-turn' width=500 height=500></canvas>
 
 So far everything we’ve been doing has only required the regular 2D sine waves. In a lot of cases, when we do a Fourier transform we only care about the frequencies, so we don’t worry about the fact it’s 3D.* (when we put in regular things the wavy parts cancel out?)
 
@@ -64,7 +64,10 @@ What’s going on here? Well we can think of the drawing as a 3D line because of
 
 So, we can apply this process to any drawing really! Now it’s your chance to play around with it!
 
-[ Draw your own fourier thing time ✅]
+<canvas id='draw-zone' width=500 height=500></canvas>
+
+<canvas id='circle-zone' width=500 height=500></canvas>
+
 
 Other ideas:
 
