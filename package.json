@@ -4,13 +4,18 @@
   "description": "",
   "main": "index.js",
   "watch": {
-    "webpack": "js/**/*.js"
+    "makehtml": "content.md",
+    "webpack": "js/**/*.js",
+    "cp": "css/styles.css"
   },
   "scripts": {
     "start": "http-server",
     "webpack": "webpack || exit 1",
+    "makehtml": "showdown makehtml -i content.md -o /tmp/content.html && sed '/{{CONTENT}}/ {\nr /tmp/content.html\nd\n}' template.html > build/index.html",
+    "cp": "cp -r css build/",
+    "build": "npm run webpack && npm run makehtml && npm run cp",
     "watch": "npm-watch",
-    "reload": "reload -b -w build"
+    "reload": "reload -b -d build"
   },
   "author": "Jezzamon",
   "license": "ISC",
