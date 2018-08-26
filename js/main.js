@@ -34,6 +34,7 @@ function init() {
 	if (hasElement('combo-sine-wave-split')) {
 		let controller = new WaveSplitController('combo-sine-wave-split');
 		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + Math.sin(6 * Math.PI * t), 128));
+		controller.fadeFrequencies = false;
 		controllers.push(controller);
 	}
 	if (hasElement('square-wave')) {

@@ -14,6 +14,7 @@ export default class WaveSplitController extends Controller {
         this.waveTop = 0;
         this.waveBottom = 0;
         this.totalHeight = 0;
+        this.fadeFrequencies = true;
     }
 
     setPath(path) {
@@ -100,7 +101,10 @@ export default class WaveSplitController extends Controller {
             const wavePosition = slurp(-this.waveTop, curWavePos, splitAmt);
 
             this.context.beginPath();
-            this.context.globalAlpha = fadeAmt * (1 - babeAmt);
+            this.context.globalAlpha = fadeAmt;
+            if (this.fadeFrequencies) {
+                this.context.globalAlpha *= (1 - babeAmt);
+            }
             for (let xAmt = startXAmt, i = startI; xAmt <= 1 + step; xAmt += step, i ++) {
                 const index = i % this.wavePoints.length;
                 const indexAmt = index / this.wavePoints.length;
