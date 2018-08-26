@@ -6,6 +6,7 @@ import { titlePoints } from './title-points.js';
 import WaveController from './controller/wave-controller.js';
 import WaveSplitController from './controller/wave-split-controller.js';
 import { getWave, squareWave } from './wave-things.js';
+import { easeInOut, sinEaseInOut } from './util.js';
 
 let conductor = null;
 
@@ -47,10 +48,13 @@ function init() {
 
 	if (hasElement('complex-sinusoid')) {
 		let controller = new ComplexSinusoidController('complex-sinusoid');
+		controller.xzAngleFn = () => Math.PI / 4;
+		controller.yAngleFn = () => -Math.PI / 6;
 		controllers.push(controller);
 	}
 	if (hasElement('complex-sinusoid-turn')) {
 		let controller = new ComplexSinusoidController('complex-sinusoid-turn');
+		controller.xzAngleFn = (amt) => -Math.PI / 2 * easeInOut(sinEaseInOut(2 * amt), 4);
 		controllers.push(controller);
 	}
 	

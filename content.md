@@ -1,5 +1,3 @@
-[ Cool eye catch fourier transform animation hook ✅ ]
-
 <canvas id='fourier-title' width=500 height=500></canvas>
 
 # Fourier transforms. What the heck are they???
@@ -46,7 +44,7 @@ Ok, now let's dig more into the Fourier transform. This next part looks cool, bu
 
 Now at the start, I said it splits intos into sine waves. The thing is, the sine waves it creates are not just regular sine waves, but they’re 3D.
 
-[ Animation 3D sinusoid? ] 
+<canvas id='complex-sinusoid' width=500 height=500></canvas>
 
 If we take a look from the side, they look like sine waves. From front on, though, these look like circles.
 
