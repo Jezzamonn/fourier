@@ -31,7 +31,9 @@ export default class Conductor {
 		let dt = (curTime - this.lastTime) / 1000;
 
 		this.controllers.forEach(controller => {
-			controller.update(dt, this.mousePosition);
+			if (controller.isOnScreen()) {
+				controller.update(dt, this.mousePosition);
+			}
 		});
 
 		this.lastTime = curTime;
@@ -39,7 +41,9 @@ export default class Conductor {
 
 	render() {
 		this.controllers.forEach(controller => {
-			controller.render();
+			if (controller.isOnScreen()) {
+				controller.render();
+			}
 		});
 	}
 

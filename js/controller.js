@@ -20,6 +20,18 @@ export default class Controller {
 		this.canvas.style.height = height + 'px';
 	}
 
+	isOnScreen() {
+		// Thanks stack overflow https://stackoverflow.com/a/7557433
+		const boundingRect = this.canvas.getBoundingClientRect();
+
+		return (
+			boundingRect.bottom >= 0 &&
+			boundingRect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+			boundingRect.right >= 0 &&
+			boundingRect.left <= (window.innerWidth || document.documentElement.clientWidth)
+		);
+	}
+
 	clear() {
 		// Clear the previous frame
 		this.context.resetTransform();
