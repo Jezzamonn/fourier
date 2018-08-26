@@ -7,6 +7,7 @@ import WaveController from './controller/wave-controller.js';
 import WaveSplitController from './controller/wave-split-controller.js';
 import { getWave, squareWave } from './wave-things.js';
 import { easeInOut, sinEaseInOut } from './util.js';
+import SkewedSinusoidController from './controller/skewed-sinusoid-controller.js';
 
 let conductor = null;
 
@@ -47,9 +48,7 @@ function init() {
 	}
 
 	if (hasElement('complex-sinusoid')) {
-		let controller = new ComplexSinusoidController('complex-sinusoid');
-		controller.xzAngleFn = () => Math.PI / 4;
-		controller.yAngleFn = () => -Math.PI / 6;
+		let controller = new SkewedSinusoidController('complex-sinusoid');
 		controllers.push(controller);
 	}
 	if (hasElement('complex-sinusoid-turn')) {

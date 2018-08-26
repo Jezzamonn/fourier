@@ -9,6 +9,8 @@ export default class ComplexSinusoidController extends Controller {
         this.animAmt = 0;
         this.xzAngleFn = () => 0;
         this.yAngleFn = () => 0;
+        this.radius = 0.2 * this.height;
+        this.length = 0.7 * this.width;
     }
 
 	update(dt, mousePosition) {
@@ -33,10 +35,9 @@ export default class ComplexSinusoidController extends Controller {
         const yAngle = this.yAngleFn(this.animAmt);
         for (let i = 0; i < 100; i ++ ) {
             const amt = i / 99;
-            const spiralRadius = 0.2 * this.height;
-            const x = 0.7 * this.width * (amt - 0.5);
-            const y = spiralRadius * Math.sin(2 * Math.PI * (3 * amt - 4 * this.animAmt));
-            const z = spiralRadius * Math.cos(2 * Math.PI * (3 * amt - 4 * this.animAmt));
+            const x = this.length * (amt - 0.5);
+            const y = this.radius * Math.sin(2 * Math.PI * (3 * amt - 4 * this.animAmt));
+            const z = this.radius * Math.cos(2 * Math.PI * (3 * amt - 4 * this.animAmt));
 
 
             const points = to2dIsometric(x, y, z, xzAngle, yAngle);
@@ -52,11 +53,6 @@ export default class ComplexSinusoidController extends Controller {
         }
 
         this.context.stroke();
-    }
-
-    lineTo3d(context, x, y, z, xzAngle=0, yAngle=0) {
-        const points = to2dIsometric(x, y, z, xzAngle, yAngle);
-        context.lineTo(points.x, points.y);
     }
 
 }
