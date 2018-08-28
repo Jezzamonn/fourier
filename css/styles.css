@@ -1,8 +1,12 @@
 canvas {
 	border-style: solid;
 	border-width: 1px;
+	margin: auto;
+	display: block;
 }
 
 body {
-    font-family: sans-serif;
+	font-family: sans-serif;
+	width: 80%;
+	margin: auto;
 }
