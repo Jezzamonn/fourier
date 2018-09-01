@@ -104,7 +104,8 @@ export default class WaveSplitController extends Controller {
         }
 
         // Draw its little babies
-        for (let babe = 0; babe < numBabies; babe ++) {
+        const renderedBabies = slurp(1, numBabies, this.fourierAmt);
+        for (let babe = 0; babe < renderedBabies; babe ++) {
             let babeAmt = babe / (numBabies - 1);
             const waveData = this.fourierData[babe];
             curWavePos += waveData.amplitude;

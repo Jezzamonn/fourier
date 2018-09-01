@@ -53,6 +53,7 @@ export default class RangeController {
 
         const sinePos = 0.5 * Math.cos(2 * Math.PI * this.animAmt) + 0.5;
         this.slider.value = sinePos;
+        this.onValueChange.forEach(fn => fn(this.slider.value));
     }
 
     isOnScreen() {
@@ -69,6 +70,8 @@ export default class RangeController {
         this.heldValue = this.slider.value;
         // Calculate what the anim amt should be.
         this.animAmt = Math.acos(2 * this.heldValue - 1) / (2 * Math.PI);
+
+        this.onValueChange.forEach(fn => fn(this.slider.value));
     }
 
 

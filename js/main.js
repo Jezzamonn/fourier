@@ -17,7 +17,7 @@ function init() {
 
 	let controllers = [];
 	// Controllers that we may need to refer to elsewhere
-	let drawZone, waveDrawController;
+	let drawZone, waveDrawController, waveDrawSliderController;
 
 	if (hasElement('fourier-title')) {
 		let fourierTitle = new EpicyclesController('fourier-title');
@@ -64,16 +64,19 @@ function init() {
 		waveDrawController = new WaveDrawController('wave-draw-controller');
 		controllers.push(waveDrawController);
 	}
+	if (hasElement('wave-draw-slider')) {
+		waveDrawSliderController = new RangeController('wave-draw-slider', 500);
+		controllers.push(waveDrawSliderController);
+	}
 	if (hasElement('wave-draw-split-controller')) {
 		let controller = new WaveSplitController('wave-draw-split-controller');
 		if (waveDrawController != null) {
 			waveDrawController.onDrawingStart.push(() => controller.setPath([]));
 			waveDrawController.onDrawingEnd.push(() => controller.setPath(waveDrawController.normPath));
 		}
-		controllers.push(controller);
-	}
-	if (hasElement('wave-draw-slider')) {
-		let controller = new RangeController('wave-draw-slider', 500);
+		if (waveDrawSliderController != null) {
+			waveDrawSliderController.onValueChange.push(val => controller.fourierAmt = val);
+		}
 		controllers.push(controller);
 	}
 	
