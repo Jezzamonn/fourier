@@ -16,7 +16,7 @@ function init() {
 
 	let controllers = [];
 	// Controllers that we may need to refer to elsewhere
-	let drawZone;
+	let drawZone, waveDrawController;
 
 	if (hasElement('fourier-title')) {
 		let fourierTitle = new EpicyclesController('fourier-title');
@@ -60,7 +60,15 @@ function init() {
 	}
 	
 	if (hasElement('wave-draw-controller')) {
-		let controller = new WaveDrawController('wave-draw-controller');
+		waveDrawController = new WaveDrawController('wave-draw-controller');
+		controllers.push(waveDrawController);
+	}
+	if (hasElement('wave-draw-split-controller')) {
+		let controller = new WaveSplitController('wave-draw-split-controller');
+		if (waveDrawController != null) {
+			waveDrawController.onDrawingStart.push(() => controller.setPath([]));
+			waveDrawController.onDrawingEnd.push(() => controller.setPath(waveDrawController.normPath));
+		}
 		controllers.push(controller);
 	}
 	

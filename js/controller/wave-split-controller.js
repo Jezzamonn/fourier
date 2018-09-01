@@ -20,7 +20,7 @@ export default class WaveSplitController extends Controller {
     setPath(path) {
         this.wavePoints = path;
         // Calculate fourier points, and drop the small things.
-        this.fourierData = getRealFourierData(path).filter(p => p.amplitude > 0.001);
+        this.fourierData = getRealFourierData(path).filter(p => p.amplitude > 0.001 && p.freq > 0);
 
         // Calculate the heights of the main wave and all the sine things
         this.waveTop = Math.min(...path);
@@ -30,6 +30,9 @@ export default class WaveSplitController extends Controller {
         this.totalHeight = this.waveBottom - this.waveTop;
         // Then add all the sine thingos
         this.fourierData.forEach((el) => this.totalHeight += 2 * el.amplitude);
+
+        // reset the animation too
+        this.animAmt = 0;
     }
 
 	update(dt, mousePosition) {

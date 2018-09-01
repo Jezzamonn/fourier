@@ -20,7 +20,11 @@ export default class WaveDrawController extends Controller {
         document.addEventListener('touchend', () => this.stopDrawing());
     }
 
-   startDrawing() {
+    get normPath() {
+        return this.wavePoints.map(el => el / this.height)
+    }
+
+    startDrawing() {
         this.drawing = true;
         this.lastMousePoint = null;
 
