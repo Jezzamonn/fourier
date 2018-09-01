@@ -8,6 +8,7 @@ import WaveSplitController from './controller/wave-split-controller.js';
 import { getWave, squareWave } from './wave-things.js';
 import { easeInOut, sinEaseInOut } from './util.js';
 import SkewedSinusoidController from './controller/skewed-sinusoid-controller.js';
+import WaveDrawController from './controller/wave-draw-controller.js';
 
 let conductor = null;
 
@@ -58,9 +59,13 @@ function init() {
 		controllers.push(controller);
 	}
 	
+	if (hasElement('wave-draw-controller')) {
+		let controller = new WaveDrawController('wave-draw-controller');
+		controllers.push(controller);
+	}
+	
 	if (hasElement('draw-zone')) {
 		drawZone = new DrawController('draw-zone');
-		window.drawZone = drawZone;
 		controllers.push(drawZone);
 	}
 	if (hasElement('circle-zone')) {

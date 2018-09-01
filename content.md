@@ -28,7 +28,7 @@ It doesn’t look like we can make it out of sine waves, but if we have enough w
 
 This process works like that for any repeating line. Give it a go, try draw your own!
 
-[ Draw something here! ]
+<canvas id='wave-draw' width=500 height=500></canvas>
 
 [ Converted into sine waves ]
 
