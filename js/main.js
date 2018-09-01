@@ -9,6 +9,7 @@ import { getWave, squareWave } from './wave-things.js';
 import { easeInOut, sinEaseInOut } from './util.js';
 import SkewedSinusoidController from './controller/skewed-sinusoid-controller.js';
 import WaveDrawController from './controller/wave-draw-controller.js';
+import RangeController from './controller/range-controller.js';
 
 let conductor = null;
 
@@ -71,6 +72,10 @@ function init() {
 		}
 		controllers.push(controller);
 	}
+	if (hasElement('wave-draw-slider')) {
+		let controller = new RangeController('wave-draw-slider', 500);
+		controllers.push(controller);
+	}
 	
 	if (hasElement('draw-zone')) {
 		drawZone = new DrawController('draw-zone');
@@ -84,8 +89,6 @@ function init() {
 		}
 		controllers.push(epicycles);
 	}
-
-	
 
 	conductor = new Conductor(controllers);
 	conductor.start();

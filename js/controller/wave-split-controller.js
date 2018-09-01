@@ -15,6 +15,9 @@ export default class WaveSplitController extends Controller {
         this.waveBottom = 0;
         this.totalHeight = 0;
         this.fadeFrequencies = true;
+        this.splitAnim = false;
+        // How many of the waves to draw
+        this.fourierAmt = 1;
     }
 
     setPath(path) {
@@ -89,12 +92,16 @@ export default class WaveSplitController extends Controller {
         this.context.stroke();
         curWavePos += this.waveBottom;
 
-        const splitAmt = easeInOut(clamp(4 * this.animAmt, 0, 1), 4);
-        let fadeAmt = 2 * this.animAmt;
-        if (fadeAmt > 1) {
-            fadeAmt = 2 - fadeAmt;
+        let splitAmt = 1;
+        let fadeAmt = 1;
+        if (this.splitAnim) {
+            splitAmt = easeInOut(clamp(4 * this.animAmt, 0, 1), 4);
+            fadeAmt = 2 * this.animAmt;
+            if (fadeAmt > 1) {
+                fadeAmt = 2 - fadeAmt;
+            }
+            fadeAmt = easeInOut(clamp(4 * fadeAmt, 0, 1));
         }
-        fadeAmt = easeInOut(clamp(4 * fadeAmt, 0, 1));
 
         // Draw its little babies
         for (let babe = 0; babe < numBabies; babe ++) {
