@@ -21,13 +21,17 @@ export default class WaveSplitController extends Controller {
     }
 
     setPath(path) {
-        this.wavePoints = path;
+        // Update the wave points. For the sake of removing the constant term in the FFT,
+        // Set the mean to be 0.
+        const pathAverage = path.reduce((a, b) => a + b, 0) / path.length;
+        this.wavePoints = path.map(p => p - pathAverage);
         // Calculate fourier points, and drop the small things.
-        this.fourierData = getRealFourierData(path).filter(p => p.amplitude > 0.001 && p.freq > 0);
+        this.fourierData = getRealFourierData(this.wavePoints).filter(f => f.amplitude > 0.001);
+        this.fourierData.sort((a, b) => b.amplitude - a.amplitude);
 
         // Calculate the heights of the main wave and all the sine things
-        this.waveTop = Math.min(...path);
-        this.waveBottom = Math.max(...path);
+        this.waveTop = Math.min(...this.wavePoints);
+        this.waveBottom = Math.max(...this.wavePoints);
 
         // Total height. Start with the main wave...
         this.totalHeight = this.waveBottom - this.waveTop;
@@ -72,25 +76,8 @@ export default class WaveSplitController extends Controller {
         const step = 1 / (this.wavePoints.length);
         // TODO: Skip drawing the start things that are already defined.
 
-        // Draw the main boy
-        curWavePos -= this.waveTop;
-        this.context.beginPath();
-        for (let xAmt = startXAmt, i = startI; xAmt <= 1 + step; xAmt += step, i ++) {
-            const index = i % this.wavePoints.length;
-
-            const x = this.width * xAmt;
-            const fullWaveAmt = this.wavePoints[index];
-            const y = top + sizeMultiple * (curWavePos + spacingMultiplier * fullWaveAmt);
-
-            if (i == 0) {
-                this.context.moveTo(x, y);
-            }
-            else {
-                this.context.lineTo(x, y);
-            }
-        }
-        this.context.stroke();
-        curWavePos += this.waveBottom;
+        // Actually, we're going to skip drawing the main wave here and draw it later.
+        curWavePos += this.waveBottom - this.waveTop;
 
         let splitAmt = 1;
         let fadeAmt = 1;
@@ -103,8 +90,10 @@ export default class WaveSplitController extends Controller {
             fadeAmt = easeInOut(clamp(4 * fadeAmt, 0, 1));
         }
 
-        // Draw its little babies
-        const renderedBabies = slurp(1, numBabies, this.fourierAmt);
+        // Draw its little babies.
+        // Also sum up their values to draw the partial wave.
+        let paritialWave = this.wavePoints.slice().fill(0);
+        const renderedBabies = Math.round(slurp(1, numBabies, this.fourierAmt));
         for (let babe = 0; babe < renderedBabies; babe ++) {
             let babeAmt = babe / (numBabies - 1);
             const waveData = this.fourierData[babe];
@@ -131,10 +120,41 @@ export default class WaveSplitController extends Controller {
                 else {
                     this.context.lineTo(x, y);
                 }
+
+                // ALSO update the partial wave
+                if (i - startI < this.wavePoints.length) {
+                    paritialWave[index] += sineAmt;
+                }
             }
             curWavePos += waveData.amplitude;
             this.context.stroke();
             this.context.globalAlpha = 1;
         }
+
+        curWavePos = 0;
+        curWavePos -= this.waveTop;
+        if (this.fourierAmt == 1) {
+            // Eh just make it the full wave.
+            paritialWave = this.wavePoints;
+        }
+
+        // Now, lets go back and draw the main wave
+        // Draw the main boy
+        this.context.beginPath();
+        for (let xAmt = startXAmt, i = startI; xAmt <= 1 + step; xAmt += step, i ++) {
+            const index = i % this.wavePoints.length;
+
+            const x = this.width * xAmt;
+            const fullWaveAmt = paritialWave[index];
+            const y = top + sizeMultiple * (curWavePos + spacingMultiplier * fullWaveAmt);
+
+            if (i == 0) {
+                this.context.moveTo(x, y);
+            }
+            else {
+                this.context.lineTo(x, y);
+            }
+        }
+        this.context.stroke();
     }
 }
