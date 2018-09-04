@@ -2,7 +2,7 @@
 
 # Fourier transforms. What the heck are they???
 
-This is a super simple explanation of what a fourier transform does, and some different ways it can useful. I’m going to do my best to keep it simple and math-free.
+This is a super simple explanation of what a Fourier transform does, and some different ways it can useful. I’m going to do my best to keep it simple and math-free.
 
 ## So what is this thing??
 
@@ -57,7 +57,7 @@ If we take a look from the side, they look like sine waves. From front on, thoug
 
 <canvas id='complex-sinusoid-turn' width=500 height=500></canvas>
 
-So far everything we’ve been doing has only required the regular 2D sine waves. When we do a fourier transform on 2D waves, the complex parts cancel out so we just end up with sine waves.
+So far everything we’ve been doing has only required the regular 2D sine waves. When we do a Fourier transform on 2D waves, the complex parts cancel out so we just end up with sine waves.
 
 But we can use the 3D sine waves to make something fun looking like this:
 
@@ -78,9 +78,26 @@ So, we can apply this process to any drawing really! Now it’s your chance to p
 
 <canvas id='circle-zone' width=500 height=500></canvas>
 
+## Further questions for the curious
 
-Other ideas:
+This is just scratching the surface into the applications of Fourier transforms. There are a whole lot of other questions you can find about:
 
-- Show plot in the frequency domain?
-- Talk about JPEG
-- Music, windows, etc
+- How do you mathematically do a Fourier transform?
+    - Can we use the Fourier transforms on things that don't repeat?
+    - What's the difference between the continuous Fourier transform and the discrete Fourier transform?
+    - Can Fourier transforms handle things that become infinite?
+- How do you computationally do a Fourier transform?
+    - What's the running time of a standard Fourier transform algorithm?
+    - What's the running time of the fast Fourier transform algorithm? How does the algorithm work?
+    - What are the different window functions and why would you use them?
+    - How are Fourier transforms used in compressing MP3s?
+    - How are Fourier transforms used in compressing JPGs?
+    - How are Fourier transforms used in electrical engineering?
+- How do we use Fourier transforms with music?
+    - When we use a Fourier transform on a musical note, what does the largest sine wave represent?
+    - When we use a Fourier transform on a musical note, what do the other sine waves represent?
+    - What happens when we use a Fourier transform on two notes playing at the same time?
+    - What happens we you use it on a whole song, with a lot of notes?
+    - How do you create the moving bars that you see on CD players with a Fourier transform?
+    - Why should we use Fourier transforms to tell how loud something is?
+    - How can we create filters using Fourier transforms?
