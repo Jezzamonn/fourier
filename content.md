@@ -80,24 +80,37 @@ So, we can apply this process to any drawing really! Now it’s your chance to p
 
 ## Further questions for the curious
 
-This is just scratching the surface into the applications of Fourier transforms. There are a whole lot of other questions you can find about:
+This is just scratching the surface into the applications of Fourier transforms. There's a lot more in this field!
+
+To learn more, some really good resources you can check out are:
+
+[An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)  
+A great article that digs more into the mathematics of what happens.
+
+[But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)  
+A great Youtube video by 3Blue1Brown, also explaining the maths of Fourier transforms from an audio perspective.
+
+[A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)  
+Another article explaining how you can use epicycles to draw a path, explaing from a linear algerbra perspective.
+
+If you're interested learning about more applications you might want to think about:
+
+- How do musical tuners use Fourier transforms?
+- How do equalizer displays use Fourier transforms?
+- Why should we use Fourier transforms to tell how loud something is?
+- How are Fourier transforms used in compressing MP3s?
+- How are Fourier transforms used in compressing JPGs?
+
+If you're interested in the underlying principles of how it works, here are some questions you can use to guide your research:
 
 - How do you mathematically do a Fourier transform?
-    - Can we use the Fourier transforms on things that don't repeat?
-    - What's the difference between the continuous Fourier transform and the discrete Fourier transform?
-    - Can Fourier transforms handle things that become infinite?
+- What's the difference between a continuous time Fourier transform and a discrete time fourier transform?
+- What are the other types of frequency domain transforms (Fourier transform is not the only one!)
 - How do you computationally do a Fourier transform?
-    - What's the running time of a standard Fourier transform algorithm?
-    - What's the running time of the fast Fourier transform algorithm? How does the algorithm work?
-    - What are the different window functions and why would you use them?
-    - How are Fourier transforms used in compressing MP3s?
-    - How are Fourier transforms used in compressing JPGs?
-    - How are Fourier transforms used in electrical engineering?
-- How do we use Fourier transforms with music?
-    - When we use a Fourier transform on a musical note, what does the largest sine wave represent?
-    - When we use a Fourier transform on a musical note, what do the other sine waves represent?
-    - What happens when we use a Fourier transform on two notes playing at the same time?
-    - What happens we you use it on a whole song, with a lot of notes?
-    - How do you create the moving bars that you see on CD players with a Fourier transform?
-    - Why should we use Fourier transforms to tell how loud something is?
-    - How can we create filters using Fourier transforms?
+- What are the different window functions and why would you use them?
+
+## The author?
+
+I'm Jez! Full time I work at a large search company in the Bay Area, and in my spare time I like making games and interactive code things like this!
+
+If you want to see more of my work, you can follow me on Twitter!
