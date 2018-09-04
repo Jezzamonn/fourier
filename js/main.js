@@ -81,19 +81,18 @@ function init() {
 		let controller = new WaveSplitController('wave-draw-split');
 		if (waveDrawController != null) {
 			waveDrawController.onDrawingStart.push(() => {
-				if (waveDrawSliderController != null) {
-					waveDrawSliderController.slider.value = 1;
-				}
 				controller.splitAnim = true;
 				controller.setPath([]);
 			});
 			waveDrawController.onDrawingEnd.push(() => {
-				if (waveDrawSliderController != null) {
-					waveDrawSliderController.slider.value = 1;
-				}
 				controller.splitAnim = true;
 				controller.setPath(waveDrawController.normPath);
 			});
+			// Reset the slider back to 1 when the wave changes to draw the full wave.
+			if (waveDrawSliderController) {
+				waveDrawController.onDrawingStart.push(() => waveDrawSliderController.slider.value = 1);
+				waveDrawController.onDrawingEnd.push(() => waveDrawSliderController.slider.value = 1);
+			}
 		}
 		if (waveDrawSliderController != null) {
 			waveDrawSliderController.onValueChange.push(val => {
@@ -141,22 +140,34 @@ function init() {
 		controllers.push(controller);
 	}
 	
-	let drawZone;
+	let drawZone, circleZoneSlider;
 	if (hasElement('draw-zone')) {
 		drawZone = new DrawController('draw-zone');
 		controllers.push(drawZone);
 	}
+	if (hasElement('circle-zone-slider')) {
+		circleZoneSlider = new RangeController('circle-zone-slider', 500);
+		controllers.push(circleZoneSlider);
+	}
 	if (hasElement('circle-zone')) {
-		let epicycles = new EpicyclesController('circle-zone', 500, 500);
+		let epicycles = new EpicyclesController('circle-zone');
 		if (drawZone) {
 			drawZone.onDrawingStart.push(() => epicycles.setPath([]));
 			drawZone.onDrawingEnd.push(() => epicycles.setPath(drawZone.path, 1024));
+			// Reset the slider back to 1 to draw the full shape when it changes.
+			if (circleZoneSlider) {
+				drawZone.onDrawingStart.push(() => circleZoneSlider.slider.value = 1);
+				drawZone.onDrawingEnd.push(() => circleZoneSlider.slider.value = 1);
+			}
+		}
+		if (circleZoneSlider) {
+			circleZoneSlider.onValueChange.push(val => epicycles.setFourierAmt(val));
 		}
 		controllers.push(epicycles);
 	}
 
 	if (hasElement('its-meee')) {
-		let controller = new EpicyclesController('its-meee', 500, 500);
+		let controller = new EpicyclesController('its-meee');
 		controller.setPath(mePoints, 256, 0.1);
 		controllers.push(controller);
 	}

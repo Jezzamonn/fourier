@@ -77,6 +77,10 @@ export function getRealFourierData(points) {
  * Transforms a list of x, y points into input appropriate for a fourier transform.
  */
 export function resample2dData(points, numSamples) {
+    if (points.length == 0) {
+        // Can't resample if we don't have ANY points
+        return [];
+    }
     let newPoints = [];
     for (let i = 0; i < numSamples; i ++) {
         let position = points.length * (i / numSamples);

@@ -105,6 +105,9 @@ export default class EpicyclesController extends Controller {
     }
 
     renderCircles() {
+        if (this.fourierData.length == 0) {
+            return;
+        }
         let runningX = 0;
         let runningY = 0;
         const numFouriers = Math.round(slurp(2, this.fourierData.length, this.fourierAmt));
