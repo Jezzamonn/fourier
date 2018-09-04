@@ -23,7 +23,7 @@ function init() {
 		let fourierTitle = new EpicyclesController('fourier-title');
 		fourierTitle.setPath(
 			titlePoints.map(p => {
-				return {x: p.x * 0.9, y: p.y * 0.9}
+				return {x: p.x * 0.9, y: p.y * 0.9 - 40}
 			}));
 		fourierTitle.period = 15;
 		controllers.push(fourierTitle);
@@ -113,18 +113,30 @@ function init() {
 		controllers.push(controller);
 	}
 
+	const adjustedPeaceHandPoints = peaceHandPoints.map(p => {
+		return {x: p.x * 1.5 - 170, y:p.y * 1.5 - 50}
+	});
 	if (hasElement('peace-epicycles')) {
 		let controller = new EpicyclesController('peace-epicycles');
-		controller.setPath(peaceHandPoints.map(p => {
-			return {x: p.x * 1.5 - 170, y:p.y * 1.5 - 50}
-		}));
+		controller.setPath(adjustedPeaceHandPoints, -1, 0.05);
 		controllers.push(controller);
 	}
 	if (hasElement('peace-3d')) {
 		let controller = new SkewedPathController('peace-3d');
-		controller.setPath(peaceHandPoints.map(p => {
-			return {x: p.x * 1.5 - 170, y:p.y * 1.5 - 50}
-		}));
+		controller.setPath(adjustedPeaceHandPoints, -1, 0.05);
+		controllers.push(controller);
+	}
+	let peaceBuildUpSlider;
+	if (hasElement('peace-build-up-slider')) {
+		peaceBuildUpSlider = new RangeController('peace-build-up-slider', 500);
+		controllers.push(peaceBuildUpSlider);
+	}
+	if (hasElement('peace-build-up')) {
+		let controller = new EpicyclesController('peace-build-up');
+		controller.setPath(adjustedPeaceHandPoints, -1, 0.05);
+		if (peaceBuildUpSlider) {
+			peaceBuildUpSlider.onValueChange.push(val => controller.setFourierAmt(val));
+		}
 		controllers.push(controller);
 	}
 	
@@ -137,7 +149,7 @@ function init() {
 		let epicycles = new EpicyclesController('circle-zone', 500, 500);
 		if (drawZone) {
 			drawZone.onDrawingStart.push(() => epicycles.setPath([]));
-			drawZone.onDrawingEnd.push(() => epicycles.setPath(drawZone.path));
+			drawZone.onDrawingEnd.push(() => epicycles.setPath(drawZone.path, 1024));
 		}
 		controllers.push(epicycles);
 	}

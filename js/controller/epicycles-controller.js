@@ -1,8 +1,7 @@
 import Controller from "../controller";
 import { getFourierData, resample2dData } from "../justfourierthings";
+import { slurp } from "../util";
 
-const numPoints = 1024;
- 
 export default class EpicyclesController extends Controller {
 
 	constructor(id, width, height) {
@@ -18,13 +17,32 @@ export default class EpicyclesController extends Controller {
         this.animAmt = 0;
         this.niceAnimAmt = 0;
         this.period = 5;
+
+        this.fourierAmt = 1;
     }
 
-    setPath(path) {
+    setPath(path, numPoints=-1, minAmplitude=0.01) {
+        if (numPoints < 0) {
+            numPoints = path.length;
+        }
+        this.numPoints = numPoints;
         this.animAmt = 0;
         this.niceAnimAmt = 0;
         this.fourierPath = [];
-        this.fourierData = getFourierData(resample2dData(path, numPoints));
+        // Get the fourier data, also filter out the really small terms.
+        this.fourierData = getFourierData(resample2dData(path, this.numPoints)).filter(f => f.amplitude > minAmplitude);
+        this.fourierData.sort((a, b) => b.amplitude - a.amplitude);
+        console.log(this.fourierData.length + '/' + numPoints)
+    }
+
+    setFourierAmt(amt) {
+        this.fourierAmt = amt;
+        // then render everything.
+        for (let i = 0; i < this.numPoints; i ++) {
+            this.niceAnimAmt += 1 / this.numPoints;
+            this.addToPath();
+        }
+        this.niceAnimAmt -= 1;
     }
 
 	update(dt, mousePosition) {
@@ -43,8 +61,7 @@ export default class EpicyclesController extends Controller {
             if (this.niceAnimAmt >= this.animAmt) {
                 break;
             }
-            this.niceAnimAmt += 1 / numPoints;
-
+            this.niceAnimAmt += 1 / this.numPoints;
             this.addToPath();
         }
     }
@@ -55,7 +72,8 @@ export default class EpicyclesController extends Controller {
         }
         let runningX = 0;
         let runningY = 0;
-        for (let i = 0; i < this.fourierData.length; i ++) {
+        const numFouriers = Math.round(slurp(2, this.fourierData.length, this.fourierAmt));
+        for (let i = 0; i < numFouriers; i ++) {
             const amplitude = this.fourierData[i].amplitude;
             const angle = 2 * Math.PI * this.fourierData[i].freq * this.niceAnimAmt + this.fourierData[i].phase;
             runningX += amplitude * Math.cos(angle);
@@ -63,7 +81,7 @@ export default class EpicyclesController extends Controller {
         }
 
         this.fourierPath.push({x: runningX, y:runningY});
-        if (this.fourierPath.length > this.fourierData.length) {
+        if (this.fourierPath.length > this.numPoints) {
             this.fourierPath.shift();
         }
     }
@@ -89,7 +107,8 @@ export default class EpicyclesController extends Controller {
     renderCircles() {
         let runningX = 0;
         let runningY = 0;
-        for (let i = 0; i < this.fourierData.length; i ++) {
+        const numFouriers = Math.round(slurp(2, this.fourierData.length, this.fourierAmt));
+        for (let i = 0; i < numFouriers; i ++) {
             const amplitude = this.fourierData[i].amplitude;
             const angle = 2 * Math.PI * this.fourierData[i].freq * this.niceAnimAmt + this.fourierData[i].phase;
             runningX += amplitude * Math.cos(angle);

@@ -67,6 +67,11 @@ What’s going on here? Well we can think of the drawing as a 3D wave because of
 
 <canvas id='peace-3d' width=500 height=500></canvas>
 
+As we add more and more epicycles, we get closer to representing the original shape. With just a few it's able to create the shape fairly well, although it needs the smaller ones to draw the sharp edges.
+
+<canvas id='peace-build-up' width=500 height=500></canvas>
+<input id="peace-build-up-slider" type="range" min="0" max="1" value="1" step="any">
+
 So, we can apply this process to any drawing really! Now it’s your chance to play around with it!
 
 <canvas id='draw-zone' width=500 height=500></canvas>
