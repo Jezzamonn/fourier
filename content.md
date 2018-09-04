@@ -57,11 +57,11 @@ If we take a look from the side, they look like sine waves. From front on, thoug
 
 <canvas id='complex-sinusoid-turn' width=500 height=500></canvas>
 
-So far everything we’ve been doing has only required the regular 2D sine waves. In a lot of cases, when we do a Fourier transform we only care about the frequencies, so we don’t worry about the fact it’s 3D.* (when we put in regular things the wavy parts cancel out?)
+So far everything we’ve been doing has only required the regular 2D sine waves. When we do a fourier transform on 2D waves, the complex parts cancel out so we just end up with sine waves.
 
 But we can use the 3D sine waves to make something fun looking like this:
 
-[ Something simple being drawn -- maybe the picture of me? ]
+<canvas id='peace-epicycles' width=500 height=500></canvas>
 
 What’s going on here? Well we can think of the drawing as a 3D line because of the way it moves around in time. And then those circles spinning are the same 3D sine waves we saw earlier.
 

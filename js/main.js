@@ -10,6 +10,7 @@ import { easeInOut, sinEaseInOut } from './util.js';
 import SkewedSinusoidController from './controller/skewed-sinusoid-controller.js';
 import WaveDrawController from './controller/wave-draw-controller.js';
 import RangeController from './controller/range-controller.js';
+import { peaceHandPoints } from './peace-hand-points.js';
 
 let conductor = null;
 
@@ -108,6 +109,14 @@ function init() {
 	if (hasElement('complex-sinusoid-turn')) {
 		let controller = new ComplexSinusoidController('complex-sinusoid-turn');
 		controller.xzAngleFn = (amt) => -Math.PI / 2 * easeInOut(sinEaseInOut(2 * amt), 4);
+		controllers.push(controller);
+	}
+
+	if (hasElement('peace-epicycles')) {
+		let controller = new EpicyclesController('peace-epicycles');
+		controller.setPath(peaceHandPoints.map(p => {
+			return {x: p.x * 1.5 - 170, y:p.y * 1.5 - 50}
+		}));
 		controllers.push(controller);
 	}
 	
