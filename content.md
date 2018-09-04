@@ -63,9 +63,9 @@ But we can use the 3D sine waves to make something fun looking like this:
 
 <canvas id='peace-epicycles' width=500 height=500></canvas>
 
-What’s going on here? Well we can think of the drawing as a 3D line because of the way it moves around in time. And then those circles spinning are the same 3D sine waves we saw earlier.
+What’s going on here? Well we can think of the drawing as a 3D wave because of the way it moves around in time.
 
-[ 3D version of the thing being drawn? ]
+<canvas id='peace-3d' width=500 height=500></canvas>
 
 So, we can apply this process to any drawing really! Now it’s your chance to play around with it!
 

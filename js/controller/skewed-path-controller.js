@@ -46,8 +46,8 @@ export default class SkewedPathController extends Controller {
         this.tiltAmt += dt / this.tiltPeriod;
         this.tiltAmt %= 1;
 
-        this.xzAngleDiff = slurp(-this.tileRange, this.tileRange, sinEaseInOut(2 * this.tiltAmt));
-        this.xzAngle = -0.75 + slurp((-0.75 - this.tiltPeriod) * Math.PI, -0.75 * Math.PI, sinEaseInOut(2 * this.tiltAmt));
+        let xzAngleDiff = slurp(-this.tiltRange, this.tiltRange, sinEaseInOut(2 * this.tiltAmt));
+        this.xzAngle = (-0.75 + xzAngleDiff) * Math.PI;
     }
 
 	render() {
@@ -71,15 +71,13 @@ export default class SkewedPathController extends Controller {
     renderPath(minX, maxX) {
         let startXAmt = -this.animAmt;
         let startI = 0;
-        // (I think the wavelength of the wave can be configured by changing the 1 here)
-        const step = 1 / (this.path.length);
+        // The wavelength relative to the bounding box can be configured by the constant here.
+        const step = 0.5 / (this.path.length);
         while (startXAmt < 0) {
             startXAmt += step;
             startI ++;
         }
 
-        console.log(this.minZ);
-    
         this.context.beginPath();
         this.context.strokeStyle = 'black';
         this.context.lineWidth = 1;
