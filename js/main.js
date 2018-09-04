@@ -11,6 +11,7 @@ import SkewedSinusoidController from './controller/skewed-sinusoid-controller.js
 import WaveDrawController from './controller/wave-draw-controller.js';
 import RangeController from './controller/range-controller.js';
 import { peaceHandPoints } from './peace-hand-points.js';
+import SkewedPathController from './controller/skewed-path-controller.js';
 
 let conductor = null;
 
@@ -114,6 +115,13 @@ function init() {
 
 	if (hasElement('peace-epicycles')) {
 		let controller = new EpicyclesController('peace-epicycles');
+		controller.setPath(peaceHandPoints.map(p => {
+			return {x: p.x * 1.5 - 170, y:p.y * 1.5 - 50}
+		}));
+		controllers.push(controller);
+	}
+	if (hasElement('peace-3d')) {
+		let controller = new SkewedPathController('peace-3d');
 		controller.setPath(peaceHandPoints.map(p => {
 			return {x: p.x * 1.5 - 170, y:p.y * 1.5 - 50}
 		}));
