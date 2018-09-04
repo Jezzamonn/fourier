@@ -16,8 +16,6 @@ let conductor = null;
 function init() {
 
 	let controllers = [];
-	// Controllers that we may need to refer to elsewhere
-	let drawZone, waveDrawController, waveDrawSliderController;
 
 	if (hasElement('fourier-title')) {
 		let fourierTitle = new EpicyclesController('fourier-title');
@@ -39,6 +37,7 @@ function init() {
 		controller.fadeFrequencies = false;
 		controllers.push(controller);
 	}
+
 	if (hasElement('square-wave')) {
 		let controller = new WaveController('square-wave');
 		controller.setPath(getWave(squareWave, 128));
@@ -50,6 +49,58 @@ function init() {
 		controllers.push(controller);
 	}
 
+	let squareWaveBuildUpSlider;
+	if (hasElement('square-wave-build-up-slider')) {
+		squareWaveBuildUpSlider = new RangeController('square-wave-build-up-slider', 500);
+		controllers.push(squareWaveBuildUpSlider);
+	}
+	if (hasElement('square-wave-build-up')) {
+		let controller = new WaveSplitController('square-wave-build-up');
+		controller.setPath(getWave(squareWave, 128));
+		controller.splitAnim = false;
+		if (squareWaveBuildUpSlider != null) {
+			squareWaveBuildUpSlider.onValueChange.push(val => controller.fourierAmt = val);
+		}
+		controllers.push(controller);
+	}
+
+	let waveDrawController, waveDrawSliderController;
+	if (hasElement('wave-draw')) {
+		waveDrawController = new WaveDrawController('wave-draw');
+		controllers.push(waveDrawController);
+	}
+	if (hasElement('wave-draw-slider')) {
+		waveDrawSliderController = new RangeController('wave-draw-slider', 500);
+		waveDrawSliderController.animate = false;
+		controllers.push(waveDrawSliderController);
+	}
+	if (hasElement('wave-draw-split')) {
+		let controller = new WaveSplitController('wave-draw-split');
+		if (waveDrawController != null) {
+			waveDrawController.onDrawingStart.push(() => {
+				if (waveDrawSliderController != null) {
+					waveDrawSliderController.slider.value = 1;
+				}
+				controller.splitAnim = true;
+				controller.setPath([]);
+			});
+			waveDrawController.onDrawingEnd.push(() => {
+				if (waveDrawSliderController != null) {
+					waveDrawSliderController.slider.value = 1;
+				}
+				controller.splitAnim = true;
+				controller.setPath(waveDrawController.normPath);
+			});
+		}
+		if (waveDrawSliderController != null) {
+			waveDrawSliderController.onValueChange.push(val => {
+				controller.fourierAmt = val;
+				controller.splitAnim = false;
+			});
+		}
+		controllers.push(controller);
+	}
+	
 	if (hasElement('complex-sinusoid')) {
 		let controller = new SkewedSinusoidController('complex-sinusoid');
 		controllers.push(controller);
@@ -60,26 +111,7 @@ function init() {
 		controllers.push(controller);
 	}
 	
-	if (hasElement('wave-draw')) {
-		waveDrawController = new WaveDrawController('wave-draw');
-		controllers.push(waveDrawController);
-	}
-	if (hasElement('wave-draw-slider')) {
-		waveDrawSliderController = new RangeController('wave-draw-slider', 500);
-		controllers.push(waveDrawSliderController);
-	}
-	if (hasElement('wave-draw-split')) {
-		let controller = new WaveSplitController('wave-draw-split');
-		if (waveDrawController != null) {
-			waveDrawController.onDrawingStart.push(() => controller.setPath([]));
-			waveDrawController.onDrawingEnd.push(() => controller.setPath(waveDrawController.normPath));
-		}
-		if (waveDrawSliderController != null) {
-			waveDrawSliderController.onValueChange.push(val => controller.fourierAmt = val);
-		}
-		controllers.push(controller);
-	}
-	
+	let drawZone;
 	if (hasElement('draw-zone')) {
 		drawZone = new DrawController('draw-zone');
 		controllers.push(drawZone);

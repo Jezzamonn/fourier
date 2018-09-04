@@ -32,10 +32,12 @@ export default class WaveDrawController extends Controller {
     }
 
     stopDrawing() {
-        this.drawing = false;
-        this.lastMousePoint = null;
-
-        this.onDrawingEnd.forEach(fn => fn());
+        if (this.drawing) {
+            this.drawing = false;
+            this.lastMousePoint = null;
+    
+            this.onDrawingEnd.forEach(fn => fn());
+        }
     }
 
  	update(dt, mousePosition) {

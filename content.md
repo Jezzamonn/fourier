@@ -8,7 +8,9 @@ This is a super simple explanation of what a fourier transform does, and some di
 
 Put simply, Fourier transform is a way of changing something into a bunch of sine waves. As usual, the name comes from some person called Fourier who lived a long time ago.
 
-Let’s start with a simple examples and work our way up. Here’s a wave pattern. (It repeats forever?)
+Let’s start with a simple examples and work our way up. First up we're going to look at waves -- these repeating functions.
+
+Here’s an example wave:
 
 <canvas id='combo-sine-wave' width=500 height=300></canvas>
 
@@ -16,21 +18,26 @@ This pattern wavy pattern here can be split up into sine waves.
 
 <canvas id='combo-sine-wave-split' width=500 height=500></canvas>
 
-That example might seem kind of obvious. But we can actually it that with any line like that.
+That example might seem kind of obvious. But we can actually it that with any line.
 
 Let's take a look at this guy. It’s called a square wave.
 
 <canvas id='square-wave' width=500 height=300></canvas>
 
-It doesn’t look like we can make it out of sine waves, but if we have enough we can do it.
+It might not look like it, but it also can be split up into sine waves.
 
 <canvas id='square-wave-split' width=500 height=500></canvas>
+
+We need a lot of them this time -- technically an infinite amount to perfectly represent it. As we add more and more sine waves the pattern gets closer and closer to the square wave we started with.
+
+<canvas id='square-wave-build-up' width=500 height=500></canvas>
+<input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
 
 This process works like that for any repeating line. Give it a go, try draw your own!
 
 <canvas id='wave-draw' width=500 height=300></canvas>
-
 <canvas id='wave-draw-split' width=500 height=500></canvas>
+<input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
 
 Um, ok. So it looks cool. But why?
 

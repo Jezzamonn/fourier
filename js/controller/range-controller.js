@@ -21,6 +21,8 @@ export default class RangeController {
          * Time to transition back to being controller automatically
          */
         this.resumeLength = 2;
+
+        this.animate = true;
         this.animAmt = 0;
         this.period = 10;
 
@@ -28,6 +30,9 @@ export default class RangeController {
     }
 
     update(dt, mousePosition) {
+        if (!this.animate) {
+            return;
+        }
         if (this.holdValueCount > 0) {
             this.holdValueCount -= dt;
             // Just set it back to zero to be clean about it.
