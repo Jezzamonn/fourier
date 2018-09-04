@@ -109,8 +109,10 @@ If you're interested in the underlying principles of how it works, here are some
 - How do you computationally do a Fourier transform?
 - What are the different window functions and why would you use them?
 
-## The author?
+## The author
 
-I'm Jez! Full time I work at a large search company in the Bay Area, and in my spare time I like making games and interactive code things like this!
+<canvas id='its-meee' width=500 height=500></canvas>
 
-If you want to see more of my work, you can follow me on Twitter!
+I'm Jez! Full time I work at a search company in the Bay Area, and in my spare time I like making games and interactive code things like this!
+
+If you want to see more of my work, check out my [homepage](/). On Twitter I'm [@jezzamonn](https://twitter.com/jezzamonn), and I'm currently posting fun little gifs there too :)

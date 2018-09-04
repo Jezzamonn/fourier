@@ -2,7 +2,7 @@ import DrawController from './controller/draw-controller.js';
 import EpicyclesController from './controller/epicycles-controller.js';
 import ComplexSinusoidController from './controller/complex-sinusoid-controller.js';
 import Conductor from './conductor.js';
-import { titlePoints } from './title-points.js';
+import { titlePoints } from './points/title-points.js';
 import WaveController from './controller/wave-controller.js';
 import WaveSplitController from './controller/wave-split-controller.js';
 import { getWave, squareWave } from './wave-things.js';
@@ -10,8 +10,9 @@ import { easeInOut, sinEaseInOut } from './util.js';
 import SkewedSinusoidController from './controller/skewed-sinusoid-controller.js';
 import WaveDrawController from './controller/wave-draw-controller.js';
 import RangeController from './controller/range-controller.js';
-import { peaceHandPoints } from './peace-hand-points.js';
+import { peaceHandPoints } from './points/peace-hand-points.js';
 import SkewedPathController from './controller/skewed-path-controller.js';
+import { mePoints } from './points/me-points.js';
 
 let conductor = null;
 
@@ -152,6 +153,12 @@ function init() {
 			drawZone.onDrawingEnd.push(() => epicycles.setPath(drawZone.path, 1024));
 		}
 		controllers.push(epicycles);
+	}
+
+	if (hasElement('its-meee')) {
+		let controller = new EpicyclesController('its-meee', 500, 500);
+		controller.setPath(mePoints, 256, 0.1);
+		controllers.push(controller);
 	}
 
 	conductor = new Conductor(controllers);
