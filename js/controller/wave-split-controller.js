@@ -15,7 +15,7 @@ export default class WaveSplitController extends Controller {
         this.waveBottom = 0;
         this.totalHeight = 0;
         this.fadeFrequencies = true;
-        this.splitAnim = false;
+        this.splitAnim = true;
         // How many of the waves to draw
         this.fourierAmt = 1;
     }

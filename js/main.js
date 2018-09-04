@@ -60,16 +60,16 @@ function init() {
 		controllers.push(controller);
 	}
 	
-	if (hasElement('wave-draw-controller')) {
-		waveDrawController = new WaveDrawController('wave-draw-controller');
+	if (hasElement('wave-draw')) {
+		waveDrawController = new WaveDrawController('wave-draw');
 		controllers.push(waveDrawController);
 	}
 	if (hasElement('wave-draw-slider')) {
 		waveDrawSliderController = new RangeController('wave-draw-slider', 500);
 		controllers.push(waveDrawSliderController);
 	}
-	if (hasElement('wave-draw-split-controller')) {
-		let controller = new WaveSplitController('wave-draw-split-controller');
+	if (hasElement('wave-draw-split')) {
+		let controller = new WaveSplitController('wave-draw-split');
 		if (waveDrawController != null) {
 			waveDrawController.onDrawingStart.push(() => controller.setPath([]));
 			waveDrawController.onDrawingEnd.push(() => controller.setPath(waveDrawController.normPath));

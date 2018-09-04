@@ -1,4 +1,4 @@
-<canvas id='fourier-title' width=500 height=500></canvas>
+<canvas id='fourier-title' width=500 height=300></canvas>
 
 # Fourier transforms. What the heck are they???
 
@@ -10,7 +10,7 @@ Put simply, Fourier transform is a way of changing something into a bunch of sin
 
 Let’s start with a simple examples and work our way up. Here’s a wave pattern. (It repeats forever?)
 
-<canvas id='combo-sine-wave' width=500 height=500></canvas>
+<canvas id='combo-sine-wave' width=500 height=300></canvas>
 
 This pattern wavy pattern here can be split up into sine waves.
 
@@ -20,7 +20,7 @@ That example might seem kind of obvious. But we can actually it that with any li
 
 Let's take a look at this guy. It’s called a square wave.
 
-<canvas id='square-wave' width=500 height=500></canvas>
+<canvas id='square-wave' width=500 height=300></canvas>
 
 It doesn’t look like we can make it out of sine waves, but if we have enough we can do it.
 
@@ -28,9 +28,9 @@ It doesn’t look like we can make it out of sine waves, but if we have enough w
 
 This process works like that for any repeating line. Give it a go, try draw your own!
 
-<canvas id='wave-draw' width=500 height=500></canvas>
+<canvas id='wave-draw' width=500 height=300></canvas>
 
-[ Converted into sine waves ]
+<canvas id='wave-draw-split' width=500 height=500></canvas>
 
 Um, ok. So it looks cool. But why?
 
