@@ -136,7 +136,7 @@ export default class DrawController extends Controller {
     drawPoints(path) {
         this.context.beginPath();
         this.context.strokeStyle = 'black';
-        this.context.lineWidth = 2;
+        this.context.lineWidth = 1;
         for (let i = 0; i < path.length; i ++) {
             if (i == 0) {
                 this.context.moveTo(path[i].x, path[i].y);
