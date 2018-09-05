@@ -9,10 +9,14 @@ canvas {
 }
 
 body {
-	font-family: sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	min-width: 625px;
 	margin: auto;
 	line-height: 1.5;
+}
+
+h1, h2, h3 {
+	font-family: 'Montserrat', sans-serif;
 }
 
 #content {
