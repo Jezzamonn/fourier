@@ -57,7 +57,7 @@ export default class WaveDrawController extends Controller {
 
         const xDiff = Math.abs(mousePoint.x - this.lastMousePoint.x);
         const pointsGap = this.width / this.wavePoints.length;
-        const lerpPoints = 2 * Math.ceil(xDiff / pointsGap);
+        const lerpPoints = 2 * Math.ceil(xDiff / pointsGap) + 1;
         for (let i = 0; i < lerpPoints; i ++) {
             const amt = (i - 1) / lerpPoints;
 
