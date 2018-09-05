@@ -180,4 +180,19 @@ function hasElement(id) {
 	return document.getElementById(id) != null;
 }
 
+/**
+ * Configure the canvases to be able to handle screens with higher dpi
+ */
+function updateCanvasSizes() {
+	const pixelRatio = window.devicePixelRatio || 1;
+	const canvases = document.getElementsByTagName("canvas");
+	for (let canvas of canvases) {
+		canvas.width = width * pixelRatio;
+		canvas.height = height * pixelRatio;
+		canvas.style.width = width + 'px';
+		canvas.style.height = height + 'px';
+	}
+}
+
+// updateCanvasSizes();
 init();

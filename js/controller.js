@@ -12,12 +12,6 @@ export default class Controller {
 		this.context = this.canvas.getContext('2d');
 		this.width = width;
 		this.height = height;
-
-		const pixelRatio = window.devicePixelRatio || 1;
-		this.canvas.width = width * pixelRatio;
-		this.canvas.height = height * pixelRatio;
-		this.canvas.style.width = width + 'px';
-		this.canvas.style.height = height + 'px';
 	}
 
 	isOnScreen() {

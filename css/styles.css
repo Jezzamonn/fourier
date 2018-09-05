@@ -10,9 +10,14 @@ canvas {
 
 body {
 	font-family: sans-serif;
-	width: 80%;
+	min-width: 625px;
 	margin: auto;
 	line-height: 1.5;
+}
+
+#content {
+	width: 80%;
+	margin: auto;
 }
 
 li {
