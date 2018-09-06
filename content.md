@@ -8,13 +8,13 @@ This is a super simple explanation of what a Fourier transform does, and some di
 
 Put simply, Fourier transform is a way of splitting something up into a bunch of sine waves. As usual, the name comes from some person called Fourier who lived a long time ago.
 
-Let’s start with a simple examples and work our way up. First up we're going to look at waves – these repeating functions.
+Let’s start with some simple examples and work our way up. First up we're going to look at waves – these repeating functions.
 
 Here’s an example wave:
 
 <canvas id='combo-sine-wave' width=500 height=300></canvas>
 
-This pattern wavy pattern here can be split up into sine waves.
+This wavy pattern here can be split up into sine waves.
 
 <canvas id='combo-sine-wave-split' width=500 height=500></canvas>
 
