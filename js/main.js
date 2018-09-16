@@ -147,6 +147,7 @@ function init() {
 	}
 	if (hasElement('circle-zone-slider')) {
 		circleZoneSlider = new RangeController('circle-zone-slider', 500);
+		circleZoneSlider.animate = false;
 		controllers.push(circleZoneSlider);
 	}
 	if (hasElement('circle-zone')) {
@@ -156,8 +157,14 @@ function init() {
 			drawZone.onDrawingEnd.push(() => epicycles.setPath(drawZone.path, 1024));
 			// Reset the slider back to 1 to draw the full shape when it changes.
 			if (circleZoneSlider) {
-				drawZone.onDrawingStart.push(() => circleZoneSlider.slider.value = 1);
-				drawZone.onDrawingEnd.push(() => circleZoneSlider.slider.value = 1);
+				drawZone.onDrawingStart.push(() => {
+					circleZoneSlider.slider.value = 1;
+					epicycles.setFourierAmt(1);
+				});
+				drawZone.onDrawingEnd.push(() => {
+					circleZoneSlider.slider.value = 1;
+					epicycles.setFourierAmt(1);
+				});
 			}
 		}
 		if (circleZoneSlider) {

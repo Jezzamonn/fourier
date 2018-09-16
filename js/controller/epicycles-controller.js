@@ -19,6 +19,8 @@ export default class EpicyclesController extends Controller {
         this.period = 5;
 
         this.fourierAmt = 1;
+
+        this.pathDirty = false;
     }
 
     setPath(path, numPoints=-1, minAmplitude=0.01) {
@@ -37,6 +39,10 @@ export default class EpicyclesController extends Controller {
 
     setFourierAmt(amt) {
         this.fourierAmt = amt;
+        this.pathDirty = true;
+    }
+
+    recalculatePath() {
         // then render everything.
         for (let i = 0; i < this.numPoints; i ++) {
             this.niceAnimAmt += 1 / this.numPoints;
@@ -46,6 +52,11 @@ export default class EpicyclesController extends Controller {
     }
 
 	update(dt, mousePosition) {
+        if (this.pathDirty) {
+            this.recalculatePath();
+            this.pathDirty = false;
+        }
+
         if (!this.animate) {
             return;
         }

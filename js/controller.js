@@ -1,6 +1,7 @@
 export default class Controller {
 
 	constructor(id, width=null, height=null) {
+		this.id = id;
 		this.canvas = document.getElementById(id);
 		if (width == null) {
 			width = this.canvas.width;
