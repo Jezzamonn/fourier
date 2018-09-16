@@ -198,5 +198,5 @@ function updateCanvasSizes() {
 	}
 }
 
-updateCanvasSizes();
+// updateCanvasSizes();
 init();

@@ -1,5 +1,5 @@
 import Controller from "../controller";
- 
+
 const maxDrawDist = 3;
 
 export default class DrawController extends Controller {
@@ -17,10 +17,13 @@ export default class DrawController extends Controller {
         this.onDrawingEnd = [];
 
         this.canvas.addEventListener('mousedown', () => this.startDrawing());
-        this.canvas.addEventListener('touchstart', () => this.stopDrawing());
+        this.canvas.addEventListener('touchstart', () => this.startDrawing());
 
         document.addEventListener('mouseup', () => this.stopDrawing());
         document.addEventListener('touchend', () => this.stopDrawing());
+
+        // Prevent scrolling while we're drawing here
+        this.canvas.addEventListener('touchmove', (evt) => evt.preventDefault(), {passive: false});
 
         document.addEventListener('keydown', (evt) => this.checkKeys(evt));
     }
@@ -63,6 +66,9 @@ export default class DrawController extends Controller {
     }
 
     stopDrawing() {
+        if (!this.drawing) {
+            return;
+        }
         this.drawing = false;
 
         this.curUndoIndex ++;

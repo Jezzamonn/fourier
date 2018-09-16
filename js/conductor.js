@@ -52,8 +52,9 @@ export default class Conductor {
 	}
 
 	updateTouchPosition(evt) {
-		this.mousePosition = { x: evt.touches[0].clientX, y: evt.touches[0].clientY };
-		evt.preventDefault();
+		if (evt.touches.length > 0) {
+			this.mousePosition = { x: evt.touches[0].clientX, y: evt.touches[0].clientY };
+		}
 	}
 
 }

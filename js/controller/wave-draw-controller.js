@@ -14,10 +14,13 @@ export default class WaveDrawController extends Controller {
         this.lastMousePoint = null;
 
         this.canvas.addEventListener('mousedown', () => this.startDrawing());
-        this.canvas.addEventListener('touchstart', () => this.stopDrawing());
+        this.canvas.addEventListener('touchstart', () => this.startDrawing());
 
         document.addEventListener('mouseup', () => this.stopDrawing());
         document.addEventListener('touchend', () => this.stopDrawing());
+
+        // Prevent scrolling while we're drawing here
+        this.canvas.addEventListener('touchmove', (evt) => evt.preventDefault(), {passive: false});
     }
 
     get normPath() {
