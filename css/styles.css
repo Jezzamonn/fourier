@@ -20,6 +20,15 @@ body {
 	width: 80%;
 	margin: auto;
 }
+#debug-window {
+	position: fixed;
+	left: 0;
+	top: 0;
+	border-style: solid;
+	border-width: 1px;
+	background: rgba(255, 255, 255, 0.9);
+	font-size: 0.5em;
+}
 
 
 h1, h2, h3 {

@@ -4,6 +4,7 @@ export default class Conductor {
 		this.lastTime = Date.now();
 		this.mousePosition = null;
 		this.controllers = controllers.slice();
+		this.updatingControllers = [];
 
 		// We can handle these all the same really.
 		document.addEventListener('mousemove', (evt) => this.updateMousePosition(evt));
@@ -30,13 +31,21 @@ export default class Conductor {
 		let curTime = Date.now();
 		let dt = (curTime - this.lastTime) / 1000;
 
+		this.updatingControllers = [];
+
 		this.controllers.forEach(controller => {
 			if (controller.isOnScreen()) {
 				controller.update(dt, this.mousePosition);
+				this.updatingControllers.push(controller);
 			}
 		});
 
 		this.lastTime = curTime;
+
+		const debug = document.getElementById('debug-content');
+		if (debug) {
+			debug.innerHTML = this.updatingControllers.map(c => c.id).join('<br>');
+		}
 	}
 
 	render() {
