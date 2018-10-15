@@ -1,14 +1,14 @@
 <canvas id='fourier-title' width=500 height=300></canvas>
 
-# An interactive introduction to Fourier transforms
+# An Interactive Introduction to Fourier Transforms
 
 This is a super simple explanation of what a Fourier transform does, and some different ways it can useful. I’m going to do my best to keep it simple and math-free.
 
 ## So what is this thing?
 
-Put simply, Fourier transform is a way of splitting something up into a bunch of sine waves. As usual, the name comes from some person called Fourier who lived a long time ago.
+Put simply, the Fourier transform is a way of splitting something up into a bunch of sine waves. As usual, the name comes from some person called Fourier who lived a long time ago.
 
-Let’s start with some simple examples and work our way up. First up we're going to look at waves – these repeating functions.
+Let’s start with some simple examples and work our way up. First up we're going to look at waves - patterns that repeat over time.
 
 Here’s an example wave:
 
@@ -35,11 +35,17 @@ We need a lot of them this time – technically an infinite amount to perfectly 
 <canvas id='square-wave-build-up' width=500 height=500></canvas>
 <input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
 
+*Drag the slider above to play with how many sine waves there are.*
+
 This process works like that for any repeating line. Give it a go, try draw your own!
 
 <canvas id='wave-draw' width=500 height=300></canvas>
 <canvas id='wave-draw-split' width=500 height=500></canvas>
 <input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
+
+*Move the slider to see how as we add move sine waves, it gets closer and closer to your drawing*
+
+---
 
 Um, ok. So it looks cool. But why?
 
@@ -73,6 +79,8 @@ As we add more and more spirals, we get closer to representing the original shap
 
 <canvas id='peace-build-up' width=500 height=500></canvas>
 <input id="peace-build-up-slider" type="range" min="0" max="1" value="1" step="any">
+
+*Again, use the slider above to control how many spirals there are.*
 
 So, we can apply this process to any drawing really! Now it’s your chance to play around with it!
 

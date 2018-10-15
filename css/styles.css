@@ -13,6 +13,7 @@ body {
 	margin: auto;
 	line-height: 1.5;
 	min-width: 625px;
+	color: #333;
 }
 
 
@@ -33,6 +34,7 @@ body {
 
 h1, h2, h3 {
 	font-family: 'Montserrat', sans-serif;
+	color: #3F51B5;
 }
 
 h1, h2, h3, p, li {
@@ -43,6 +45,9 @@ h1, h2, h3, p, li {
 li {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
+}
+em {
+	color: #e91e63;
 }
 
 input[type=range] {
