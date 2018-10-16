@@ -1,6 +1,8 @@
 import Controller from "../controller";
-import { to2dIsometric, easeInOut, sinEaseInOut } from "../util";
+import { to2dIsometric, easeInOut, sinEaseInOut, slurp } from "../util";
 import { palette } from "../color";
+
+const transitionFactor = (1 / 18);
 
 export default class ComplexSinusoidController extends Controller {
 
@@ -8,16 +10,25 @@ export default class ComplexSinusoidController extends Controller {
         super(id, width, height);
         
         this.animAmt = 0;
-        this.xzAngleFn = () => 0;
+        // Functions so that they can be overridden elsewhere.
+        this.xzAngleFn = () => this.xzAngle;
         this.yAngleFn = () => 0;
         this.radius = 0.2 * this.height;
         this.length = 0.7 * this.width;
+        this.xzAngle = 0;
     }
 
 	update(dt, mousePosition) {
         const period = 7;
         this.animAmt += dt / period;
         this.animAmt %= 1;
+
+        const pos = this.getScrollPosition();
+        let desiredAngle = 0;
+        if (pos < 0.5) {
+            desiredAngle = Math.PI / 2;
+        }
+        this.xzAngle += transitionFactor * (desiredAngle - this.xzAngle);
     }
 
 	render() {

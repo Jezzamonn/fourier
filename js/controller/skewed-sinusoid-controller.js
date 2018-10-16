@@ -1,5 +1,5 @@
 import Controller from "../controller";
-import { to2dIsometric, easeInOut, sinEaseInOut, slurp } from "../util";
+import { to2dIsometric, easeInOut, sinEaseInOut, slurp, clampedSlurp } from "../util";
 import ComplexSinusoidController from "./complex-sinusoid-controller";
 import { renderBoundingCube } from "./render-cube";
 import { palette } from "../color";
@@ -19,6 +19,10 @@ export default class SkewedSinusoidController extends Controller {
 
 	update(dt, mousePosition) {
         this.sinusoidController.update(dt, mousePosition);
+
+        const pos = this.getScrollPosition();
+        const spinAmt = Math.PI / 8;
+        this.xzAngle = Math.PI / 4 + slurp(-spinAmt, spinAmt, pos);
     }
 
 	render() {

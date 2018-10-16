@@ -109,7 +109,6 @@ function init() {
 	}
 	if (hasElement('complex-sinusoid-turn')) {
 		let controller = new ComplexSinusoidController('complex-sinusoid-turn');
-		controller.xzAngleFn = (amt) => -Math.PI / 2 * easeInOut(sinEaseInOut(2 * amt), 4);
 		controllers.push(controller);
 	}
 

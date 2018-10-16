@@ -23,11 +23,6 @@ export default class SkewedPathController extends Controller {
 
         this.animAmt = 0;
         this.period = 4;
-
-        this.tiltAmt = 0;
-        this.tiltPeriod = 10;
-        // Actually half the range but close enough
-        this.tiltRange = 0.05;
     }
 
     setPath(path) {
@@ -44,11 +39,9 @@ export default class SkewedPathController extends Controller {
         this.animAmt += dt / this.period;
         this.animAmt %= 1;
 
-        this.tiltAmt += dt / this.tiltPeriod;
-        this.tiltAmt %= 1;
-
-        let xzAngleDiff = slurp(-this.tiltRange, this.tiltRange, sinEaseInOut(2 * this.tiltAmt));
-        this.xzAngle = (-0.75 + xzAngleDiff) * Math.PI;
+        const pos = this.getScrollPosition();
+        const spinAmt = Math.PI / 8;
+        this.xzAngle = -0.75 * Math.PI + slurp(-spinAmt, spinAmt, pos);
     }
 
 	render() {
