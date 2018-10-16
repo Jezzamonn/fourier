@@ -1,7 +1,3 @@
-<canvas id='fourier-title' width=500 height=300></canvas>
-
-# An Interactive Introduction to Fourier Transforms
-
 This is a super simple explanation of what a Fourier transform does, and some different ways it can useful. I’m going to do my best to keep it simple and math-free.
 
 ## So what is this thing?
@@ -44,8 +40,6 @@ This process works like that for any repeating line. Give it a go, try draw your
 <input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
 
 *Move the slider to see how as we add move sine waves, it gets closer and closer to your drawing*
-
----
 
 Um, ok. So it looks cool. But why?
 
@@ -103,7 +97,7 @@ If you're interested learning about more applications you might want to think ab
 
 If you're interested in the underlying principles of how it works, here are some questions you can use to guide your research:
 
-- How do you mathematically do a Fourier transform?
+- How do you mathematically represent a Fourier transform?
 - What's the difference between a continuous time Fourier transform and a discrete time fourier transform?
 - What are the other types of frequency domain transforms (Fourier transform is not the only one!)
 - How do you computationally do a Fourier transform?
