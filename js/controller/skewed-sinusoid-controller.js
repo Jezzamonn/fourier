@@ -2,6 +2,7 @@ import Controller from "../controller";
 import { to2dIsometric, easeInOut, sinEaseInOut, slurp } from "../util";
 import ComplexSinusoidController from "./complex-sinusoid-controller";
 import { renderBoundingCube } from "./render-cube";
+import { palette } from "../color";
 
 export default class SkewedSinusoidController extends Controller {
 
@@ -27,6 +28,8 @@ export default class SkewedSinusoidController extends Controller {
         const halfHeight = this.sinusoidController.radius;
         const halfWidth = 0.5 * this.sinusoidController.length;
         const halfDepth = this.sinusoidController.radius;
+        this.context.lineWidth = 1;
+        this.context.strokeStyle = palette.black;
         renderBoundingCube(
             this.context,
             -halfWidth, halfWidth,

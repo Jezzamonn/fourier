@@ -9,3 +9,10 @@ export function grey(whiteAmt) {
 	const whiteRgb = Math.floor(255 * whiteAmt);
 	return rgb(whiteRgb, whiteRgb, whiteRgb);
 }
+
+export const palette = {
+	black: '#333',
+	blue: '#4657d7',
+	cyan: '#57a7cc',
+	pink: '#e81dbb',
+}

@@ -1,6 +1,7 @@
 import Controller from "../controller";
 import { easeInOut, clamp, slurp } from "../util";
 import { getRealFourierData } from "../justfourierthings";
+import { palette } from "../color";
 
 export default class WaveSplitController extends Controller {
 
@@ -57,8 +58,8 @@ export default class WaveSplitController extends Controller {
         if (this.wavePoints.length == 0) {
             return;
         }
-        this.context.strokeStyle = 'black';
-        this.context.lineWidth = 1;
+        this.context.strokeStyle = palette.cyan;
+        this.context.lineWidth = 2;
 
         const numBabies = Math.min(50, this.fourierData.length);
         const top = 0.1 * this.context.canvas.height;
@@ -140,6 +141,8 @@ export default class WaveSplitController extends Controller {
 
         // Now, lets go back and draw the main wave
         // Draw the main boy
+        this.context.strokeStyle = palette.blue;
+        this.context.lineWidth = 2;
         this.context.beginPath();
         for (let xAmt = startXAmt, i = startI; xAmt <= 1 + step; xAmt += step, i ++) {
             const index = i % this.wavePoints.length;

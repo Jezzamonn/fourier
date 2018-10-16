@@ -1,5 +1,6 @@
 import Controller from "../controller";
 import { slurp } from "../util";
+import { palette } from "../color";
  
 export default class WaveDrawController extends Controller {
 
@@ -92,6 +93,8 @@ export default class WaveDrawController extends Controller {
 
     renderWave() {
         this.context.beginPath();
+        this.context.lineWidth = 2;
+        this.context.strokeStyle = palette.pink;
         for (let i = 0; i <= this.wavePoints.length; i ++) {
             const index = i % this.wavePoints.length;
             const amt = i / this.wavePoints.length;

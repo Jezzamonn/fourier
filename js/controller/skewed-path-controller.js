@@ -1,6 +1,7 @@
 import Controller from "../controller";
 import { to2dIsometric, slurp, sinEaseInOut } from "../util";
 import { renderBoundingCube } from "./render-cube";
+import { palette } from "../color";
 
 export default class SkewedPathController extends Controller {
 
@@ -54,12 +55,20 @@ export default class SkewedPathController extends Controller {
         this.clear();
         // Render points
         this.context.translate(this.context.canvas.width / 2, this.context.canvas.height / 2);
+        
+        this.context.strokeStyle = palette.blue;
+        this.context.lineWidth = 2;
         this.renderPath(this.minX, this.maxX);
+
         this.context.globalAlpha = 0.2;
+        this.context.strokeStyle = palette.blue;
+        this.context.lineWidth = 2;
         this.renderPath(this.maxX, this.maxX);
         this.context.globalAlpha = 1;
 
         // Gimme that bounding box
+        this.context.lineWidth = 1;
+        this.context.strokeStyle = palette.black;
         renderBoundingCube(
             this.context,
             this.minX, this.maxX,
@@ -79,8 +88,6 @@ export default class SkewedPathController extends Controller {
         }
 
         this.context.beginPath();
-        this.context.strokeStyle = 'black';
-        this.context.lineWidth = 1;
         for (let xAmt = startXAmt, i = startI; xAmt <= 1 + step; xAmt += step, i ++) {
             const index = i % this.path.length;
 

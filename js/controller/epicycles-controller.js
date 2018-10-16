@@ -1,6 +1,7 @@
 import Controller from "../controller";
 import { getFourierData, resample2dData } from "../justfourierthings";
 import { slurp } from "../util";
+import { palette } from "../color";
 
 export default class EpicyclesController extends Controller {
 
@@ -107,8 +108,8 @@ export default class EpicyclesController extends Controller {
     renderPath(path) {
         for (let i = 0; i < path.length - 1; i ++) {
             this.context.beginPath();
-            this.context.strokeStyle = 'black'
-            this.context.lineWidth = 1;
+            this.context.strokeStyle = palette.blue;
+            this.context.lineWidth = 2;
             this.context.moveTo(path[i].x, path[i].y);
             this.context.lineTo(path[i+1].x, path[i+1].y);
             this.context.stroke();
@@ -134,7 +135,7 @@ export default class EpicyclesController extends Controller {
                 continue; // skip the really tiny ones
             }
             this.context.beginPath();
-            this.context.strokeStyle = 'black';
+            this.context.strokeStyle = palette.cyan;
             this.context.globalAlpha = 0.7;
             this.context.lineWidth = 1;
             this.context.moveTo(runningX, runningY);

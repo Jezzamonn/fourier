@@ -1,5 +1,6 @@
 import Controller from "../controller";
 import { to2dIsometric, easeInOut, sinEaseInOut } from "../util";
+import { palette } from "../color";
 
 export default class ComplexSinusoidController extends Controller {
 
@@ -27,8 +28,8 @@ export default class ComplexSinusoidController extends Controller {
     renderWave() {
         this.context.translate(this.context.canvas.width / 2, this.context.canvas.height / 2);
         this.context.beginPath();
-        this.context.strokeStyle = 'black';
-        this.context.lineWidth = 1;
+        this.context.strokeStyle = palette.blue;
+        this.context.lineWidth = 2;
 
     
         const xzAngle = this.xzAngleFn(this.animAmt);

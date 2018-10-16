@@ -1,4 +1,5 @@
 import Controller from "../controller";
+import { palette } from "../color";
 
 export default class WaveSplitController extends Controller {
 
@@ -28,8 +29,8 @@ export default class WaveSplitController extends Controller {
         if (this.wavePoints.length == 0) {
             return;
         }
-        this.context.strokeStyle = 'black';
-        this.context.lineWidth = 1;
+        this.context.strokeStyle = palette.blue;
+        this.context.lineWidth = 2;
 
         const waveHeight = 0.2 * 0.5 * this.height;
         const wavePos = 0.5 * this.context.canvas.height;
