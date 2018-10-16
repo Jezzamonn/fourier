@@ -1,6 +1,6 @@
 import Controller from "../controller";
 import { getFourierData, resample2dData } from "../justfourierthings";
-import { slurp } from "../util";
+import { slurp, clampedSlurp } from "../util";
 import { palette } from "../color";
 
 export default class EpicyclesController extends Controller {
@@ -14,6 +14,10 @@ export default class EpicyclesController extends Controller {
         this.fourierData = [];
         // [ {x, y} ]
         this.fourierPath = [];
+        this.numPoints = 0;
+        // What percentage of the path to draw
+        this.pathAmt = 1;
+        this.animatePathAmt = true;
 
         this.animAmt = 0;
         this.niceAnimAmt = 0;
@@ -68,6 +72,19 @@ export default class EpicyclesController extends Controller {
             this.niceAnimAmt --;
         }
 
+        if (this.animatePathAmt) {
+            const transitionFactor = (1 / 10);
+            const pos = this.getScrollPosition();
+            let desiredPathAmt = 0;
+            if (pos < 0.8) {
+                desiredPathAmt = 1;
+            }
+            this.pathAmt += transitionFactor * (desiredPathAmt - this.pathAmt);
+            if (this.pathAmt >= 0.99) {
+                this.pathAmt = 1;
+            }
+        }
+
         // some max iterations to stop it from hanging
         for (let i = 0; i < 20; i ++) {
             if (this.niceAnimAmt >= this.animAmt) {
@@ -93,7 +110,7 @@ export default class EpicyclesController extends Controller {
         }
 
         this.fourierPath.push({x: runningX, y:runningY});
-        if (this.fourierPath.length > this.numPoints) {
+        while (this.fourierPath.length > this.numPoints * this.pathAmt && this.fourierPath.length > 0) {
             this.fourierPath.shift();
         }
     }
