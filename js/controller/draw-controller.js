@@ -112,9 +112,13 @@ export default class DrawController extends Controller {
 
         // TODO: Some minimum point length
         const canvasPosition = this.canvas.getBoundingClientRect();
+        // we have to account for the border here too
+        const actualWidth = (canvasPosition.right - canvasPosition.left) - 2;
+        // 500 being the 'default' width
+        const scale = 500 / actualWidth;
         const point = {
-            x: mousePosition.x - canvasPosition.x,
-            y: mousePosition.y - canvasPosition.y,
+            x: scale * (mousePosition.x - canvasPosition.x),
+            y: scale * (mousePosition.y - canvasPosition.y),
         }
         if (this.points.length == 0) {
             this.points.push(point);

@@ -49,11 +49,14 @@ export default class WaveDrawController extends Controller {
             return;
         }
 
-        // TODO: Some minimum point length
         const canvasPosition = this.canvas.getBoundingClientRect();
+        // we have to account for the border here too
+        const actualWidth = (canvasPosition.right - canvasPosition.left) - 2;
+        // 500 being the 'default' width
+        const scale = 500 / actualWidth;
         const mousePoint = {
-            x: mousePosition.x - canvasPosition.x,
-            y: mousePosition.y - canvasPosition.y,
+            x: scale * (mousePosition.x - canvasPosition.x),
+            y: scale * (mousePosition.y - canvasPosition.y),
         }
         if (this.lastMousePoint == null) {
             this.lastMousePoint = mousePoint;

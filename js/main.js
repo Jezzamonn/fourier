@@ -54,7 +54,7 @@ function init() {
 
 	let squareWaveBuildUpSlider;
 	if (hasElement('square-wave-build-up-slider')) {
-		squareWaveBuildUpSlider = new RangeController('square-wave-build-up-slider', 500);
+		squareWaveBuildUpSlider = new RangeController('square-wave-build-up-slider');
 		controllers.push(squareWaveBuildUpSlider);
 	}
 	if (hasElement('square-wave-build-up')) {
@@ -73,7 +73,7 @@ function init() {
 		controllers.push(waveDrawController);
 	}
 	if (hasElement('wave-draw-slider')) {
-		waveDrawSliderController = new RangeController('wave-draw-slider', 500);
+		waveDrawSliderController = new RangeController('wave-draw-slider');
 		waveDrawSliderController.animate = false;
 		controllers.push(waveDrawSliderController);
 	}
@@ -127,7 +127,7 @@ function init() {
 	}
 	let peaceBuildUpSlider;
 	if (hasElement('peace-build-up-slider')) {
-		peaceBuildUpSlider = new RangeController('peace-build-up-slider', 500);
+		peaceBuildUpSlider = new RangeController('peace-build-up-slider');
 		controllers.push(peaceBuildUpSlider);
 	}
 	if (hasElement('peace-build-up')) {
@@ -145,7 +145,7 @@ function init() {
 		controllers.push(drawZone);
 	}
 	if (hasElement('circle-zone-slider')) {
-		circleZoneSlider = new RangeController('circle-zone-slider', 500);
+		circleZoneSlider = new RangeController('circle-zone-slider');
 		circleZoneSlider.animate = false;
 		controllers.push(circleZoneSlider);
 	}

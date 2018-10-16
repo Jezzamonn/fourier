@@ -44,7 +44,7 @@ export default class Conductor {
 
 		const debug = document.getElementById('debug-content');
 		if (debug) {
-			debug.innerHTML = this.updatingControllers.map(c => c.id).join('<br>');
+			debug.innerHTML = this.updatingControllers.map(c => c.id).join('<br>') + '<br>';
 		}
 	}
 

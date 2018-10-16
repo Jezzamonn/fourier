@@ -2,11 +2,9 @@ import { slurp, easeInOut } from "../util";
 
 export default class RangeController {
 
-	constructor(id, width=null) {
+	constructor(id) {
         this.id = id;
         this.slider = document.getElementById(id);
-		this.width = width;
-        this.slider.style.width = width + 'px';
 
         this.onValueChange = [];
 
