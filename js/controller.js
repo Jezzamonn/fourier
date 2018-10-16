@@ -27,6 +27,12 @@ export default class Controller {
 		);
 	}
 
+	getScrollPosition() {
+		const boundingRect = this.canvas.getBoundingClientRect();
+		const centerY = (boundingRect.top + boundingRect.bottom) / 2;
+		return centerY / (window.innerHeight || document.documentElement.clientHeight);
+	}
+
 	clear() {
 		// Clear the previous frame
 		this.context.resetTransform();

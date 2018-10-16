@@ -1,7 +1,9 @@
 import Controller from "../controller";
-import { easeInOut, clamp, slurp } from "../util";
+import { easeInOut, clamp, slurp, clampedSlurp } from "../util";
 import { getRealFourierData } from "../justfourierthings";
 import { palette } from "../color";
+
+const transitionFactor = (1 / 15);
 
 export default class WaveSplitController extends Controller {
 
@@ -41,12 +43,20 @@ export default class WaveSplitController extends Controller {
 
         // reset the animation too
         this.animAmt = 0;
+        this.splitAmt = 0;
     }
 
 	update(dt, mousePosition) {
         const period = 7;
         this.animAmt += dt / period;
         this.animAmt %= 1;
+
+        const pos = this.getScrollPosition();
+        let desiredSplitAmt = 0;
+        if (pos < 0.7) {
+            desiredSplitAmt = 1;
+        }
+        this.splitAmt += transitionFactor * (desiredSplitAmt - this.splitAmt);
     }
 
 	render() {
@@ -83,12 +93,8 @@ export default class WaveSplitController extends Controller {
         let splitAmt = 1;
         let fadeAmt = 1;
         if (this.splitAnim) {
-            splitAmt = easeInOut(clamp(4 * this.animAmt, 0, 1), 4);
-            fadeAmt = 2 * this.animAmt;
-            if (fadeAmt > 1) {
-                fadeAmt = 2 - fadeAmt;
-            }
-            fadeAmt = easeInOut(clamp(4 * fadeAmt, 0, 1));
+            splitAmt = this.splitAmt;
+            fadeAmt = splitAmt;
         }
 
         // Draw its little babies.
