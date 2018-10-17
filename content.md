@@ -35,8 +35,10 @@ We need a lot of them this time – technically an infinite amount to perfectly 
 
 This process works like that for any repeating line. Give it a go, try draw your own!
 
+<div class="multi-container">
 <canvas id='wave-draw' width=500 height=300></canvas>
 <canvas id='wave-draw-split' width=500 height=500></canvas>
+</div>
 <input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
 
 *Move the slider to see how as we add move sine waves, it gets closer and closer to your drawing*
@@ -78,9 +80,10 @@ As we add more and more spirals, we get closer to representing the original shap
 
 So, we can apply this process to any drawing really! Now it’s your chance to play around with it!
 
+<div class="multi-container">
 <canvas id='draw-zone' width=500 height=500></canvas>
-
 <canvas id='circle-zone' width=500 height=500></canvas>
+</div>
 <input id="circle-zone-slider" type="range" min="0" max="1" value="1" step="any">
 
 ## Questions for the curious

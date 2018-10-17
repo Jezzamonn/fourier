@@ -5,7 +5,6 @@ body {
 	color: #333;
 }
 
-
 header {
 	text-align: center;
 	background-color: #e91e63;
@@ -17,7 +16,7 @@ header h1 {
 	color: white;
 }
 main {
-	width: 80%;
+	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 80px;
@@ -33,7 +32,6 @@ main {
 	background: rgba(255, 255, 255, 0.9);
 	font-size: 0.5em;
 }
-
 
 canvas {
 	display: block;
@@ -52,6 +50,29 @@ canvas {
 	border-color: rgb(0, 0, 0, 0.2);
 	border-radius: 5px;
 	background-color: white;
+}
+
+.multi-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	justify-content: center;
+}
+/* Because flex box doesn't collapse margins, use much smaller ones */
+.multi-container canvas {
+	margin: 10px;
+}
+
+input[type=range] {
+	display: block;
+	max-width: 500px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 h1, h2, h3 {
@@ -75,14 +96,4 @@ em {
 }
 a, a:hover, a:visited {
 	color: #e91e63;
-}
-
-input[type=range] {
-	display: block;
-	max-width: 500px;
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 30px;
-	margin-bottom: 30px;
 }
