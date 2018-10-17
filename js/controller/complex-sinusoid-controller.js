@@ -25,7 +25,7 @@ export default class ComplexSinusoidController extends Controller {
 
         const pos = this.getScrollPosition();
         let desiredAngle = 0;
-        if (pos < 0.5) {
+        if (pos < 0.6) {
             desiredAngle = Math.PI / 2;
         }
         this.xzAngle += transitionFactor * (desiredAngle - this.xzAngle);
