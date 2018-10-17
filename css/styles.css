@@ -102,6 +102,9 @@ main {
 
 	transition: opacity 0.2s ease-in-out;
 }
+.wave-instruction {
+	top: 25%;
+}
 .hidden {
 	opacity: 0;
 }

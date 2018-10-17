@@ -72,6 +72,12 @@ function init() {
 		waveDrawController = new WaveDrawController('wave-draw');
 		controllers.push(waveDrawController);
 	}
+	if (hasElement('wave-draw-instruction')) {
+		const instruction = document.getElementById('wave-draw-instruction');
+		if (waveDrawController) {
+			waveDrawController.onDrawingStart.push(() => instruction.classList.add('hidden'))
+		}
+	}
 	if (hasElement('wave-draw-slider')) {
 		waveDrawSliderController = new RangeController('wave-draw-slider');
 		waveDrawSliderController.animate = false;
