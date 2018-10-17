@@ -91,6 +91,7 @@ main {
     right: 0;
     top: 50%;
 	transform: translateY(-50%);
+	opacity: 1;
 
 	pointer-events: none;
     -moz-user-select: -moz-none;
@@ -98,6 +99,11 @@ main {
     -webkit-user-select: none;
     -o-user-select: none;
 	user-select: none;
+
+	transition: opacity 0.2s ease-in-out;
+}
+.hidden {
+	opacity: 0;
 }
 
 .multi-container {

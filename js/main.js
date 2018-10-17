@@ -144,6 +144,12 @@ function init() {
 		drawZone = new DrawController('draw-zone');
 		controllers.push(drawZone);
 	}
+	if (hasElement('draw-zone-instruction')) {
+		const instruction = document.getElementById('draw-zone-instruction');
+		if (drawZone) {
+			drawZone.onDrawingStart.push(() => instruction.classList.add('hidden'))
+		}
+	}
 	if (hasElement('circle-zone-slider')) {
 		circleZoneSlider = new RangeController('circle-zone-slider');
 		circleZoneSlider.animate = false;
