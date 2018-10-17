@@ -110,7 +110,6 @@ export default class DrawController extends Controller {
             return;
         }
 
-        // TODO: Some minimum point length
         const canvasPosition = this.canvas.getBoundingClientRect();
         // we have to account for the border here too
         const actualWidth = (canvasPosition.right - canvasPosition.left) - 2;
