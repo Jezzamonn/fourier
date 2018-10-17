@@ -84,7 +84,7 @@ So, we can apply this process to any drawing really! Now it’s your chance to p
 <div class="sketch" >
     <canvas id="draw-zone" class="sketch-child" width=500 height=500></canvas>
     <p id="draw-zone-instruction" class="instruction">Draw here!</p>
-    <button id="reset-button" class="button">Undo</button>
+    <button id="draw-zone-undo-button" class="button">Undo</button>
 </div>
 <canvas id='circle-zone' class='sketch' width=500 height=500></canvas>
 </div>

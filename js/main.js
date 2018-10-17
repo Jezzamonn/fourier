@@ -150,6 +150,12 @@ function init() {
 			drawZone.onDrawingStart.push(() => instruction.classList.add('hidden'))
 		}
 	}
+	if (hasElement('draw-zone-undo-button')) {
+		const undoButton = document.getElementById('draw-zone-undo-button');
+		if (drawZone) {
+			undoButton.addEventListener('click', () => drawZone.undo());
+		}
+	}
 	if (hasElement('circle-zone-slider')) {
 		circleZoneSlider = new RangeController('circle-zone-slider');
 		circleZoneSlider.animate = false;
