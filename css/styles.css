@@ -23,6 +23,7 @@ main {
 	margin-top: 80px;
 	margin-bottom: 80px;
 }
+
 #debug-window {
 	display: none;
 	position: fixed;
@@ -34,8 +35,9 @@ main {
 	font-size: 0.5em;
 }
 
-canvas {
+.sketch {
 	display: block;
+	position: relative;
 	max-width: 500px;
 	width: 90%;
 	margin-left: auto;
@@ -52,6 +54,51 @@ canvas {
 	border-radius: 5px;
 	background-color: white;
 }
+.sketch-child {
+	display: block;
+	width: 100%;
+}
+.button {
+	display: block;
+	background-color: #e91e63;
+    color: white;
+    font-size: 20px;
+    padding: 0.5em 1em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+	border: none;
+	transition: transform 0.1s linear,
+				background-color 0.1s linear;
+}
+.button:hover, .button:focus {
+	background-color: #ed7656;
+}
+.button:focus {
+	outline: 0;
+}
+.button:active {
+    transform: scale(0.95);
+}
+.instruction {
+	font-size: 30px;
+	color: #e91e63;
+    margin: auto;
+	position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 50%;
+	transform: translateY(-50%);
+
+	pointer-events: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+	user-select: none;
+}
 
 .multi-container {
 	display: flex;
@@ -62,7 +109,7 @@ canvas {
 	justify-content: center;
 }
 /* Because flex box doesn't collapse margins, use much smaller ones */
-.multi-container canvas {
+.multi-container .sketch {
 	margin: 10px;
 }
 
@@ -95,6 +142,9 @@ li {
 em {
 	color: #e91e63;
 }
-a, a:hover, a:visited {
+a, a:visited {
 	color: #e91e63;
+}
+a:hover {
+	color: #ed7656;
 }

@@ -8,11 +8,11 @@ Let’s start with some simple examples and work our way up. First up we're goin
 
 Here’s an example wave:
 
-<canvas id='combo-sine-wave' width=500 height=300></canvas>
+<canvas id='combo-sine-wave' class='sketch' width=500 height=300></canvas>
 
 This wavy pattern here can be split up into sine waves.
 
-<canvas id='combo-sine-wave-split' width=500 height=500></canvas>
+<canvas id='combo-sine-wave-split' class='sketch' width=500 height=500></canvas>
 
 The Fourier transform is a way for us to take the combined wave, and get each of the sine waves back out. In this example, you can almost do it in your head, just by looking at the original wave.
 
@@ -20,24 +20,24 @@ But we can use this process on waves that don't look like they're made of sine w
 
 Let's take a look at this guy. It’s called a square wave.
 
-<canvas id='square-wave' width=500 height=300></canvas>
+<canvas id='square-wave' class='sketch' width=500 height=300></canvas>
 
 It might not look like it, but it also can be split up into sine waves.
 
-<canvas id='square-wave-split' width=500 height=500></canvas>
+<canvas id='square-wave-split' class='sketch' width=500 height=500></canvas>
 
 We need a lot of them this time – technically an infinite amount to perfectly represent it. As we add more and more sine waves the pattern gets closer and closer to the square wave we started with.
 
-<canvas id='square-wave-build-up' width=500 height=500></canvas>
-<input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
+<canvas id='square-wave-build-up' class='sketch' width=500 height=500></canvas>
+<input id="square-wave-build-up-slider" class='sketch' type="range" min="0" max="1" value="0" step="any" >
 
 *Drag the slider above to play with how many sine waves there are.*
 
 This process works like that for any repeating line. Give it a go, try draw your own!
 
 <div class="multi-container">
-<canvas id='wave-draw' width=500 height=300></canvas>
-<canvas id='wave-draw-split' width=500 height=500></canvas>
+<canvas id='wave-draw' class='sketch' width=500 height=300></canvas>
+<canvas id='wave-draw-split' class='sketch' width=500 height=500></canvas>
 </div>
 <input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
 
@@ -55,25 +55,25 @@ Ok, now let's dig more into the Fourier transform. This next part looks cool, bu
 
 Now at the start, I said it splits intos into sine waves. The thing is, the sine waves it creates are not just regular sine waves, but they’re 3D. You could call them "complex sinusoids", "epicycles", or just "spirals".
 
-<canvas id='complex-sinusoid' width=500 height=500></canvas>
+<canvas id='complex-sinusoid' class='sketch' width=500 height=500></canvas>
 
 If we take a look from the side, they look like sine waves. From front on, though, these look like circles.
 
-<canvas id='complex-sinusoid-turn' width=500 height=500></canvas>
+<canvas id='complex-sinusoid-turn' class='sketch' width=500 height=500></canvas>
 
 So far everything we’ve been doing has only required the regular 2D sine waves. When we do a Fourier transform on 2D waves, the complex parts cancel out so we just end up with sine waves.
 
 But we can use the 3D sine waves to make something fun looking like this:
 
-<canvas id='peace-epicycles' width=500 height=500></canvas>
+<canvas id='peace-epicycles' class='sketch' width=500 height=500></canvas>
 
 What’s going on here? Well we can think of the drawing as a 3D wave because of the way it moves around in time.
 
-<canvas id='peace-3d' width=500 height=500></canvas>
+<canvas id='peace-3d' class='sketch' width=500 height=500></canvas>
 
 As we add more and more spirals, we get closer to representing the original shape. With just a few it's able to create the shape fairly well, although it needs the smaller ones to draw the sharp edges.
 
-<canvas id='peace-build-up' width=500 height=500></canvas>
+<canvas id='peace-build-up' class='sketch' width=500 height=500></canvas>
 <input id="peace-build-up-slider" type="range" min="0" max="1" value="1" step="any">
 
 *Again, use the slider above to control how many spirals there are.*
@@ -81,8 +81,12 @@ As we add more and more spirals, we get closer to representing the original shap
 So, we can apply this process to any drawing really! Now it’s your chance to play around with it!
 
 <div class="multi-container">
-<canvas id='draw-zone' width=500 height=500></canvas>
-<canvas id='circle-zone' width=500 height=500></canvas>
+<div class="sketch" >
+    <canvas id="draw-zone" class="sketch-child" width=500 height=500></canvas>
+    <p id="draw-zone-instruction" class="instruction">Draw here!</p>
+    <button id="reset-button" class="button">Undo</button>
+</div>
+<canvas id='circle-zone' class='sketch' width=500 height=500></canvas>
 </div>
 <input id="circle-zone-slider" type="range" min="0" max="1" value="1" step="any">
 
@@ -124,7 +128,7 @@ And of course, the Wikipedia article is pretty good too.
 
 ## The author
 
-<canvas id='its-meee' width=500 height=500></canvas>
+<canvas id='its-meee' class='sketch' width=500 height=500></canvas>
 
 I'm Jez! Full time I work at a search company in the Bay Area, and in my spare time I like making games and interactive code things like this!
 
