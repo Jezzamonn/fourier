@@ -169,6 +169,7 @@ function init() {
 	}
 	if (hasElement('circle-zone')) {
 		let epicycles = new EpicyclesController('circle-zone');
+		epicycles.animatePathAmt = false;
 		if (drawZone) {
 			drawZone.onDrawingStart.push(() => epicycles.setPath([]));
 			drawZone.onDrawingEnd.push(() => epicycles.setPath(drawZone.path, 1024));
