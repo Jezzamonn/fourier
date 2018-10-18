@@ -179,10 +179,6 @@ function init() {
 					circleZoneSlider.slider.value = 1;
 					epicycles.setFourierAmt(1);
 				});
-				drawZone.onDrawingEnd.push(() => {
-					circleZoneSlider.slider.value = 1;
-					epicycles.setFourierAmt(1);
-				});
 			}
 		}
 		if (circleZoneSlider) {
