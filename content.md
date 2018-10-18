@@ -29,7 +29,7 @@ It might not look like it, but it also can be split up into sine waves.
 We need a lot of them this time – technically an infinite amount to perfectly represent it. As we add more and more sine waves the pattern gets closer and closer to the square wave we started with.
 
 <canvas id='square-wave-build-up' class='sketch' width=500 height=500></canvas>
-<input id="square-wave-build-up-slider" class='sketch' type="range" min="0" max="1" value="0" step="any" >
+<input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
 
 *Drag the slider above to play with how many sine waves there are.*
 
