@@ -1,4 +1,11 @@
-This is a super simple explanation of what a Fourier transform does, and some different ways it can useful. I’m going to do my best to keep it simple and math-free.
+Fourier transforms are a tool used in a whole bunch of different things. This is a explanation of what a Fourier transform does, and some different ways it can useful. And how you can make pretty things with it.
+
+I'm going to focus on the practical applications. There's a bunch of Maths behind it, which some people might find interesting, but I think it's better to start with what it actually does, and why.
+
+By the end you should have a good idea about
+- What a Fourier transform does
+- Some practical uses of Fourier transforms
+- Some pointless but cool uses of Fourier transforms
 
 ## So what is this thing?
 
@@ -10,7 +17,7 @@ Here’s an example wave:
 
 <canvas id="combo-sine-wave" class="sketch" width=500 height=300></canvas>
 
-This wavy pattern here can be split up into sine waves.
+This wavy pattern here can be split up into sine waves. That is, when we add up the two sine waves we get back the original wave.
 
 <canvas id="combo-sine-wave-split" class="sketch" width=500 height=500></canvas>
 
@@ -26,12 +33,14 @@ It might not look like it, but it also can be split up into sine waves.
 
 <canvas id="square-wave-split" class="sketch" width=500 height=500></canvas>
 
-We need a lot of them this time – technically an infinite amount to perfectly represent it. As we add more and more sine waves the pattern gets closer and closer to the square wave we started with.
+We need a lot of them this time – technically an infinite amount to perfectly represent it. As we add up more and more sine waves the pattern gets closer and closer to the square wave we started with.
 
 <canvas id="square-wave-build-up" class="sketch" width=500 height=500></canvas>
 <input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
 
 *Drag the slider above to play with how many sine waves there are.*
+
+You'll notice that actually the first few sine waves are the ones that make the biggest difference. With the slider halfway, we have the general shape of the wave, but it's all wiggly. We just need the rest of the small ones to make the wigglyness flatten out.
 
 This process works like that for any repeating line. Give it a go, try draw your own!
 
@@ -46,11 +55,21 @@ This process works like that for any repeating line. Give it a go, try draw your
 
 *Move the slider to see how as we add move sine waves, it gets closer and closer to your drawing*
 
+Again, aside from the extra wigglyness, the wave looks pretty similar with just half of the sine waves.
+
 Um, ok. So it looks cool. But why?
 
 Turns out a lot of things in the real world interact based on these sine waves. We often call them the frequencies of a wave.
 
-The most obvious example is music – when we hear a sound, we don’t hear the shape of the sound wave, we hear the different frequencies of the sine waves that make up the sound. It applies to a lot of other things too though, like how electricity flows, or building vibrations.
+The most obvious example is music – when we hear a sound, we don’t hear the shape of the sound wave, we hear the different frequencies of the sine waves that make up the sound.
+
+But there's another reason to split them up too. Normally on a computer we represent this wave as a series of points.
+
+[diagram with x and y points mapped out]
+
+What we can do instead, as represent it as a bunch of sine waves. And if we want to represent it while using less data, we can just ignore the smaller frequencies and get something that looks, and sounds pretty similar to a person.
+
+This is essentially what MP3s do, except they're more clever about which frequencies they keep and which ones they throw away.
 
 Ok, now let's dig more into the Fourier transform. This next part looks cool, but also gives you a bit more understanding of what the Fourier transform does. But mostly looks cool.
 
@@ -74,12 +93,14 @@ What’s going on here? Well we can think of the drawing as a 3D wave because of
 
 <canvas id="peace-3d" class="sketch" width=500 height=500></canvas>
 
-As we add more and more spirals, we get closer to representing the original shape. With just a few it's able to create the shape fairly well, although it needs the smaller ones to draw the sharp edges.
+As we add more and more spirals, we get closer to representing the original shape.
 
 <canvas id="peace-build-up" class="sketch" width=500 height=500></canvas>
 <input id="peace-build-up-slider" type="range" min="0" max="1" value="1" step="any">
 
-*Again, use the slider above to control how many spirals there are.*
+*Use the slider above to control how many spirals there are.*
+
+Like before, we get a pretty good approximation of the our pattern with just a few circles. With just a few it's able to create the shape fairly well. Because this is a fairly simple shape, all the last ones do is make the edges a little sharper.
 
 So, we can apply this process to any drawing really! Now it’s your chance to play around with it!
 
@@ -93,17 +114,31 @@ So, we can apply this process to any drawing really! Now it’s your chance to p
 </div>
 <input id="circle-zone-slider" type="range" min="0" max="1" value="1" step="any">
 
-## Questions for the curious
+You'll see for most shapes, we can approximate them fairly well with just a small number of circles, instead of saving all the points.
 
-This is just scratching the surface into the applications of Fourier transforms. There's a lot more in this field!
+Can we use this for real data? Well, we could! In reality we have another data format called SVG, which probably does a better job for the types of shapes we tend to create. So for the moment, this is really just for making cool little gifs.
+
+<canvas id="fourier-title" class="sketch" width=500 height=300></canvas>
+
+## Conclusion
+
+So lets recap:
+
+- Fourier transforms are things that let us take something and split it up into its frequencies.
+- We can use them to understand more what different sounds are like
+- We can use them to compress data
+- And we can also use them to make cool looking animations with a bunch of circles
+
+This is just scratching the surface into some applications. The Fourier transform is an extremely powerful tool, because splitting things up into waves is so fundamental. They're used in a lot of fields, including circuit design, mobile phone signals, magnetic resonance imaging (MRI), and quantum physics!
+
+## Questions for the curious
 
 If you're interested learning about more applications you might want to think about:
 
 - How do musical tuners use Fourier transforms?
 - How do equalizer displays use Fourier transforms?
-- Why should we use Fourier transforms to tell how loud something is?
-- How are Fourier transforms used in compressing MP3s?
-- How are Fourier transforms used in compressing JPGs?
+- Why do we need use Fourier transforms to tell how loud something is?
+- How do we do a Fourier transform of a whole song, rather than just a wave?
 
 If you're interested in the underlying principles of how it works, here are some questions you can use to guide your research:
 
