@@ -61,10 +61,10 @@ export default class WaveSplitController extends Controller {
 
 	render() {
         this.clear();
-        this.renderWave();
+        this.renderWaves();
     }
 
-    renderWave() {
+    renderWaves() {
         if (this.wavePoints.length == 0) {
             return;
         }
@@ -99,6 +99,9 @@ export default class WaveSplitController extends Controller {
 
         // Draw its little babies.
         // Also sum up their values to draw the partial wave.
+
+        // This variable needed for the closure
+        const wavePoints = this.wavePoints;
         let paritialWave = this.wavePoints.slice().fill(0);
         const renderedBabies = Math.round(slurp(1, numBabies, this.fourierAmt));
         for (let babe = 0; babe < renderedBabies; babe ++) {
@@ -107,35 +110,35 @@ export default class WaveSplitController extends Controller {
             curWavePos += waveData.amplitude;
             const wavePosition = slurp(-this.waveTop, curWavePos, splitAmt);
 
+            // lets generate this wave hey
+            // TODO: cache this?
+            const wave = this.wavePoints.slice();
+            for (let i = 0; i < this.wavePoints.length; i ++) {
+                const iAmt = i / this.wavePoints.length;
+                const fullWaveAmt = wavePoints[i];
+                const sineAmt = waveData.amplitude * Math.cos(2 * Math.PI * waveData.freq * iAmt + waveData.phase);
+                wave[i] = slurp(fullWaveAmt, sineAmt, splitAmt);
+
+                // While we're here, update the partial wave
+                paritialWave[i] += wave[i];
+            }
+
             this.context.beginPath();
             this.context.globalAlpha = fadeAmt;
             if (this.fadeFrequencies) {
                 this.context.globalAlpha *= (1 - babeAmt);
             }
-            for (let xAmt = startXAmt, i = startI; xAmt <= 1 + step; xAmt += step, i ++) {
-                const index = i % this.wavePoints.length;
-                const indexAmt = index / this.wavePoints.length;
-    
-                const x = this.width * xAmt;
-                const fullWaveAmt = this.wavePoints[index];
-                const sineAmt = waveData.amplitude * Math.cos(2 * Math.PI * waveData.freq * indexAmt + waveData.phase);
-                const y = top + sizeMultiple * (wavePosition + spacingMultiplier * slurp(fullWaveAmt, sineAmt, splitAmt));
-    
-                if (i == 0) {
-                    this.context.moveTo(x, y);
-                }
-                else {
-                    this.context.lineTo(x, y);
-                }
-
-                // ALSO update the partial wave
-                if (i - startI < this.wavePoints.length) {
-                    paritialWave[index] += sineAmt;
-                }
-            }
-            curWavePos += waveData.amplitude;
+            this.renderWave({
+                wave: wave,
+                numPoints: this.wavePoints.length,
+                yPosition: top + sizeMultiple * wavePosition,
+                yMultiple: sizeMultiple * spacingMultiplier,
+                startXAmt: startXAmt
+            });
             this.context.stroke();
             this.context.globalAlpha = 1;
+
+            curWavePos += waveData.amplitude;
         }
 
         curWavePos = 0;
@@ -150,12 +153,27 @@ export default class WaveSplitController extends Controller {
         this.context.strokeStyle = palette.blue;
         this.context.lineWidth = 2;
         this.context.beginPath();
+        this.renderWave({
+            wave: paritialWave,
+            numPoints: this.wavePoints.length,
+            yPosition: top + sizeMultiple * curWavePos,
+            yMultiple: sizeMultiple * spacingMultiplier,
+            startXAmt: startXAmt
+        });
+        this.context.stroke();
+    }
+
+    renderWave({wave, numPoints, yPosition, yMultiple, startXAmt}) {
+        let startI = 0;
+        // (I think the wavelength of the wave can be configured by changing the 1 here)
+        const step = 1 / numPoints;
+        // TODO: Skip drawing the start things that are already defined.
         for (let xAmt = startXAmt, i = startI; xAmt <= 1 + step; xAmt += step, i ++) {
-            const index = i % this.wavePoints.length;
+            const index = i % numPoints;
+            const indexAmt = index / numPoints;
 
             const x = this.width * xAmt;
-            const fullWaveAmt = paritialWave[index];
-            const y = top + sizeMultiple * (curWavePos + spacingMultiplier * fullWaveAmt);
+            const y = yPosition + yMultiple * wave[index];
 
             if (i == 0) {
                 this.context.moveTo(x, y);
@@ -164,6 +182,5 @@ export default class WaveSplitController extends Controller {
                 this.context.lineTo(x, y);
             }
         }
-        this.context.stroke();
     }
 }
