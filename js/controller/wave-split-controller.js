@@ -2,6 +2,7 @@ import Controller from "../controller";
 import { easeInOut, clamp, slurp, clampedSlurp } from "../util";
 import { getRealFourierData } from "../justfourierthings";
 import { palette } from "../color";
+import { renderWave } from "../wave-things";
 
 const transitionFactor = (1 / 15);
 
@@ -82,13 +83,6 @@ export default class WaveSplitController extends Controller {
         let curWavePos = 0;
 
         let startXAmt = -this.animAmt;
-        let startI = 0;
-        // (I think the wavelength of the wave can be configured by changing the 1 here)
-        const step = 1 / (this.wavePoints.length);
-        // TODO: Skip drawing the start things that are already defined.
-
-        // Actually, we're going to skip drawing the main wave here and draw it later.
-        curWavePos += this.waveBottom - this.waveTop;
 
         let splitAmt = 1;
         let fadeAmt = 1;
@@ -97,11 +91,12 @@ export default class WaveSplitController extends Controller {
             fadeAmt = splitAmt;
         }
 
+        // Actually, we're going to skip drawing the main wave here and draw it later.
+        curWavePos += this.waveBottom - this.waveTop;
+
         // Draw its little babies.
         // Also sum up their values to draw the partial wave.
 
-        // This variable needed for the closure
-        const wavePoints = this.wavePoints;
         let paritialWave = this.wavePoints.slice().fill(0);
         const renderedBabies = Math.round(slurp(1, numBabies, this.fourierAmt));
         for (let babe = 0; babe < renderedBabies; babe ++) {
@@ -115,7 +110,7 @@ export default class WaveSplitController extends Controller {
             const wave = this.wavePoints.slice();
             for (let i = 0; i < this.wavePoints.length; i ++) {
                 const iAmt = i / this.wavePoints.length;
-                const fullWaveAmt = wavePoints[i];
+                const fullWaveAmt = this.wavePoints[i];
                 const sineAmt = waveData.amplitude * Math.cos(2 * Math.PI * waveData.freq * iAmt + waveData.phase);
                 wave[i] = slurp(fullWaveAmt, sineAmt, splitAmt);
 
@@ -128,9 +123,10 @@ export default class WaveSplitController extends Controller {
             if (this.fadeFrequencies) {
                 this.context.globalAlpha *= (1 - babeAmt);
             }
-            this.renderWave({
+            renderWave({
+                context: this.context,
+                width: this.width,
                 wave: wave,
-                numPoints: this.wavePoints.length,
                 yPosition: top + sizeMultiple * wavePosition,
                 yMultiple: sizeMultiple * spacingMultiplier,
                 startXAmt: startXAmt
@@ -153,9 +149,10 @@ export default class WaveSplitController extends Controller {
         this.context.strokeStyle = palette.blue;
         this.context.lineWidth = 2;
         this.context.beginPath();
-        this.renderWave({
+        renderWave({
+            context: this.context,
+            width: this.width,
             wave: paritialWave,
-            numPoints: this.wavePoints.length,
             yPosition: top + sizeMultiple * curWavePos,
             yMultiple: sizeMultiple * spacingMultiplier,
             startXAmt: startXAmt
@@ -163,24 +160,4 @@ export default class WaveSplitController extends Controller {
         this.context.stroke();
     }
 
-    renderWave({wave, numPoints, yPosition, yMultiple, startXAmt}) {
-        let startI = 0;
-        // (I think the wavelength of the wave can be configured by changing the 1 here)
-        const step = 1 / numPoints;
-        // TODO: Skip drawing the start things that are already defined.
-        for (let xAmt = startXAmt, i = startI; xAmt <= 1 + step; xAmt += step, i ++) {
-            const index = i % numPoints;
-            const indexAmt = index / numPoints;
-
-            const x = this.width * xAmt;
-            const y = yPosition + yMultiple * wave[index];
-
-            if (i == 0) {
-                this.context.moveTo(x, y);
-            }
-            else {
-                this.context.lineTo(x, y);
-            }
-        }
-    }
 }

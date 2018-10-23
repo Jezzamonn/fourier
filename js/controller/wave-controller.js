@@ -1,5 +1,6 @@
 import Controller from "../controller";
 import { palette } from "../color";
+import { renderWave } from "../wave-things";
 
 export default class WaveSplitController extends Controller {
 
@@ -36,26 +37,16 @@ export default class WaveSplitController extends Controller {
         const wavePos = 0.5 * this.context.canvas.height;
 
         let startXAmt = -this.animAmt;
-        let startI = 0;
-        // (I think the wavelength of the wave can be configured by changing the 1 here)
-        const step = 1 / (this.wavePoints.length);
-        // TODO: Skip drawing the start things that are already defined.
 
         this.context.beginPath();
-        for (let xAmt = startXAmt, i = startI; xAmt <= 1 + step; xAmt += step, i ++) {
-            const index = i % this.wavePoints.length;
-
-            const x = this.width * xAmt;
-            const fullWaveAmt = this.wavePoints[index];
-            const y = wavePos + waveHeight * fullWaveAmt;
-
-            if (i == 0) {
-                this.context.moveTo(x, y);
-            }
-            else {
-                this.context.lineTo(x, y);
-            }
-        }
+        renderWave({
+            context: this.context,
+            width: this.width,
+            wave: this.wavePoints,
+            yPosition: wavePos,
+            yMultiple: waveHeight,
+            startXAmt: startXAmt
+        })
         this.context.stroke();
     }
 }
