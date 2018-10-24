@@ -31,12 +31,12 @@ function init() {
 	}
 	if (hasElement('combo-sine-wave')) {
 		let controller = new WaveController('combo-sine-wave');
-		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + Math.sin(6 * Math.PI * t), 128));
+		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + 0.5 * Math.sin(20 * Math.PI * t), 128));
 		controllers.push(controller);
 	}
 	if (hasElement('combo-sine-wave-split')) {
 		let controller = new WaveSplitController('combo-sine-wave-split');
-		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + Math.sin(6 * Math.PI * t), 128));
+		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + 0.5 * Math.sin(20 * Math.PI * t), 128));
 		controller.fadeFrequencies = false;
 		controllers.push(controller);
 	}
