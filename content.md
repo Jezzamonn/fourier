@@ -120,6 +120,44 @@ Can we use this for real data? Well, we could! In reality we have another data f
 
 <canvas id="fourier-title" class="sketch" width=500 height=300></canvas>
 
+Ok, that's it for fourier transforms right? WRONG!
+
+## JPEGs
+
+Alright, now we're going to go into a new area. JPEGs! Did you know fourier transforms can also be used on images? That's how JPEGs works. We're applying the same principles to images -- splitting up something into a bunch of sine waves.
+
+Except, we now need sine waves that can represent an image, because remember we need to be able to add them back up and get back to our original iamge. How do we do that? Well, each of our frequencies will be images too. Instead of a wave with a top and a bottom, we now have images with black and sections. We have ones in the X dimension, and the Y dimension. 
+
+[x dimension img]
+
+[y dimension img]
+
+And we also need some extra ones
+
+[x * y]
+
+For an 8x8 image, here are all the combinations
+
+[ all the combinations ]
+
+Here's a little slider that lets you play with each combo
+
+[ sine image w/ x/y combo ]
+
+Just like before, we can use these to split up an image. Lets start with this letter 'A'. It's pretty small, but we need it to be small otherwise we'll end up with too many other images.
+
+[ A ]
+
+Now, as we add more and more of these frequencies, we end up with something that becomes closer and closer to the actual image. But I think you'll see the pattern here, as we get a reasonable approximation with just a few of them.
+
+[ Thing you can slide around ]
+
+What happens with a JPEG is the image gets broken up into 8x8 chunks, and then each chunk gets 'fouriered' and saves the images. The number of frequencies that gets saved determines the quality of the image.
+
+[ animation of how JPEGs work? ]
+
+(sorry no interactively drawing your own image because I can't find any javascript library to do it)
+
 ## Conclusion
 
 So lets recap:
