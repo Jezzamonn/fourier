@@ -16,6 +16,7 @@
     "makedebughtml": "showdown makehtml -i debug.md -o /tmp/debug.html && sed '/{{CONTENT}}/ {\nr /tmp/debug.html\nd\n}' template.html > build/debug.html",
     "cp": "cp -r css build/",
     "build": "npm run webpack && npm run makehtml && npm run cp",
+    "test": "jest",
     "watch": "npm-watch",
     "reload": "reload -b -d build"
   },
@@ -24,10 +25,13 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "http-server": "^0.11.1",
+    "jest": "^23.6.0",
     "npm-watch": "^0.3.0",
+    "regenerator-runtime": "^0.12.1",
     "reload": "^2.3.1",
     "webpack": "^3.12.0"
   },
