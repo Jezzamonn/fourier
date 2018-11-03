@@ -126,20 +126,88 @@ Ok, that's it for fourier transforms right? WRONG!
 
 Alright, now we're going to go into a new area. JPEGs! Did you know fourier transforms can also be used on images? That's how JPEGs works. We're applying the same principles to images -- splitting up something into a bunch of sine waves.
 
-Except, we now need sine waves that can represent an image, because remember we need to be able to add them back up and get back to our original iamge. How do we do that? Well, each of our frequencies will be images too. Instead of a wave with a top and a bottom, we now have images with black and sections. We have ones in the X dimension, and the Y dimension. 
+Except, we now need sine waves that can represent an image, because remember we need to be able to add them back up and get back to our original iamge. How do we do that? Well, each of our frequencies will be images too. Instead of a wave with a top and a bottom, we now have images with black and sections.
 
-[x dimension img]
+We have ones in the X dimension,
 
-[y dimension img]
+<img src="img/components-0-4.png" class="sketch sketch-small">
+
+and the Y dimension.
+
+<img src="img/components-4-0.png" class="sketch sketch-small">
 
 And we also need some extra ones
 
-[x * y]
+<img src="img/components-4-4.png" class="sketch sketch-small">
 
 For an 8x8 image, here are all the combinations
 
-[ all the combinations ]
-
+<div class="img-component-container">
+<img src="img/components-0-0.png" class="img-component">
+<img src="img/components-0-1.png" class="img-component">
+<img src="img/components-0-2.png" class="img-component">
+<img src="img/components-0-3.png" class="img-component">
+<img src="img/components-0-4.png" class="img-component">
+<img src="img/components-0-5.png" class="img-component">
+<img src="img/components-0-6.png" class="img-component">
+<img src="img/components-0-7.png" class="img-component">
+<img src="img/components-1-0.png" class="img-component">
+<img src="img/components-1-1.png" class="img-component">
+<img src="img/components-1-2.png" class="img-component">
+<img src="img/components-1-3.png" class="img-component">
+<img src="img/components-1-4.png" class="img-component">
+<img src="img/components-1-5.png" class="img-component">
+<img src="img/components-1-6.png" class="img-component">
+<img src="img/components-1-7.png" class="img-component">
+<img src="img/components-2-0.png" class="img-component">
+<img src="img/components-2-1.png" class="img-component">
+<img src="img/components-2-2.png" class="img-component">
+<img src="img/components-2-3.png" class="img-component">
+<img src="img/components-2-4.png" class="img-component">
+<img src="img/components-2-5.png" class="img-component">
+<img src="img/components-2-6.png" class="img-component">
+<img src="img/components-2-7.png" class="img-component">
+<img src="img/components-3-0.png" class="img-component">
+<img src="img/components-3-1.png" class="img-component">
+<img src="img/components-3-2.png" class="img-component">
+<img src="img/components-3-3.png" class="img-component">
+<img src="img/components-3-4.png" class="img-component">
+<img src="img/components-3-5.png" class="img-component">
+<img src="img/components-3-6.png" class="img-component">
+<img src="img/components-3-7.png" class="img-component">
+<img src="img/components-4-0.png" class="img-component">
+<img src="img/components-4-1.png" class="img-component">
+<img src="img/components-4-2.png" class="img-component">
+<img src="img/components-4-3.png" class="img-component">
+<img src="img/components-4-4.png" class="img-component">
+<img src="img/components-4-5.png" class="img-component">
+<img src="img/components-4-6.png" class="img-component">
+<img src="img/components-4-7.png" class="img-component">
+<img src="img/components-5-0.png" class="img-component">
+<img src="img/components-5-1.png" class="img-component">
+<img src="img/components-5-2.png" class="img-component">
+<img src="img/components-5-3.png" class="img-component">
+<img src="img/components-5-4.png" class="img-component">
+<img src="img/components-5-5.png" class="img-component">
+<img src="img/components-5-6.png" class="img-component">
+<img src="img/components-5-7.png" class="img-component">
+<img src="img/components-6-0.png" class="img-component">
+<img src="img/components-6-1.png" class="img-component">
+<img src="img/components-6-2.png" class="img-component">
+<img src="img/components-6-3.png" class="img-component">
+<img src="img/components-6-4.png" class="img-component">
+<img src="img/components-6-5.png" class="img-component">
+<img src="img/components-6-6.png" class="img-component">
+<img src="img/components-6-7.png" class="img-component">
+<img src="img/components-7-0.png" class="img-component">
+<img src="img/components-7-1.png" class="img-component">
+<img src="img/components-7-2.png" class="img-component">
+<img src="img/components-7-3.png" class="img-component">
+<img src="img/components-7-4.png" class="img-component">
+<img src="img/components-7-5.png" class="img-component">
+<img src="img/components-7-6.png" class="img-component">
+<img src="img/components-7-7.png" class="img-component">
+</div>
 Here's a little slider that lets you play with each combo
 
 [ sine image w/ x/y combo ]

@@ -54,10 +54,35 @@ main {
 	border-radius: 5px;
 	background-color: white;
 }
+.sketch-small {
+	max-width: 250px;
+}
 .sketch-child {
 	display: block;
 	width: 100%;
 }
+
+.img-component-container {
+	display: grid;
+	grid-template-columns: repeat(8, auto);
+	grid-gap: 1vh;
+	max-width: 500px;
+	margin: auto;
+}
+.img-component {
+	display: block;
+	width: 100%;
+
+	-webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(0, 0, 0, 0.2);
+	border-radius: 5px;
+	background-color: white;
+}
+
 .button {
 	display: block;
 	background-color: #e91e63;
