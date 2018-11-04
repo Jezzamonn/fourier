@@ -57,6 +57,9 @@ main {
 .sketch-small {
 	max-width: 250px;
 }
+.sketch-letter {
+	max-width: 50px;
+}
 .sketch-child {
 	display: block;
 	width: 100%;
