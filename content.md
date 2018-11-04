@@ -214,7 +214,7 @@ Here's a little slider that lets you play with each combo
 
 Just like before, we can use these to split up an image. Lets start with this letter 'A'. It's pretty small, but we need it to be small otherwise we'll end up with too many other images.
 
-[ A ]
+<img src="img/a.png" class="sketch sketch-small" style="max-width: 50px">
 
 Now, as we add more and more of these frequencies, we end up with something that becomes closer and closer to the actual image. But I think you'll see the pattern here, as we get a reasonable approximation with just a few of them.
 

@@ -63,11 +63,11 @@ main {
 }
 
 .img-component-container {
-	display: grid;
-	grid-template-columns: repeat(8, auto);
-	grid-gap: 1vh;
 	max-width: 500px;
 	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(8, auto);
+	grid-gap: 1.5vw;
 }
 .img-component {
 	display: block;
@@ -79,7 +79,7 @@ main {
 	border-style: solid;
 	border-width: 1px;
 	border-color: rgb(0, 0, 0, 0.2);
-	border-radius: 5px;
+	border-radius: 5%;
 	background-color: white;
 }
 
