@@ -214,11 +214,11 @@ Here's a little slider that lets you play with each combo
 
 Just like before, we can use these to split up an image. Lets start with this letter 'A'. It's pretty small, but we need it to be small otherwise we'll end up with too many other images.
 
-<img src="img/a.png" class="sketch sketch-letter" style="max-width: 50px">
+<img src="img/a.png" class="sketch sketch-letter">
 
 Now, as we add more and more of these frequencies, we end up with something that becomes closer and closer to the actual image. But I think you'll see the pattern here, as we get a reasonable approximation with just a few of them.
 
-[ Thing you can slide around ]
+<img id="letter-buildup" src="img/img-buildup-0-0.png" class="sketch sketch-letter">
 
 What happens with a JPEG is the image gets broken up into 8x8 chunks, and then each chunk gets 'fouriered' and saves the images. The number of frequencies that gets saved determines the quality of the image.
 

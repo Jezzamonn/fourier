@@ -6,13 +6,14 @@ import { titlePoints } from './points/title-points.js';
 import WaveController from './controller/wave-controller.js';
 import WaveSplitController from './controller/wave-split-controller.js';
 import { getWave, squareWave } from './wave-things.js';
-import { easeInOut, sinEaseInOut } from './util.js';
 import SkewedSinusoidController from './controller/skewed-sinusoid-controller.js';
 import WaveDrawController from './controller/wave-draw-controller.js';
 import RangeController from './controller/range-controller.js';
 import { peaceHandPoints } from './points/peace-hand-points.js';
 import SkewedPathController from './controller/skewed-path-controller.js';
 import { mePoints } from './points/me-points.js';
+import ImageSwapController from './controller/image-swap-controller.js';
+import { loopLikeAJpeg } from './jpeg.js';
 
 let conductor = null;
 
@@ -185,6 +186,16 @@ function init() {
 			circleZoneSlider.onValueChange.push(val => epicycles.setFourierAmt(val));
 		}
 		controllers.push(epicycles);
+	}
+
+	if (hasElement('letter-buildup')) {
+		let controller = new ImageSwapController('letter-buildup');
+		const imageSrcs = [];
+		for (let [y, x] of loopLikeAJpeg(8)) {
+			imageSrcs.push('img/img-buildup-' + x + '-' + y + '.png');
+		}
+		controller.imageSrcs = imageSrcs;
+		controllers.push(controller);
 	}
 
 	if (hasElement('its-meee')) {

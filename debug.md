@@ -1,1 +1,1 @@
-<canvas id="combo-sine-wave-split" class="sketch" width=500 height=500></canvas>
+<img id="letter-buildup" src="img/img-buildup-0-0.png" class="sketch sketch-letter">
