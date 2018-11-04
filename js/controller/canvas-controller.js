@@ -1,4 +1,4 @@
-export default class Controller {
+export default class CanvasController {
 
 	constructor(id, width=null, height=null) {
 		this.id = id;

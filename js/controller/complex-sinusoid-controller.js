@@ -1,10 +1,10 @@
-import Controller from "../controller";
+import CanvasController from "./canvas-controller";
 import { to2dIsometric, easeInOut, sinEaseInOut, slurp } from "../util";
 import { palette } from "../color";
 
 const transitionFactor = (1 / 18);
 
-export default class ComplexSinusoidController extends Controller {
+export default class ComplexSinusoidController extends CanvasController {
 
 	constructor(id, width, height) {
         super(id, width, height);

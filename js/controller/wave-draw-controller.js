@@ -1,8 +1,8 @@
-import Controller from "../controller";
+import CanvasController from "./canvas-controller";
 import { slurp } from "../util";
 import { palette } from "../color";
  
-export default class WaveDrawController extends Controller {
+export default class WaveDrawController extends CanvasController {
 
 	constructor(id, width, height) {
         super(id, width, height);

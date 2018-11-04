@@ -1,8 +1,8 @@
-import Controller from "../controller";
+import CanvasController from "./canvas-controller";
 import { palette } from "../color";
 import { renderWave } from "../wave-things";
 
-export default class WaveSplitController extends Controller {
+export default class WaveSplitController extends CanvasController {
 
 	constructor(id, width, height) {
         super(id, width, height);

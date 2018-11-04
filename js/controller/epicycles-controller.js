@@ -1,9 +1,9 @@
-import Controller from "../controller";
+import CanvasController from "./canvas-controller";
 import { getFourierData, resample2dData } from "../justfourierthings";
 import { slurp, clampedSlurp } from "../util";
 import { palette } from "../color";
 
-export default class EpicyclesController extends Controller {
+export default class EpicyclesController extends CanvasController {
 
 	constructor(id, width, height) {
         super(id, width, height);

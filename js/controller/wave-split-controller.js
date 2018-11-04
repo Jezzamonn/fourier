@@ -1,4 +1,4 @@
-import Controller from "../controller";
+import CanvasController from "./canvas-controller";
 import { easeInOut, clamp, slurp, clampedSlurp } from "../util";
 import { getRealFourierData } from "../justfourierthings";
 import { palette } from "../color";
@@ -6,7 +6,7 @@ import { renderWave } from "../wave-things";
 
 const transitionFactor = (1 / 15);
 
-export default class WaveSplitController extends Controller {
+export default class WaveSplitController extends CanvasController {
 
 	constructor(id, width, height) {
         super(id, width, height);

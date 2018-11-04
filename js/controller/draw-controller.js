@@ -1,9 +1,9 @@
-import Controller from "../controller";
+import CanvasController from "./canvas-controller";
 import { palette } from "../color";
 
 const maxDrawDist = 3;
 
-export default class DrawController extends Controller {
+export default class DrawController extends CanvasController {
 
 	constructor(id, width, height) {
         super(id, width, height);

@@ -1,10 +1,10 @@
-import Controller from "../controller";
+import CanvasController from "./canvas-controller";
 import { to2dIsometric, easeInOut, sinEaseInOut, slurp, clampedSlurp } from "../util";
 import ComplexSinusoidController from "./complex-sinusoid-controller";
 import { renderBoundingCube } from "./render-cube";
 import { palette } from "../color";
 
-export default class SkewedSinusoidController extends Controller {
+export default class SkewedSinusoidController extends CanvasController {
 
 	constructor(id, width, height) {
         super(id, width, height);
