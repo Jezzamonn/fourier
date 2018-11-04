@@ -58,10 +58,10 @@ export function clampedSlurp(val1, val2, amt) {
 }
 
 export function clamp(amt, val1, val2) {
-    if (amt < 0) {
+    if (amt < val1) {
         return val1;
     }
-    if (amt > 1) {
+    if (amt > val2) {
         return val2;
     }
     return amt;

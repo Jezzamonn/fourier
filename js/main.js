@@ -188,6 +188,33 @@ function init() {
 		controllers.push(epicycles);
 	}
 
+	if (hasElement('img-x-component')) {
+		let controller = new ImageSwapController('img-x-component');
+		const imageSrcs = [];
+		for (let i = 0; i < 8; i ++) {
+			imageSrcs.push('img/components-0-' + i + '.png');
+		}
+		controller.imageSrcs = imageSrcs;
+		controllers.push(controller);
+	}
+	if (hasElement('img-y-component')) {
+		let controller = new ImageSwapController('img-y-component');
+		const imageSrcs = [];
+		for (let i = 0; i < 8; i ++) {
+			imageSrcs.push('img/components-' + i + '-0.png');
+		}
+		controller.imageSrcs = imageSrcs;
+		controllers.push(controller);
+	}
+	if (hasElement('img-x-y-component')) {
+		let controller = new ImageSwapController('img-x-y-component');
+		const imageSrcs = [];
+		for (let i = 0; i < 8; i ++) {
+			imageSrcs.push('img/components-' + i + '-' + i + '.png');
+		}
+		controller.imageSrcs = imageSrcs;
+		controllers.push(controller);
+	}
 	if (hasElement('letter-buildup')) {
 		let controller = new ImageSwapController('letter-buildup');
 		const imageSrcs = [];

@@ -130,15 +130,15 @@ Except, we now need sine waves that can represent an image, because remember we 
 
 We have ones in the X dimension,
 
-<img src="img/components-0-4.png" class="sketch sketch-small">
+<img id="img-x-component" src="img/components-0-4.png" class="sketch sketch-small">
 
 and the Y dimension.
 
-<img src="img/components-4-0.png" class="sketch sketch-small">
+<img id="img-y-component" src="img/components-4-0.png" class="sketch sketch-small">
 
 And we also need some extra ones
 
-<img src="img/components-4-4.png" class="sketch sketch-small">
+<img id="img-x-y-component" src="img/components-4-4.png" class="sketch sketch-small">
 
 For an 8x8 image, here are all the combinations
 

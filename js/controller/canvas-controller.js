@@ -1,3 +1,5 @@
+import { elementInView, getScrollPosition } from "./controller-util";
+
 export default class CanvasController {
 
 	constructor(id, width=null, height=null) {
@@ -16,21 +18,11 @@ export default class CanvasController {
 	}
 
 	isOnScreen() {
-		// Thanks stack overflow https://stackoverflow.com/a/7557433
-		const boundingRect = this.canvas.getBoundingClientRect();
-
-		return (
-			boundingRect.bottom >= 0 &&
-			boundingRect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-			boundingRect.right >= 0 &&
-			boundingRect.left <= (window.innerWidth || document.documentElement.clientWidth)
-		);
+		return elementInView(this.canvas);
 	}
 
 	getScrollPosition() {
-		const boundingRect = this.canvas.getBoundingClientRect();
-		const centerY = (boundingRect.top + boundingRect.bottom) / 2;
-		return centerY / (window.innerHeight || document.documentElement.clientHeight);
+		return getScrollPosition(this.canvas)
 	}
 
 	clear() {
