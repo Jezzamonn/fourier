@@ -143,71 +143,72 @@ And we also need some extra ones
 For an 8x8 image, here are all the combinations
 
 <div class="img-component-container">
-<img src="img/components-0-0.png" class="img-component">
-<img src="img/components-0-1.png" class="img-component">
-<img src="img/components-0-2.png" class="img-component">
-<img src="img/components-0-3.png" class="img-component">
-<img src="img/components-0-4.png" class="img-component">
-<img src="img/components-0-5.png" class="img-component">
-<img src="img/components-0-6.png" class="img-component">
-<img src="img/components-0-7.png" class="img-component">
-<img src="img/components-1-0.png" class="img-component">
-<img src="img/components-1-1.png" class="img-component">
-<img src="img/components-1-2.png" class="img-component">
-<img src="img/components-1-3.png" class="img-component">
-<img src="img/components-1-4.png" class="img-component">
-<img src="img/components-1-5.png" class="img-component">
-<img src="img/components-1-6.png" class="img-component">
-<img src="img/components-1-7.png" class="img-component">
-<img src="img/components-2-0.png" class="img-component">
-<img src="img/components-2-1.png" class="img-component">
-<img src="img/components-2-2.png" class="img-component">
-<img src="img/components-2-3.png" class="img-component">
-<img src="img/components-2-4.png" class="img-component">
-<img src="img/components-2-5.png" class="img-component">
-<img src="img/components-2-6.png" class="img-component">
-<img src="img/components-2-7.png" class="img-component">
-<img src="img/components-3-0.png" class="img-component">
-<img src="img/components-3-1.png" class="img-component">
-<img src="img/components-3-2.png" class="img-component">
-<img src="img/components-3-3.png" class="img-component">
-<img src="img/components-3-4.png" class="img-component">
-<img src="img/components-3-5.png" class="img-component">
-<img src="img/components-3-6.png" class="img-component">
-<img src="img/components-3-7.png" class="img-component">
-<img src="img/components-4-0.png" class="img-component">
-<img src="img/components-4-1.png" class="img-component">
-<img src="img/components-4-2.png" class="img-component">
-<img src="img/components-4-3.png" class="img-component">
-<img src="img/components-4-4.png" class="img-component">
-<img src="img/components-4-5.png" class="img-component">
-<img src="img/components-4-6.png" class="img-component">
-<img src="img/components-4-7.png" class="img-component">
-<img src="img/components-5-0.png" class="img-component">
-<img src="img/components-5-1.png" class="img-component">
-<img src="img/components-5-2.png" class="img-component">
-<img src="img/components-5-3.png" class="img-component">
-<img src="img/components-5-4.png" class="img-component">
-<img src="img/components-5-5.png" class="img-component">
-<img src="img/components-5-6.png" class="img-component">
-<img src="img/components-5-7.png" class="img-component">
-<img src="img/components-6-0.png" class="img-component">
-<img src="img/components-6-1.png" class="img-component">
-<img src="img/components-6-2.png" class="img-component">
-<img src="img/components-6-3.png" class="img-component">
-<img src="img/components-6-4.png" class="img-component">
-<img src="img/components-6-5.png" class="img-component">
-<img src="img/components-6-6.png" class="img-component">
-<img src="img/components-6-7.png" class="img-component">
-<img src="img/components-7-0.png" class="img-component">
-<img src="img/components-7-1.png" class="img-component">
-<img src="img/components-7-2.png" class="img-component">
-<img src="img/components-7-3.png" class="img-component">
-<img src="img/components-7-4.png" class="img-component">
-<img src="img/components-7-5.png" class="img-component">
-<img src="img/components-7-6.png" class="img-component">
-<img src="img/components-7-7.png" class="img-component">
+    <img src="img/components-0-0.png" class="img-component">
+    <img src="img/components-0-1.png" class="img-component">
+    <img src="img/components-0-2.png" class="img-component">
+    <img src="img/components-0-3.png" class="img-component">
+    <img src="img/components-0-4.png" class="img-component">
+    <img src="img/components-0-5.png" class="img-component">
+    <img src="img/components-0-6.png" class="img-component">
+    <img src="img/components-0-7.png" class="img-component">
+    <img src="img/components-1-0.png" class="img-component">
+    <img src="img/components-1-1.png" class="img-component">
+    <img src="img/components-1-2.png" class="img-component">
+    <img src="img/components-1-3.png" class="img-component">
+    <img src="img/components-1-4.png" class="img-component">
+    <img src="img/components-1-5.png" class="img-component">
+    <img src="img/components-1-6.png" class="img-component">
+    <img src="img/components-1-7.png" class="img-component">
+    <img src="img/components-2-0.png" class="img-component">
+    <img src="img/components-2-1.png" class="img-component">
+    <img src="img/components-2-2.png" class="img-component">
+    <img src="img/components-2-3.png" class="img-component">
+    <img src="img/components-2-4.png" class="img-component">
+    <img src="img/components-2-5.png" class="img-component">
+    <img src="img/components-2-6.png" class="img-component">
+    <img src="img/components-2-7.png" class="img-component">
+    <img src="img/components-3-0.png" class="img-component">
+    <img src="img/components-3-1.png" class="img-component">
+    <img src="img/components-3-2.png" class="img-component">
+    <img src="img/components-3-3.png" class="img-component">
+    <img src="img/components-3-4.png" class="img-component">
+    <img src="img/components-3-5.png" class="img-component">
+    <img src="img/components-3-6.png" class="img-component">
+    <img src="img/components-3-7.png" class="img-component">
+    <img src="img/components-4-0.png" class="img-component">
+    <img src="img/components-4-1.png" class="img-component">
+    <img src="img/components-4-2.png" class="img-component">
+    <img src="img/components-4-3.png" class="img-component">
+    <img src="img/components-4-4.png" class="img-component">
+    <img src="img/components-4-5.png" class="img-component">
+    <img src="img/components-4-6.png" class="img-component">
+    <img src="img/components-4-7.png" class="img-component">
+    <img src="img/components-5-0.png" class="img-component">
+    <img src="img/components-5-1.png" class="img-component">
+    <img src="img/components-5-2.png" class="img-component">
+    <img src="img/components-5-3.png" class="img-component">
+    <img src="img/components-5-4.png" class="img-component">
+    <img src="img/components-5-5.png" class="img-component">
+    <img src="img/components-5-6.png" class="img-component">
+    <img src="img/components-5-7.png" class="img-component">
+    <img src="img/components-6-0.png" class="img-component">
+    <img src="img/components-6-1.png" class="img-component">
+    <img src="img/components-6-2.png" class="img-component">
+    <img src="img/components-6-3.png" class="img-component">
+    <img src="img/components-6-4.png" class="img-component">
+    <img src="img/components-6-5.png" class="img-component">
+    <img src="img/components-6-6.png" class="img-component">
+    <img src="img/components-6-7.png" class="img-component">
+    <img src="img/components-7-0.png" class="img-component">
+    <img src="img/components-7-1.png" class="img-component">
+    <img src="img/components-7-2.png" class="img-component">
+    <img src="img/components-7-3.png" class="img-component">
+    <img src="img/components-7-4.png" class="img-component">
+    <img src="img/components-7-5.png" class="img-component">
+    <img src="img/components-7-6.png" class="img-component">
+    <img src="img/components-7-7.png" class="img-component">
 </div>
+
 Here's a little slider that lets you play with each combo
 
 [ sine image w/ x/y combo ]
@@ -218,7 +219,75 @@ Just like before, we can use these to split up an image. Lets start with this le
 
 Now, as we add more and more of these frequencies, we end up with something that becomes closer and closer to the actual image. But I think you'll see the pattern here, as we get a reasonable approximation with just a few of them.
 
+<div class="multi-container">
 <img id="letter-buildup" src="img/img-buildup-0-0.png" class="sketch sketch-letter">
+<div id="letter-buildup-components" class="img-component-container">
+    <img src="img/img-components-0-0.png" class="img-component">
+    <img src="img/img-components-0-1.png" class="img-component">
+    <img src="img/img-components-0-2.png" class="img-component">
+    <img src="img/img-components-0-3.png" class="img-component">
+    <img src="img/img-components-0-4.png" class="img-component">
+    <img src="img/img-components-0-5.png" class="img-component">
+    <img src="img/img-components-0-6.png" class="img-component">
+    <img src="img/img-components-0-7.png" class="img-component">
+    <img src="img/img-components-1-0.png" class="img-component">
+    <img src="img/img-components-1-1.png" class="img-component">
+    <img src="img/img-components-1-2.png" class="img-component">
+    <img src="img/img-components-1-3.png" class="img-component">
+    <img src="img/img-components-1-4.png" class="img-component">
+    <img src="img/img-components-1-5.png" class="img-component">
+    <img src="img/img-components-1-6.png" class="img-component">
+    <img src="img/img-components-1-7.png" class="img-component">
+    <img src="img/img-components-2-0.png" class="img-component">
+    <img src="img/img-components-2-1.png" class="img-component">
+    <img src="img/img-components-2-2.png" class="img-component">
+    <img src="img/img-components-2-3.png" class="img-component">
+    <img src="img/img-components-2-4.png" class="img-component">
+    <img src="img/img-components-2-5.png" class="img-component">
+    <img src="img/img-components-2-6.png" class="img-component">
+    <img src="img/img-components-2-7.png" class="img-component">
+    <img src="img/img-components-3-0.png" class="img-component">
+    <img src="img/img-components-3-1.png" class="img-component">
+    <img src="img/img-components-3-2.png" class="img-component">
+    <img src="img/img-components-3-3.png" class="img-component">
+    <img src="img/img-components-3-4.png" class="img-component">
+    <img src="img/img-components-3-5.png" class="img-component">
+    <img src="img/img-components-3-6.png" class="img-component">
+    <img src="img/img-components-3-7.png" class="img-component">
+    <img src="img/img-components-4-0.png" class="img-component">
+    <img src="img/img-components-4-1.png" class="img-component">
+    <img src="img/img-components-4-2.png" class="img-component">
+    <img src="img/img-components-4-3.png" class="img-component">
+    <img src="img/img-components-4-4.png" class="img-component">
+    <img src="img/img-components-4-5.png" class="img-component">
+    <img src="img/img-components-4-6.png" class="img-component">
+    <img src="img/img-components-4-7.png" class="img-component">
+    <img src="img/img-components-5-0.png" class="img-component">
+    <img src="img/img-components-5-1.png" class="img-component">
+    <img src="img/img-components-5-2.png" class="img-component">
+    <img src="img/img-components-5-3.png" class="img-component">
+    <img src="img/img-components-5-4.png" class="img-component">
+    <img src="img/img-components-5-5.png" class="img-component">
+    <img src="img/img-components-5-6.png" class="img-component">
+    <img src="img/img-components-5-7.png" class="img-component">
+    <img src="img/img-components-6-0.png" class="img-component">
+    <img src="img/img-components-6-1.png" class="img-component">
+    <img src="img/img-components-6-2.png" class="img-component">
+    <img src="img/img-components-6-3.png" class="img-component">
+    <img src="img/img-components-6-4.png" class="img-component">
+    <img src="img/img-components-6-5.png" class="img-component">
+    <img src="img/img-components-6-6.png" class="img-component">
+    <img src="img/img-components-6-7.png" class="img-component">
+    <img src="img/img-components-7-0.png" class="img-component">
+    <img src="img/img-components-7-1.png" class="img-component">
+    <img src="img/img-components-7-2.png" class="img-component">
+    <img src="img/img-components-7-3.png" class="img-component">
+    <img src="img/img-components-7-4.png" class="img-component">
+    <img src="img/img-components-7-5.png" class="img-component">
+    <img src="img/img-components-7-6.png" class="img-component">
+    <img src="img/img-components-7-7.png" class="img-component">
+</div>
+</div>
 
 What happens with a JPEG is the image gets broken up into 8x8 chunks, and then each chunk gets 'fouriered' and saves the images. The number of frequencies that gets saved determines the quality of the image.
 

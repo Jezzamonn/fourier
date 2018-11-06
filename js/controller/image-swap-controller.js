@@ -8,6 +8,7 @@ export default class ImageSwapController {
         this.imageSrcs = [];
 
         this.img = document.getElementById(id);
+        this.index = 0;
     }
 
 	update() {
@@ -16,9 +17,9 @@ export default class ImageSwapController {
         }
         const pos = getScrollPosition(this.img);
         const posAmt = clamp(slurp(1.2, -0.2, pos), 0, 1);
-        const index = clamp(Math.floor(this.imageSrcs.length * posAmt), 0, this.imageSrcs.length - 1);
+        this.index = clamp(Math.floor(this.imageSrcs.length * posAmt), 0, this.imageSrcs.length - 1);
 
-        this.img.src = this.imageSrcs[index];
+        this.img.src = this.imageSrcs[this.index];
     }
 
     isOnScreen() {

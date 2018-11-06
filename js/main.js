@@ -14,6 +14,7 @@ import SkewedPathController from './controller/skewed-path-controller.js';
 import { mePoints } from './points/me-points.js';
 import ImageSwapController from './controller/image-swap-controller.js';
 import { loopLikeAJpeg } from './jpeg.js';
+import ImageBuildUpController from './controller/image-build-up-controller.js';
 
 let conductor = null;
 
@@ -215,13 +216,19 @@ function init() {
 		controller.imageSrcs = imageSrcs;
 		controllers.push(controller);
 	}
+
+	let letterBuildUpController;
 	if (hasElement('letter-buildup')) {
-		let controller = new ImageSwapController('letter-buildup');
+		letterBuildUpController = new ImageSwapController('letter-buildup');
 		const imageSrcs = [];
 		for (let [y, x] of loopLikeAJpeg(8)) {
 			imageSrcs.push('img/img-buildup-' + x + '-' + y + '.png');
 		}
-		controller.imageSrcs = imageSrcs;
+		letterBuildUpController.imageSrcs = imageSrcs;
+		controllers.push(letterBuildUpController);
+	}
+	if (hasElement('letter-buildup-components')) {
+		let controller = new ImageBuildUpController('letter-buildup-components', letterBuildUpController);
 		controllers.push(controller);
 	}
 

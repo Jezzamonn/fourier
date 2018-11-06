@@ -67,6 +67,7 @@ main {
 
 .img-component-container {
 	max-width: 500px;
+	width: 90%;
 	margin: auto;
 	display: grid;
 	grid-template-columns: repeat(8, auto);
