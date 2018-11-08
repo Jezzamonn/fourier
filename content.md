@@ -291,9 +291,9 @@ Now, as we add more and more of these frequencies, we end up with something that
 
 What happens with a JPEG is the image gets broken up into 8x8 chunks, and then each chunk gets 'fouriered' and saves the images. The number of frequencies that gets saved determines the quality of the image.
 
-[ animation of how JPEGs work? ]
-
-(sorry no interactively drawing your own image because I can't find any javascript library to do it)
+<div id="jpeg-example" class="sketch">
+    <img src="img/cat.png" class="sketch-child clear-pixels">
+</div>
 
 ## Conclusion
 

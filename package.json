@@ -38,6 +38,7 @@
     "webpack": "^3.12.0"
   },
   "dependencies": {
+    "browser-image-compression": "0.0.3",
     "fft.js": "^4.0.3",
     "matrix-multiplication": "^0.5.2"
   }

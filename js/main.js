@@ -15,6 +15,7 @@ import { mePoints } from './points/me-points.js';
 import ImageSwapController from './controller/image-swap-controller.js';
 import { loopLikeAJpeg } from './jpeg.js';
 import ImageBuildUpController from './controller/image-build-up-controller.js';
+import JpegCompressorController from './controller/jpeg-compressor-controller.js';
 
 let conductor = null;
 
@@ -229,6 +230,10 @@ function init() {
 	}
 	if (hasElement('letter-buildup-components')) {
 		let controller = new ImageBuildUpController('letter-buildup-components', letterBuildUpController);
+		controllers.push(controller);
+	}
+	if (hasElement('jpeg-example')) {
+		let controller = new JpegCompressorController('jpeg-example');
 		controllers.push(controller);
 	}
 

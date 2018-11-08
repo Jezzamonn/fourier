@@ -137,6 +137,9 @@ main {
 .hidden {
 	opacity: 0;
 }
+.clear-pixels {
+	image-rendering: pixelated;
+}
 
 .multi-container {
 	display: flex;
