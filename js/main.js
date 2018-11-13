@@ -33,16 +33,30 @@ function init() {
 		fourierTitle.period = 15;
 		controllers.push(fourierTitle);
 	}
+
+	const comboWave = getWave(t => Math.sin(2 * Math.PI * t) + 0.5 * Math.sin(6 * Math.PI * t), 128);
 	if (hasElement('combo-sine-wave')) {
 		let controller = new WaveController('combo-sine-wave');
-		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + 0.5 * Math.sin(6 * Math.PI * t), 128));
+		controller.setPath(comboWave);
 		controllers.push(controller);
 	}
 	if (hasElement('combo-sine-wave-split')) {
 		let controller = new WaveSplitController('combo-sine-wave-split');
-		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + 0.5 * Math.sin(6 * Math.PI * t), 128));
+		controller.setPath(comboWave);
 		controller.fadeFrequencies = false;
 		controllers.push(controller);
+	}
+	if (hasElement('together-button')) {
+		const button = document.getElementById('together-button');
+		button.addEventListener('click', () => playSoundWave(t => Math.sin(2 * Math.PI * t) + 0.5 * Math.sin(6 * Math.PI * t)));
+	}
+	if (hasElement('split-button-1')) {
+		const button = document.getElementById('split-button-1');
+		button.addEventListener('click', () => playSoundWave(t => 0.5 * Math.sin(6 * Math.PI * t)));
+	}
+	if (hasElement('split-button-2')) {
+		const button = document.getElementById('split-button-2');
+		button.addEventListener('click', () => playSoundWave(t => Math.sin(2 * Math.PI * t)));
 	}
 
 	if (hasElement('square-wave')) {
@@ -111,19 +125,6 @@ function init() {
 			});
 		}
 		controllers.push(controller);
-	}
-
-	if (hasElement('together-button')) {
-		const button = document.getElementById('together-button');
-		button.addEventListener('click', () => playSoundWave([220, 660]));
-	}
-	if (hasElement('split-button-1')) {
-		const button = document.getElementById('split-button-1');
-		button.addEventListener('click', () => playSoundWave([660]));
-	}
-	if (hasElement('split-button-2')) {
-		const button = document.getElementById('split-button-2');
-		button.addEventListener('click', () => playSoundWave([220]));
 	}
 	
 	if (hasElement('complex-sinusoid')) {
