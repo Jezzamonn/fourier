@@ -16,6 +16,7 @@ import ImageSwapController from './controller/image-swap-controller.js';
 import { loopLikeAJpeg } from './jpeg.js';
 import ImageBuildUpController from './controller/image-build-up-controller.js';
 import JpegCompressorController from './controller/jpeg-compressor-controller.js';
+import { playSoundWave } from './synth.js';
 
 let conductor = null;
 
@@ -110,6 +111,11 @@ function init() {
 			});
 		}
 		controllers.push(controller);
+	}
+
+	if (hasElement('beep-button')) {
+		const button = document.getElementById('beep-button');
+		button.addEventListener('click', () => playSoundWave());
 	}
 	
 	if (hasElement('complex-sinusoid')) {

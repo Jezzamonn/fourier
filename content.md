@@ -7,6 +7,8 @@ By the end you should have a good idea about
 - Some practical uses of Fourier transforms
 - Some pointless but cool uses of Fourier transforms
 
+<button id="beep-button" class="button">BEEP</button>
+
 ## So what is this thing?
 
 Put simply, the Fourier transform is a way of splitting something up into a bunch of sine waves. As usual, the name comes from some person called Fourier who lived a long time ago.
