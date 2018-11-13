@@ -35,12 +35,12 @@ function init() {
 	}
 	if (hasElement('combo-sine-wave')) {
 		let controller = new WaveController('combo-sine-wave');
-		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + 0.5 * Math.sin(20 * Math.PI * t), 128));
+		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + 0.5 * Math.sin(6 * Math.PI * t), 128));
 		controllers.push(controller);
 	}
 	if (hasElement('combo-sine-wave-split')) {
 		let controller = new WaveSplitController('combo-sine-wave-split');
-		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + 0.5 * Math.sin(20 * Math.PI * t), 128));
+		controller.setPath(getWave(t => Math.sin(2 * Math.PI * t) + 0.5 * Math.sin(6 * Math.PI * t), 128));
 		controller.fadeFrequencies = false;
 		controllers.push(controller);
 	}
@@ -113,9 +113,17 @@ function init() {
 		controllers.push(controller);
 	}
 
-	if (hasElement('beep-button')) {
-		const button = document.getElementById('beep-button');
-		button.addEventListener('click', () => playSoundWave());
+	if (hasElement('together-button')) {
+		const button = document.getElementById('together-button');
+		button.addEventListener('click', () => playSoundWave([220, 660]));
+	}
+	if (hasElement('split-button-1')) {
+		const button = document.getElementById('split-button-1');
+		button.addEventListener('click', () => playSoundWave([660]));
+	}
+	if (hasElement('split-button-2')) {
+		const button = document.getElementById('split-button-2');
+		button.addEventListener('click', () => playSoundWave([220]));
 	}
 	
 	if (hasElement('complex-sinusoid')) {

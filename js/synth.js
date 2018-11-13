@@ -1,15 +1,16 @@
 const SAMPLE_RATE = 44100;
 
-export function playSoundWave(wave) {
+export function playSoundWave(freqs) {
     const audioContext = new AudioContext();
     const buffer = audioContext.createBuffer(1, SAMPLE_RATE, SAMPLE_RATE);
     
     const channel = buffer.getChannelData(0);
-    const frequency = 440; // A4
     for (let i = 0; i < buffer.length; i ++) {
-        // Where we are in the save, in seconds.
+        // Where we are in the sound, in seconds.
         const t = i / SAMPLE_RATE;
-        channel[i] = Math.sin(2 * Math.PI * frequency * t);
+        for (const freq of freqs) {
+            channel[i] += Math.sin(2 * Math.PI * freq * t);
+        }
     }
 
     const source = audioContext.createBufferSource();

@@ -7,8 +7,6 @@ By the end you should have a good idea about
 - Some practical uses of Fourier transforms
 - Some pointless but cool uses of Fourier transforms
 
-<button id="beep-button" class="button">BEEP</button>
-
 ## So what is this thing?
 
 Put simply, the Fourier transform is a way of splitting something up into a bunch of sine waves. As usual, the name comes from some person called Fourier who lived a long time ago.
@@ -63,7 +61,13 @@ Um, ok. So it looks cool. But why?
 
 Turns out a lot of things in the real world interact based on these sine waves. We often call them the frequencies of a wave.
 
-The most obvious example is music – when we hear a sound, we don’t hear the shape of the sound wave, we hear the different frequencies of the sine waves that make up the sound.
+The most obvious example is music – when we hear a sound, we don’t hear the shape of the sound wave, we hear the different frequencies of the sine waves that make up the sound. Being able to split them up on a computer can give us an understanding of what a person actually hears.
+
+<button id="together-button" class="button">Together</button>
+
+<button id="split-button-1" class="button">Split (high)</button>
+
+<button id="split-button-2" class="button">Split (low)</button>
 
 But there's another reason to split them up too. Normally on a computer we represent this wave as a series of points.
 
@@ -110,7 +114,7 @@ So, we can apply this process to any drawing really! Now it’s your chance to p
 <div class="sketch" >
     <canvas id="draw-zone" class="sketch-child" width=500 height=500></canvas>
     <p id="draw-zone-instruction" class="instruction">Draw here!</p>
-    <button id="draw-zone-undo-button" class="button">Undo</button>
+    <button id="draw-zone-undo-button" class="button embedded-button">Undo</button>
 </div>
 <canvas id="circle-zone" class="sketch" width=500 height=500></canvas>
 </div>
