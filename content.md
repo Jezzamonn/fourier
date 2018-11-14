@@ -23,6 +23,12 @@ This wavy pattern here can be split up into sine waves. That is, when we add up 
 
 The Fourier transform is a way for us to take the combined wave, and get each of the sine waves back out. In this example, you can almost do it in your head, just by looking at the original wave.
 
+<button id="together-button" class="button">Together</button>
+
+<button id="split-button-1" class="button">Split (high)</button>
+
+<button id="split-button-2" class="button">Split (low)</button>
+
 But we can use this process on waves that don't look like they're made of sine waves.
 
 Let's take a look at this guy. It’s called a square wave.
@@ -41,6 +47,8 @@ We need a lot of them this time – technically an infinite amount to perfectly 
 *Drag the slider above to play with how many sine waves there are.*
 
 You'll notice that actually the first few sine waves are the ones that make the biggest difference. With the slider halfway, we have the general shape of the wave, but it's all wiggly. We just need the rest of the small ones to make the wigglyness flatten out.
+
+<button id="square-wave-button" class="button">Square Wave</button>
 
 This process works like that for any repeating line. Give it a go, try draw your own!
 
@@ -62,12 +70,6 @@ Um, ok. So it looks cool. But why?
 Turns out a lot of things in the real world interact based on these sine waves. We often call them the frequencies of a wave.
 
 The most obvious example is music – when we hear a sound, we don’t hear the shape of the sound wave, we hear the different frequencies of the sine waves that make up the sound. Being able to split them up on a computer can give us an understanding of what a person actually hears.
-
-<button id="together-button" class="button">Together</button>
-
-<button id="split-button-1" class="button">Split (high)</button>
-
-<button id="split-button-2" class="button">Split (low)</button>
 
 But there's another reason to split them up too. Normally on a computer we represent this wave as a series of points.
 

@@ -1,6 +1,16 @@
 const SAMPLE_RATE = 44100;
+const baseFrequency = 220;
 
-export function playSoundWave(fn) {
+/**
+ * 
+ * @param {function(number):number|Array<number>} wave 
+ */
+export function playSoundWave(wave) {
+    if (wave.constructor === Array) {
+        // transform our wave array into a function we can call
+        wave = getWaveFunction(wave);
+    }
+
     const audioContext = new AudioContext();
     const buffer = audioContext.createBuffer(1, SAMPLE_RATE, SAMPLE_RATE);
     
@@ -9,11 +19,28 @@ export function playSoundWave(fn) {
         // Where we are in the sound, in seconds.
         const t = i / SAMPLE_RATE;
         // The waves are visually at a very low frequency, we need to bump that up a bunch
-        channel[i] += fn(220 * t);
+        channel[i] += wave(baseFrequency * t);
     }
 
     const source = audioContext.createBufferSource();
     source.buffer = buffer;
     source.connect(audioContext.destination);
     source.start();
+}
+
+/**
+ * Creates a function that gives the value of a wave at a certain point.
+ * @param {Array<number>} wave 
+ * @returns {function(number):number} A wave function (mainly to be used by the playSoundWave thing)
+ */
+export function getWaveFunction(wave) {
+    // TODO: Interpolation?
+    return t => {
+        t %= 1;
+        if (t < 0) {
+            t ++;
+        }
+        const index = Math.floor(wave.length * t);
+        return wave[index];
+    }
 }

@@ -13,6 +13,7 @@ export default class WaveSplitController extends CanvasController {
         
         this.animAmt = 0;
         this.wavePoints = [];
+        this.partialWave = [];
         this.fourierPoints = [];
 
         this.waveTop = 0;
@@ -97,7 +98,7 @@ export default class WaveSplitController extends CanvasController {
         // Draw its little babies.
         // Also sum up their values to draw the partial wave.
 
-        let paritialWave = this.wavePoints.slice().fill(0);
+        this.partialWave = this.wavePoints.slice().fill(0);
         const renderedBabies = Math.round(slurp(1, numBabies, this.fourierAmt));
         for (let babe = 0; babe < renderedBabies; babe ++) {
             let babeAmt = babe / (numBabies - 1);
@@ -115,7 +116,7 @@ export default class WaveSplitController extends CanvasController {
                 wave[i] = slurp(fullWaveAmt, sineAmt, splitAmt);
 
                 // While we're here, update the partial wave
-                paritialWave[i] += wave[i];
+                this.partialWave[i] += wave[i];
             }
 
             this.context.beginPath();
@@ -141,7 +142,7 @@ export default class WaveSplitController extends CanvasController {
         curWavePos -= this.waveTop;
         if (this.fourierAmt == 1) {
             // Eh just make it the full wave.
-            paritialWave = this.wavePoints;
+            this.partialWave = this.wavePoints;
         }
 
         // Now, lets go back and draw the main wave
@@ -152,7 +153,7 @@ export default class WaveSplitController extends CanvasController {
         renderWave({
             context: this.context,
             width: this.width,
-            wave: paritialWave,
+            wave: this.partialWave,
             yPosition: top + sizeMultiple * curWavePos,
             yMultiple: sizeMultiple * spacingMultiplier,
             startXAmt: startXAmt

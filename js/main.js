@@ -70,10 +70,13 @@ function init() {
 		controllers.push(controller);
 	}
 
-	let squareWaveBuildUpSlider;
+	let squareWaveBuildUpSlider, squareWaveButton;
 	if (hasElement('square-wave-build-up-slider')) {
 		squareWaveBuildUpSlider = new RangeController('square-wave-build-up-slider');
 		controllers.push(squareWaveBuildUpSlider);
+	}
+	if (hasElement('square-wave-button')) {
+		squareWaveButton = document.getElementById('square-wave-button');
 	}
 	if (hasElement('square-wave-build-up')) {
 		let controller = new WaveSplitController('square-wave-build-up');
@@ -81,6 +84,9 @@ function init() {
 		controller.splitAnim = false;
 		if (squareWaveBuildUpSlider != null) {
 			squareWaveBuildUpSlider.onValueChange.push(val => controller.fourierAmt = val);
+		}
+		if (squareWaveButton) {
+			squareWaveButton.addEventListener('click', () => playSoundWave(controller.partialWave));
 		}
 		controllers.push(controller);
 	}
