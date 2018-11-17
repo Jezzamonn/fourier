@@ -23,11 +23,17 @@ This wavy pattern here can be split up into sine waves. That is, when we add up 
 
 The Fourier transform is a way for us to take the combined wave, and get each of the sine waves back out. In this example, you can almost do it in your head, just by looking at the original wave.
 
+Why? Turns out a lot of things in the real world interact based on these sine waves. We usually call them the wave's frequencies.
+
+The most obvious example is sound – when we hear a sound, we don’t hear that squiggly line, but we hear the different frequencies of the sine waves that make up the sound.
+
 <button id="together-button" class="button">Together</button>
 
 <button id="split-button-1" class="button">Split (high)</button>
 
 <button id="split-button-2" class="button">Split (low)</button>
+
+Being able to split them up on a computer can give us an understanding of what a person actually hears.
 
 But we can use this process on waves that don't look like they're made of sine waves.
 
@@ -44,11 +50,21 @@ We need a lot of them this time – technically an infinite amount to perfectly 
 <canvas id="square-wave-build-up" class="sketch" width=500 height=500></canvas>
 <input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
 
+<button id="square-wave-button" class="button">Play Wave</button>
+
 *Drag the slider above to play with how many sine waves there are.*
 
-You'll notice that actually the first few sine waves are the ones that make the biggest difference. With the slider halfway, we have the general shape of the wave, but it's all wiggly. We just need the rest of the small ones to make the wigglyness flatten out.
+Visually, you'll notice that actually the first few sine waves are the ones that make the biggest difference. With the slider halfway, we have the general shape of the wave, but it's all wiggly. We just need the rest of the small ones to make the wigglyness flatten out.
 
-<button id="square-wave-button" class="button">Square Wave</button>
+When you listen to the wave, the you'll hear the sound get lower. Because we're removing the higher frequencies.
+
+Aside from understanding what the wave sounds like, there's another reason to split it up into frequencies. Normally on a computer we store a wave as a series of points.
+
+[diagram with x and y points mapped out]
+
+What we can do instead is represent it as a bunch of sine waves. And if we want to represent it while using less data, we can just ignore the smaller frequencies and get something that sounds pretty similar to a person.
+
+This is essentially what MP3s do, except they're more clever about which frequencies they keep and which ones they throw away.
 
 This process works like that for any repeating line. Give it a go, try draw your own!
 
@@ -60,25 +76,13 @@ This process works like that for any repeating line. Give it a go, try draw your
 <canvas id="wave-draw-split" class="sketch" width=500 height=500></canvas>
 </div>
 <input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
-<button id="wave-draw-button" class="button">Square Wave</button>
+<button id="wave-draw-button" class="button">Play Wave</button>
 
 *Move the slider to see how as we add move sine waves, it gets closer and closer to your drawing*
 
 Again, aside from the extra wigglyness, the wave looks pretty similar with just half of the sine waves.
 
-Um, ok. So it looks cool. But why?
-
-Turns out a lot of things in the real world interact based on these sine waves. We often call them the frequencies of a wave.
-
-The most obvious example is music – when we hear a sound, we don’t hear the shape of the sound wave, we hear the different frequencies of the sine waves that make up the sound. Being able to split them up on a computer can give us an understanding of what a person actually hears.
-
-But there's another reason to split them up too. Normally on a computer we represent this wave as a series of points.
-
-[diagram with x and y points mapped out]
-
-What we can do instead, as represent it as a bunch of sine waves. And if we want to represent it while using less data, we can just ignore the smaller frequencies and get something that looks, and sounds pretty similar to a person.
-
-This is essentially what MP3s do, except they're more clever about which frequencies they keep and which ones they throw away.
+So in this case, we can use fourier transforms to get an understanding of the fundamental properties of a wave, and then we can use that for things like compression.
 
 Ok, now let's dig more into the Fourier transform. This next part looks cool, but also gives you a bit more understanding of what the Fourier transform does. But mostly looks cool.
 
@@ -129,13 +133,13 @@ Can we use this for real data? Well, we could! In reality we have another data f
 
 <canvas id="fourier-title" class="sketch" width=500 height=300></canvas>
 
-Ok, that's it for fourier transforms right? WRONG!
+So, we can't use Fourier transforms to compress shapes in an interesting way. But there's another type of data that we can use Fourier transforms for.
 
 ## JPEGs
 
-Alright, now we're going to go into a new area. JPEGs! Did you know fourier transforms can also be used on images? That's how JPEGs works. We're applying the same principles to images -- splitting up something into a bunch of sine waves.
+Did you know Fourier transforms can also be used on images? That's how JPEGs works. We're applying the same principles to images -- splitting up something into a bunch of sine waves, and then only storing the important ones.
 
-Except, we now need sine waves that can represent an image, because remember we need to be able to add them back up and get back to our original iamge. How do we do that? Well, each of our frequencies will be images too. Instead of a wave with a top and a bottom, we now have images with black and sections.
+Now we're dealing with 2D images, we need a different type of sine wave. We need to have something that no matter what image we have, we can add up a bunch of these sine waves to get back to our original iamge. How do we do that? Well, each of our frequencies will be images too. Instead of a wave that's a line with a top and a bottom, we now have images with black and white sections.
 
 We have ones in the X dimension,
 
@@ -218,11 +222,9 @@ For an 8x8 image, here are all the combinations
     <img src="img/components-7-7.png" class="img-component">
 </div>
 
-Here's a little slider that lets you play with each combo
+What do they represent? Well the first one is the average color of the image. Smaller waves relate to how sharp the edges in the images are.
 
-[ sine image w/ x/y combo ]
-
-Just like before, we can use these to split up an image. Lets start with this letter 'A'. It's pretty small, but we need it to be small otherwise we'll end up with too many other images.
+And now we can use these to split up an image. Let's start with this letter 'A'. It's pretty small, but we need it to be small otherwise we'll end up with too many other images.
 
 <img src="img/a.png" class="sketch sketch-letter">
 
@@ -298,7 +300,7 @@ Now, as we add more and more of these frequencies, we end up with something that
 </div>
 </div>
 
-What happens with a JPEG is the image gets broken up into 8x8 chunks, and then each chunk gets 'fouriered' and saves the images. The number of frequencies that gets saved determines the quality of the image.
+What happens with a JPEG is the image gets broken up into 8x8 chunks, and then each chunk gets 'fouriered' and saves the images. We use a set of frequencies to determine how light or dark each pixel is, and then another set for the color of each section. The number of frequencies that we use determines the quality of the image.
 
 <div id="jpeg-example" class="sketch">
     <img src="img/cat.png" class="sketch-child clear-pixels">
@@ -309,11 +311,11 @@ What happens with a JPEG is the image gets broken up into 8x8 chunks, and then e
 So lets recap:
 
 - Fourier transforms are things that let us take something and split it up into its frequencies.
-- We can use them to understand more what different sounds are like
-- We can use them to compress data
+- The frequencies tell us about some fundamental properties of the data we have
+- And can compress data by only storing the important frequencies
 - And we can also use them to make cool looking animations with a bunch of circles
 
-This is just scratching the surface into some applications. The Fourier transform is an extremely powerful tool, because splitting things up into waves is so fundamental. They're used in a lot of fields, including circuit design, mobile phone signals, magnetic resonance imaging (MRI), and quantum physics!
+This is just scratching the surface into some applications. The Fourier transform is an extremely powerful tool, because splitting things up into frequencies is so fundamental. They're used in a lot of fields, including circuit design, mobile phone signals, magnetic resonance imaging (MRI), and quantum physics!
 
 ## Questions for the curious
 
@@ -322,15 +324,13 @@ If you're interested learning about more applications you might want to think ab
 - How do musical tuners use Fourier transforms?
 - How do equalizer displays use Fourier transforms?
 - Why do we need use Fourier transforms to tell how loud something is?
-- How do we do a Fourier transform of a whole song, rather than just a wave?
 
-If you're interested in the underlying principles of how it works, here are some questions you can use to guide your research:
+I skipped most of the math stuff here, but if you're interested in the underlying principles of how it works, here are some questions you can use to guide your research:
 
 - How do you mathematically represent a Fourier transform?
-- What's the difference between a continuous time Fourier transform and a discrete time fourier transform?
-- What are the other types of frequency domain transforms (Fourier transform is not the only one!)
+- What's the difference between a continuous time Fourier transform and a discrete time Fourier transform?
 - How do you computationally do a Fourier transform?
-- What window functions and why would you use them?
+- What are window functions and why would you use them?
 
 ## Further 'reading'
 
