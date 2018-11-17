@@ -58,14 +58,6 @@ Visually, you'll notice that actually the first few sine waves are the ones that
 
 When you listen to the wave, the you'll hear the sound get lower. Because we're removing the higher frequencies.
 
-Aside from understanding what the wave sounds like, there's another reason to split it up into frequencies. Normally on a computer we store a wave as a series of points.
-
-[diagram with x and y points mapped out]
-
-What we can do instead is represent it as a bunch of sine waves. And if we want to represent it while using less data, we can just ignore the smaller frequencies and get something that sounds pretty similar to a person.
-
-This is essentially what MP3s do, except they're more clever about which frequencies they keep and which ones they throw away.
-
 This process works like that for any repeating line. Give it a go, try draw your own!
 
 <div class="multi-container">
@@ -81,6 +73,18 @@ This process works like that for any repeating line. Give it a go, try draw your
 *Move the slider to see how as we add move sine waves, it gets closer and closer to your drawing*
 
 Again, aside from the extra wigglyness, the wave looks pretty similar with just half of the sine waves.
+
+There's also another reason to split it up into frequencies. We can use a Fourier transform to only store the important parts of a sound.
+
+Normally on a computer we store a wave as a series of points.
+
+[diagram with x and y points mapped out]
+
+What we can do instead is represent it as a bunch of sine waves. And if we want to represent it while using less data, we can just ignore the smaller frequencies and get something that sounds pretty similar to a person.
+
+[diagram with all the frequencies]
+
+This is essentially what MP3s do, except they're more clever about which frequencies they keep and which ones they throw away.
 
 So in this case, we can use fourier transforms to get an understanding of the fundamental properties of a wave, and then we can use that for things like compression.
 
