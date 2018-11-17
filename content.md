@@ -60,6 +60,7 @@ This process works like that for any repeating line. Give it a go, try draw your
 <canvas id="wave-draw-split" class="sketch" width=500 height=500></canvas>
 </div>
 <input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
+<button id="wave-draw-button" class="button">Square Wave</button>
 
 *Move the slider to see how as we add move sine waves, it gets closer and closer to your drawing*
 

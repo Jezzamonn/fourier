@@ -91,7 +91,7 @@ function init() {
 		controllers.push(controller);
 	}
 
-	let waveDrawController, waveDrawSliderController;
+	let waveDrawController, waveDrawSliderController, waveDrawButton;
 	if (hasElement('wave-draw')) {
 		waveDrawController = new WaveDrawController('wave-draw');
 		controllers.push(waveDrawController);
@@ -106,6 +106,9 @@ function init() {
 		waveDrawSliderController = new RangeController('wave-draw-slider');
 		waveDrawSliderController.animate = false;
 		controllers.push(waveDrawSliderController);
+	}
+	if (hasElement('wave-draw-button')) {
+		waveDrawButton = document.getElementById('wave-draw-button');
 	}
 	if (hasElement('wave-draw-split')) {
 		let controller = new WaveSplitController('wave-draw-split');
@@ -129,6 +132,9 @@ function init() {
 				controller.fourierAmt = val;
 				controller.splitAnim = false;
 			});
+		}
+		if (waveDrawButton) {
+			waveDrawButton.addEventListener('click', () => playSoundWave(controller.partialWave));
 		}
 		controllers.push(controller);
 	}

@@ -1,3 +1,5 @@
+import { slurp } from "./util";
+
 const SAMPLE_RATE = 44100;
 const baseFrequency = 220;
 
@@ -35,12 +37,17 @@ export function playSoundWave(wave) {
  */
 export function getWaveFunction(wave) {
     // TODO: Interpolation?
+    const min = Math.min(...wave);
+    const max = Math.max(...wave)
     return t => {
         t %= 1;
         if (t < 0) {
             t ++;
         }
         const index = Math.floor(wave.length * t);
-        return wave[index];
+        // normalise to range 0 to 1
+        const waveAmt = (wave[index] - min) / (max - min);
+        // Then adjust to some volume.
+        return slurp(-1, 1, waveAmt);
     }
 }
