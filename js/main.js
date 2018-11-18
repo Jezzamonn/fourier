@@ -17,6 +17,7 @@ import { loopLikeAJpeg } from './jpeg.js';
 import ImageBuildUpController from './controller/image-build-up-controller.js';
 import JpegCompressorController from './controller/jpeg-compressor-controller.js';
 import { playSoundWave } from './synth.js';
+import WaveSamplesController from './controller/wave-samples-controller.js';
 
 let conductor = null;
 
@@ -138,7 +139,17 @@ function init() {
 		}
 		controllers.push(controller);
 	}
-	
+	if (hasElement('wave-samples')) {
+		const waveSamplesController = new WaveSamplesController('wave-samples');
+		if (waveDrawController) {
+			waveDrawController.onDrawingEnd.push(() => {
+		        // Map from [0, 1] to [-1, 1]
+				waveSamplesController.setWave(waveDrawController.normPath);
+			});
+		}
+		controllers.push(waveSamplesController);
+	}
+
 	if (hasElement('complex-sinusoid')) {
 		let controller = new SkewedSinusoidController('complex-sinusoid');
 		controllers.push(controller);

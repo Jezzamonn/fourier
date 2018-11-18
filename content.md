@@ -78,11 +78,11 @@ There's also another reason to split it up into frequencies. We can use a Fourie
 
 Normally on a computer we store a wave as a series of points.
 
-[diagram with x and y points mapped out]
+<canvas id="wave-samples" class="sketch" width=500 height=500></canvas>
 
 What we can do instead is represent it as a bunch of sine waves. And if we want to represent it while using less data, we can just ignore the smaller frequencies and get something that sounds pretty similar to a person.
 
-[diagram with all the frequencies]
+<canvas id="wave-frequencies" class="sketch" width=500 height=500></canvas>
 
 This is essentially what MP3s do, except they're more clever about which frequencies they keep and which ones they throw away.
 

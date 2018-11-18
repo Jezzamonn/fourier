@@ -1,1 +1,2 @@
-<img id="letter-buildup" src="img/img-buildup-0-0.png" class="sketch sketch-letter">
+<canvas id="wave-draw" class="sketch" width=500 height=300></canvas>
+<canvas id="wave-samples" class="sketch" width=500 height=500></canvas>
