@@ -38,7 +38,7 @@ export default class WaveSamplesController extends CanvasController {
         }
 
         this.renderWave();
-        this.renderMarker();
+        this.renderLabel();
     }
 
     renderWave() {
@@ -55,10 +55,11 @@ export default class WaveSamplesController extends CanvasController {
         this.context.stroke();
     }
 
-    renderMarker() {
+    renderLabel() {
         this.context.beginPath();
         this.context.lineWidth = 2;
         this.context.strokeStyle = palette.cyan;
+        this.context.fillStyle = palette.cyan;
 
         // What point from the wave to use
         const waveAmt = this.animAmt;
@@ -67,9 +68,21 @@ export default class WaveSamplesController extends CanvasController {
         const x = this.width * waveAmt;
         const y = this.yPos + this.yMultiple * waveValue;
 
+        // draw li'l circle (?)
         this.context.arc(x, y, 2, 0, 2 * Math.PI);
-
         this.context.stroke();
 
+        // draw the line up to the label
+        const labelDist = 0.1 * this.height;
+
+        this.context.beginPath();
+        this.context.moveTo(x, y);
+        this.context.lineTo(x + labelDist, y - labelDist);
+        this.context.stroke();
+
+        const label = `t = ${waveAmt.toFixed(2)}\namplitude = ${waveValue.toFixed(2)}`
+        this.context.font = '16px "Open Sans", sans-serif';
+        this.context.fillText(label, x + labelDist, y - labelDist);
     }
+
 }

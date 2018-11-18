@@ -12,6 +12,7 @@ export default class CanvasController {
 			height = this.canvas.height;
 		}
 
+		/** @type {CanvasRenderingContext2D} */
 		this.context = this.canvas.getContext('2d');
 		this.width = width;
 		this.height = height;
