@@ -26,8 +26,8 @@ export default class WaveSamplesController extends CanvasController {
 
     update(dt, mousePosition) {
         const pos = 1 - this.getScrollPosition();
-        this.sampleAmt = clamp(pos, 0, 1);
-        this.waveShiftAmt = slurp(-0.8, -1.2, pos);
+        this.sampleAmt = pos;
+        this.waveShiftAmt = slurp(0.1, -0.1, pos);
     }
 
 	render() {
@@ -52,7 +52,7 @@ export default class WaveSamplesController extends CanvasController {
             context: this.context,
             width: this.width,
             wave: this.wave,
-            startXAmt: this.waveShiftAmt,
+            startXAmt: this.waveShiftAmt - 1,
             yPosition: this.yPos,
             yMultiple: this.yMultiple,
             type: 'wave'
@@ -65,7 +65,7 @@ export default class WaveSamplesController extends CanvasController {
             context: this.context,
             width: this.width,
             wave: this.wave,
-            startXAmt: this.waveShiftAmt,
+            startXAmt: this.waveShiftAmt - 1,
             yPosition: this.yPos,
             yMultiple: this.yMultiple,
             type: 'samples'
@@ -74,7 +74,7 @@ export default class WaveSamplesController extends CanvasController {
 
     renderLabel() {
         // What point from the wave to use
-        const waveAmt = this.sampleAmt;
+        const waveAmt = (this.sampleAmt + 1) % 1;
         const waveIndex = Math.floor((this.wave.length - 1) * waveAmt);
         const waveValue = this.wave[waveIndex];
 
