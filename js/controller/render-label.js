@@ -13,28 +13,28 @@ export function renderLabel(context, text, x, y, labelDist, color, minX, maxX, t
     context.strokeStyle = color;
     context.fillStyle = color;
 
-    // TODO: move this back to the wave samples controller
-    // draw li'l circle (?)
-    context.arc(x, y, 2, 0, 2 * Math.PI);
-    context.stroke();
-
     context.font = '16px "Open Sans", sans-serif';
     const textMetrics = context.measureText(text);
+    const textWidth = textMetrics.width;
 
+    // For the moment, set it to what it would be if it was facing the right
     let labelX = x + labelDist;
-    if (labelX + textMetrics.width + textPadding > maxX) {
-        labelX = maxX - textMetrics.width - textPadding;
-    }
-    if (labelX - textPadding < minX) {
-        labelX = minX + textPadding;
-    }
-    let labelY = y - labelDist;
+    const labelY = y - labelDist;
 
-    context.fillText(text, labelX, labelY);
+    if (labelX + textWidth + textPadding < maxX) {
+        // slanting to the right
+        labelX = x + labelDist;
+        context.fillText(text, labelX + textPadding, labelY - textPadding);
+    }
+    else {
+        // slanting to the left
+        labelX = x - labelDist;
+        context.fillText(text, labelX - textWidth - textPadding, labelY - textPadding)
+    }
 
     context.beginPath();
     context.moveTo(x, y);
-    context.lineTo(labelX - textPadding, labelY + textPadding);
+    context.lineTo(labelX, labelY);
     context.stroke();
 
 }
