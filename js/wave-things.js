@@ -46,7 +46,7 @@ export function squareWave(t) {
     return t < 0.5 ? -1 : 1
 }
 
-export function renderWave({context, wave, width, yPosition=0, yMultiple, startXAmt=0}) {
+export function renderWave({context, wave, width, yPosition=0, yMultiple, startXAmt=0, type='wave'}) {
     let startI = 0;
     // (I think the wavelength of the wave can be configured by changing the 1 here)
     const step = 1 / wave.length;
@@ -57,11 +57,18 @@ export function renderWave({context, wave, width, yPosition=0, yMultiple, startX
         const x = width * xAmt;
         const y = yPosition + yMultiple * wave[index];
 
-        if (i == 0) {
-            context.moveTo(x, y);
+        if (type == 'wave') {
+            if (i == 0) {
+                context.moveTo(x, y);
+            }
+            else {
+                context.lineTo(x, y);
+            }
         }
-        else {
-            context.lineTo(x, y);
+        else if (type == 'samples') {
+            context.beginPath();
+            context.arc(x, y, 2, 0, 2 * Math.PI);
+            context.fill();
         }
     }
 }
