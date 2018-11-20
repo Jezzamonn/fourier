@@ -34,23 +34,30 @@ export default class HeadingController extends CanvasController {
         this.context.beginPath();
         this.context.strokeStyle = palette.orange;
         this.context.lineWidth = 2;
-        const freq = 10;
-        for (let i = 0; i <= this.width; i += 3) {
-            // some some arbitray mapping to real world things
-            const t = i / 500 + this.animAmt;
-            const waveAmt = 0.5 + 0.5 * Math.sin(2 * Math.PI * freq * t);
 
-            const x = i;
-            const y = slurp(0, this.height, waveAmt);
-
-            if (i == 0) {
-                this.context.moveTo(x, y);
-            }
-            else {
-                this.context.lineTo(x, y);
+        const numLines = 4;
+        for (let j = 0; j < numLines; j ++) {
+            const waveTop = this.height * j / numLines;
+            const waveBottom = this.height * (j + 1) / numLines;
+            const freq = 2 * Math.pow(2, j);
+            for (let i = 0; i <= this.width; i += 3) {
+                // some some arbitray mapping to real world things
+                const t = i / 500 + this.animAmt;
+                const waveAmt = 0.5 + 0.5 * Math.sin(2 * Math.PI * freq * t);
+    
+                const x = i;
+                const y = slurp(waveTop, waveBottom, slurp(0.1, 0.9, waveAmt));
+    
+                if (i == 0) {
+                    this.context.moveTo(x, y);
+                }
+                else {
+                    this.context.lineTo(x, y);
+                }
             }
         }
         this.context.stroke();
+        this.context.globalAlpha = 1;
     }
 
 }
