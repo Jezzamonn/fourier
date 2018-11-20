@@ -9,7 +9,6 @@ export default class HeadingController extends CanvasController {
         super(id, width, height);
 
         this.animAmt = 0;
-        this.period = 10;
 
         this.onResize();
     }
@@ -24,8 +23,7 @@ export default class HeadingController extends CanvasController {
     }
 
 	update(dt, mousePosition) {
-        this.animAmt += dt / this.period;
-        this.animAmt %= 1;
+        this.animAmt += dt;
     }
 
 	render() {
@@ -39,10 +37,13 @@ export default class HeadingController extends CanvasController {
         for (let j = 0; j < numLines; j ++) {
             const waveTop = this.height * j / numLines;
             const waveBottom = this.height * (j + 1) / numLines;
-            const freq = 2 * Math.pow(2, j);
+
+            const freq = 2 * Math.pow(2, (numLines - 1) - j);
+            const speed = 0.05 + 0.02 * j;
+
             for (let i = 0; i <= this.width; i += 3) {
                 // some some arbitray mapping to real world things
-                const t = i / 500 + this.animAmt;
+                const t = i / 500 + speed * this.animAmt;
                 const waveAmt = 0.5 + 0.5 * Math.sin(2 * Math.PI * freq * t);
     
                 const x = i;
