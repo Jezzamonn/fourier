@@ -15,4 +15,5 @@ export const palette = {
 	blue: '#4657d7',
 	cyan: '#57a7cc',
 	pink: '#e91e63',
+	orange: '#ed7656',
 }

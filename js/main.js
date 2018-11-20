@@ -18,12 +18,18 @@ import ImageBuildUpController from './controller/image-build-up-controller.js';
 import JpegCompressorController from './controller/jpeg-compressor-controller.js';
 import { playSoundWave } from './synth.js';
 import WaveSamplesController from './controller/wave-samples-controller.js';
+import HeadingController from './controller/heading-controller.js';
 
 let conductor = null;
 
 function init() {
 
 	let controllers = [];
+
+	if (hasElement('header-background')) {
+		let controller = new HeadingController('header-background');
+		controllers.push(controller);
+	}
 
 	if (hasElement('fourier-title')) {
 		let fourierTitle = new EpicyclesController('fourier-title');

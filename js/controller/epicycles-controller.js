@@ -142,7 +142,7 @@ export default class EpicyclesController extends CanvasController {
         const numFouriers = Math.round(slurp(2, this.fourierData.length, this.fourierAmt));
         for (let i = 0; i < numFouriers; i ++) {
             const amplitude = this.fourierData[i].amplitude;
-            const angle = 2 * Math.PI * this.fourierData[i].freq * this.niceAnimAmt + this.fourierData[i].phase;
+            const angle = 2 * Math.PI * this.fourierData[i].freq * this.animAmt + this.fourierData[i].phase;
             runningX += amplitude * Math.cos(angle);
             runningY += amplitude * Math.sin(angle);
             if (i == 0) {

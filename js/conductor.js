@@ -14,11 +14,21 @@ export default class Conductor {
 		document.addEventListener('touchmove',  (evt) => this.updateTouchPosition(evt));
 		document.addEventListener('touchstart', (evt) => this.updateTouchPosition(evt));
 		document.addEventListener('touchend',   (evt) => this.updateTouchPosition(evt));
+
+		window.addEventListener('resize', (evt) => this.onResize(evt));
 	}
 
 	start() {
 		// Kick off the update loop
 		window.requestAnimationFrame(() => this.everyFrame());
+	}
+
+	onResize(evt) {
+		this.controllers.forEach(controller => {
+			if (typeof controller.onResize === 'function') {
+				controller.onResize();
+			}
+		})
 	}
 
 	everyFrame() {
