@@ -1,7 +1,7 @@
 import CanvasController from "./canvas-controller";
 import { palette } from "../color";
 import { renderWave, normaliseWave, getWaveFunction } from "../wave-things";
-import { slurp, clamp } from "../util";
+import { slurp, clamp, posMod } from "../util";
 import { renderLabel } from "./render-label";
 
 
@@ -19,9 +19,15 @@ export default class WaveSamplesController extends CanvasController {
         this.yMultiple = this.height / 4;
     }
 
+    /**
+     * @param {Array<number>} wave 
+     */
     setWave(wave) {
+        // lets filter a lot of the samples to make it easier to debug
+        // ? maybe just do this to make it easier to see?
+        this.wave = wave.filter((v, i) => (i % 4) === 0);
         // normalise this bad boi
-        this.wave = normaliseWave(wave);
+        this.wave = normaliseWave(this.wave);
     }
 
     update(dt, mousePosition) {
@@ -74,13 +80,12 @@ export default class WaveSamplesController extends CanvasController {
 
     renderLabel() {
         // What point from the wave to use
-        const waveAmt = (this.sampleAmt + 1) % 1;
-        const waveIndex = Math.floor((this.wave.length - 1) * waveAmt);
-        const waveValue = this.wave[waveIndex];
+        const sampleIndex = Math.floor(this.wave.length * this.sampleAmt);
+        const waveValue = this.wave[posMod(sampleIndex, this.wave.length)];
 
-        const adjustedWaveAmt = (waveAmt + this.waveShiftAmt + 2) % 1;
+        const waveAmt = sampleIndex / this.wave.length;
     
-        const x = this.width * adjustedWaveAmt;
+        const x = this.width * (waveAmt + this.waveShiftAmt);
         const y = this.yPos + this.yMultiple * waveValue;
 
         // draw li'l circle (?)

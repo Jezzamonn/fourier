@@ -67,6 +67,20 @@ export function clamp(amt, val1, val2) {
     return amt;
 }
 
+/**
+ * Does a positive modulo
+ * @param {number} a The thing being modulo'd
+ * @param {number} b The divider thing
+ * @returns {number} a % b
+ */
+export function posMod(a, b) {
+    let out = a % b;
+    if (out < 0) {
+        out += b;
+    }
+    return out;
+}
+
 // TODO? Redesign so this generates a function?
 export function to2dIsometric(x, y, z, xzAngle=0, yAngle=0) {
     const mul = matrixMultiplication()(3);
