@@ -1,8 +1,8 @@
 import { slurp } from "./util";
 import { normaliseWave, getWaveFunction } from "./wave-things";
 
-const SAMPLE_RATE = 44100;
-const baseFrequency = 220;
+export const SAMPLE_RATE = 44100;
+export const baseFrequency = 220;
 
 /**
  * 

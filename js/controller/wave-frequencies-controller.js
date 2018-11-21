@@ -3,6 +3,7 @@ import { palette } from "../color";
 import { renderWave, normaliseWave, getWaveFunction, getWave } from "../wave-things";
 import { slurp, clamp, posMod } from "../util";
 import { renderLabel } from "./render-label";
+import { baseFrequency } from "../synth";
 
 
 export default class WaveFrequenciesController extends CanvasController {
@@ -77,7 +78,8 @@ export default class WaveFrequenciesController extends CanvasController {
         }
         const y = (this.height / this.totalHeight) * (waveTop + waveData.amplitude + 0.7 * waveValue);
 
-        renderLabel(this.context, "hello", x, y, 100, palette.cyan, 0, this.width);
+        const text = `freq = ${(baseFrequency * waveData.freq).toFixed(0)} Hz\namp = ${waveData.amplitude.toFixed(2)}`;
+        renderLabel(this.context, text, x, y, 100, palette.cyan, 0, this.width);
 
     }
     
