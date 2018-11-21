@@ -16,6 +16,8 @@ export default class WaveSplitController extends CanvasController {
         this.partialWave = [];
         this.fourierPoints = [];
 
+        this.onFourierChange = []
+
         this.waveTop = 0;
         this.waveBottom = 0;
         this.totalHeight = 0;
@@ -46,6 +48,8 @@ export default class WaveSplitController extends CanvasController {
         // reset the animation too
         this.animAmt = 0;
         this.splitAmt = 0;
+
+        this.onFourierChange.forEach(fn => fn());
     }
 
 	update(dt, mousePosition) {

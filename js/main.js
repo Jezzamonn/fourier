@@ -19,6 +19,7 @@ import JpegCompressorController from './controller/jpeg-compressor-controller.js
 import { playSoundWave } from './synth.js';
 import WaveSamplesController from './controller/wave-samples-controller.js';
 import HeadingController from './controller/heading-controller.js';
+import WaveFrequenciesController from './controller/wave-frequencies-controller.js';
 
 let conductor = null;
 
@@ -71,10 +72,11 @@ function init() {
 		controller.setPath(getWave(squareWave, 128));
 		controllers.push(controller);
 	}
+	let squareWaveSplitController;
 	if (hasElement('square-wave-split')) {
-		let controller = new WaveSplitController('square-wave-split');
-		controller.setPath(getWave(squareWave, 256));
-		controllers.push(controller);
+		squareWaveSplitController = new WaveSplitController('square-wave-split');
+		squareWaveSplitController.setPath(getWave(squareWave, 256));
+		controllers.push(squareWaveSplitController);
 	}
 
 	let squareWaveBuildUpSlider, squareWaveButton;
@@ -98,7 +100,7 @@ function init() {
 		controllers.push(controller);
 	}
 
-	let waveDrawController, waveDrawSliderController, waveDrawButton;
+	let waveDrawController, waveDrawSliderController, waveDrawButton, waveDrawSplitController;
 	if (hasElement('wave-draw')) {
 		waveDrawController = new WaveDrawController('wave-draw');
 		controllers.push(waveDrawController);
@@ -118,15 +120,15 @@ function init() {
 		waveDrawButton = document.getElementById('wave-draw-button');
 	}
 	if (hasElement('wave-draw-split')) {
-		let controller = new WaveSplitController('wave-draw-split');
+		waveDrawSplitController = new WaveSplitController('wave-draw-split');
 		if (waveDrawController != null) {
 			waveDrawController.onDrawingStart.push(() => {
-				controller.splitAnim = true;
-				controller.setPath([]);
+				waveDrawSplitController.splitAnim = true;
+				waveDrawSplitController.setPath([]);
 			});
 			waveDrawController.onDrawingEnd.push(() => {
-				controller.splitAnim = true;
-				controller.setPath(waveDrawController.normPath);
+				waveDrawSplitController.splitAnim = true;
+				waveDrawSplitController.setPath(waveDrawController.normPath);
 			});
 			// Reset the slider back to 1 when the wave changes to draw the full wave.
 			if (waveDrawSliderController) {
@@ -136,17 +138,20 @@ function init() {
 		}
 		if (waveDrawSliderController != null) {
 			waveDrawSliderController.onValueChange.push(val => {
-				controller.fourierAmt = val;
-				controller.splitAnim = false;
+				waveDrawSplitController.fourierAmt = val;
+				waveDrawSplitController.splitAnim = false;
 			});
 		}
 		if (waveDrawButton) {
-			waveDrawButton.addEventListener('click', () => playSoundWave(controller.partialWave));
+			waveDrawButton.addEventListener('click', () => playSoundWave(waveDrawSplitController.partialWave));
 		}
-		controllers.push(controller);
+		controllers.push(waveDrawSplitController);
 	}
+
 	if (hasElement('wave-samples')) {
 		const waveSamplesController = new WaveSamplesController('wave-samples');
+		// Initially set it to the square wave
+		waveSamplesController.setWave(getWave(squareWave, 256));
 		if (waveDrawController) {
 			waveDrawController.onDrawingEnd.push(() => {
 		        // Map from [0, 1] to [-1, 1]
@@ -154,6 +159,20 @@ function init() {
 			});
 		}
 		controllers.push(waveSamplesController);
+	}
+	if (hasElement('wave-frequencies')) {
+		const waveFrequenciesController = new WaveFrequenciesController('wave-frequencies');
+		// Intially use the frequencies from the square wave
+		if (squareWaveSplitController) {
+			waveFrequenciesController.setFourierData(squareWaveSplitController.fourierData);
+		}
+		if (waveDrawSplitController) {
+			waveDrawSplitController.onFourierChange.push(() => {
+		        // Map from [0, 1] to [-1, 1]
+				waveFrequenciesController.setFourierData(waveDrawSplitController.fourierData);
+			});
+		}
+		controllers.push(waveFrequenciesController);
 	}
 
 	if (hasElement('complex-sinusoid')) {
