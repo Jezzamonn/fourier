@@ -79,7 +79,7 @@ export default class WaveFrequenciesController extends CanvasController {
         const y = (this.height / this.totalHeight) * (waveTop + waveData.amplitude + 0.7 * waveValue);
 
         const text = `freq = ${(baseFrequency * waveData.freq).toFixed(0)} Hz\namp = ${waveData.amplitude.toFixed(2)}`;
-        renderLabel(this.context, text, x, y, 100, palette.cyan, 0, this.width);
+        renderLabel(this.context, text, x, y, 0.1 * this.height, palette.cyan, 0, this.width);
 
     }
     
