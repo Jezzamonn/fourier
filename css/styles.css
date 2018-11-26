@@ -82,6 +82,10 @@ main {
 	grid-template-columns: repeat(8, auto);
 	grid-gap: 1.5vw;
 }
+.multi-container .img-component-container {
+	margin: 0 20px;
+}
+
 .img-component {
 	display: block;
 	width: 100%;
