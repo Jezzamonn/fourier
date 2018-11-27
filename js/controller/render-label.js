@@ -27,7 +27,7 @@ export function renderLabel(context, text, x, y, labelDist, color, minX, maxX, t
     let textHeight = 20;
 
     // For the moment, set it to what it would be if it was facing the right
-    let labelX = 0;
+    let labelX = x + labelDist;
     let labelY = 0;
     let textX = 0;
     let textY = 0;
@@ -41,7 +41,7 @@ export function renderLabel(context, text, x, y, labelDist, color, minX, maxX, t
     }
     else {
         // slanting to the left
-        labelX = x + labelDist;
+        labelX = x - labelDist;
         labelY = y - labelDist;
         textX = labelX - textWidth - textPadding;
         textY = labelY - textPadding;

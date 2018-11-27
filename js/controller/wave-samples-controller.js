@@ -1,7 +1,7 @@
 import CanvasController from "./canvas-controller";
 import { palette } from "../color";
 import { renderWave, normaliseWave, getWaveFunction } from "../wave-things";
-import { slurp, clamp, posMod } from "../util";
+import { slurp, clamp, posMod, divideInterval } from "../util";
 import { renderLabel } from "./render-label";
 
 
@@ -32,7 +32,7 @@ export default class WaveSamplesController extends CanvasController {
 
     update(dt, mousePosition) {
         const pos = 1 - this.getScrollPosition();
-        this.sampleAmt = pos;
+        this.sampleAmt = divideInterval(pos, 0.2, 0.6);
         this.waveShiftAmt = slurp(0.1, -0.1, pos);
     }
 
