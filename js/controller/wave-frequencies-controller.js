@@ -1,7 +1,7 @@
 import CanvasController from "./canvas-controller";
 import { palette } from "../color";
 import { renderWave, normaliseWave, getWaveFunction, getWave } from "../wave-things";
-import { slurp, clamp, posMod } from "../util";
+import { slurp, clamp, posMod, divideInterval } from "../util";
 import { renderLabel } from "./render-label";
 import { baseFrequency } from "../synth";
 
@@ -28,7 +28,10 @@ export default class WaveFrequenciesController extends CanvasController {
 
     update(dt, mousePosition) {
         const pos = 1 - this.getScrollPosition();
-        this.selectedIndex = clamp(Math.floor(this.fourierData.length * pos), 0, this.fourierData.length - 1);
+        const fourierAmt = divideInterval(pos, 0.2, 0.6);
+
+        const unclampedIndex = Math.floor(this.fourierData.length * fourierAmt);
+        this.selectedIndex = clamp(unclampedIndex, 0, this.fourierData.length - 1);
     }
 
 	render() {
@@ -48,7 +51,7 @@ export default class WaveFrequenciesController extends CanvasController {
             this.context.lineWidth = 2;
             this.context.strokeStyle = palette.blue;
             if (i != this.selectedIndex) {
-                this.context.globalAlpha = 0.3;
+                this.context.globalAlpha = 0.1;
             }
             renderWave({
                 context: this.context,
@@ -78,9 +81,38 @@ export default class WaveFrequenciesController extends CanvasController {
         }
         const y = (this.height / this.totalHeight) * (waveTop + waveData.amplitude + 0.7 * waveValue);
 
-        const text = `freq = ${(baseFrequency * waveData.freq).toFixed(0)} Hz\namp = ${waveData.amplitude.toFixed(2)}`;
+        const freqString = (baseFrequency * waveData.freq).toFixed(0);
+        const ampString = toScientificNotation(waveData.amplitude);
+        const text = `frequency = ${freqString} Hz\namplitude = ${ampString}`;
         renderLabel(this.context, text, x, y, 0.1 * this.height, palette.cyan, 0, this.width);
 
     }
     
+}
+
+/**
+ * Returns a nicely formatted number
+ * @param {number} number 
+ */
+function toScientificNotation(number) {
+    // because I'm lazy and don't want to do this by tweaking the size when drawing on the canvas.
+    const superscripts = {
+        '-': '⁻',
+        '0': '⁰',
+        '1': '¹',
+        '2': '²',
+        '3': '³',
+        '4': '⁴',
+        '5': '⁵',
+        '6': '⁶',
+        '7': '⁷',
+        '8': '⁸',
+        '9': '⁹'
+    }
+    let [significand, exponent] = number.toExponential(2).replace('+').split('e');
+    let superscriptExponent = '';
+    for (const digit of exponent) {
+        superscriptExponent += superscripts[digit];
+    }
+    return significand + '×10' + superscriptExponent;
 }
