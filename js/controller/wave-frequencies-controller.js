@@ -15,6 +15,11 @@ export default class WaveFrequenciesController extends CanvasController {
         this.totalHeight = 0;
 
         this.selectedIndex = 0;
+
+        this.waveSpacingMultiple = 0.7;
+        this.waveTopAmt = 0.2;
+        this.waveBottomAmt = 0.9;
+        this.waveHeightAmt = this.waveBottomAmt - this.waveTopAmt;
     }
 
     setFourierData(fourierData) {
@@ -42,10 +47,14 @@ export default class WaveFrequenciesController extends CanvasController {
     }
 
     renderWaves() {
+        const waveSpacingMultiple = 0.7;
+
         let waveTop = 0;
         for (let i = 0; i < this.fourierData.length; i ++) {
             const waveData = this.fourierData[i];
             const wave = getWave(t => waveData.amplitude * Math.cos(2 * Math.PI * waveData.freq * t + waveData.phase));
+            const yPositionAmt = (1 / this.totalHeight) * (waveTop + waveData.amplitude);
+            const yPosition = this.height * slurp(this.waveTopAmt, this.waveBottomAmt, yPositionAmt);
             
             this.context.beginPath();
             this.context.lineWidth = 2;
@@ -57,8 +66,8 @@ export default class WaveFrequenciesController extends CanvasController {
                 context: this.context,
                 wave: wave,
                 width: this.width,
-                yPosition: (this.height / this.totalHeight) * (waveTop + waveData.amplitude),
-                yMultiple: 0.7 * (this.height / this.totalHeight),
+                yPosition: yPosition,
+                yMultiple: this.waveHeightAmt * waveSpacingMultiple * (this.height / this.totalHeight),
             })
             this.context.stroke();
             this.context.globalAlpha = 1;
@@ -79,7 +88,8 @@ export default class WaveFrequenciesController extends CanvasController {
         for (let i = 0; i < this.selectedIndex; i ++) {
             waveTop += 2 * this.fourierData[i].amplitude;
         }
-        const y = (this.height / this.totalHeight) * (waveTop + waveData.amplitude + 0.7 * waveValue);
+        const yAmt = (1 / this.totalHeight) * (waveTop + waveData.amplitude + this.waveSpacingMultiple * waveValue);
+        const y = this.height * slurp(this.waveTopAmt, this.waveBottomAmt, yAmt);
 
         const freqString = (baseFrequency * waveData.freq).toFixed(0);
         const ampString = toScientificNotation(waveData.amplitude);
@@ -107,9 +117,9 @@ function toScientificNotation(number) {
         '6': '⁶',
         '7': '⁷',
         '8': '⁸',
-        '9': '⁹'
+        '9': '⁹',
     }
-    let [significand, exponent] = number.toExponential(2).replace('+').split('e');
+    let [significand, exponent] = number.toExponential(2).replace('+', '').split('e');
     let superscriptExponent = '';
     for (const digit of exponent) {
         superscriptExponent += superscripts[digit];
