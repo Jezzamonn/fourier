@@ -1,5 +1,5 @@
 import { elementInView, getScrollPosition } from "./controller-util";
-import { clamp, slurp } from "../util";
+import { clamp, slurp, divideInterval } from "../util";
 import imageCompression from 'browser-image-compression';
 
 const originalImageSrc = "img/cat.png"
@@ -31,8 +31,9 @@ export default class JpegCompressorController {
         if (!this.baseImage) {
             return;
         }
-        const pos = getScrollPosition(this.img);
-        const posAmt = clamp(slurp(1.2, -0.2, pos), 0, 1);
+        const pos = 1 - getScrollPosition(this.img);
+        let posAmt = clamp(divideInterval(pos, 0.4, 0.7), 0, 1);
+        posAmt *= posAmt;
 
         this.context.drawImage(this.baseImage, 0, 0);
         const dataUrl = this.canvas.toDataURL('image/jpeg', posAmt);

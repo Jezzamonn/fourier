@@ -256,7 +256,7 @@ function init() {
 	if (hasElement('img-x-component')) {
 		let controller = new ImageSwapController('img-x-component');
 		const imageSrcs = [];
-		for (let i = 0; i < 8; i ++) {
+		for (let i = 1; i < 8; i ++) {
 			imageSrcs.push('img/components-0-' + i + '.png');
 		}
 		controller.imageSrcs = imageSrcs;
@@ -265,7 +265,7 @@ function init() {
 	if (hasElement('img-y-component')) {
 		let controller = new ImageSwapController('img-y-component');
 		const imageSrcs = [];
-		for (let i = 0; i < 8; i ++) {
+		for (let i = 1; i < 8; i ++) {
 			imageSrcs.push('img/components-' + i + '-0.png');
 		}
 		controller.imageSrcs = imageSrcs;
@@ -289,6 +289,8 @@ function init() {
 			imageSrcs.push('img/img-buildup-' + x + '-' + y + '.png');
 		}
 		letterBuildUpController.imageSrcs = imageSrcs;
+		letterBuildUpController.minY = 0.2;
+		letterBuildUpController.maxY = 0.6;
 		controllers.push(letterBuildUpController);
 	}
 	if (hasElement('letter-buildup-components')) {
