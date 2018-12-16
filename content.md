@@ -244,7 +244,6 @@ And now we can use these to split up an image. Let's start with this letter 'A'.
 Now, as we add more and more of these frequencies, we end up with something that becomes closer and closer to the actual image. But I think you'll see the pattern here, as we get a reasonable approximation with just a few of them.
 
 <div class="multi-container">
-<img id="letter-buildup" src="img/img-buildup-0-0.png" class="sketch sketch-letter">
 <div id="letter-buildup-components" class="img-component-container">
     <img src="img/img-components-0-0.png" class="img-component">
     <img src="img/img-components-0-1.png" class="img-component">
@@ -311,6 +310,7 @@ Now, as we add more and more of these frequencies, we end up with something that
     <img src="img/img-components-7-6.png" class="img-component">
     <img src="img/img-components-7-7.png" class="img-component">
 </div>
+<img id="letter-buildup" src="img/img-buildup-0-0.png" class="sketch sketch-letter">
 </div>
 
 What happens with a JPEG is the image gets broken up into 8x8 chunks, and then each chunk gets 'fouriered' and saves the images. We use a set of frequencies to determine how light or dark each pixel is, and then another set for the color of each section. The number of frequencies that we use determines the quality of the image.
