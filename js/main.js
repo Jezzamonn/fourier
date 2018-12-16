@@ -21,6 +21,7 @@ import WaveSamplesController from './controller/wave-samples-controller.js';
 import HeadingController from './controller/heading-controller.js';
 import WaveFrequenciesController from './controller/wave-frequencies-controller.js';
 import SelfDrawController from './controller/self-draw/self-draw-controller.js';
+import ImageMultController from './controller/image-mult-controller.js';
 
 let conductor = null;
 
@@ -277,13 +278,30 @@ function init() {
 		controller.imageSrcs = imageSrcs;
 		controllers.push(controller);
 	}
-	if (hasElement('img-x-y-component')) {
-		let controller = new ImageSwapController('img-x-y-component');
+
+	let imgMultXController, imgMultYController;
+	if (hasElement('img-mult-x-component')) {
+		imgMultXController = new ImageSwapController('img-mult-x-component');
 		const imageSrcs = [];
-		for (let i = 0; i < 8; i ++) {
-			imageSrcs.push('img/components-' + i + '-' + i + '.png');
+		for (let i = 1; i < 8; i ++) {
+			imageSrcs.push('img/components-0-' + i + '.png');
 		}
-		controller.imageSrcs = imageSrcs;
+		imgMultXController.imageSrcs = imageSrcs;
+		imgMultXController.maxY = 0.5;
+		controllers.push(imgMultXController);
+	}
+	if (hasElement('img-mult-y-component')) {
+		imgMultYController = new ImageSwapController('img-mult-y-component');
+		const imageSrcs = [];
+		for (let i = 1; i < 8; i ++) {
+			imageSrcs.push('img/components-' + i + '-0.png');
+		}
+		imgMultYController.imageSrcs = imageSrcs;
+		imgMultYController.minY = 0.5;
+		controllers.push(imgMultYController);
+	}
+	if (hasElement('img-x-y-component')) {
+		let controller = new ImageMultController('img-x-y-component', imgMultXController, imgMultYController);
 		controllers.push(controller);
 	}
 
