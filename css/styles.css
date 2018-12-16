@@ -73,6 +73,11 @@ main {
 	display: block;
 	width: 100%;
 }
+.sketch-mult {
+	width: 20vw;
+	max-width: 200px;
+	margin: 0;
+}
 
 .img-component-container {
 	max-width: 500px;
@@ -98,6 +103,9 @@ main {
 	border-color: rgb(0, 0, 0, 0.2);
 	border-radius: 5%;
 	background-color: white;
+}
+.maths {
+	font-size: 10vw;
 }
 
 .button {
@@ -168,6 +176,9 @@ main {
 /* Because flex box doesn't collapse margins, use much smaller ones */
 .multi-container .sketch {
 	margin: 10px;
+}
+.multi-container .sketch-mult {
+	margin: 2vw;
 }
 
 input[type=range] {

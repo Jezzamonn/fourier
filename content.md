@@ -158,7 +158,13 @@ and the Y dimension.
 
 And we also need some extra ones
 
-<img id="img-x-y-component" src="img/components-4-4.png" class="sketch sketch-small">
+<div class="multi-container">
+<img id="img-mult-x-component" src="img/components-0-4.png" class="sketch sketch-mult">
+<div class="maths">×</div>
+<img id="img-mult-y-component" src="img/components-4-0.png" class="sketch sketch-mult">
+<div class="maths">=</div>
+<img id="img-x-y-component" src="img/components-4-4.png" class="sketch sketch-mult">
+</div>
 
 For an 8x8 image, here are all the combinations
 
