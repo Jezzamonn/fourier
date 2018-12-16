@@ -20,6 +20,7 @@ import { playSoundWave } from './synth.js';
 import WaveSamplesController from './controller/wave-samples-controller.js';
 import HeadingController from './controller/heading-controller.js';
 import WaveFrequenciesController from './controller/wave-frequencies-controller.js';
+import SelfDrawController from './controller/self-draw/self-draw-controller.js';
 
 let conductor = null;
 
@@ -29,6 +30,11 @@ function init() {
 
 	if (hasElement('header-background')) {
 		let controller = new HeadingController('header-background');
+		controllers.push(controller);
+	}
+
+	if (hasElement('self-draw')) {
+		let controller = new SelfDrawController('self-draw');
 		controllers.push(controller);
 	}
 

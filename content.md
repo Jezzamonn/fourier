@@ -1,5 +1,8 @@
 Fourier transforms are a tool used in a whole bunch of different things. This is a explanation of what a Fourier transform does, and some different ways it can useful. And how you can make pretty things with it.
 
+<canvas id="self-draw" class="sketch" width=500 height=500></canvas>
+
+
 I'm going to focus on the practical applications. There's a bunch of Maths behind it, which some people might find interesting, but I think it's better to start with what it actually does, and why.
 
 By the end you should have a good idea about
