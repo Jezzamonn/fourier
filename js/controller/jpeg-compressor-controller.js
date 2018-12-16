@@ -1,12 +1,14 @@
 import { elementInView, getScrollPosition } from "./controller-util";
 import { clamp, slurp, divideInterval } from "../util";
 import imageCompression from 'browser-image-compression';
+import Controller from "./controller";
 
 const originalImageSrc = "img/cat.png"
 
-export default class JpegCompressorController {
+export default class JpegCompressorController extends Controller {
 
 	constructor(id) {
+        super();
         this.id = id;
         this.imageSrcs = [];
 
@@ -42,10 +44,6 @@ export default class JpegCompressorController {
 
     isOnScreen() {
         return elementInView(this.img);
-    }
-
-	render() {
-        // yeah nothing
     }
 
 }

@@ -1,8 +1,10 @@
 import { loopLikeAJpeg } from "../jpeg";
+import Controller from "./controller";
 
-export default class ImageBuildUpController {
+export default class ImageBuildUpController extends Controller {
 
 	constructor(id, imageSwapController) {
+        super();
         this.container = document.getElementById(id);
         this.swapController = imageSwapController;
     }
@@ -20,14 +22,6 @@ export default class ImageBuildUpController {
                 component.classList.add('hidden');
             }
         }
-    }
-
-    isOnScreen() {
-        return true;
-    }
-
-	render() {
-        // yeah nothing
     }
 
 }

@@ -1,8 +1,10 @@
 import { elementInView, getScrollPosition } from "./controller-util";
+import Controller from "./controller";
 
-export default class CanvasController {
+export default class CanvasController extends Controller {
 
 	constructor(id, width=null, height=null) {
+		super();
 		this.id = id;
 		this.canvas = document.getElementById(id);
 		if (width == null) {

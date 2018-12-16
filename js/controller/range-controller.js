@@ -1,8 +1,10 @@
 import { slurp, easeInOut } from "../util";
+import Controller from "./controller";
 
-export default class RangeController {
+export default class RangeController extends Controller {
 
 	constructor(id) {
+        super();
         this.id = id;
         this.slider = document.getElementById(id);
 
@@ -58,14 +60,6 @@ export default class RangeController {
         const sinePos = 0.5 * Math.cos(2 * Math.PI * this.animAmt) + 0.5;
         this.slider.value = sinePos;
         this.onValueChange.forEach(fn => fn(this.slider.value));
-    }
-
-    isOnScreen() {
-        return true;
-    }
-
-    render() {
-        // nothing.
     }
 
     holdValue() {

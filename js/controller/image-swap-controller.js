@@ -1,9 +1,11 @@
 import { elementInView, getScrollPosition } from "./controller-util";
 import { clamp, slurp, divideInterval } from "../util";
+import Controller from "./controller";
 
-export default class ImageSwapController {
+export default class ImageSwapController extends Controller {
 
 	constructor(id) {
+        super();
         this.id = id;
         this.imageSrcs = [];
 
@@ -27,10 +29,6 @@ export default class ImageSwapController {
 
     isOnScreen() {
         return elementInView(this.img);
-    }
-
-	render() {
-        // yeah nothing
     }
 
 }
