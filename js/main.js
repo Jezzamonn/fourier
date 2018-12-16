@@ -22,6 +22,7 @@ import HeadingController from './controller/heading-controller.js';
 import WaveFrequenciesController from './controller/wave-frequencies-controller.js';
 import SelfDrawController from './controller/self-draw/self-draw-controller.js';
 import ImageMultController from './controller/image-mult-controller.js';
+import { getScrollPosition } from './controller/controller-util.js';
 
 let conductor = null;
 
@@ -306,13 +307,14 @@ function init() {
 	}
 
 	let letterBuildUpController;
-	if (hasElement('letter-buildup')) {
-		letterBuildUpController = new ImageSwapController('letter-buildup');
+	if (hasElement('letter-buildup-letter')) {
+		letterBuildUpController = new ImageSwapController('letter-buildup-letter');
 		const imageSrcs = [];
 		for (let [y, x] of loopLikeAJpeg(8)) {
 			imageSrcs.push('img/img-buildup-' + x + '-' + y + '.png');
 		}
 		letterBuildUpController.imageSrcs = imageSrcs;
+		letterBuildUpController.scrollFocus = document.querySelector('#letter-buildup');
 		letterBuildUpController.minY = 0.2;
 		letterBuildUpController.maxY = 0.6;
 		controllers.push(letterBuildUpController);

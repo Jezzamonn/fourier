@@ -14,13 +14,15 @@ export default class ImageSwapController extends Controller {
 
         this.minY = 0.2;
         this.maxY = 0.8;
+
+        this.scrollFocus = this.img;
     }
 
 	update() {
         if (this.imageSrcs.length == 0) {
             return;
         }
-        const pos = 1 - getScrollPosition(this.img);
+        const pos = 1 - getScrollPosition(this.scrollFocus);
         const posAmt = clamp(divideInterval(pos, this.minY, this.maxY), 0, 1);
         this.index = clamp(Math.floor(this.imageSrcs.length * posAmt), 0, this.imageSrcs.length - 1);
 
@@ -28,7 +30,7 @@ export default class ImageSwapController extends Controller {
     }
 
     isOnScreen() {
-        return elementInView(this.img);
+        return elementInView(this.scrollFocus);
     }
 
 }
