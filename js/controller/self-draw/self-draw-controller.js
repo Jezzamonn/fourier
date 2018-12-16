@@ -116,6 +116,8 @@ export default class SelfDrawController extends CanvasController {
     }
 
     render() {
+        this.clear();
+
         const context = this.context;
         const xOffset = 0.66 * this.width;
         const yOffset = 0.5 * this.height;
