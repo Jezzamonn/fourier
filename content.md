@@ -347,18 +347,12 @@ This is just scratching the surface into some applications. The Fourier transfor
 
 ## Questions for the curious
 
-If you're interested learning about more applications you might want to think about:
-
-- How do musical tuners use Fourier transforms?
-- How do equalizer displays use Fourier transforms?
-- Why do we need use Fourier transforms to tell how loud something is?
-
 I skipped most of the math stuff here, but if you're interested in the underlying principles of how it works, here are some questions you can use to guide your research:
 
 - How do you mathematically represent a Fourier transform?
 - What's the difference between a continuous time Fourier transform and a discrete time Fourier transform?
 - How do you computationally do a Fourier transform?
-- What are window functions and why would you use them?
+- How do you do a Fourier transform of a whole song? (Rather than just a single note.)
 
 ## Further 'reading'
 
@@ -380,6 +374,6 @@ And of course, the Wikipedia article is pretty good too.
 
 <canvas id="its-meee" class="sketch" width=500 height=500></canvas>
 
-I'm Jez! Full time I work at a search company in the Bay Area, and in my spare time I like making games and interactive code things like this!
+I'm Jez! Full time I work at a [search company](https://www.google.com/) in the Bay Area, and in my spare time I like making games and interactive code things like this!
 
-If you want to see more of my work, check out my [homepage](/). On Twitter I'm [@jezzamonn](https://twitter.com/jezzamonn), and I'm currently posting fun little gifs there :)
+If you want to see more of my work, check out my [homepage](/). On Twitter I'm [@jezzamonn](https://twitter.com/jezzamonn).
