@@ -27,6 +27,9 @@ export default class WaveFrequenciesController extends CanvasController {
         // Sort by frequency this time
         this.fourierData.sort((a, b) => a.freq - b.freq);
 
+        // Only just the first few to make it look nicer
+        this.fourierData = this.fourierData.slice(0, 20);
+
         this.totalHeight = 0;
         this.fourierData.forEach((el) => this.totalHeight += 2 * el.amplitude);
     }

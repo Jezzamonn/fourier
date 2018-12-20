@@ -53,7 +53,8 @@ function init() {
 	const comboWave = getWave(t => Math.sin(2 * Math.PI * t) + 0.5 * Math.sin(6 * Math.PI * t), 128);
 	if (hasElement('combo-sine-wave')) {
 		let controller = new WaveController('combo-sine-wave');
-		controller.setPath(comboWave);
+		// Here we stretch out the wave to make it look nicer. Kind of lazy but w/e.
+		controller.setPath(comboWave.map(t => 2 * t));
 		controllers.push(controller);
 	}
 	if (hasElement('combo-sine-wave-split')) {

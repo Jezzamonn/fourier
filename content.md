@@ -1,18 +1,19 @@
-Fourier transforms are a tool used in a whole bunch of different things. This is a explanation of what a Fourier transform does, and some different ways it can useful. And how you can make pretty things with it.
+Fourier transforms are a tool used in a whole bunch of different things. This is a explanation of what a Fourier transform does, and some different ways it can useful. And how you can make pretty things with it, like this thing:
 
 <canvas id="self-draw" class="sketch" width=500 height=500></canvas>
 
-
-I'm going to focus on the practical applications. There's a bunch of Maths behind it, which some people might find interesting, but I think it's better to start with what it actually does, and why.
+I'm going to explain how that animation works, and along the way explain Fourier transforms!
 
 By the end you should have a good idea about
 - What a Fourier transform does
 - Some practical uses of Fourier transforms
 - Some pointless but cool uses of Fourier transforms
 
+We're going to leave the mathematics and equations out of it for now. There's a bunch of interesting maths behind it, but it's better to start with what it actually does, and why you'd want to use it first. If you want to know more about the how, there's some further reading suggestions below!
+
 ## So what is this thing?
 
-Put simply, the Fourier transform is a way of splitting something up into a bunch of sine waves. As usual, the name comes from some person called Fourier who lived a long time ago.
+Put simply, the Fourier transform is a way of splitting something up into a bunch of sine waves. As usual, the name comes from some person who lived a long time ago called Fourier.
 
 Let’s start with some simple examples and work our way up. First up we're going to look at waves - patterns that repeat over time.
 
@@ -36,9 +37,9 @@ The most obvious example is sound – when we hear a sound, we don’t hear that
 
 <button id="split-button-2" class="button">Split (low)</button>
 
-Being able to split them up on a computer can give us an understanding of what a person actually hears.
+Being able to split them up on a computer can give us an understanding of what a person actually hears. We can understand how high or low a sound it, or figure out what note it is.
 
-But we can use this process on waves that don't look like they're made of sine waves.
+We can also use this process on waves that don't look like they're made of sine waves.
 
 Let's take a look at this guy. It’s called a square wave.
 
@@ -77,25 +78,25 @@ This process works like that for any repeating line. Give it a go, try draw your
 
 Again, aside from the extra wigglyness, the wave looks pretty similar with just half of the sine waves.
 
-There's also another reason to split it up into frequencies. We can use a Fourier transform to only store the important parts of a sound.
+We can actually use the fact that the wave is pretty similar to our advantage. By using a Fourier transform, we can get the important parts of a sound, and only store those to end up with something that's pretty close to the original sound.
 
 Normally on a computer we store a wave as a series of points.
 
 <canvas id="wave-samples" class="sketch" width=500 height=500></canvas>
 
-What we can do instead is represent it as a bunch of sine waves. And if we want to represent it while using less data, we can just ignore the smaller frequencies and get something that sounds pretty similar to a person.
+What we can do instead is represent it as a bunch of sine waves. Then, if we can compress the sound by ignoring the smaller frequencies. Our end result won't be the same, but it'll sounds pretty similar to a person.
 
 <canvas id="wave-frequencies" class="sketch" width=500 height=500></canvas>
 
 This is essentially what MP3s do, except they're more clever about which frequencies they keep and which ones they throw away.
 
-So in this case, we can use fourier transforms to get an understanding of the fundamental properties of a wave, and then we can use that for things like compression.
+So in this case, we can use Fourier transforms to get an understanding of the fundamental properties of a wave, and then we can use that for things like compression.
 
 Ok, now let's dig more into the Fourier transform. This next part looks cool, but also gives you a bit more understanding of what the Fourier transform does. But mostly looks cool.
 
 ## Epicycles
 
-Now at the start, I said it splits intos into sine waves. The thing is, the sine waves it creates are not just regular sine waves, but they’re 3D. You could call them "complex sinusoids", "epicycles", or just "spirals".
+Now at the start, I said it splits intos into sine waves. The thing is, the sine waves it creates are not just regular sine waves, but they’re 3D. You could call them "complex sinusoids". Or just "spirals".
 
 <canvas id="complex-sinusoid" class="sketch" width=500 height=500></canvas>
 
@@ -109,20 +110,26 @@ But we can use the 3D sine waves to make something fun looking like this:
 
 <canvas id="peace-epicycles" class="sketch" width=500 height=500></canvas>
 
-What’s going on here? Well we can think of the drawing as a 3D wave because of the way it moves around in time.
+What’s going on here?
+
+Well, we can think of the drawing as a 3D shape because of the way it moves around in time. If you imagine the hand being drawn by a person, the three dimensions represent where the tip of their pencil is at that moment. The x and y dimensions tell us the position, and then the time dimension is the time at that moment.
 
 <canvas id="peace-3d" class="sketch" width=500 height=500></canvas>
 
-As we add more and more spirals, we get closer to representing the original shape.
+Now that we have a 3D pattern, we can't use the regular 2D sine waves to represent it. No matter how many of the 2D sine waves we add up, we'll never get something 3D. So we need something else.
+
+What we can use is the 3D spiral sine waves from before. If we add up lots of those, we can get something that looks like our 3D pattern.
+
+Remember, these waves look like circles when we look at them from front on. The name for the pattern of a circle moving around another circle is an epicycle.
 
 <canvas id="peace-build-up" class="sketch" width=500 height=500></canvas>
 <input id="peace-build-up-slider" type="range" min="0" max="1" value="1" step="any">
 
-*Use the slider above to control how many spirals there are.*
+*Use the slider above to control how many circles there are.*
 
 Like before, we get a pretty good approximation of the our pattern with just a few circles. With just a few it's able to create the shape fairly well. Because this is a fairly simple shape, all the last ones do is make the edges a little sharper.
 
-So, we can apply this process to any drawing really! Now it’s your chance to play around with it!
+All this applies to any drawing, really! Now it’s your chance to play around with it.
 
 <div class="multi-container">
 <div class="sketch" >
@@ -134,29 +141,33 @@ So, we can apply this process to any drawing really! Now it’s your chance to p
 </div>
 <input id="circle-zone-slider" type="range" min="0" max="1" value="1" step="any">
 
-You'll see for most shapes, we can approximate them fairly well with just a small number of circles, instead of saving all the points.
+*Use the slider to control how many circles are used for your drawing*
+
+Again, you'll see for most shapes, we can approximate them fairly well with just a small number of circles, instead of saving all the points.
 
 Can we use this for real data? Well, we could! In reality we have another data format called SVG, which probably does a better job for the types of shapes we tend to create. So for the moment, this is really just for making cool little gifs.
 
 <canvas id="fourier-title" class="sketch" width=500 height=300></canvas>
 
-So, we can't use Fourier transforms to compress shapes in an interesting way. But there's another type of data that we can use Fourier transforms for.
+There is another type of visual data that we does use Fourier transforms for, however.
 
 ## JPEGs
 
-Did you know Fourier transforms can also be used on images? That's how JPEGs works. We're applying the same principles to images -- splitting up something into a bunch of sine waves, and then only storing the important ones.
+Did you know Fourier transforms can also be used on images? That's how JPEGs works. We're applying the same principles to images – splitting up something into a bunch of sine waves, and then only storing the important ones.
 
-Now we're dealing with 2D images, we need a different type of sine wave. We need to have something that no matter what image we have, we can add up a bunch of these sine waves to get back to our original iamge. How do we do that? Well, each of our frequencies will be images too. Instead of a wave that's a line with a top and a bottom, we now have images with black and white sections.
+Now we're dealing with images, we need a different type of sine wave. We need to have something that no matter what image we have, we can add up a bunch of these sine waves to get back to our original image.
 
-We have ones in the X dimension,
+To do that, each of our sine waves will be images too. Instead of a wave that's a line with a top and a bottom, we now have images with black and white sections. Instead waves that are larger or smaller, we have images that have more or less contrast.
 
-<img id="img-x-component" src="img/components-0-4.png" class="sketch sketch-small">
-
-and the Y dimension.
+We can also use these to represent color in the same way, but let's start with black-and-white images for now. To represent colorless images, we need some horizontal wave images,
 
 <img id="img-y-component" src="img/components-4-0.png" class="sketch sketch-small">
 
-And we also need some extra ones
+Along with some vertical wave images.
+
+<img id="img-x-component" src="img/components-0-4.png" class="sketch sketch-small">
+
+By themselves, just horizontal and vertical images aren't enough to represent the types of images we get. We also need some extra ones that you get by multiplying the two together.
 
 <div class="multi-container">
 <img id="img-mult-x-component" src="img/components-0-4.png" class="sketch sketch-mult">
@@ -166,7 +177,7 @@ And we also need some extra ones
 <img id="img-x-y-component" src="img/components-4-4.png" class="sketch sketch-mult">
 </div>
 
-For an 8x8 image, here are all the combinations
+For an 8x8 image, here are all the images we need.
 
 <div class="img-component-container">
     <img src="img/components-0-0.png" class="img-component">
@@ -235,15 +246,16 @@ For an 8x8 image, here are all the combinations
     <img src="img/components-7-7.png" class="img-component">
 </div>
 
-What do they represent? Well the first one is the average color of the image. Smaller waves relate to how sharp the edges in the images are.
+If we take the images, adjust their contrast to the right amount, and then add them up we can create any image.
 
-And now we can use these to split up an image. Let's start with this letter 'A'. It's pretty small, but we need it to be small otherwise we'll end up with too many other images.
+Let's start with this letter 'A'. It's pretty small, but we need it to be small otherwise we'll end up with too many other images.
 
 <img src="img/a.png" class="sketch sketch-letter">
 
-Now, as we add more and more of these frequencies, we end up with something that becomes closer and closer to the actual image. But I think you'll see the pattern here, as we get a reasonable approximation with just a few of them.
+As we add more and more of these images, we end up with something that becomes closer and closer to the actual image. But I think you'll see the pattern here, as we get a reasonable approximation with just a few of them.
 
 <div id="letter-buildup" class="multi-container">
+<img id="letter-buildup-letter" src="img/img-buildup-0-0.png" class="sketch sketch-letter">
 <div id="letter-buildup-components" class="img-component-container">
     <img src="img/img-components-0-0.png" class="img-component">
     <img src="img/img-components-0-1.png" class="img-component">
@@ -310,10 +322,13 @@ Now, as we add more and more of these frequencies, we end up with something that
     <img src="img/img-components-7-6.png" class="img-component">
     <img src="img/img-components-7-7.png" class="img-component">
 </div>
-<img id="letter-buildup-letter" src="img/img-buildup-0-0.png" class="sketch sketch-letter">
 </div>
 
-What happens with a JPEG is the image gets broken up into 8x8 chunks, and then each chunk gets 'fouriered' and saves the images. We use a set of frequencies to determine how light or dark each pixel is, and then another set for the color of each section. The number of frequencies that we use determines the quality of the image.
+For actual JPEG images there are a just few extra details.
+
+The image gets broken up into 8x8 chunks, and each chunk gets split up separately. We use a set of frequencies to determine how light or dark each pixel is, and then another two sets for the color, one for red-green, and another for blue-yellow. The number of frequencies that we use for each chunk determines the quality of the JPEG.
+
+Here's a real JPEG image, zoomed in so we can see the details. When we play with the quality levels we can see this process happen.
 
 <div id="jpeg-example" class="sketch">
     <img src="img/cat.png" class="sketch-child clear-pixels">

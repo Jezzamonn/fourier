@@ -93,7 +93,7 @@ export default class WaveSamplesController extends CanvasController {
         this.context.arc(x, y, 2, 0, 2 * Math.PI);
         this.context.stroke();
 
-        const label = `t = ${waveAmt.toFixed(2)}\nvalue = ${-waveValue.toFixed(2)}`
+        const label = `time = ${waveAmt.toFixed(2)}\nvalue = ${-waveValue.toFixed(2)}`
         renderLabel(this.context, label, x, y, 0.1 * this.height, palette.cyan, 0, this.width);
     }
     

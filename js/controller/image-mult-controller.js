@@ -29,7 +29,7 @@ export default class ImageMultController extends Controller {
         this.xIndex = this.multXController.index + 1;
         this.yIndex = this.multYController.index + 1;
         
-        this.img.src = `img/components-${this.xIndex}-${this.yIndex}.png`;
+        this.img.src = `img/components-${this.yIndex}-${this.xIndex}.png`;
     }
 
     isOnScreen() {
