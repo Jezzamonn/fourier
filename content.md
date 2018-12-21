@@ -149,7 +149,7 @@ Can we use this for real data? Well, we could! In reality we have another data f
 
 <canvas id="fourier-title" class="sketch" width=500 height=300></canvas>
 
-There is another type of visual data that we does use Fourier transforms for, however.
+There is another type of visual data that does use Fourier transforms, however.
 
 ## JPEGs
 
