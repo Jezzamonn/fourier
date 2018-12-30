@@ -84,7 +84,7 @@ Normally on a computer we store a wave as a series of points.
 
 <canvas id="wave-samples" class="sketch" width=500 height=500></canvas>
 
-What we can do instead is represent it as a bunch of sine waves. Then, if we can compress the sound by ignoring the smaller frequencies. Our end result won't be the same, but it'll sounds pretty similar to a person.
+What we can do instead is represent it as a bunch of sine waves. Then we can compress the sound by ignoring the smaller frequencies. Our end result won't be the same, but it'll sound pretty similar to a person.
 
 <canvas id="wave-frequencies" class="sketch" width=500 height=500></canvas>
 
@@ -96,7 +96,7 @@ Ok, now let's dig more into the Fourier transform. This next part looks cool, bu
 
 ## Epicycles
 
-Now at the start, I said it splits intos into sine waves. The thing is, the sine waves it creates are not just regular sine waves, but they’re 3D. You could call them "complex sinusoids". Or just "spirals".
+Now at the start, I said it splits things into sine waves. The thing is, the sine waves it creates are not just regular sine waves, but they’re 3D. You could call them "complex sinusoids". Or just "spirals".
 
 <canvas id="complex-sinusoid" class="sketch" width=500 height=500></canvas>
 
