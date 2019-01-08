@@ -31,11 +31,11 @@ Why? Turns out a lot of things in the real world interact based on these sine wa
 
 The most obvious example is sound – when we hear a sound, we don’t hear that squiggly line, but we hear the different frequencies of the sine waves that make up the sound.
 
-<button id="together-button" class="button">Together</button>
+<button id="together-button" class="button">Play Full Wave</button>
 
-<button id="split-button-1" class="button">Split (high)</button>
+<button id="split-button-1" class="button">Play High Frequency</button>
 
-<button id="split-button-2" class="button">Split (low)</button>
+<button id="split-button-2" class="button">Play Low Frequency</button>
 
 Being able to split them up on a computer can give us an understanding of what a person actually hears. We can understand how high or low a sound it, or figure out what note it is.
 
