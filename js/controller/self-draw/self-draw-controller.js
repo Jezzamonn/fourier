@@ -9,9 +9,12 @@ let State = Object.freeze({
     circlesFading: 4,
     windowMove: 5,
 });
-let handMoveTime = 60 * 0.8;
-let circleFadeTime = 180 * 0.8;
-let windowMoveTime = 60;
+
+let maxSubFrames = 20;
+let fps = 60;
+let handMoveTime = fps * 0.8;
+let circleFadeTime = 3 * fps * 0.8;
+let windowMoveTime = fps;
 
 export default class SelfDrawController extends CanvasController {
 
@@ -23,9 +26,25 @@ export default class SelfDrawController extends CanvasController {
 
         this.state = State.handDrawing;
         this.animCount = 0;
+
+        this.simulatedTime = 0;
+        this.elapsedTime = 0;
     }
 
-    update() {
+    update(dt, mousePosition) {
+        if (dt > maxSubFrames / fps) {
+            // Limit this for the case where the user navigates away and then comes back.
+            dt = maxSubFrames / fps;
+        }
+
+        this.elapsedTime += dt;
+        while (this.simulatedTime < this.elapsedTime) {
+            this.subUpdate();
+            this.simulatedTime += 1 / fps;
+        }
+    }
+
+    subUpdate() {
         switch (this.state) {
             case State.handDrawing: {
 
