@@ -9,6 +9,10 @@ export const baseFrequency = 220;
  * @param {function(number):number|Array<number>} wave 
  */
 export function playSoundWave(wave) {
+    if (wave.length == 0) {
+        // Do nothing if we have a nothing-lengthed wave.
+        return;
+    }
     const baseVolume = 0.8;
     const decay = 3;
     if (wave.constructor === Array) {
