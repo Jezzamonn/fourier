@@ -15,8 +15,13 @@ header {
 header h1 {
 	position: relative;
 	margin: 0;
-	padding: 20px;
+	padding: 0 20px;
 	color: white;
+}
+header p {
+	position: relative;
+	color: white;
+	margin: auto;
 }
 main {
 	width: 90%;
