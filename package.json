@@ -17,7 +17,8 @@
     "makedebughtml": "showdown makehtml -i debug.md -o /tmp/debug.html && sed '/{{CONTENT}}/ {\nr /tmp/debug.html\nd\n}' template.html > build/debug.html",
     "css": "cp -r css build/",
     "img": "cp -r img build/",
-    "build": "npm run webpack && npm run makehtml && npm run cp",
+    "preview": "cp preview.png build/",
+    "build": "npm run webpack && npm run makehtml && npm run css && npm run img && npm run preview",
     "test": "jest",
     "watch": "npm-watch",
     "reload": "reload -b -d build"
