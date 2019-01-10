@@ -40,16 +40,6 @@ function init() {
 		controllers.push(controller);
 	}
 
-	if (hasElement('fourier-title')) {
-		let fourierTitle = new EpicyclesController('fourier-title');
-		fourierTitle.setPath(
-			titlePoints.map(p => {
-				return {x: p.x * 0.9, y: p.y * 0.9 - 40}
-			}));
-		fourierTitle.period = 15;
-		controllers.push(fourierTitle);
-	}
-
 	const comboWave = getWave(t => Math.sin(2 * Math.PI * t) + 0.5 * Math.sin(6 * Math.PI * t), 128);
 	if (hasElement('combo-sine-wave')) {
 		let controller = new WaveController('combo-sine-wave');
@@ -63,6 +53,7 @@ function init() {
 		controller.fadeFrequencies = false;
 		controllers.push(controller);
 	}
+
 	if (hasElement('together-button')) {
 		const button = document.getElementById('together-button');
 		button.addEventListener('click', () => playSoundWave(t => Math.sin(2 * Math.PI * t) + 0.5 * Math.sin(6 * Math.PI * t)));
@@ -81,6 +72,7 @@ function init() {
 		controller.setPath(getWave(squareWave, 128));
 		controllers.push(controller);
 	}
+
 	let squareWaveSplitController;
 	if (hasElement('square-wave-split')) {
 		squareWaveSplitController = new WaveSplitController('square-wave-split');
@@ -88,25 +80,25 @@ function init() {
 		controllers.push(squareWaveSplitController);
 	}
 
-	let squareWaveBuildUpSlider, squareWaveButton;
+	let squareWaveBuildUpController;
+	if (hasElement('square-wave-build-up')) {
+		squareWaveBuildUpController = new WaveSplitController('square-wave-build-up');
+		squareWaveBuildUpController.setPath(getWave(squareWave, 128));
+		squareWaveBuildUpController.splitAnim = false;
+		controllers.push(squareWaveBuildUpController);
+	}
 	if (hasElement('square-wave-build-up-slider')) {
-		squareWaveBuildUpSlider = new RangeController('square-wave-build-up-slider');
-		controllers.push(squareWaveBuildUpSlider);
+		const slider = new RangeController('square-wave-build-up-slider');
+		if (squareWaveBuildUpController) {
+			slider.onValueChange.push(val => squareWaveBuildUpController.fourierAmt = val);
+		}
+		controllers.push(slider);
 	}
 	if (hasElement('square-wave-button')) {
-		squareWaveButton = document.getElementById('square-wave-button');
-	}
-	if (hasElement('square-wave-build-up')) {
-		let controller = new WaveSplitController('square-wave-build-up');
-		controller.setPath(getWave(squareWave, 128));
-		controller.splitAnim = false;
-		if (squareWaveBuildUpSlider != null) {
-			squareWaveBuildUpSlider.onValueChange.push(val => controller.fourierAmt = val);
+		const button = document.getElementById('square-wave-button');
+		if (squareWaveBuildUpController) {
+			button.addEventListener('click', () => playSoundWave(squareWaveBuildUpController.partialWave));
 		}
-		if (squareWaveButton) {
-			squareWaveButton.addEventListener('click', () => playSoundWave(controller.partialWave));
-		}
-		controllers.push(controller);
 	}
 
 	let waveDrawController, waveDrawSliderController, waveDrawButton, waveDrawSplitController;
@@ -124,9 +116,6 @@ function init() {
 		waveDrawSliderController = new RangeController('wave-draw-slider');
 		waveDrawSliderController.animate = false;
 		controllers.push(waveDrawSliderController);
-	}
-	if (hasElement('wave-draw-button')) {
-		waveDrawButton = document.getElementById('wave-draw-button');
 	}
 	if (hasElement('wave-draw-split')) {
 		waveDrawSplitController = new WaveSplitController('wave-draw-split');
@@ -151,10 +140,13 @@ function init() {
 				waveDrawSplitController.splitAnim = false;
 			});
 		}
-		if (waveDrawButton) {
-			waveDrawButton.addEventListener('click', () => playSoundWave(waveDrawSplitController.partialWave));
-		}
 		controllers.push(waveDrawSplitController);
+	}
+	if (hasElement('wave-draw-button')) {
+		const button = document.getElementById('wave-draw-button');
+		if (button) {
+			button.addEventListener('click', () => playSoundWave(waveDrawSplitController.partialWave));
+		}
 	}
 
 	if (hasElement('wave-samples')) {
@@ -260,6 +252,18 @@ function init() {
 			circleZoneSlider.onValueChange.push(val => epicycles.setFourierAmt(val));
 		}
 		controllers.push(epicycles);
+	}
+
+	if (hasElement('fourier-title')) {
+		let fourierTitle = new EpicyclesController('fourier-title');
+		fourierTitle.setPath(
+			titlePoints.map(p => {
+				return {
+					x: p.x * 0.9,
+					y: p.y * 0.9 - 40}
+			}));
+		fourierTitle.period = 15;
+		controllers.push(fourierTitle);
 	}
 
 	if (hasElement('img-x-component')) {
