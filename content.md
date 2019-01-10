@@ -378,4 +378,4 @@ I'm Jez! Full time I work at a [search company](https://www.google.com/) in the 
 
 If you have any feedback or want to ask any questions, feel free to<span id="email-text"></span> shoot me a tweet on [Twitter](https://twitter.com/jezzamonn).
 
-If you want to see more of my work, check out my [homepage](/), and if you want to see what I'm making next, you can follow my Twitter account, [@jezzamonn](https://twitter.com/jezzamonn)!
+And if you want to see more of my work, check out my [homepage](/), and if you want to see what I'm making next, you can follow my Twitter account, [@jezzamonn](https://twitter.com/jezzamonn)!
