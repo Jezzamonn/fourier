@@ -339,6 +339,14 @@ function init() {
 		controllers.push(controller);
 	}
 
+	if (hasElement('email-text')) {
+		const emailElement = document.getElementById('email-text');
+		// Add my email using js so that non-js scrapers can't just get it
+		const email = 'fourier' + '@' + 'jezzamon.com';
+		const emailText = ` email me at <a href="mailto:${email}">${email}</a>, or`;
+		emailElement.innerHTML = emailText;
+	}
+
 	conductor = new Conductor(controllers);
 	conductor.start();
 }

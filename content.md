@@ -153,7 +153,7 @@ There is another type of visual data that does use Fourier transforms, however.
 
 ## JPEGs
 
-Did you know Fourier transforms can also be used on images? That's how JPEGs works. We're applying the same principles to images – splitting up something into a bunch of sine waves, and then only storing the important ones.
+Did you know Fourier transforms can also be used on images? In fact, we use it all the time, because that's how JPEGs work! We're applying the same principles to images – splitting up something into a bunch of sine waves, and then only storing the important ones.
 
 Now we're dealing with images, we need a different type of sine wave. We need to have something that no matter what image we have, we can add up a bunch of these sine waves to get back to our original image.
 
@@ -375,5 +375,7 @@ And of course, the Wikipedia article is pretty good too.
 <canvas id="its-meee" class="sketch" width=500 height=500></canvas>
 
 I'm Jez! Full time I work at a [search company](https://www.google.com/) in the Bay Area, and in my spare time I like making games and interactive code things like this!
+
+If you have any feedback or want to ask any questions, feel free to<span id="email-text"></span> shoot me a tweet on [Twitter](https://twitter.com/jezzamonn).
 
 If you want to see more of my work, check out my [homepage](/), and if you want to see what I'm making next, you can follow my Twitter account, [@jezzamonn](https://twitter.com/jezzamonn)!
