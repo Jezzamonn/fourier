@@ -127,7 +127,7 @@ Remember, these waves look like circles when we look at them from front on. The 
 
 *Use the slider above to control how many circles there are.*
 
-Like before, we get a pretty good approximation of the our pattern with just a few circles. With just a few it's able to create the shape fairly well. Because this is a fairly simple shape, all the last ones do is make the edges a little sharper.
+Like before, we get a pretty good approximation of our pattern with just a few circles. Because this is a fairly simple shape, all the last ones do is make the edges a little sharper.
 
 All this applies to any drawing, really! Now it’s your chance to play around with it.
 
@@ -157,7 +157,7 @@ Did you know Fourier transforms can also be used on images? In fact, we use it a
 
 Now we're dealing with images, we need a different type of sine wave. We need to have something that no matter what image we have, we can add up a bunch of these sine waves to get back to our original image.
 
-To do that, each of our sine waves will be images too. Instead of a wave that's a line with a top and a bottom, we now have images with black and white sections. Instead waves that are larger or smaller, we have images that have more or less contrast.
+To do that, each of our sine waves will be images too. Instead of a wave that's a line, we now have images with black and white sections. To represent the size of a wave, each image will have more or less contrast.
 
 We can also use these to represent color in the same way, but let's start with black-and-white images for now. To represent colorless images, we need some horizontal wave images,
 
