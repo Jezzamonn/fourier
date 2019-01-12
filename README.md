@@ -15,7 +15,7 @@ The code for all the interactive elements on the page is under the [js/](js/) fo
 
 The actual Fourier transform is done in [just-fourier-things.js](js/just-fourier-things.js), which is really a wrapper over the [fft.js](https://www.npmjs.com/package/fft.js) library. Sound synth is done in [synth.js](js/synth.js), using the Web Audio API.
 
-To generate the images used for the JPEG section, I used Python and a Jupyter notebook. That's in [python/dct.ipynb](python/dct.ipynb). It actually fairly readable itself.
+To generate the images used for the JPEG section, I used Python and a Jupyter notebook. That's in [python/dct.ipynb](python/dct.ipynb), and it's fairly readable itself.
 
 ## Installing stuff
 If you're curious about playing with the code yourself, you'll need to [install npm](https://www.npmjs.com/get-npm). You can then run `npm install` to install all the dependencies. Once that's done, you can run `npm run watch` to start a script that will listen for file changes and rebuild everything, and `npm run reload` to launch a webserver that reloads the page whenever anything changes :)  (warning though: I haven't tried to build things on Windows so not sure how some of the scripts will run there)
