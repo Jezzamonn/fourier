@@ -3,3 +3,7 @@
 
 # Except this file
 !.gitignore
+
+# But then also allow the preview gif
+!*/
+!combo.gif
