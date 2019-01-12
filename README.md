@@ -8,7 +8,7 @@ This webpage is coded in JavaScript, using [Webpack](https://webpack.js.org/), a
 
 It uses some features of modern JavaScript like classes that might not be too familiar to you if you've only done intro JavaScript, but don't let that phase you too much! All the interactivity and graphics is just done with raw JS, no graphic libraries or anything like that.
 
-## File structure
+## Where the interesting files are
 The content of the page is written in Markdown, in [content.md](content.md), that gets converted into HTML when the website is built (the script for that is in [package.json](package.json)).
 
 The code for all the interactive elements on the page is under the [js/](js/) folder. Each interactive element has a 'controller' that handles updating and rendering that element (e.g. [EpicyclesController](js/controller/epicycles-controller.js)). There's something that I called a [conductor](js/conductor.js) that handles events and passes them on to each controller. Then they're all created and linked to elements on the page in [main.js](js/main.js).
