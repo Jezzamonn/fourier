@@ -11,7 +11,7 @@ It uses some features of modern JavaScript like classes that might not be too fa
 ## File structure
 The content of the page is written in Markdown, in [content.md](content.md), that gets converted into HTML when the website is built (the script for that is in [package.json](package.json)).
 
-The code for all the interactive elements on the page is under the [js/](js/) folder. Each interactive element has a 'controller' that handles updating and rendering that element (e.g. [EpicyclesController](js/controllers/epicycles-controller.js)). There's something that I called a [conductor](js/conductor.js) that handles events and passes them on to each controller. Then they're all created and linked to elements on the page in [main.js](js/main.js).
+The code for all the interactive elements on the page is under the [js/](js/) folder. Each interactive element has a 'controller' that handles updating and rendering that element (e.g. [EpicyclesController](js/controller/epicycles-controller.js)). There's something that I called a [conductor](js/conductor.js) that handles events and passes them on to each controller. Then they're all created and linked to elements on the page in [main.js](js/main.js).
 
 The actual Fourier transform is done in [just-fourier-things.js](js/just-fourier-things.js), which is really a wrapper over the [fft.js](https://www.npmjs.com/package/fft.js) library. Sound synth is done in [synth.js](js/synth.js), using the Web Audio API.
 
