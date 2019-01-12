@@ -1,5 +1,5 @@
 import CanvasController from "./canvas-controller";
-import { getFourierData, resample2dData } from "../justfourierthings";
+import { getFourierData, resample2dData } from "../just-fourier-things";
 import { slurp, clampedSlurp } from "../util";
 import { palette } from "../color";
 

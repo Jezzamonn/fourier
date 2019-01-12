@@ -1,6 +1,6 @@
 import CanvasController from "./canvas-controller";
 import { easeInOut, clamp, slurp, clampedSlurp } from "../util";
-import { getRealFourierData } from "../justfourierthings";
+import { getRealFourierData } from "../just-fourier-things";
 import { palette } from "../color";
 import { renderWave } from "../wave-things";
 
