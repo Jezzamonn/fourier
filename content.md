@@ -60,7 +60,7 @@ We need a lot of them this time – technically an infinite amount to perfectly 
 
 Visually, you'll notice that actually the first few sine waves are the ones that make the biggest difference. With the slider halfway, we have the general shape of the wave, but it's all wiggly. We just need the rest of the small ones to make the wigglyness flatten out.
 
-When you listen to the wave, the you'll hear the sound get lower. Because we're removing the higher frequencies.
+When you listen to the wave, you'll hear the sound get lower, because we're removing the higher frequencies.
 
 This process works like that for any repeating line. Give it a go, try draw your own!
 
