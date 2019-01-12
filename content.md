@@ -37,7 +37,7 @@ The most obvious example is sound – when we hear a sound, we don’t hear that
 
 <button id="split-button-2" class="button">Play Low Frequency</button>
 
-Being able to split them up on a computer can give us an understanding of what a person actually hears. We can understand how high or low a sound it, or figure out what note it is.
+Being able to split them up on a computer can give us an understanding of what a person actually hears. We can understand how high or low a sound is, or figure out what note it is.
 
 We can also use this process on waves that don't look like they're made of sine waves.
 
