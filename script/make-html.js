@@ -12,7 +12,7 @@ const pageData = [
     },
     { // Spanish!??! 😲
         markdown: 'content-es.md',
-        title: 'Transformada de Fourier',
+        title: 'Una introducción interactiva a las transformadas de Fourier',
         description: 'Las transformadas de Fourier son una herramienta utilizada en un montón de cosas diferentes. Esta es una explicación de lo que hace una transformada de Fourier, algunas formas diferentes en que puede ser útil y cómo puedes hacer cosas bonitas con ella, como esta cosa:',
         filename: 'es.html',
         url: '/es.html',
