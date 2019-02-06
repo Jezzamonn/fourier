@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "watch": {
-    "makehtml": "content.md",
-    "makedebughtml": "debug.md",
+    "makehtml": "./*.md",
     "webpack": "js/**/*.js",
     "css": "css/styles.css",
     "img": "img/*"
@@ -13,8 +12,7 @@
   "scripts": {
     "start": "http-server",
     "webpack": "webpack || exit 1",
-    "makehtml": "showdown makehtml -i content.md -o /tmp/content.html && sed '/{{CONTENT}}/ {\nr /tmp/content.html\nd\n}' template.html > build/index.html",
-    "makedebughtml": "showdown makehtml -i debug.md -o /tmp/debug.html && sed '/{{CONTENT}}/ {\nr /tmp/debug.html\nd\n}' template.html > build/debug.html",
+    "makehtml": "node script/make-html",
     "css": "cp -r css build/",
     "img": "cp -r img build/",
     "preview": "cp preview.png build/",
@@ -33,9 +31,11 @@
     "babel-preset-env": "^1.6.1",
     "http-server": "^0.11.1",
     "jest": "^23.6.0",
+    "mustache": "^3.0.1",
     "npm-watch": "^0.3.0",
     "regenerator-runtime": "^0.12.1",
     "reload": "^2.3.1",
+    "showdown": "^1.9.0",
     "webpack": "^3.12.0"
   },
   "dependencies": {

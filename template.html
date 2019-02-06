@@ -11,7 +11,7 @@
 	gtag('config', 'UA-105814606-2');
     </script>
     
-	<title>Fourier Transforms</title>
+	<title>{{title}}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/styles.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
@@ -28,10 +28,10 @@
 	<meta name="theme-color" content="#ffffff">
 	
 	<!-- Stuff for Facebook/Twitter -->
-	<meta property="og:url"                content="http://www.jezzamon.com/fourier" />
+	<meta property="og:url"                content="http://www.jezzamon.com/fourier{{url}}" />
 	<meta property="og:type"               content="website" />
-	<meta property="og:title"              content="Fourier Transforms" />
-	<meta property="og:description"        content="An Interactive Introduction to Fourier Transforms!" />
+	<meta property="og:title"              content="{{title}}" />
+	<meta property="og:description"        content="{{description}}" />
 	<meta property="og:image"              content="http://www.jezzamon.com/fourier/preview.png" />
 	<meta property="og:image:type"         content="image/png" />
 	<meta property="og:image:width"        content="1200" />
@@ -43,14 +43,11 @@
 <body>
 <header>
 	<canvas id="header-background" class="header-background"></canvas>
-	<h1>An Interactive Introduction to Fourier Transforms</h1>
+	<h1>{{title}}</h1>
 	<p>Jez Swanson</p>
 </header>
 <main id="content">
-	{{CONTENT}}
-</div>
-<div id="debug-window">
-	<p id="debug-content">Debug!</p>
+	{{{content}}}
 </div>
 <script src="main.bundle.js"></script>
 </body>
