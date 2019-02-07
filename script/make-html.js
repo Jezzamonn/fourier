@@ -38,7 +38,19 @@ const markdownConverter = new showdown.Converter();
 
 const template = fs.readFileSync('template.html').toString();
 
-for (pageDatum of pageData) {
+const languages = [];
+for (const pageDatum of pageData) {
+    if (!pageDatum.hasOwnProperty('languageName')) {
+        continue;
+    }
+    languages.push({
+        name: pageDatum.languageName,
+        // Use outFileName here instead of url because we need it to work relative to what page we're on now.
+        url: '' + pageDatum.outFileName,
+    });
+}
+
+for (const pageDatum of pageData) {
     console.log(`generating ${pageDatum.markdownFileName}`)
     // Read in content
     const markdown = fs.readFileSync(contentDir + pageDatum.markdownFileName).toString();
@@ -51,6 +63,7 @@ for (pageDatum of pageData) {
     const view = Object.assign({}, pageDatum);
     view.content = htmlContent;
     view.translator = translator;
+    view.languages = languages;
 
     const html = mustache.render(template, view)
     // Output to build directory;

@@ -47,9 +47,17 @@
 	<p>Jez Swanson</p>
 	{{{translator}}}
 </header>
+<nav id="languages">
+	<ul>
+		{{#languages}}
+		<li><a href="{{url}}">{{name}}</a></li>
+		{{/languages}}
+		<li><a href="https://github.com/Jezzamonn/fourier/blob/master/content/README.md">Add a translation</a></li>
+	</ul>
+</nav>
 <main id="content">
 	{{{content}}}
-</div>
+</main>
 <script src="main.bundle.js"></script>
 </body>
 </html>

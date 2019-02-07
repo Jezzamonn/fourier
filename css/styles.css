@@ -5,6 +5,31 @@ body {
 	color: #333;
 }
 
+h1, h2, h3 {
+	font-family: 'Montserrat', sans-serif;
+	color: #3F51B5;
+}
+h2, h3, p, li {
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+}
+li {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	color: #57a7cc;
+}
+em {
+	color: #e91e63;
+}
+a, a:visited {
+	color: #e91e63;
+}
+a:hover {
+	color: #ed7656;
+}
+
 header {
 	position: relative;
 	text-align: center;
@@ -26,13 +51,6 @@ header p {
 header a, header a:visited {
 	color: white;
 }
-main {
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 80px;
-	margin-bottom: 80px;
-}
 .header-background {
 	position: absolute;
 	top: 0;
@@ -41,15 +59,30 @@ main {
 	height: 100%;
 }
 
-#debug-window {
-	display: none;
-	position: fixed;
-	left: 0;
-	top: 0;
-	border-style: solid;
-	border-width: 1px;
-	background: rgba(255, 255, 255, 0.9);
-	font-size: 0.5em;
+nav {
+	text-align: center;
+}
+nav ul {
+	padding: 0;
+	margin: 5px;
+}
+nav li {
+	list-style: none;
+	display: inline;
+	font-size: 0.8rem;
+	color: #333;
+}
+nav li:not(:last-child):after {
+	content: " \00b7";
+}
+
+
+main {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 80px;
+	margin-bottom: 80px;
 }
 
 .sketch {
@@ -197,30 +230,4 @@ input[type=range] {
 	margin-right: auto;
 	margin-top: 30px;
 	margin-bottom: 30px;
-}
-
-h1, h2, h3 {
-	font-family: 'Montserrat', sans-serif;
-	color: #3F51B5;
-}
-
-h2, h3, p, li {
-	max-width: 900px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 25px;
-}
-li {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-	color: #57a7cc;
-}
-em {
-	color: #e91e63;
-}
-a, a:visited {
-	color: #e91e63;
-}
-a:hover {
-	color: #ed7656;
 }
