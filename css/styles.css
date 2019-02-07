@@ -23,6 +23,9 @@ header p {
 	color: white;
 	margin: auto;
 }
+header a, header a:visited {
+	color: white;
+}
 main {
 	width: 90%;
 	margin-left: auto;
