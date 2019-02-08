@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "watch": {
-    "makehtml": "content/*.md",
+    "makehtml": {
+      "patterns": [
+        "content/*.md"
+      ],
+      "extensions": "md"
+    },
     "webpack": "js/**/*.js",
     "css": "css/styles.css",
     "img": "img/*"
