@@ -30,6 +30,11 @@ a:hover {
 	color: #ed7656;
 }
 
+.hidden-preload {
+	position: absolute;
+	visibility: hidden;
+}
+
 header {
 	position: relative;
 	text-align: center;

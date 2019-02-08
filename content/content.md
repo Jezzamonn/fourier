@@ -254,6 +254,72 @@ Let's start with this letter 'A'. It's pretty small, but we need it to be small 
 
 As we add more and more of these images, we end up with something that becomes closer and closer to the actual image. But I think you'll see the pattern here, as we get a reasonable approximation with just a few of them.
 
+<div class="hidden-preload">
+    <img src="img/img-buildup-0-0.png">
+    <img src="img/img-buildup-0-1.png">
+    <img src="img/img-buildup-0-2.png">
+    <img src="img/img-buildup-0-3.png">
+    <img src="img/img-buildup-0-4.png">
+    <img src="img/img-buildup-0-5.png">
+    <img src="img/img-buildup-0-6.png">
+    <img src="img/img-buildup-0-7.png">
+    <img src="img/img-buildup-1-0.png">
+    <img src="img/img-buildup-1-1.png">
+    <img src="img/img-buildup-1-2.png">
+    <img src="img/img-buildup-1-3.png">
+    <img src="img/img-buildup-1-4.png">
+    <img src="img/img-buildup-1-5.png">
+    <img src="img/img-buildup-1-6.png">
+    <img src="img/img-buildup-1-7.png">
+    <img src="img/img-buildup-2-0.png">
+    <img src="img/img-buildup-2-1.png">
+    <img src="img/img-buildup-2-2.png">
+    <img src="img/img-buildup-2-3.png">
+    <img src="img/img-buildup-2-4.png">
+    <img src="img/img-buildup-2-5.png">
+    <img src="img/img-buildup-2-6.png">
+    <img src="img/img-buildup-2-7.png">
+    <img src="img/img-buildup-3-0.png">
+    <img src="img/img-buildup-3-1.png">
+    <img src="img/img-buildup-3-2.png">
+    <img src="img/img-buildup-3-3.png">
+    <img src="img/img-buildup-3-4.png">
+    <img src="img/img-buildup-3-5.png">
+    <img src="img/img-buildup-3-6.png">
+    <img src="img/img-buildup-3-7.png">
+    <img src="img/img-buildup-4-0.png">
+    <img src="img/img-buildup-4-1.png">
+    <img src="img/img-buildup-4-2.png">
+    <img src="img/img-buildup-4-3.png">
+    <img src="img/img-buildup-4-4.png">
+    <img src="img/img-buildup-4-5.png">
+    <img src="img/img-buildup-4-6.png">
+    <img src="img/img-buildup-4-7.png">
+    <img src="img/img-buildup-5-0.png">
+    <img src="img/img-buildup-5-1.png">
+    <img src="img/img-buildup-5-2.png">
+    <img src="img/img-buildup-5-3.png">
+    <img src="img/img-buildup-5-4.png">
+    <img src="img/img-buildup-5-5.png">
+    <img src="img/img-buildup-5-6.png">
+    <img src="img/img-buildup-5-7.png">
+    <img src="img/img-buildup-6-0.png">
+    <img src="img/img-buildup-6-1.png">
+    <img src="img/img-buildup-6-2.png">
+    <img src="img/img-buildup-6-3.png">
+    <img src="img/img-buildup-6-4.png">
+    <img src="img/img-buildup-6-5.png">
+    <img src="img/img-buildup-6-6.png">
+    <img src="img/img-buildup-6-7.png">
+    <img src="img/img-buildup-7-0.png">
+    <img src="img/img-buildup-7-1.png">
+    <img src="img/img-buildup-7-2.png">
+    <img src="img/img-buildup-7-3.png">
+    <img src="img/img-buildup-7-4.png">
+    <img src="img/img-buildup-7-5.png">
+    <img src="img/img-buildup-7-6.png">
+    <img src="img/img-buildup-7-7.png">
+</div>
 <div id="letter-buildup" class="multi-container">
 <img id="letter-buildup-letter" src="img/img-buildup-0-0.png" class="sketch sketch-letter">
 <div id="letter-buildup-components" class="img-component-container">
