@@ -413,7 +413,7 @@ Estas son solo algunas de las aplicaciones. La transformada de Fourier es una he
                            
 ## Preguntas para los curiosos.
                             
-Me salté la mayoría de las conceptos matemáticos, pero si estás interesado en los principios teóricos de cómo funciona, aquí hay algunas preguntas que puedes usar para guiar tu investigación:
+Me salté la mayoría de los conceptos matemáticos, pero si estás interesado en los principios teóricos de cómo funciona, aquí hay algunas preguntas que puedes usar para guiar tu investigación:
                             
 - ¿Cómo representas matemáticamente una transformada de Fourier?
 - ¿Cuál es la diferencia entre una transformada de Fourier de tiempo continuo y una transformada de Fourier de tiempo discreto?
