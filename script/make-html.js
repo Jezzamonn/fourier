@@ -22,7 +22,7 @@ const pageData = [
         translatorMarkdown: 'Traducido por [Juan Carlos Ponce Campuzano](https://www.jcponce.com)',
     },
     { // German
-        languageName: 'Deutsche',
+        languageName: 'Deutsch',
         markdownFileName: 'content-de.md',
         title: 'Eine interaktive Einführung in die Fourier-Transformationen',
         description: 'Fourier Transformationen sind ein Werkzeug die für eine menge verschiedener anwendunge genutzt werden können. dies ist eine Erklärung was eine Fouriertransformation macht und einige andere Arten wie sie nützlich sein kann.',
