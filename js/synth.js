@@ -4,6 +4,20 @@ import { normaliseWave, getWaveFunction } from "./wave-things";
 export const SAMPLE_RATE = 44100;
 export const baseFrequency = 220;
 
+let audioContext = null;
+
+function getAudioContext() {
+    if (audioContext === null) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext || false;
+        if (!AudioContext) {
+            // Web Audio API not supported :(
+            return null;
+        }
+        audioContext = new AudioContext();
+    }
+    return audioContext;
+}
+
 /**
  * 
  * @param {function(number):number|Array<number>} wave 
@@ -20,7 +34,10 @@ export function playSoundWave(wave) {
         wave = getWaveFunction(normaliseWave(wave));
     }
 
-    const audioContext = new AudioContext();
+    const audioContext = getAudioContext();
+    if (audioContext === null) {
+        return false;
+    }
     const buffer = audioContext.createBuffer(1, SAMPLE_RATE, SAMPLE_RATE);
     
     const channel = buffer.getChannelData(0);
