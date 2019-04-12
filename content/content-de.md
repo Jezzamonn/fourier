@@ -1,101 +1,102 @@
-Fourier Transformationen sind ein Werkzeug die für eine menge verschiedener anwendunge genutzt werden können. dies ist eine Erklärung was eine Fouriertransformation macht und einige andere Arten wie sie nützlich sein kann. Und wie man so schöne Dinge machen kann wie diese:
+Die Fouriertransformation ist ein Werkzeug, das für eine Vielzahl verschiedener Anwendungen genutzt werden kann. Diese Seite ist eine Einführung in die Funktionsweise und Anwendung der Fouriertransformation. Sie zeigt außerdem, wie man damit schöne Dinge machen kann, wie zum Beispiel das hier:
 
 <canvas id="self-draw" class="sketch" width=500 height=500></canvas>
 
-Ich werde erklären, wie die Animation funktioniert und dabei die Fourier Transformation erklären!
-Am Ende sollten Sie eine Idee davon bekommen haben
-- Was eine Fourier Transformation macht
-- einige praktische Anwendunge der Fourier Transformation
-- einige sinnlose aber coole anwendungen der Fourier Transformation
+Ich werde erklären, wie die Animation funktioniert und dabei die Fouriertransformation erläutern!
 
-Wir werden Mathematik und Gleichungen zunächst aussen vor lassen. Es ist eine Menge interessanter Mathematik dahinter, aber es ist besser damit anzufangen was es tatsächlich tut und wofür Sie es als erstes nutzen würden. Wenn Sie mehr darüber wissen wollen, weiter unten können Sie mehr lesen.
+Am Ende solltest du ein gutes Verständnis davon haben,
+- was eine Fouriertransformation macht
+- wie einige praktische Anwendungen der Fouriertransformation aussehen
+- wie sinnlose, aber coole Anwendungen der Fouriertransformation aussehen.
 
-## Also Was ist diese Sache?
+Wir werden die Mathematik und Gleichungen zunächst außen vor lassen. Es steckt eine Menge interessanter Mathematik dahinter, aber es ist besser als erstes damit anzufangen zu erklären was sie eigentlich tut und warum du sie nutzen willst. Wenn du mehr über das Wie wissen möchtest, gibt es unten weitere Literaturempfehlungen.
 
-Einfach gesagt is die Fourier Transformation ein Verfahren etwas in eine Menge von Sinus-Wellen zu zerlegen. Wie gewohnt stammt der Name von einer Person, die vor langer Zeit gelebt hat und sich Fourier nannte.
+## Also was ist dieses Ding?
 
-Lassen Sie uns mit einigen einfachen Bespielen beginnen und uns den Weg nach oben arbeiten. Als erstes schauen wir uns Wellen an - Muster die sich mit der Zeit widerholen.
+Einfach gesagt ist die Fouriertransformation ein Verfahren etwas in eine Menge von Sinuswellen zu zerlegen. Wie gewöhnlich stammt der Name von einer Person, die vor langer Zeit gelebt hat und sich Fourier nannte.
 
-Hier ist ein Wellen-Beispiel:
+Lasst uns mit einigen einfachen Bespielen beginnen und uns weiter nach oben arbeiten. Als erstes schauen wir uns Wellen an - Muster, die sich mit der Zeit widerholen.
+
+Hier ist eine Beispielwelle:
 
 <canvas id="combo-sine-wave" class="sketch" width=500 height=300></canvas>
 
-Dieses Wellenmuster kann in Sinus-Wellen zerlegt werden. Also wenn wir zwei Sinuswellen aufaddieren bekommen wir die Original-Welle zurück.
+Dieses Wellenmuster kann in Sinuswellen zerlegt werden. Wenn wir die zwei Sinuswellen addieren, bekommen wir die Originalwelle zurück.
 
 <canvas id="combo-sine-wave-split" class="sketch" width=500 height=500></canvas>
 
-Die Fourier-Transformation ist für uns ein Weg die kombinierte Welle zu nehmen und jede einzelne Well zurück zu erhalten. In diesem Beispiel kann man es fast im Kopf machen, einfach wenn man die originale Welle betrachtet.
+Die Fouriertransformation ist für uns eine Möglichkeit die kombinierte Welle zu nehmen und jede einzelne darin enthaltene Sinuswelle zurück zu erhalten. In diesem Beispiel kann man es fast im Kopf machen, indem man die originale Welle betrachtet.
 
-Warum? Es stellt sich heraus, dass eine Menge Dinge der realen Welt ebenfalls auf Sinus-Wellen basieren. Üblicherweise nennen wir Sie die Frequenzen der Wellen.
+Warum? Es stellt sich heraus, dass eine große Zahl von Dingen in der echten Welt basierend auf Sinuswellen interagieren. Üblicherweise nennen wir sie die Frequenzen der Wellen.
 
-Das offensichtlichste Beispiel ist Klang - wenn wir einen Klang hören, hören wir nicht die verschnörkelte Linie, aber wir hören die verschiedenen Frequenzen der Sinus-Welle, die den Klang ausmacht.
+Das offensichtlichste Beispiel ist Klang - wenn wir einen Klang hören, hören wir nicht die verschnörkelte Linie, aber die verschiedenen Frequenzen der Sinuswelle, die den Klang ausmacht.
 
-<button id="together-button" class="button">Zeige ganze Welle</button>
+<button id="together-button" class="button">Spiele die ganze Welle</button>
 
-<button id="split-button-1" class="button">Zeuge hohe Frequenzen</button>
+<button id="split-button-1" class="button">Spiele hohe Frequenzen</button>
 
-<button id="split-button-2" class="button">Zeige tiefe Frequenzen</button>
+<button id="split-button-2" class="button">Spiele tiefe Frequenzen</button>
 
-Wenn wir in der Lage sind sie auf einem Computer zu zerlegen, dann vermittelt uns das ein Verständnis davon was die Person aktuell hört. Wir verstehen wie hoch oder tief der Klang ist, oder können die Note herausfinden.
+Weil wir die Frequenzen auf einem Computer zerlegen können, gibt uns das eine Erklärung dafür, was eine Person wirklich hört. Wir verstehen, wie hoch oder tief der Klang ist oder die Note herausfinden.
 
-Wir können diesen Prozess auch auf Wellen anwenden, die nicht aus Sinus-Wellen zusammen gesetzt sind.
+Wir können diesen Prozess auch auf Wellen anwenden, die nicht so aussehen, als würden sie aus Sinuswellen bestehen.
 
-Schauen Sie sich diese Welle an. Sie wird Rechteck-Welle genennt.
+Schauen wir uns dieses Ding an. Es wird Rechtecksignal genannt.
 
 <canvas id="square-wave" class="sketch" width=500 height=300></canvas>
 
-Es sieht vielleicht nicht so aus, aber sie kann auch in Sinus-Wellen zerlegt werden.
+Es sieht vielleicht nicht so aus, aber es kann auch in Sinuswellen zerlegt werden.
 
 <canvas id="square-wave-split" class="sketch" width=500 height=500></canvas>
 
-Diesmal brauchen wir eine Menge davon - technisch gesehen eine unendliche Menge um sie perfekt zu repräsentieren. Je mehr wir aufaddieren um so mehr nähern wir uns der Rechteck-Welle an, mit der wir gestartet sind.
+Diesmal brauchen wir sehr viele davon - genau genommen eine unendliche Menge um es perfekt darzustellen. Je mehr wir addieren, umso mehr nähern wir uns dem Rechtecksignal an, mit dem wir gestartet sind.
 
 <canvas id="square-wave-build-up" class="sketch" width=500 height=500></canvas>
 <input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
 
-<button id="square-wave-button" class="button">Zeige Welle</button>
+<button id="square-wave-button" class="button">Spiele Welle</button>
 
-*Verschieben Sie den Regler oberhalb um die Anzahl der Sinus-Wellen zu verändern.*
+*Ziehe den Schieberegler oben, um die Anzahl der Sinuswellen zu verändern.*
 
-Offensichtich werden Sie bemerkt haben, dass die ersten Sinuswellen die sind, die den größten Unterschied ausmachen. Mit dem Schieberegler auf halbem Weg haben wir die allgemeine Form der Welle, aber es ist noch verwackelt. Wir brauchen auch noch den Rest der kleinen Wellen um das Verwackeln auszuglätten.
+Visuell wirst du bemerken, dass die ersten paar Sinuswellen den größten Einfluß haben. Mit dem Schieberegler in der Mitte haben wir den prinzipiellen Verlauf der Welle, aber er ist sehr wackelig. Wir brauchen noch den Rest der kleinen Wellen, um das Verwackeln auszuglätten.
 
-Wenn Sie sich die Welle anhören, hören Sie, dass der Klang dunkler wird, da wir die höheren Frequenzen wegnehmen.
+Wenn du dir die Welle anhörst, wird der Klang tiefer werden, weil wir die höheren Frequenzen entfernen.
 
-Dieser Prozess arbeitet genauso bei anderen sich wiederholenden Linien. Propieren Sie es aus, versuchen Sie selbst zu zeichnen!
+Dieser Prozess funktioniert genauso mit jedem sich wiederholenden Verlauf. Probiere es aus, versuche deinen eigenen Verlauf zu zeichnen!
 
 <div class="multi-container">
 <div class="sketch" >
     <canvas id="wave-draw" class="sketch-child" width=500 height=300></canvas>
-    <p id="wave-draw-instruction" class="instruction wave-instruction">Zeichne hier</p>
+    <p id="wave-draw-instruction" class="instruction wave-instruction">Zeichne hier!</p>
 </div>
 <canvas id="wave-draw-split" class="sketch" width=500 height=500></canvas>
 </div>
 <input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
-<button id="wave-draw-button" class="button">Zeige Welle</button>
+<button id="wave-draw-button" class="button">Spiele Welle</button>
 
-*Bewegen Sie den Regler um zu sehen, wie sich mit dem Hinzufügen von immer mehr Wellen wir näher und näher an die Zeichnung kommen.*
+*Bewege den Schieberegler, um zu sehen, wie sich mit dem Hinzufügen von immer mehr Wellen wir näher und näher an deine Zeichnung kommen.*
 
-Nochmal, trotz der Verwaschenheit, die Welle schaut schon ziemlich ähnlich aus mit der Hälfte der Sinus-Wellen.
+Nochmal, abgesehen von der Wackeligkeit, sieht die Welle schon mit der Hälfte der Sinuswellen sehr ähnlich aus.
 
-Tatsächlich können wir die Tatsache, dass die Welle schon ziemlich ähnlich ist zu unserem Vorteil nutzen. Mit der Benutzung der Fourier-Transformation erhalten wir die wichtigen Anteile des Klangs und speichern nur diese schon dicht am Originalklang.
+Tatsächlich können wir es zu unserem Vorteil nutzen, dass die Welle sehr ähnlich aussieht. Mit der Anwendung der Fouriertransformation erhalten wir die wichtigen Anteile des Klangs und speichern nur diese, um etwas zu erhalten, was dicht am Originalklang ist.
 
-Normalerweise speichert ein Computer eine Welle als Punktreihe.
+Normalerweise speichert ein Computer eine Welle als Reihe von Abtastungen.
 
 <canvas id="wave-samples" class="sketch" width=500 height=500></canvas>
 
-Statt dessen können wir  sie auch als Menge von Sinus-Wellen repräsentieren. Dann komprimieren wir den Sound und ignorieren die kleineren Frequenzen. Das Endresultat ist zwar nicht das gleiche, aber klingt sehr ähnlich für eine Person.
+Stattdessen können wir sie auch als Sinuswellen darstellen. Dann komprimieren wir den Klang und ignorieren die kleineren Frequenzen. Das Endresultat ist zwar nicht dasselbe, aber es klingt für eine Person sehr ähnlich.
 
 <canvas id="wave-frequencies" class="sketch" width=500 height=500></canvas>
 
-Das ist im Wesentlichen das was MP3 macht, ausser das sie klüger sind welche Frequenzen sie nutzen und welche verworfen werden.
+Das ist im Wesentlichen das, was MP3s machen, außer, dass sie besser entscheiden können welche Frequenzen genutzt und welche verworfen werden.
 
-Also in diesem Fall können wir die Fourier-Transformation benutzen um die fundamentalen Eigenschaften einer Welle zu verstehen und es dann für Kompression nutzen.
+In diesem Fall können wir die Fouriertransformation benutzen, um die fundamentalen Eigenschaften einer Welle zu verstehen und sie dann für beispielsweise Kompression zu nutzen.
 
-Ok, steigen wir tiefer in die Fourier-Transformation ein. Der nächste Abschnitt schaut cool aus, gibt Ihnen aber auch ein bisschen mehr Verständnis darüber was die Fourier-Transformation macht. Aber überwiegend sieht es cool aus.
+Ok, steigen wir tiefer in die Fouriertransformation ein. Der nächste Abschnitt schaut cool aus, gibt dir aber auch ein bisschen mehr Verständnis darüber, was die Fouriertransformation macht. Aber hauptsächlich sieht es cool aus.
 
 ## Folgezyklen/Epizyklen
 
-Am Anfang sagte ich, dass die Fourier-Transformation Ereignisse in Sinus-Wellen zerlegt. Tatsache ist, dass es die erzeugten Wellen nicht einfache reguläre Sinuswellen sind, sondern 3D. Sie können sie "komplexe Sinoide" nennen. Oder nur "Spiralen".
+Am Anfang sagte ich, dass die Fouriertransformation Ereignisse in Sinus-Wellen zerlegt. Tatsache ist, dass es die erzeugten Wellen nicht einfache reguläre Sinuswellen sind, sondern 3D. Sie können sie "komplexe Sinoide" nennen. Oder nur "Spiralen".
 
 <canvas id="complex-sinusoid" class="sketch" width=500 height=500></canvas>
 
@@ -103,7 +104,7 @@ Wenn wir sie uns von der Seite ansehen, dann schauen sie aus wie Sinuswellen. Vo
 
 <canvas id="complex-sinusoid-turn" class="sketch" width=500 height=500></canvas>
 
-Was wir bisher gemacht haben erforderte nur reguläre 2D Sinuswellen. Wenn wir eine Fourier-Transformation auf 2D Wellen anwenden dann kürzt sich der komplexe Teil heraus, so dass wir eine Sinuswelle erhalten.
+Was wir bisher gemacht haben erforderte nur reguläre 2D Sinuswellen. Wenn wir eine Fouriertransformation auf 2D Wellen anwenden dann kürzt sich der komplexe Teil heraus, so dass wir eine Sinuswelle erhalten.
 
 Aber wir können 3D Sinuswellen für etwas Spass nutzen wie dies:
 
@@ -148,11 +149,11 @@ Könne wir das für echte Daten auch nutzen? Können wir! In der Realtität habe
 
 <canvas id="fourier-title" class="sketch" width=500 height=300></canvas>
 
-Aber, es gibt noch ein anderen Typ für visuelle Daten, der von der Fourier-Transformation Gebrauch macht.
+Aber, es gibt noch ein anderen Typ für visuelle Daten, der von der Fouriertransformation Gebrauch macht.
 
 ## JPEGs
 
-Wußten Sie, dass die Fourier-Transformation auch für Bilder bentutzt werden kann. Tatsächlich benutzen wir es dauernd, denn so funktionieren JPEGs. Wir wenden die gleichen Prinzipien auf Bilder an -zerlegen sie in eine Reihe von Sinus-Wellen und speichern dann nur das Wichtigste.
+Wußten Sie, dass die Fouriertransformation auch für Bilder bentutzt werden kann. Tatsächlich benutzen wir es dauernd, denn so funktionieren JPEGs. Wir wenden die gleichen Prinzipien auf Bilder an -zerlegen sie in eine Reihe von Sinus-Wellen und speichern dann nur das Wichtigste.
 
 Jetzt, wo wir es mit Bildern zu tun haben, brauchen wir einen anderen Typ von Sinus-Wellen. Wir brauchen etws, was , gleich welches Bild wir haben, aufaddiert das Originalbild zurückliefert.
 
@@ -403,21 +404,21 @@ Hier ist ein richtes JPEG, zoomen Sie hinein um die Details zu sehen. Wenn wir m
 
 Lassen Sie uns rekapitulieren:
 
-- Fourier-Transformationen sind Verfahren, die uns Dinge in ihre Frequenzen zerlegen läßt.
+- Fouriertransformationen sind Verfahren, die uns Dinge in ihre Frequenzen zerlegen läßt.
 - die Frequenzen spiegeln fundamentale Eigenschaften der jeweiligen Daten wider.
 - Und man kann Daten komprimieren, in dem man nur die wichtigen Frequenzen speichert.
 - und wir können sie dazu nutzen um cool aussehenden Animationen mit einer Reihe von Kreisen zu erzeugen.
 
-Damit haben wir nur an der Oberfläche einiger Anwendungen gekratzt. Fourier-Transformation ist ein extrem mächtiges Werkzeug, da das Zerlegen von Dingen in Frequenzen so fundamental ist. Sie werden in vielen Gebieten genutzt, einschließlich Schaltkreis-Design, Mobil-Telefon-Signale, Magnetische Resonanzverfahren (Imaging - MRI) und Quantenphysik.
+Damit haben wir nur an der Oberfläche einiger Anwendungen gekratzt. Fouriertransformation ist ein extrem mächtiges Werkzeug, da das Zerlegen von Dingen in Frequenzen so fundamental ist. Sie werden in vielen Gebieten genutzt, einschließlich Schaltkreis-Design, Mobil-Telefon-Signale, Magnetische Resonanzverfahren (Imaging - MRI) und Quantenphysik.
 
 ## Fragen der Neugierigen
 
 Ich habe hier den meisten mathematischen Kram weggelassen, aber wenn Sie an den zugrunde liegenden Prinzipien, wie es funktioniert, interessiert sind, hier sind ein paar Fragen um Ihre Suche zu unterstützen.:
 
-- Wie werden Fourier-Transformationen mathematisch repräsentiert?
+- Wie werden Fouriertransformationen mathematisch repräsentiert?
 - Was ist der Unterschied zwischen einer kontinuierlichen Zeit-Fourier-Transforamtion und einer diskreten?
-- wie setze ich eine Fourier-Transformation am Computer um?
-- wie erstelle ich eine Fourier-Transformation für ein ganzes Lied?( statt nur eines einzelnen Tons)
+- wie setze ich eine Fouriertransformation am Computer um?
+- wie erstelle ich eine Fouriertransformation für ein ganzes Lied?( statt nur eines einzelnen Tons)
 
 ## Lese-Hinweise
 
@@ -427,7 +428,7 @@ Um mehr zu lernen könenn sie einige gute Quellen ausprobieren:
 Ein großartiger Artikel, der mehr auf die Mathematik eingeht.
 
 [But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)
-Ein gutes Youtube-Video von 3Blue1Brown, was die Mathematik der Fourier-Transformation aus der Audio-Perspektive behandelt.
+Ein gutes Youtube-Video von 3Blue1Brown, was die Mathematik der Fouriertransformation aus der Audio-Perspektive behandelt.
 
 [A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)
 Ein weiterer Artikel, der erklärt wie man Epizyklen zum Zeichnen von Wegen/Rändern nutzen kann, erklärt aus der Perspektive der linearen Algebra.
