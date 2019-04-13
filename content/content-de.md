@@ -94,9 +94,9 @@ In diesem Fall können wir die Fouriertransformation benutzen, um die fundamenta
 
 Ok, steigen wir tiefer in die Fouriertransformation ein. Der nächste Abschnitt schaut cool aus, gibt dir aber auch ein bisschen mehr Verständnis darüber, was die Fouriertransformation macht. Aber hauptsächlich sieht es cool aus.
 
-## Folgezyklen/Epizyklen
+## Epizyklen
 
-Am Anfang sagte ich, dass die Fouriertransformation Ereignisse in Sinus-Wellen zerlegt. Tatsache ist, dass es die erzeugten Wellen nicht einfache reguläre Sinuswellen sind, sondern 3D. Sie können sie "komplexe Sinoide" nennen. Oder nur "Spiralen".
+Zu Beginn sagte ich, die Fouriertransformation spaltet Dinge in Sinuswellen auf. Es ist aber tatsächlich so, dass die Wellen, die erzeugt werden, keine normalen Sinuswellen sind, sondern sie in 3D sind. Man könnte sie "komplexer Sinus" nennen. Oder einfach "Spirale".
 
 <canvas id="complex-sinusoid" class="sketch" width=500 height=500></canvas>
 
@@ -104,52 +104,52 @@ Wenn wir sie uns von der Seite ansehen, dann schauen sie aus wie Sinuswellen. Vo
 
 <canvas id="complex-sinusoid-turn" class="sketch" width=500 height=500></canvas>
 
-Was wir bisher gemacht haben erforderte nur reguläre 2D Sinuswellen. Wenn wir eine Fouriertransformation auf 2D Wellen anwenden dann kürzt sich der komplexe Teil heraus, so dass wir eine Sinuswelle erhalten.
+Was wir bisher gemacht haben, erforderte nur reguläre 2D Sinuswellen. Wenn wir eine Fouriertransformation auf 2D Wellen anwenden, dann kürzen sich die komplexen Anteile heraus, sodass wir nur Sinuswellen erhalten.
 
-Aber wir können 3D Sinuswellen für etwas Spass nutzen wie dies:
+Aber wir können die 3D Sinuswellen für etwas lusitges, wie dies hier verwenden:
 
 <canvas id="peace-epicycles" class="sketch" width=500 height=500></canvas>
 
-Was passiert dort?
+Was passiert hier?
 
-Wir könne an das Zeichnen einer 3D-Form denken bei der Art, wie es sich mit der Zeit bewegt. 'Wenn Sie sich die Hand vorstellen, wie sie von einer Person beim Zeichnen bewegt wird, werden die drei Dimensioen dadurch repräsentiert, wo die Spitze des Stiftes gerade ist. Die x und y Dimension ergibt die Position und die Zeit-Dimension ist die Zeit zu diesem Augenblick.
+Wir können uns die Zeichnung als 3D Form vorstellen, weil sie sich mit der Zeit bewegt. Wenn du dir vorstellst, dass die Hand von einer Person gezeichnet wird, stellen die drei Dimensionen die Position der Stiftspitze im zeitlichen Moment dar. Die X- und Y-Dimension geben die Position an, die zeitliche Dimension bestimmt die Zeit in diesem Moment.
 
 <canvas id="peace-3d" class="sketch" width=500 height=500></canvas>
 
-Jetzt, wo wir ein 3D Muster haben, können wir nicht die reguläre 2D Sinuswelle benutzen, um sie darzustellen. Gleich wieviele 2D-Wellen wir aufaddieren, wir erhalten niemals was in 3D. Also brauchen wir etwas anderes.
+Jetzt, da wir ein 3D Muster haben, können wir nicht die regulären 2D Sinuswellen benutzen, um es darzustellen. Egal wie viele der 2D Sinuswellen wir addieren, kommen wir nie auf etwas in 3D. Also brauchen wir etwas anderes.
 
-Was wir benutzen können sind die 3d Spiral-Sinuswellen von eben. Wenn wir davon genug aufaddieren dann erhalten wir unser 3D Muster.
+Was wir benutzen können, sind die 3D Spiral-Sinuswellen von eben. Wenn wir davon sehr viele addieren, dann erhalten wir etwas, was aussieht wie unser 3D Muster.
 
-Erinnern Sie sich, diese Wellen sehen aus wie Kreise, wenn wir von vorn draufgucken. Der Name für Muster eines Kreises der sich um einen anderen Kreis bewegt, nennt man Epizykel.
+Merke, diese Wellen sehen von vorn wie Kreise aus. Das Muster eines Kreises, welcher sich um einen anderen Kreis bewegt nennt man Epizyklus.
 
 <canvas id="peace-build-up" class="sketch" width=500 height=500></canvas>
 <input id="peace-build-up-slider" type="range" min="0" max="1" value="1" step="any">
 
-*Benutzen sie den Regler um die Anzahl der Kreise einzustellen.*
+*Benutze den SChieberegler, um die Anzahl der Kreise einzustellen.*
 
-Wie zuvor erhalten wir eine gute Annährerung an unser Muster mit nur ein paar Kreisen. Da es eine ziemlich einfache Form ist, machen Sie die Ecken schärfer um mehr zu sehen.
+Wie zuvor erhalten wir eine gute Annährerung an unser Muster mit nur ein paar Kreisen. Weil dies ein sehr simples Muster ist, werden von den letzten Wellen nur die Ecken etwas geschärft.
 
-Das funktioniert bei allen Zeichnungen, wirklich! Jetzt ist Ihre Chance damit herumzuspielen.
+Das funktioniert wirklich bei allen Zeichnungen! Dies ist deine Chance damit herumzuspielen.
 
 <div class="multi-container">
 <div class="sketch" >
     <canvas id="draw-zone" class="sketch-child" width=500 height=500></canvas>
-    <p id="draw-zone-instruction" class="instruction">Zeichne hier</p>
-    <button id="draw-zone-undo-button" class="button embedded-button">Zurücknehmen</button>
+    <p id="draw-zone-instruction" class="instruction">Zeichne hier!</p>
+    <button id="draw-zone-undo-button" class="button embedded-button">Rückgängig</button>
 </div>
 <canvas id="circle-zone" class="sketch" width=500 height=500></canvas>
 </div>
 <input id="circle-zone-slider" type="range" min="0" max="1" value="1" step="any">
 
-*Benutzen sie den Regler um die Anzahl der Kreise einzustellen.*
+*Benutze den Schieberegler, um die Anzahl der Kreise einzustellen.*
 
-Wieder sehen Sie, dass für die meisten Formen wir sie mit wenigen Kreisen recht gut  approximieren können, anstatt alle Punkte zu speichern.
+ Du wirst wieder für die meisten Formen erkennen, dass wir sie mit einer kleinen Anzahl von Kreisen sehr gut darstellen können, statt alle Punkte zu speichern.
 
-Könne wir das für echte Daten auch nutzen? Können wir! In der Realtität haben wir ein anderes Datenformat, das sich SVG nennt, welches vielleicht besser geeignet dazu ist Buchstaben zu erzeugen als wir es könnten. Für den Monent ist es nur dafür da colle Gifs zu machen.
+Können wir das auch für echte Daten benutzen? Ja, könnten wir! In Wirklichkeit haben wir ein Datenformat namens SVG, welches vermutlich eine bessere Arbeit bei Formen und Mustern, die wir erzeugen, leistet. Vorerst ist es nur dazu da, um coole kleine GIFs zu erstellen.
 
 <canvas id="fourier-title" class="sketch" width=500 height=300></canvas>
 
-Aber, es gibt noch ein anderen Typ für visuelle Daten, der von der Fouriertransformation Gebrauch macht.
+Aber ss gibt noch einen anderen Typ von Bilddateien, welcher die Fouriertransformation verwendet.
 
 ## JPEGs
 
