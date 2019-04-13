@@ -125,7 +125,7 @@ Merke, diese Wellen sehen von vorn wie Kreise aus. Das Muster eines Kreises, wel
 <canvas id="peace-build-up" class="sketch" width=500 height=500></canvas>
 <input id="peace-build-up-slider" type="range" min="0" max="1" value="1" step="any">
 
-*Benutze den SChieberegler, um die Anzahl der Kreise einzustellen.*
+*Benutze den Schieberegler, um die Anzahl der Kreise einzustellen.*
 
 Wie zuvor erhalten wir eine gute Annährerung an unser Muster mit nur ein paar Kreisen. Weil dies ein sehr simples Muster ist, werden von den letzten Wellen nur die Ecken etwas geschärft.
 
@@ -149,7 +149,7 @@ Können wir das auch für echte Daten benutzen? Ja, könnten wir! In Wirklichkei
 
 <canvas id="fourier-title" class="sketch" width=500 height=300></canvas>
 
-Aber ss gibt noch einen anderen Typ von Bilddateien, welcher die Fouriertransformation verwendet.
+Aber es gibt noch einen anderen Typ von Bilddateien, welcher die Fouriertransformation verwendet.
 
 ## JPEGs
 
