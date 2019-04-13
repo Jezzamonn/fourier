@@ -1,4 +1,4 @@
-Fourier transforms are a tool used in a whole bunch of different things. This is a explanation of what a Fourier transform does, and some different ways it can useful. And how you can make pretty things with it, like this thing:
+Fourier transforms are a tool used in a whole bunch of different things. This is an explanation of what a Fourier transform does, and some different ways it can be useful. And how you can make pretty things with it, like this thing:
 
 <canvas id="self-draw" class="sketch" width=500 height=500></canvas>
 
@@ -62,7 +62,7 @@ Visually, you'll notice that actually the first few sine waves are the ones that
 
 When you listen to the wave, you'll hear the sound get lower, because we're removing the higher frequencies.
 
-This process works like that for any repeating line. Give it a go, try draw your own!
+This process works like that for any repeating line. Give it a go, try drawing your own!
 
 <div class="multi-container">
 <div class="sketch" >
@@ -74,7 +74,7 @@ This process works like that for any repeating line. Give it a go, try draw your
 <input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
 <button id="wave-draw-button" class="button">Play Wave</button>
 
-*Move the slider to see how as we add move sine waves, it gets closer and closer to your drawing*
+*Move the slider to see how as we add more sine waves, it gets closer and closer to your drawing*
 
 Again, aside from the extra wigglyness, the wave looks pretty similar with just half of the sine waves.
 
@@ -390,7 +390,7 @@ As we add more and more of these images, we end up with something that becomes c
 </div>
 </div>
 
-For actual JPEG images there are a just few extra details.
+For actual JPEG images there are just a few extra details.
 
 The image gets broken up into 8x8 chunks, and each chunk gets split up separately. We use a set of frequencies to determine how light or dark each pixel is, and then another two sets for the color, one for red-green, and another for blue-yellow. The number of frequencies that we use for each chunk determines the quality of the JPEG.
 
@@ -402,7 +402,7 @@ Here's a real JPEG image, zoomed in so we can see the details. When we play with
 
 ## Conclusion
 
-So lets recap:
+So let's recap:
 
 - Fourier transforms are things that let us take something and split it up into its frequencies.
 - The frequencies tell us about some fundamental properties of the data we have
