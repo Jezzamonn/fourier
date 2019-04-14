@@ -153,21 +153,21 @@ Aber es gibt noch einen anderen Typ von Bilddateien, welcher die Fouriertransfor
 
 ## JPEGs
 
-Wußten Sie, dass die Fouriertransformation auch für Bilder bentutzt werden kann. Tatsächlich benutzen wir es dauernd, denn so funktionieren JPEGs. Wir wenden die gleichen Prinzipien auf Bilder an -zerlegen sie in eine Reihe von Sinus-Wellen und speichern dann nur das Wichtigste.
+Wusstest du, dass die Fouriertransformation auch für Bilder benutzt werden kann? Wir benutzen sie ständig, denn so funktionieren JPEGs. Wir wenden die gleichen Prinzipien auf Bilder an, indem wir sie in eine Reihe von Sinuswellen zerlegen und dann nur die Wichtigsten speichern.
 
-Jetzt, wo wir es mit Bildern zu tun haben, brauchen wir einen anderen Typ von Sinus-Wellen. Wir brauchen etws, was , gleich welches Bild wir haben, aufaddiert das Originalbild zurückliefert.
+Jetzt, wo wir es mit Bildern zu tun haben, brauchen wir einen anderen Typ von Sinuswellen. Wir brauchen etwas, damit egal welches Bild wir haben, wir eine große Zahl von diesen Sinuswellen addieren können, um das Ursprungsbild zu erhalten.
 
-Um das zu tun muss jede Sinuswelle selbst ein Bild sein. Statt einer Welle, die eine Linie ist, haben wir jetzt Bilder mit schwarzen und weißen Anteilen. Um die Größe der Welle darzustellen haben wir mehr oder weniger Kontrast.
+Um das zu erreichen, muss jede unserer Sinuswellen ebenfalls ein Bild sein. Statt einer Welle, welche eine Linie ist, haben wir Bilder mit weißen und schwarzen Sektionen. Um die Größe einer Welle darzustellen, hat jedes Bild mehr oder weniger Kontrast.
 
-Wir können das auch nutzen um Farben darzustellen, aber lassen Sie uns zunächst mit Schwar-weiß-Bildern anfangen. Um farblose Bilder darzustellen brauchen wir horizontale Wellen-Bilder.
+Wir können sie außerdem dafür benutzen, um in ähnlicher Weise Farben darzustellen, aber bleiben wir zu Beginn erstmal bei Schwarz-Weiß-Bildern. Um farblose Bilder darzustellen, benötigen wir horizontale Wellenbilder,
 
 <img id="img-y-component" src="img/components-4-0.png" class="sketch sketch-small">
 
-Zusammen mit verticalen Wellenbildern.
+zusammen mit vertikalen Wellenbildern.
 
 <img id="img-x-component" src="img/components-0-4.png" class="sketch sketch-small">
 
-Alleine horizontalen und vertikalen Bilder sind nicht genug um den Typ des Bildes zu repräsentieren. Wir brauchen noch eins zusätzlich, welches wir durch Multiplikation der beiden erhalten.
+Für sich allein, sind nur horizontale und vertikale Bilder nicht genug, um Bilder wie wir sie kennen darzustellen. Wir brauchen noch ein paar zusätzliche Bilder, die wir durch die Multiplikation beider Arten erhalten.
 
 <div class="multi-container">
 <img id="img-mult-x-component" src="img/components-0-4.png" class="sketch sketch-mult">
@@ -177,7 +177,7 @@ Alleine horizontalen und vertikalen Bilder sind nicht genug um den Typ des Bilde
 <img id="img-x-y-component" src="img/components-4-4.png" class="sketch sketch-mult">
 </div>
 
-Für ein 8x8 Bild sind hier die Bilder die wir benötigen.
+Für ein 8x8 Bild sind hier alle Bilder, die wir benötigen.
 
 <div class="img-component-container">
     <img src="img/components-0-0.png" class="img-component">
@@ -246,13 +246,13 @@ Für ein 8x8 Bild sind hier die Bilder die wir benötigen.
     <img src="img/components-7-7.png" class="img-component">
 </div>
 
-Wenn wir die Bilder hernehmen, ihren Kontrast justieren und sie aufaddieren können wir jedes Bild erzeugen.
+Wenn wir die Bilder nehmen, ihren Kontrast auf das richtige Maß anpassen und addieren, können wir damit jedes erdenkliche Bild erzeugen.
 
-Lassen Sie uns mit dem Buchstaben"A" anfangen. Er ist ziemlich klein, aber es sollte klein sein, da sonst zu vielen anderen Bilder erzeugt werden müssen.
+Lass uns mit dem Buchstaben "A" anfangen. Er ist sehr klein, aber er muss klein sein, sonst erhalten wir viel zu viele andere Bilder.
 
 <img src="img/a.png" class="sketch sketch-letter">
 
-Wenn wir mehr und mehr von diesen Bildern aufaddieren, nähern wir uns immer mehr dem aktuellen Bild an. Ich denke Sie erkennen das Muster dahinter, da wir schon eine vernünftige Annäherung mit ein paar von ihnen erhalten.
+Wenn wir mehr und mehr von diesen Bildern addieren, nähern wir uns immer mehr dem eigentlichen Bild an. Ich denke, du wirst das Muster hier erkennen, da wir eine vernünftige Approximation mit ein paar von ihnen erhalten.
 
 <div class="hidden-preload">
     <img src="img/img-buildup-0-0.png">
@@ -392,9 +392,9 @@ Wenn wir mehr und mehr von diesen Bildern aufaddieren, nähern wir uns immer meh
 
 Für echte JPEG Bilder gibt es noch einige extra Details.
 
-Das Bild wurde auf geteilt in 8x8 Blöcke und jeder Block wurde einzeln zerlegt. Wir benutzen einen Set von Frequenzen um zu bestimmen, wie hell oder dunkel jedes Pixel ist und dann zwei weitere für die Farbe, eine für rot-grün, eine für blau-gelb. Die Anzahl der Frequenzen, die wir benutzen, bestimmt die Qualität des JPEG.
+Das Bild wird in 8x8 Blöcke zerlegt und jeder Block wird separat aufgeteilt. Wir nehmen einen Satz von Frequenzen, um zu bestimmen, wie hell oder dunkel jedes Pixel ist. Anschließend nehmen wir weitere zwei Sätze für die Farbe, einen für rot-grün, den anderen für blau-gelb. Die Anzahl der Frequenzen, welche wir für jeden Block verwenden, bestimmt die Qualität des JPEG.
 
-Hier ist ein richtes JPEG, zoomen Sie hinein um die Details zu sehen. Wenn wir mit den Qualitäts-Leveln spielen können wir den Prozess erleben.
+Hier ist ein echtes JPEG, hineingezoomt, um die Details zu sehen. Wenn wir mit den Qualitäts-Leveln spielen, können wir diesen Prozess verfolgen.
 
 <div id="jpeg-example" class="sketch">
     <img src="img/cat.png" class="sketch-child clear-pixels">
@@ -402,46 +402,49 @@ Hier ist ein richtes JPEG, zoomen Sie hinein um die Details zu sehen. Wenn wir m
 
 ## Zusammenfassung
 
-Lassen Sie uns rekapitulieren:
+Lass uns kurz zusammenfassen:
 
-- Fouriertransformationen sind Verfahren, die uns Dinge in ihre Frequenzen zerlegen läßt.
-- die Frequenzen spiegeln fundamentale Eigenschaften der jeweiligen Daten wider.
-- Und man kann Daten komprimieren, in dem man nur die wichtigen Frequenzen speichert.
-- und wir können sie dazu nutzen um cool aussehenden Animationen mit einer Reihe von Kreisen zu erzeugen.
+- Die Fouriertransformation ist ein Verfahren, die uns Dinge in ihre Frequenzen zerlegen läßt.
+- Die Frequenzen spiegeln fundamentale Eigenschaften der jeweiligen Daten wider.
+- Man kann Daten komprimieren, indem man nur die wichtigsten Frequenzen speichert.
+- Und wir können sie dazu nutzen, um cool aussehende Animationen mit einer Menge an Kreisen zu erzeugen.
 
-Damit haben wir nur an der Oberfläche einiger Anwendungen gekratzt. Fouriertransformation ist ein extrem mächtiges Werkzeug, da das Zerlegen von Dingen in Frequenzen so fundamental ist. Sie werden in vielen Gebieten genutzt, einschließlich Schaltkreis-Design, Mobil-Telefon-Signale, Magnetische Resonanzverfahren (Imaging - MRI) und Quantenphysik.
+Damit haben wir nur an der Oberfläche einiger Anwendungen gekratzt. Die Fouriertransformation ist ein extrem mächtiges Werkzeug, da das Zerlegen von Dingen in Frequenzen so fundamental ist. Sie wird in vielen Bereichen eingesetzt, einschließlich Schaltkreis-Design, Mobilkommunikationssignale, bildgebende magnetische Resonanzverfahren (MRI) und Quantenphysik!
 
-## Fragen der Neugierigen
+## Fragen für die Neugierigen
 
-Ich habe hier den meisten mathematischen Kram weggelassen, aber wenn Sie an den zugrunde liegenden Prinzipien, wie es funktioniert, interessiert sind, hier sind ein paar Fragen um Ihre Suche zu unterstützen.:
+Ich habe hier den meisten mathematischen Kram weggelassen, aber wenn du an den zugrunde liegenden Prinzipien der Funktionsweise interessiert bist, sind hier ein paar Fragen, um deine Recherche zu leiten:
 
-- Wie werden Fouriertransformationen mathematisch repräsentiert?
-- Was ist der Unterschied zwischen einer kontinuierlichen Zeit-Fourier-Transforamtion und einer diskreten?
-- wie setze ich eine Fouriertransformation am Computer um?
-- wie erstelle ich eine Fouriertransformation für ein ganzes Lied?( statt nur eines einzelnen Tons)
+- Wie wird die Fouriertransformation mathematisch dargestellt?
+- Was ist der Unterschied zwischen einer zeitkontinuierlichen und einer zeitdiskreten Fouriertransformation?
+- Wie setze ich eine Fouriertransformation rechnergestützt um?
+- Wie erstelle ich eine Fouriertransformation eines ganzen Liedes? (Statt nur eines einzelnen Tons.)
 
-## Lese-Hinweise
+## Literaturempfehlungen
 
-Um mehr zu lernen könenn sie einige gute Quellen ausprobieren:
+Um mehr über die Fouriertransformation zu lernen sind hier einige sehr gute Quellen:
 
 [An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)
-Ein großartiger Artikel, der mehr auf die Mathematik eingeht.
+Ein großartiger (englischer) Artikel, der mehr auf die Mathematik eingeht.
 
 [But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)
-Ein gutes Youtube-Video von 3Blue1Brown, was die Mathematik der Fouriertransformation aus der Audio-Perspektive behandelt.
+Ein gutes (englisches) Youtube-Video von 3Blue1Brown, welches die Mathematik der Fouriertransformation im Audiobereich behandelt.
 
 [A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)
-Ein weiterer Artikel, der erklärt wie man Epizyklen zum Zeichnen von Wegen/Rändern nutzen kann, erklärt aus der Perspektive der linearen Algebra.
+Ein weiterer (englischer) Artikel, der erklärt wie man Epizyklen zum Zeichnen von Wegen nutzen kann, erklärt aus der Sicht der linearen Algebra.
 
 [Fourier transform (Wikipedia)](https://en.wikipedia.org/wiki/Fourier_transform)
 Und selbstverständlich ist der Wikipedia-Artikel ebenfalls ziemlich gut.
+
+[Fouriertransformation (Wikipedia)](https://www.wikiwand.com/de/Fourier-Transformation)
+Hier nochmal auf Deutsch.
 
 ## Der Autor
 
 <canvas id="its-meee" class="sketch" width=500 height=500></canvas>
 
-Ich bin Jez. In Vollzeit arbeite ich in einer research-company  (Forschungseinrichtung) in der Bay Area und in meiner Freizeit erstelle ich gern Spiele und interaktiven Code wie den hier.
+Ich bin Jez! In Vollzeit arbeite ich bei einer [Suchfirma](https://www.google.com/) in der Bay Area und in meiner Freizeit erstelle ich gern Spiele und interaktiven Code, wie diesen hier!
 
-dieseWep-page ist open-source und kann auf [GitHub](https://github.com/Jezzamonn/fourier) eingesehen werden! Wenn Sie irgendwelche Rückfragen oder feedback habenschreiben sie mri eine Email an <span id="email-text"></span> oder senden Sie mir einen Tweetan [Twitter](https://twitter.com/jezzamonn).
+Diese Webseite ist Open Source und kann auf [GitHub](https://github.com/Jezzamonn/fourier) eingesehen werden! Für Feedback oder Rückfragen kannst du mir gerne eine Email an <span id="email-text"></span> schreiben oder sende mir einen Tweet auf [Twitter](https://twitter.com/jezzamonn).
 
-Wenn Sie mehr von meiner Arbeit sehen wollnen, beuschen Sie meine home-page [homepage](/), und wenn Sie sehen wollen, was ich als Nächstes machefolgen Sie meinem Twitter-account, [@jezzamonn](https://twitter.com/jezzamonn)!
+Wenn du mehr von meiner Arbeit sehen möchtest, schau dir meine [homepage](/) an und wenn du wissen willst, was ich als Nächstes mache, kannst du mir auf Twitter unter [@jezzamonn](https://twitter.com/jezzamonn) folgen!
