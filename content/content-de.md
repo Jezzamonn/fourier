@@ -49,7 +49,7 @@ Es sieht vielleicht nicht so aus, aber es kann auch in Sinuswellen zerlegt werde
 
 <canvas id="square-wave-split" class="sketch" width=500 height=500></canvas>
 
-Diesmal brauchen wir sehr viele davon - genau genommen eine unendliche Menge um es perfekt darzustellen. Je mehr wir addieren, umso mehr nähern wir uns dem Rechtecksignal an, mit dem wir gestartet sind.
+Diesmal brauchen wir sehr viele davon - genau genommen eine unendliche Menge, um es perfekt darzustellen. Je mehr wir addieren, umso mehr nähern wir uns dem Rechtecksignal an, mit dem wir gestartet sind.
 
 <canvas id="square-wave-build-up" class="sketch" width=500 height=500></canvas>
 <input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
@@ -58,7 +58,7 @@ Diesmal brauchen wir sehr viele davon - genau genommen eine unendliche Menge um 
 
 *Ziehe den Schieberegler oben, um die Anzahl der Sinuswellen zu verändern.*
 
-Visuell wirst du bemerken, dass die ersten paar Sinuswellen den größten Einfluß haben. Mit dem Schieberegler in der Mitte haben wir den prinzipiellen Verlauf der Welle, aber er ist sehr wackelig. Wir brauchen noch den Rest der kleinen Wellen, um das Verwackeln auszuglätten.
+Visuell wirst du bemerken, dass die ersten paar Sinuswellen den größten Einfluss haben. Mit dem Schieberegler in der Mitte haben wir den prinzipiellen Verlauf der Welle, aber er ist sehr wackelig. Wir brauchen noch den Rest der kleinen Wellen, um das Verwackeln auszuglätten.
 
 Wenn du dir die Welle anhörst, wird der Klang tiefer werden, weil wir die höheren Frequenzen entfernen.
 
@@ -106,7 +106,7 @@ Wenn wir sie uns von der Seite ansehen, dann schauen sie aus wie Sinuswellen. Vo
 
 Was wir bisher gemacht haben, erforderte nur reguläre 2D Sinuswellen. Wenn wir eine Fouriertransformation auf 2D Wellen anwenden, dann kürzen sich die komplexen Anteile heraus, sodass wir nur Sinuswellen erhalten.
 
-Aber wir können die 3D Sinuswellen für etwas lusitges, wie dies hier verwenden:
+Aber wir können die 3D Sinuswellen für etwas lustiges, wie dies hier verwenden:
 
 <canvas id="peace-epicycles" class="sketch" width=500 height=500></canvas>
 
@@ -127,7 +127,7 @@ Merke, diese Wellen sehen von vorn wie Kreise aus. Das Muster eines Kreises, wel
 
 *Benutze den Schieberegler, um die Anzahl der Kreise einzustellen.*
 
-Wie zuvor erhalten wir eine gute Annährerung an unser Muster mit nur ein paar Kreisen. Weil dies ein sehr simples Muster ist, werden von den letzten Wellen nur die Ecken etwas geschärft.
+Wie zuvor erhalten wir eine gute Annäherung an unser Muster mit nur ein paar Kreisen. Weil dies ein sehr simples Muster ist, werden von den letzten Wellen nur die Ecken etwas geschärft.
 
 Das funktioniert wirklich bei allen Zeichnungen! Dies ist deine Chance damit herumzuspielen.
 
@@ -135,7 +135,7 @@ Das funktioniert wirklich bei allen Zeichnungen! Dies ist deine Chance damit her
 <div class="sketch" >
     <canvas id="draw-zone" class="sketch-child" width=500 height=500></canvas>
     <p id="draw-zone-instruction" class="instruction">Zeichne hier!</p>
-    <button id="draw-zone-undo-button" class="button embedded-button">Rückgängig</button>
+    <button id="draw-zone-undo-button" class="button embedded-button">rückgängig</button>
 </div>
 <canvas id="circle-zone" class="sketch" width=500 height=500></canvas>
 </div>
@@ -404,7 +404,7 @@ Hier ist ein echtes JPEG, hineingezoomt, um die Details zu sehen. Wenn wir mit d
 
 Lass uns kurz zusammenfassen:
 
-- Die Fouriertransformation ist ein Verfahren, die uns Dinge in ihre Frequenzen zerlegen läßt.
+- Die Fouriertransformation ist ein Verfahren, das uns Dinge in ihre Frequenzen zerlegen lässt.
 - Die Frequenzen spiegeln fundamentale Eigenschaften der jeweiligen Daten wider.
 - Man kann Daten komprimieren, indem man nur die wichtigsten Frequenzen speichert.
 - Und wir können sie dazu nutzen, um cool aussehende Animationen mit einer Menge an Kreisen zu erzeugen.
