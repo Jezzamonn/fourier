@@ -24,11 +24,11 @@ const pageData = [
     { // German
         languageName: 'Deutsch',
         markdownFileName: 'content-de.md',
-        title: 'Eine interaktive Einführung in die Fourier-Transformationen',
-        description: 'Fourier Transformationen sind ein Werkzeug die für eine menge verschiedener anwendunge genutzt werden können. dies ist eine Erklärung was eine Fouriertransformation macht und einige andere Arten wie sie nützlich sein kann.',
+        title: 'Eine interaktive Einführung in die Fouriertransformation',
+        description: 'Die Fouriertransformation ist ein Werkzeug, das für eine Vielzahl verschiedener Anwendungen genutzt werden kann. Diese Seite ist eine Einführung in die Funktionsweise und Anwendung der Fouriertransformation.',
         outFileName: 'de.html',
         url: '/de.html',
-        translatorMarkdown: 'Übersetzt von [Frank H. Dürkopf](http://duerkopf.de)',
+        translatorMarkdown: 'Übersetzt von Joni Rousu und [Frank H. Dürkopf](http://duerkopf.de)',
     },
     { // Debug
         markdownFileName: 'debug.md',
