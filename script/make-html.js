@@ -28,7 +28,7 @@ const pageData = [
         description: 'Die Fouriertransformation ist ein Werkzeug, das für eine Vielzahl verschiedener Anwendungen genutzt werden kann. Diese Seite ist eine Einführung in die Funktionsweise und Anwendung der Fouriertransformation.',
         outFileName: 'de.html',
         url: '/de.html',
-        translatorMarkdown: 'Übersetzt von Joni Rousu',
+        translatorMarkdown: 'Übersetzt von Joni Rousu und [Frank H. Dürkopf](http://duerkopf.de)',
     },
     { // Debug
         markdownFileName: 'debug.md',
