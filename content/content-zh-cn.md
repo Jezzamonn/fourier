@@ -31,11 +31,11 @@
 
 最明显的例子就是声音 —— 当我们听到声音时，我们听不到那条波浪线，但我们听到构成声音的正弦波的不同频率。
 
-<button id="together-button" class="button">Play Full Wave</button>
+<button id="together-button" class="button">播放整个波形</button>
 
-<button id="split-button-1" class="button">Play High Frequency</button>
+<button id="split-button-1" class="button">播放高频成分</button>
 
-<button id="split-button-2" class="button">Play Low Frequency</button>
+<button id="split-button-2" class="button">播放低频成分</button>
 
 能够在计算机上区分这两个音调，我们就可以了解一个人实际可以听到的内容。我们可以理解声音的高低，或弄清楚这个波包含了什么音符。
 
@@ -54,7 +54,7 @@
 <canvas id="square-wave-build-up" class="sketch" width=500 height=500></canvas>
 <input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
 
-<button id="square-wave-button" class="button">Play Wave</button>
+<button id="square-wave-button" class="button">播放波形</button>
 
 *移动滑块来试试我们需要多少个正弦波。**
 
@@ -67,12 +67,12 @@
 <div class="multi-container">
 <div class="sketch" >
     <canvas id="wave-draw" class="sketch-child" width=500 height=300></canvas>
-    <p id="wave-draw-instruction" class="instruction wave-instruction">Draw here!</p>
+    <p id="wave-draw-instruction" class="instruction wave-instruction">画一个波形！</p>
 </div>
 <canvas id="wave-draw-split" class="sketch" width=500 height=500></canvas>
 </div>
 <input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
-<button id="wave-draw-button" class="button">Play Wave</button>
+<button id="wave-draw-button" class="button">播放波形</button>
 
 *移动滑块来观察，正弦波加得越多，组合出的波形越接近你画的原始波形。*
 
@@ -134,8 +134,8 @@
 <div class="multi-container">
 <div class="sketch" >
     <canvas id="draw-zone" class="sketch-child" width=500 height=500></canvas>
-    <p id="draw-zone-instruction" class="instruction">Draw here!</p>
-    <button id="draw-zone-undo-button" class="button embedded-button">Undo</button>
+    <p id="draw-zone-instruction" class="instruction">画一个波形！</p>
+    <button id="draw-zone-undo-button" class="button embedded-button">撤销</button>
 </div>
 <canvas id="circle-zone" class="sketch" width=500 height=500></canvas>
 </div>
@@ -422,19 +422,23 @@
 
 ## 拓展阅读
 
-要了解更多信息，你可以看看这些非常好的资源：
+要了解更多信息，你可以看看这些非常好的资源（作者推荐的这些资源是英文版的）。
 
 [An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)  
-A great article that digs more into the mathematics of what happens.
+从数学角度更加深刻地介绍傅里叶变换。
 
 [But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)  
-A great Youtube video by 3Blue1Brown, also explaining the maths of Fourier transforms from an audio perspective.
+3Blue1Brown 制作的 YouTube 视频，从音频的角度解释傅里叶变换的数学原理。
 
 [A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)  
-Another article explaining how you can use epicycles to draw a path, explained from a linear algebra perspective.
+另一篇不错的文章，从线性代数的角度解释如何用周转圆来画出形状。
 
 [Fourier transform (Wikipedia)](https://en.wikipedia.org/wiki/Fourier_transform)  
-And of course, the Wikipedia article is pretty good too.
+当然，维基百科的解释也很不错。
+
+[傅里叶变换（维基百科）](https://zh.wikipedia.org/wiki/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2)  
+译者为你添加了中文维基的链接。
+
 
 ## 关于作者
 
