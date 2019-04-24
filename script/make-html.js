@@ -30,6 +30,15 @@ const pageData = [
         url: '/de.html',
         translatorMarkdown: 'Übersetzt von Joni Rousu und [Frank H. Dürkopf](http://duerkopf.de)',
     },
+	{ // Brazilian Portuguese
+        languageName: 'Português',
+        markdownFileName: 'content-pt_br.md',
+        title: 'Uma introdução interativa às transformadas de Fourier',
+        description: 'Transformadas de Fourier são ferramentas utilizadas em vários contextos. Essa é uma explicação do que uma transformada de Fourier faz, e algumas maneiras diferentes que elas podem ser úteis.',
+        outFileName: 'pt_br.html',
+        url: '/pt_br.html',
+        translatorMarkdown: 'Traduzido por [Jean Oliveira Rodrigues de Araujo](https://twitter.com/_jaraujo_)',
+    },
     { // Debug
         markdownFileName: 'debug.md',
         title: 'debug debug debug',
