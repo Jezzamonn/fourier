@@ -134,8 +134,8 @@ Wszystko to można wykorzystać w jakimkolwiek rysunku. Naprawdę! Teraz masz ok
 <div class="multi-container">
 <div class="sketch" >
     <canvas id="draw-zone" class="sketch-child" width=500 height=500></canvas>
-    <p id="draw-zone-instruction" class="instruction">Draw here!</p>
-    <button id="draw-zone-undo-button" class="button embedded-button">Undo</button>
+    <p id="draw-zone-instruction" class="instruction">Rysuj tutaj!</p>
+    <button id="draw-zone-undo-button" class="button embedded-button">Cofnij</button>
 </div>
 <canvas id="circle-zone" class="sketch" width=500 height=500></canvas>
 </div>
