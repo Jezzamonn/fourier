@@ -48,6 +48,15 @@ const pageData = [
         url: '/zh-cn.html',
         translatorMarkdown: '',
     },
+	{ // Polish
+        languageName: 'polski',
+        markdownFileName: 'content-pl.md',
+        title: 'Interaktywny wstęp do transformaty Fouriera',
+        description: 'Transformata Fouriera jest narzędziem, które znajduje zastosowanie w wielu rzeczach. Znajdziesz tu wyjaśnienie, co robi transformata Fouriera i kiedy bywa użyteczna. Dowiesz się też, jak za jej pomocą możesz tworzyć ciekawe i piękne rzeczy.',
+        outFileName: 'pl.html',
+        url: '/pl.html',
+        translatorMarkdown: 'Przekład: [Jakub Górczyński](github.com/leavethevault)',
+    },
     { // Debug
         markdownFileName: 'debug.md',
         title: 'debug debug debug',
