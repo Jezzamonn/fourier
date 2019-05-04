@@ -442,6 +442,6 @@ E claro, o artigo da Wikipédia é muito bom também.
 
 Sou Jez! Trabalho em tempo integral em uma [empresa de busca](https://www.google.com/) na área da Baía de São Francisco, e no meu tempo livre gosto de fazer jogos e códigos interativos como este!
 
-Esta página é open-source, você pode checar o código no [GitHub](https://github.com/Jezzamonn/fourier)! Se você tem algum feedback ou quer perguntar alguma coisa, sinta-se livre para me mandar um e-mail em fourier@jezzamon.com ou me enviar um tweet em [Twitter](https://twitter.com/jezzamonn).
+Esta página é open-source, você pode checar o código no [GitHub](https://github.com/Jezzamonn/fourier)! Se você tem algum feedback ou quer perguntar alguma coisa, sinta-se livre para me mandar um e-mail em <span id="email-text">fourier [at] jezzamon [dot] com</span> ou me enviar um tweet em [Twitter](https://twitter.com/jezzamonn).
 
 Se você quer ver mais do meu trabalho, visite minha [homepage](/), e se quiser saber o que farei em seguida, pode seguir minha conta no Twitter, [@jezzamonn](https://twitter.com/jezzamonn)!

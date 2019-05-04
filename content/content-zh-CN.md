@@ -446,7 +446,7 @@
 
 我的名字叫Jez！ 我在美国湾区的[一家搜索引擎公司](https://www.google.com/)工作，在业余时间我喜欢制作这样的游戏和互动代码！
 
-这个网页是开源的，你可以查看[GitHub](https://github.com/Jezzamonn/fourier)上的代码！ 如果您有任何反馈或想提出任何问题，可以给我发邮件<span id="email-text"></span>，或者发[Twitter](https://twitter.com/jezzamonn)。
+这个网页是开源的，你可以查看[GitHub](https://github.com/Jezzamonn/fourier)上的代码！ 如果您有任何反馈或想提出任何问题，可以给我发邮件<span id="email-text">fourier [at] jezzamon [dot] com</span>，或者发[Twitter](https://twitter.com/jezzamonn)。
 
 如果你想查看我的更多作品，可以访问我的[主页](/)，如果想知道我以后会制作什么，可以关注我的Twitter：[@jezzamonn](https://twitter.com/jezzamonn)!
 
