@@ -1,4 +1,4 @@
-Transformata Fouriera jest narzędziem, które znajduje zastosowanie w wielu rzeczach. Znajdziesz tu wyjaśnienie, co robi transformata Fouriera i kiedy bywa użyteczna. Dowiesz się też, jak za jej pomocą możesz tworzyć ciekawe i piękne rzeczy, np. tą wizualizację:
+Transformata Fouriera jest narzędziem, które znajduje zastosowanie w wielu rzeczach. Znajdziesz tu wyjaśnienie, co robi transformata Fouriera i kiedy bywa użyteczna. Dowiesz się też, jak za jej pomocą możesz tworzyć ciekawie wyglądające rzeczy, np. tą wizualizację:
 
 <canvas id="self-draw" class="sketch" width=500 height=500></canvas>
 
@@ -58,7 +58,7 @@ Tym razem potrzebujemy ich znacznie więcej. Praktycznie rzecz biorąc - niesko�
 
 *Przemieszczaj suwak powyżej, aby zobaczyć, ile sinusoid tworzy złożoną falę*
 
-Gdy się przyjrzysz, zauważysz, że właściwie tylko kilka pierwszych sinusoid ma największy wpływ na układ fali. Gdy suwak znajduje się w połowie zakresu, fala jest już mniej więcej ukształtowana, ale na jej powierzchni widnieją "wężyki". Fale znajdujące się w drugiej połowie zakresu suwaka są potrzebne, aby spłaszczyć "wężyki" i uzyskać gładką linię.
+Gdy się przyjrzysz, zauważysz, że właściwie tylko kilka pierwszych sinusoid ma największy wpływ na układ fali. Gdy suwak znajduje się w połowie zakresu, fala jest już mniej więcej ukształtowana, ale na jej powierzchni wciąż widnieją "wężyki". Fale znajdujące się w drugiej połowie zakresu suwaka są potrzebne, aby spłaszczyć "wężyki" i uzyskać gładką linię.
 
 Gdy posłuchasz fali, usłyszysz, że dźwięk się obniża, bo pozbyliśmy się wyższych częstotliwości.
 
@@ -67,7 +67,7 @@ Ten proces zadziała dla każdej powtarzającej się linii. Daj się ponieść -
 <div class="multi-container">
 <div class="sketch" >
     <canvas id="wave-draw" class="sketch-child" width=500 height=300></canvas>
-    <p id="wave-draw-instruction" class="instruction wave-instruction">Draw here!</p>
+    <p id="wave-draw-instruction" class="instruction wave-instruction">Rysuj tutaj!</p>
 </div>
 <canvas id="wave-draw-split" class="sketch" width=500 height=500></canvas>
 </div>
@@ -92,7 +92,7 @@ W zasadzie jest to sposób, w jaki działa format MP3, z tą różnicą, że tam
 
 W tym przypadku można było wykorzystać transformatę Fouriera do zrozumienia falowej natury dźwięku i metody jego kompresji.
 
-Ok, teraz pora zagłębić się bardziej w transformatę Fouriera. Kolejna część wygląda naprawdę super, ale też pozwala lepiej zrozumieć, co ten proces robi. W dużej mierze po prostu wygląda super.
+Ok, teraz pora zagłębić się bardziej w transformatę Fouriera. Kolejna część wygląda naprawdę super, ale też pozwala lepiej zrozumieć, co ten proces robi. W dużej mierze jednak po prostu wygląda super.
 
 ## Epicykle
 
@@ -106,7 +106,7 @@ Gdy patrzymy na spiralę z boku, wygląda jak zwykła sinusoida. Patrząc od fro
 
 Do tej pory wszystko, o czym do tej pory mówiliśmy wymagało sinusoid 2D (dwuwymiarowych). Gdy przeprowadzamy transformatę Fouriera na falach 2D, nie mamy do czynienia ze złożonymi fragmentami i otrzymujemy jedynie sinusoidy.
 
-Możemy jednak użyć sinusoid 3D, aby otrzymać coś, co wygląda całkiem zabawnie. Na przykład to:
+Możemy jednak użyć sinusoid 3D, aby otrzymać coś, co wygląda całkiem interesująco. Na przykład to:
 
 <canvas id="peace-epicycles" class="sketch" width=500 height=500></canvas>
 
@@ -116,11 +116,11 @@ Cóż, możemy myśleć o tym rysunku jak o trójwymiarowym kształcie ze wzglę
 
 <canvas id="peace-3d" class="sketch" width=500 height=500></canvas>
 
-Ponieważ teraz mamy do czynienia z trójwymiarowym wzorem, nie możemy użyć dwuwymiarowych sinusoid, aby go przeprowadzić analizę. Nieważne jak dużo fal 2D zostanie dodanych - wynik nigdy nie będzie przypominać czegoś trójwymiarowego. Potrzeba innego rozwiązania.
+Ponieważ teraz mamy do czynienia z trójwymiarowym wzorem, nie możemy użyć dwuwymiarowych sinusoid, aby przeprowadzić analizę. Nieważne jak dużo fal 2D zostanie dodanych - wynik nigdy nie będzie przypominać czegoś trójwymiarowego. Potrzeba innego rozwiązania.
 
 Możemy posłużyć się spiralami przedstawionymi przed chwilą. Jeśli dodamy ich wystarczająco dużo, możemy otrzymać coś całkiem podobnego do wyjściowego wzoru 3D.
 
-Pamiętaj, że spirale przypominają okręgi, gdy patrzy się na nie od frontu. Wzór okręgu poruszającego się wokół innego okręgu nosi nazwę epicyklu.
+Pamiętaj, że spirale przypominają okręgi, gdy patrzy się na nie z przodu. Wzór okręgu poruszającego się wokół innego okręgu nosi nazwę epicyklu.
 
 <canvas id="peace-build-up" class="sketch" width=500 height=500></canvas>
 <input id="peace-build-up-slider" type="range" min="0" max="1" value="1" step="any">
@@ -177,7 +177,7 @@ Same obrazki fal nie wystarczą do wizualizacji obrazów, które chcemy otrzyma�
 <img id="img-x-y-component" src="img/components-4-4.png" class="sketch sketch-mult">
 </div>
 
-Poniżej lista obrazków, które potrzebujemy do obrazu o wymiarach 8x8.
+Poniżej lista obrazków, których potrzebujemy do obrazu o wymiarach 8x8.
 
 <div class="img-component-container">
     <img src="img/components-0-0.png" class="img-component">
