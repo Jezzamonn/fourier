@@ -32,20 +32,20 @@ const pageData = [
     },
 	{ // Brazilian Portuguese
         languageName: 'Português',
-        markdownFileName: 'content-pt_br.md',
+        markdownFileName: 'content-pt-BR.md',
         title: 'Uma introdução interativa às transformadas de Fourier',
         description: 'Transformadas de Fourier são ferramentas utilizadas em vários contextos. Essa é uma explicação do que uma transformada de Fourier faz, e algumas maneiras diferentes que elas podem ser úteis.',
-        outFileName: 'pt_br.html',
-        url: '/pt_br.html',
+        outFileName: ['pt-BR.html', 'pt_br.html'], // Backwards compatibility with any old links
+        url: '/pt-BR.html',
         translatorMarkdown: 'Traduzido por [Jean Oliveira Rodrigues de Araujo](https://twitter.com/_jaraujo_)',
     },
 	{ // Chinese (simplified)
         languageName: '简体中文',
-        markdownFileName: 'content-zh-cn.md',
+        markdownFileName: 'content-zh-CN.md',
         title: '傅里叶变换交互式入门',
         description: '傅里叶变换是一种在各个领域都经常使用的数学工具。这个网站将为你介绍傅里叶变换能干什么，为什么傅里叶变换非常有用，以及你如何利用傅里叶变换干漂亮的事。',
-        outFileName: 'zh-cn.html',
-        url: '/zh-cn.html',
+        outFileName: 'zh-CN.html',
+        url: '/zh-CN.html',
         translatorMarkdown: '由[杜尚明](https://github.com/virtualwiz)翻译',
     },
 	{ // Polish
@@ -87,7 +87,7 @@ for (const pageDatum of pageData) {
 }
 
 for (const pageDatum of pageData) {
-    console.log(`generating ${pageDatum.markdownFileName}`)
+    console.log(`Processing ${pageDatum.markdownFileName}`)
     // Read in content
     const markdown = fs.readFileSync(contentDir + pageDatum.markdownFileName).toString();
 
@@ -102,6 +102,15 @@ for (const pageDatum of pageData) {
     view.languages = languages;
 
     const html = mustache.render(template, view)
-    // Output to build directory;
-    fs.writeFileSync(buildDir + pageDatum.outFileName, html)
+    // We might have a string or an array of strings. Convert it so we always have an array
+    let outFileNames = pageDatum.outFileName;
+    if (!(outFileNames instanceof Array)) {
+        // Wrap in Array
+        outFileNames = [outFileNames];
+    }
+    // Output to build directory.
+    for (const outFileName of outFileNames) {
+        console.log(`Writing to ${outFileName}`)
+        fs.writeFileSync(buildDir + outFileName, html)
+    }
 }
