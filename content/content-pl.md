@@ -442,6 +442,6 @@ Artykuł z Wikipedii również nie ma się czego wstydzić.
 
 Jestem Jez! Pracuję na pełen etat w [pewnej dużej firmie](https://www.google.com/) w rejonie zatoki San Francisco. W wolnym czasie lubię tworzyć gry i interaktywne, programowalne rzeczy jak animację powyżej.
 
-Ta strona ma otwarte źródło, możesz podejrzeć jej kod na [GitHubie](https://github.com/Jezzamonn/fourier)! Jeśli chcesz podzielić się swoimi wrażeniami lub po prostu zadać pytanie, śmiało napisz do mnie maila na fourier@jezzamon.com lub na [Twitterze](https://twitter.com/jezzamonn).
+Ta strona ma otwarte źródło, możesz podejrzeć jej kod na [GitHubie](https://github.com/Jezzamonn/fourier)! Jeśli chcesz podzielić się swoimi wrażeniami lub po prostu zadać pytanie, śmiało napisz do mnie maila na <span id="email-text">fourier [at] jezzamon [dot] com</span> lub na [Twitterze](https://twitter.com/jezzamonn).
 
 Jeśli chcesz zobaczyć, co jeszcze robię, zajrzyj na moją [stronę główną](/), a jeśli chcesz być na bieżąco - możesz zaobserwować moje konto na Twitterze, [@jezzamonn](https://twitter.com/jezzamonn)!

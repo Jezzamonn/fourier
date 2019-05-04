@@ -81,8 +81,7 @@ for (const pageDatum of pageData) {
     }
     languages.push({
         name: pageDatum.languageName,
-        // Use outFileName here instead of url because we need it to work relative to what page we're on now.
-        url: '' + pageDatum.outFileName,
+        url: `http://www.jezzamon.com/fourier${pageDatum.url}`,
     });
 }
 
