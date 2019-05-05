@@ -445,6 +445,6 @@ Hier nochmal auf Deutsch.
 
 Ich bin Jez! In Vollzeit arbeite ich bei einer [Suchfirma](https://www.google.com/) in der Bay Area und in meiner Freizeit erstelle ich gern Spiele und interaktiven Code, wie diesen hier!
 
-Diese Webseite ist Open Source und kann auf [GitHub](https://github.com/Jezzamonn/fourier) eingesehen werden! Für Feedback oder Rückfragen kannst du mir gerne eine Email an <span id="email-text"></span> schreiben oder sende mir einen Tweet auf [Twitter](https://twitter.com/jezzamonn).
+Diese Webseite ist Open Source und kann auf [GitHub](https://github.com/Jezzamonn/fourier) eingesehen werden! Für Feedback oder Rückfragen kannst du mir gerne eine Email an <span id="email-text">fourier [at] jezzamon [dot] com</span> oder sende mir einen Tweet auf [Twitter](https://twitter.com/jezzamonn).
 
 Wenn du mehr von meiner Arbeit sehen möchtest, schau dir meine [homepage](/) an und wenn du wissen willst, was ich als Nächstes mache, kannst du mir auf Twitter unter [@jezzamonn](https://twitter.com/jezzamonn) folgen!
