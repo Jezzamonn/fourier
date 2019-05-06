@@ -35,8 +35,8 @@ const pageData = [
         markdownFileName: 'content-pt-BR.md',
         title: 'Uma introdução interativa às transformadas de Fourier',
         description: 'Transformadas de Fourier são ferramentas utilizadas em vários contextos. Essa é uma explicação do que uma transformada de Fourier faz, e algumas maneiras diferentes que elas podem ser úteis.',
-        outFileName: ['pt-BR.html', 'pt_br.html'], // Backwards compatibility with any old links
-        url: '/pt-BR.html',
+        outFileName: ['pt-br.html', 'pt_br.html'], // Backwards compatibility with any old links
+        url: '/pt-br.html',
         translatorMarkdown: 'Traduzido por [Jean Oliveira Rodrigues de Araujo](https://twitter.com/_jaraujo_)',
     },
 	{ // Chinese (simplified)
@@ -44,8 +44,8 @@ const pageData = [
         markdownFileName: 'content-zh-CN.md',
         title: '傅里叶变换交互式入门',
         description: '傅里叶变换是一种在各个领域都经常使用的数学工具。这个网站将为你介绍傅里叶变换能干什么，为什么傅里叶变换非常有用，以及你如何利用傅里叶变换干漂亮的事。',
-        outFileName: 'zh-CN.html',
-        url: '/zh-CN.html',
+        outFileName: 'zh-cn.html',
+        url: '/zh-cn.html',
         translatorMarkdown: '由[杜尚明](https://github.com/virtualwiz)翻译',
     },
 	{ // Polish
