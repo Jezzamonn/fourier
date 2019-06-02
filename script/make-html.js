@@ -58,7 +58,7 @@ const pageData = [
         translatorMarkdown: 'Przekład: [Jakub Górczyński](https://github.com/leavethevault)',
     },
 	{ // Turkish
-        languageName: 'Turkish',
+        languageName: 'Türkçe',
         markdownFileName: 'content-tr.md',
         title: 'Fourier Dönüşümlerine İnteraktif bir Giriş',
         description: 'Fourier dönüşümleri birçok farklı şeyin yapılmasında kullanılabilecek bir araçtır. Bu sayfa Fourier dönüşümlerinin işleyişini açıklamakta ve yararlı olabilecek bazı kullanım yollarını göstermektedir.',
