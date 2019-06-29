@@ -66,6 +66,15 @@ const pageData = [
         url: '/tr.html',
         translatorMarkdown: 'Çeviren: Harun Hindioğlu',
     },
+	{ // Korean
+        languageName: '한국어',
+        markdownFileName: 'content-ko.md',
+        title: '푸리에 변환을 반응형으로 소개합니다',
+        description: '푸리에 변환은 여러 분야에 적재적소로 사용할 수 있는 도구입니다. 이 글에서는 푸리에 변환이 무엇이고, 어떻게 활용할 수 있는지 설명합니다.',
+        outFileName: 'ko.html',
+        url: '/ko.html',
+        translatorMarkdown: '잇창명 번역, [RanolP](https://ranolp.github.io/) 검수',
+    },
     { // Debug
         markdownFileName: 'debug.md',
         title: 'debug debug debug',
