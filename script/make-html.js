@@ -75,6 +75,15 @@ const pageData = [
         url: '/ko.html',
         translatorMarkdown: '잇창명 번역, [RanolP](https://ranolp.github.io/) 검수',
     },
+	{ // Italian
+        languageName: 'Italiano',
+        markdownFileName: 'content-it.md',
+        title: `Un'interazione introduttiva alle trasformate di Fourier`,
+        description: 'Le trasformate di Fourier sono uno strumento usato in molti campi diversi. Questa è una spiegazione su cosa fa una trasformata di Fourier e di alcuni modi in cui può essere utile.',
+        outFileName: 'it.html',
+        url: '/it.html',
+        translatorMarkdown: 'Tradotto da Riccardo Buah',
+    },
     { // Debug
         markdownFileName: 'debug.md',
         title: 'debug debug debug',
