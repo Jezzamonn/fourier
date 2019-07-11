@@ -99,7 +99,7 @@ for (const pageDatum of pageData) {
     }
     languages.push({
         name: pageDatum.languageName,
-        url: `http://www.jezzamon.com/fourier${pageDatum.url}`,
+        url: `/fourier${pageDatum.url}`,
     });
 }
 
