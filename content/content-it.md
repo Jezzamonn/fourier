@@ -135,7 +135,7 @@ Tutto questo si può applicare a qualsiasi disegno, davvero! Ora è arrivata la 
 <div class="sketch" >
     <canvas id="draw-zone" class="sketch-child" width=500 height=500></canvas>
     <p id="draw-zone-instruction" class="instruction">Disegna qui!</p>
-    <button id="draw-zone-undo-button" class="button embedded-button">Disfare</button>
+    <button id="draw-zone-undo-button" class="button embedded-button">Rifai</button>
 </div>
 <canvas id="circle-zone" class="sketch" width=500 height=500></canvas>
 </div>
