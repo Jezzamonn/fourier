@@ -1,173 +1,174 @@
-Fourier transforms are a tool used in a whole bunch of different things. This is an explanation of what a Fourier transform does, and some different ways it can be useful. And how you can make pretty things with it, like this thing:
+Les transformations de Fourier sont un outil utilisé dans un tas de choses différentes. Ceci est une explication de ce que fait une transformation de Fourier, et des différentes manières dont elle peut être utile. Et comment faire de jolies choses avec, comme ceci:
 
 <canvas id="self-draw" class="sketch" width=500 height=500></canvas>
 
-I'm going to explain how that animation works, and along the way explain Fourier transforms!
+Je vais expliquer le fonctionnement de cette animation, et du même coup expliquer les transformations de Fourier !
 
-By the end you should have a good idea about
-- What a Fourier transform does
-- Some practical uses of Fourier transforms
-- Some pointless but cool uses of Fourier transforms
+À la fin, vous devriez avoir une bonne idée de :
 
-We're going to leave the mathematics and equations out of it for now. There's a bunch of interesting maths behind it, but it's better to start with what it actually does, and why you'd want to use it first. If you want to know more about the how, there's some further reading suggestions below!
+- qu'est-ce qu'une transformation de Fourier,
+- quelques utilisations pratiques des transformations de Fourier,
+- quelques utilisations inutiles mais cool des transformations de Fourier.
 
-## So what is this thing?
+Nous allons laisser les mathématiques et les équations de côté pour le moment. Il y a un tas de calculs intéressants derrière cela, mais il est préférable de commencer par ce qu'une transformation de Fourier fait réellement, et pourquoi vous voudriez l'utiliser. Si vous voulez en savoir plus sur les aspects mathématiques, il y a quelques suggestions de lecture plus bas !
 
-Put simply, the Fourier transform is a way of splitting something up into a bunch of sine waves. As usual, the name comes from some person who lived a long time ago called Fourier.
+## Alors, c'est quoi la transformation de Fourier ?
 
-Let’s start with some simple examples and work our way up. First up we're going to look at waves - patterns that repeat over time.
+En gros, la transformation de Fourier est un moyen de décomposer quelque chose en un groupe d’ondes sinusoïdales. Comme d'habitude, le nom vient d'une personne qui vivait il y a longtemps, appelée Fourier.
 
-Here’s an example wave:
+Commençons par quelques exemples simples et on montera en puissance par la suite. Tout d'abord, nous allons examiner les ondes - des modèles qui se répètent dans le temps.
+
+Voici un exemple d'onde :
 
 <canvas id="combo-sine-wave" class="sketch" width=500 height=300></canvas>
 
-This wavy pattern here can be split up into sine waves. That is, when we add up the two sine waves we get back the original wave.
+Ce motif d'onde peut être divisé en ondes sinusoïdales. En d’autres termes, lorsque nous additionnons les deux ondes sinusoïdales, nous récupérons l’onde initiale.
 
 <canvas id="combo-sine-wave-split" class="sketch" width=500 height=500></canvas>
 
-The Fourier transform is a way for us to take the combined wave, and get each of the sine waves back out. In this example, you can almost do it in your head, just by looking at the original wave.
+La transformation de Fourier est un moyen pour nous de trouver chacune des ondes sinusoïdales à partir de l'onde d'origine. Dans cet exemple, vous pouvez presque le faire dans votre tête, simplement en regardant l'onde d'origine.
 
-Why? Turns out a lot of things in the real world interact based on these sine waves. We usually call them the wave's frequencies.
+Pourquoi ? Il s'avère que beaucoup de choses dans le monde réel interagissent en fonction de ces ondes sinusoïdales. Nous les appelons généralement les fréquences de l'onde.
 
-The most obvious example is sound – when we hear a sound, we don’t hear that squiggly line, but we hear the different frequencies of the sine waves that make up the sound.
+L’exemple le plus évident est le son : lorsque nous entendons un son, nous n’entendons pas cette ligne cabossée, mais nous entendons les différentes fréquences des ondes sinusoïdales qui constituent le son.
 
-<button id="together-button" class="button">Play Full Wave</button>
+<button id="together-button" class="button">Jouer l'onde globale</button>
 
-<button id="split-button-1" class="button">Play High Frequency</button>
+<button id="split-button-1" class="button">Joue la haute fréquence</button>
 
-<button id="split-button-2" class="button">Play Low Frequency</button>
+<button id="split-button-2" class="button">Joue la basse fréquence</button>
 
-Being able to split them up on a computer can give us an understanding of what a person actually hears. We can understand how high or low a sound is, or figure out what note it is.
+Le fait de pouvoir les séparer sur un ordinateur peut nous permettre de comprendre ce qu'une personne entend réellement. Nous pouvons comprendre à quel point un son est aigu ou grave, ou déterminer de quelle note il s'agit.
 
-We can also use this process on waves that don't look like they're made of sine waves.
+Nous pouvons également utiliser ce processus sur des ondes qui ne ressemblent pas à des ondes sinusoïdales.
 
-Let's take a look at this guy. It’s called a square wave.
+Jetons un coup d'œil à celle-là. C'est ce qu'on appelle une onde carrée.
 
 <canvas id="square-wave" class="sketch" width=500 height=300></canvas>
 
-It might not look like it, but it also can be split up into sine waves.
+On ne le dirait pas, mais elle peut aussi être divisée en ondes sinusoïdales.
 
 <canvas id="square-wave-split" class="sketch" width=500 height=500></canvas>
 
-We need a lot of them this time – technically an infinite amount to perfectly represent it. As we add up more and more sine waves the pattern gets closer and closer to the square wave we started with.
+Nous en avons besoin de beaucoup cette fois - techniquement, une infinité pour la représenter parfaitement. Au fur et à mesure que nous additionnons les ondes sinusoïdales, le motif se rapproche de plus en plus de l’onde carrée avec laquelle nous avons commencé.
 
 <canvas id="square-wave-build-up" class="sketch" width=500 height=500></canvas>
 <input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
 
-<button id="square-wave-button" class="button">Play Wave</button>
+<button id="square-wave-button" class="button">Jouer l'onde</button>
 
-*Drag the slider above to play with how many sine waves there are.*
+*Faites glisser le curseur ci-dessus pour jouer avec le nombre d'ondes sinusoïdales.*
 
-Visually, you'll notice that actually the first few sine waves are the ones that make the biggest difference. With the slider halfway, we have the general shape of the wave, but it's all wiggly. We just need the rest of the small ones to make the wigglyness flatten out.
+Visuellement, vous remarquerez que ce sont les premières ondes sinusoïdales qui font la plus grande différence. Avec le curseur à mi-course, nous avons la forme générale de l'onde, mais elle est toute cabossée. Nous avons juste besoin du reste des plus petites ondes pour l'applatir.
 
-When you listen to the wave, you'll hear the sound get lower, because we're removing the higher frequencies.
+Lorsque vous écoutez l'onde, vous entendez le son devenir grave, car nous supprimons les fréquences les plus hautes.
 
-This process works like that for any repeating line. Give it a go, try drawing your own!
+Ce processus fonctionne comme ça pour n'importe quelle ligne répétée. Essayez, dessinez la vôtre !
 
 <div class="multi-container">
 <div class="sketch" >
     <canvas id="wave-draw" class="sketch-child" width=500 height=300></canvas>
-    <p id="wave-draw-instruction" class="instruction wave-instruction">Draw here!</p>
+    <p id="wave-draw-instruction" class="instruction wave-instruction">Dessinez ici !</p>
 </div>
 <canvas id="wave-draw-split" class="sketch" width=500 height=500></canvas>
 </div>
 <input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
-<button id="wave-draw-button" class="button">Play Wave</button>
+<button id="wave-draw-button" class="button">Jouer l'onde</button>
 
-*Move the slider to see how as we add more sine waves, it gets closer and closer to your drawing*
+*Déplacez le curseur pour voir comment, à mesure que nous ajoutons plus d'ondes sinusoïdales, on se rapproche de plus en plus de votre dessin.*
 
-Again, aside from the extra wigglyness, the wave looks pretty similar with just half of the sine waves.
+Encore une fois, mis à part pour les petites irrégularités, l'onde semble assez similaire avec seulement la moitié des ondes sinusoïdales.
 
-We can actually use the fact that the wave is pretty similar to our advantage. By using a Fourier transform, we can get the important parts of a sound, and only store those to end up with something that's pretty close to the original sound.
+En fait, nous pouvons utiliser le fait que l'onde soit assez similaire à notre avantage. En utilisant une transformation de Fourier, nous pouvons obtenir les parties importantes d'un son et ne stocker que celles-ci pour retrouver quelque chose d'assez proche du son d'origine.
 
-Normally on a computer we store a wave as a series of points.
+Normalement sur un ordinateur, nous stockons une onde sous la forme de série de points.
 
 <canvas id="wave-samples" class="sketch" width=500 height=500></canvas>
 
-What we can do instead is represent it as a bunch of sine waves. Then we can compress the sound by ignoring the smaller frequencies. Our end result won't be the same, but it'll sound pretty similar to a person.
+Ce que nous pouvons faire à la place, c’est la représenter par un groupe d’ondes sinusoïdales. Ensuite, nous pouvons compresser le son en ignorant les plus petites fréquences. Le résultat ne sera pas exactement le même, mais personne ne fera vraiment la différence.
 
 <canvas id="wave-frequencies" class="sketch" width=500 height=500></canvas>
 
-This is essentially what MP3s do, except they're more clever about which frequencies they keep and which ones they throw away.
+C’est essentiellement ce que fait le MP3, sauf qu’il est plus intelligent sur les fréquences qu’il conserve et sur celles qu’il jette.
 
-So in this case, we can use Fourier transforms to get an understanding of the fundamental properties of a wave, and then we can use that for things like compression.
+Ainsi, nous pouvons utiliser les transformations de Fourier pour comprendre les propriétés fondamentales d’une onde, puis l’utiliser pour des tâches telles que la compression.
 
-Ok, now let's dig more into the Fourier transform. This next part looks cool, but also gives you a bit more understanding of what the Fourier transform does. But mostly looks cool.
+Ok, maintenant creusons plus loin le sujet. La partie suivante à l'air cool, mais vous donne également un peu plus de compréhension de ce que fait la transformation de Fourier. Mais surtout, c'est cool.
 
-## Epicycles
+## Épicycles
 
-Now at the start, I said it splits things into sine waves. The thing is, the sine waves it creates are not just regular sine waves, but they’re 3D. You could call them "complex sinusoids". Or just "spirals".
+Au début, j’ai dit que la transformation de Fourier décomposer quelque chose en ondes sinusoïdales. Le problème, c’est que les ondes sinusoïdales qu’elle crée ne sont pas simplement des ondes sinusoïdales classiques, mais elles sont en 3D. Vous pouvez les appeler "sinusoïdes complexes". Ou simplement "spirales".
 
 <canvas id="complex-sinusoid" class="sketch" width=500 height=500></canvas>
 
-If we take a look from the side, they look like sine waves. From front on, though, these look like circles.
+Si nous regardons de côté, elles ressemblent à des ondes sinusoïdales. De face, elles ressemblent à des cercles.
 
 <canvas id="complex-sinusoid-turn" class="sketch" width=500 height=500></canvas>
 
-So far everything we’ve been doing has only required the regular 2D sine waves. When we do a Fourier transform on 2D waves, the complex parts cancel out so we just end up with sine waves.
+Jusqu’à présent, on n’avait besoin que des ondes sinusoïdales 2D classiques. Lorsque nous réalisons une transformation de Fourier sur des ondes 2D, les parties complexes s’annulent, donnant des ondes sinusoïdales.
 
-But we can use the 3D sine waves to make something fun looking like this:
+Mais nous pouvons utiliser les ondes sinusoïdales 3D pour faire quelque chose d'amusant ressemblant à ceci :
 
 <canvas id="peace-epicycles" class="sketch" width=500 height=500></canvas>
 
-What’s going on here?
+Qu'avons-nous ici ?
 
-Well, we can think of the drawing as a 3D shape because of the way it moves around in time. If you imagine the hand being drawn by a person, the three dimensions represent where the tip of their pencil is at that moment. The x and y dimensions tell us the position, and then the time dimension is the time at that moment.
+En fait, nous pouvons considérer ce dessin comme une forme 3D dessinée dans le temps. Si vous imaginez que la main est dessinée par une personne, les trois dimensions indiquent où se trouve la pointe de son crayon à ce moment-là. Les dimensions x et y nous indiquent la position, puis la dimension temporelle est le moment présent.
 
 <canvas id="peace-3d" class="sketch" width=500 height=500></canvas>
 
-Now that we have a 3D pattern, we can't use the regular 2D sine waves to represent it. No matter how many of the 2D sine waves we add up, we'll never get something 3D. So we need something else.
+Maintenant que nous avons un motif 3D, nous ne pouvons plus utiliser les ondes sinusoïdales 2D classiques pour le représenter. Peu importe le nombre d'ondes sinusoïdales 2D que nous additionnons, nous n'obtiendrons jamais quelque chose en 3D. Nous avons donc besoin de quelque chose d'autre.
 
-What we can use is the 3D spiral sine waves from before. If we add up lots of those, we can get something that looks like our 3D pattern.
+Ce que nous pouvons utiliser, ce sont les ondes sinusoïdales 3D, en spirale. Si nous en additionnons beaucoup, nous pouvons obtenir quelque chose qui ressemble à notre motif 3D.
 
-Remember, these waves look like circles when we look at them from front on. The name for the pattern of a circle moving around another circle is an epicycle.
+Rappelez-vous que ces ondes ressemblent à des cercles quand on les regarde de face. Le nom du motif d'un cercle se déplaçant autour d'un autre cercle est un épicycle.
 
 <canvas id="peace-build-up" class="sketch" width=500 height=500></canvas>
 <input id="peace-build-up-slider" type="range" min="0" max="1" value="1" step="any">
 
-*Use the slider above to control how many circles there are.*
+*Utilisez le curseur ci-dessus pour déterminer le nombre de cercles entrant en jeu.*
 
-Like before, we get a pretty good approximation of our pattern with just a few circles. Because this is a fairly simple shape, all the last ones do is make the edges a little sharper.
+Comme auparavant, nous obtenons une assez bonne approximation de notre modèle avec seulement quelques cercles. Comme il s’agit d’une forme assez simple, la dernière chose à faire est de rendre les bords un peu plus nets.
 
-All this applies to any drawing, really! Now it’s your chance to play around with it.
+Ce principe s'applique à n'importe quel dessin ! Maintenant, c’est à votre tour de jouer avec.
 
 <div class="multi-container">
 <div class="sketch" >
     <canvas id="draw-zone" class="sketch-child" width=500 height=500></canvas>
-    <p id="draw-zone-instruction" class="instruction">Draw here!</p>
-    <button id="draw-zone-undo-button" class="button embedded-button">Undo</button>
+    <p id="draw-zone-instruction" class="instruction">Dessinez ici !</p>
+    <button id="draw-zone-undo-button" class="button embedded-button">Annuler</button>
 </div>
 <canvas id="circle-zone" class="sketch" width=500 height=500></canvas>
 </div>
 <input id="circle-zone-slider" type="range" min="0" max="1" value="1" step="any">
 
-*Use the slider to control how many circles are used for your drawing*
+*Utilisez le curseur pour déterminer le nombre de cercles utilisés pour votre dessin.*
 
-Again, you'll see for most shapes, we can approximate them fairly well with just a small number of circles, instead of saving all the points.
+Encore une fois, vous verrez que pour la plupart des formes, nous pouvons les approcher assez bien avec un petit nombre de cercles seulement, au lieu de sauvegarder tous les points.
 
-Can we use this for real data? Well, we could! In reality we have another data format called SVG, which probably does a better job for the types of shapes we tend to create. So for the moment, this is really just for making cool little gifs.
+Peut-on utiliser cela pour de vraies données ? Eh bien, nous pourrions ! En réalité, nous avons un autre format de données appelé SVG, qui fait probablement un meilleur travail pour les types de formes que nous avons tendance à créer. Donc pour le moment, c'est vraiment juste pour faire des petits gifs sympas.
 
 <canvas id="fourier-title" class="sketch" width=500 height=300></canvas>
 
-There is another type of visual data that does use Fourier transforms, however.
+Il existe cependant un autre type de données visuelles qui utilise les transformations de Fourier.
 
-## JPEGs
+## Le JPEG
 
-Did you know Fourier transforms can also be used on images? In fact, we use it all the time, because that's how JPEGs work! We're applying the same principles to images – splitting up something into a bunch of sine waves, and then only storing the important ones.
+Saviez-vous que les transformations de Fourier peuvent également être utilisées sur des images ? En fait, nous l'utilisons tout le temps car c'est ainsi que fonctionnent les JPEG ! Nous appliquons les mêmes principes aux images : décomposer quelque chose en ondes sinusoïdales et ne stocker que les plus importantes.
 
-Now we're dealing with images, we need a different type of sine wave. We need to have something that no matter what image we have, we can add up a bunch of these sine waves to get back to our original image.
+Maintenant que nous avons affaire à des images, nous avons besoin d’un type différent d’onde sinusoïdale. Nous avons besoin de pouvoir additionner plusieurs de ces ondes sinusoïdales pour revenir à notre image originale, quelle qu'elle soit.
 
-To do that, each of our sine waves will be images too. Instead of a wave that's a line, we now have images with black and white sections. To represent the size of a wave, each image will have more or less contrast.
+Pour ce faire, chacune de nos ondes sinusoïdales sera également une image. Au lieu d'une onde sous la forme d'une ligne, nous avons maintenant des images avec des sections en noir et blanc. Pour représenter la taille d'une onde, chaque image aura plus ou moins de contraste.
 
-We can also use these to represent color in the same way, but let's start with black-and-white images for now. To represent colorless images, we need some horizontal wave images,
+Nous pouvons également les utiliser pour représenter la couleur de la même manière, mais commençons par les images en noir et blanc pour le moment. Pour représenter des images sans couleur, nous avons besoin d'images d'ondes horizontales,
 
 <img id="img-y-component" src="img/components-4-0.png" class="sketch sketch-small">
 
-Along with some vertical wave images.
+Avec des images d'ondes verticales.
 
 <img id="img-x-component" src="img/components-0-4.png" class="sketch sketch-small">
 
-By themselves, just horizontal and vertical images aren't enough to represent the types of images we get. We also need some extra ones that you get by multiplying the two together.
+En soit, les images horizontales et verticales ne suffisent pas pour représenter les types d'images que nous obtenons. Nous avons également besoin de quelques-unes supplémentaires qu'on obtient en multipliant ces images entre elles.
 
 <div class="multi-container">
 <img id="img-mult-x-component" src="img/components-0-4.png" class="sketch sketch-mult">
@@ -177,7 +178,7 @@ By themselves, just horizontal and vertical images aren't enough to represent th
 <img id="img-x-y-component" src="img/components-4-4.png" class="sketch sketch-mult">
 </div>
 
-For an 8x8 image, here are all the images we need.
+Pour une image 8x8, voici toutes les images dont nous avons besoin.
 
 <div class="img-component-container">
     <img src="img/components-0-0.png" class="img-component">
@@ -246,13 +247,13 @@ For an 8x8 image, here are all the images we need.
     <img src="img/components-7-7.png" class="img-component">
 </div>
 
-If we take the images, adjust their contrast to the right amount, and then add them up we can create any image.
+Si nous prenons ces images, ajustons leur contraste judicieusement, puis les additionnons, nous pouvons créer n’importe quelle image.
 
-Let's start with this letter 'A'. It's pretty small, but we need it to be small otherwise we'll end up with too many other images.
+Commençons par cette lettre 'A'. C'est assez petit, mais nous avons besoin que ce soit petit sinon nous allons nous retrouver avec trop d'images.
 
 <img src="img/a.png" class="sketch sketch-letter">
 
-As we add more and more of these images, we end up with something that becomes closer and closer to the actual image. But I think you'll see the pattern here, as we get a reasonable approximation with just a few of them.
+À mesure que nous ajoutons plus d'images, nous obtenons quelque chose qui se rapproche de plus en plus de l'image d'origine. Mais je pense que vous constaterez ici que nous obtenons une approximation raisonnable avec seulement quelques-unes d'entre elles.
 
 <div class="hidden-preload">
     <img src="img/img-buildup-0-0.png">
@@ -390,11 +391,11 @@ As we add more and more of these images, we end up with something that becomes c
 </div>
 </div>
 
-For actual JPEG images there are just a few extra details.
+Pour les vraies images JPEG, il y a juste quelques détails supplémentaires.
 
-The image gets broken up into 8x8 chunks, and each chunk gets split up separately. We use a set of frequencies to determine how light or dark each pixel is, and then another two sets for the color, one for red-green, and another for blue-yellow. The number of frequencies that we use for each chunk determines the quality of the JPEG.
+L'image est divisée en morceaux 8x8, et chaque morceau est décomposé séparément. Nous utilisons un ensemble de fréquences pour déterminer la luminosité ou l’obscurité de chaque pixel, puis deux autres ensembles pour la couleur, un pour le rouge-vert et un autre pour le bleu-jaune. Le nombre de fréquences que nous utilisons pour chaque morceau détermine la qualité du JPEG.
 
-Here's a real JPEG image, zoomed in so we can see the details. When we play with the quality levels we can see this process happen.
+Voici une vraie image JPEG agrandie pour que nous puissions voir les détails. Lorsque nous jouons avec les niveaux de qualité, nous pouvons voir le processus en question en action.
 
 <div id="jpeg-example" class="sketch">
     <img src="img/cat.png" class="sketch-child clear-pixels">
@@ -402,46 +403,50 @@ Here's a real JPEG image, zoomed in so we can see the details. When we play with
 
 ## Conclusion
 
-So let's recap:
+Alors récapitulons :
 
-- Fourier transforms are things that let us take something and split it up into its frequencies.
-- The frequencies tell us about some fundamental properties of the data we have
-- And can compress data by only storing the important frequencies
-- And we can also use them to make cool looking animations with a bunch of circles
+- les transformations de Fourier nous permettent de prendre quelque chose et de le décomposer en fréquences,
+- les fréquences nous donnent certaines propriétés fondamentales des données dont nous disposons,
+- et peuvent compresser les données en ne stockant que les fréquences importantes,
+- et nous pouvons également les utiliser pour créer des animations sympas avec des cercles.
 
-This is just scratching the surface into some applications. The Fourier transform is an extremely powerful tool, because splitting things up into frequencies is so fundamental. They're used in a lot of fields, including circuit design, mobile phone signals, magnetic resonance imaging (MRI), and quantum physics!
+Cela n'a fait qu'égratigner la surface avec quelques applications. La transformation de Fourier est un outil extrêmement puissant, car la décomposition de quelque chose en fréquences est fondamentale. Elle est utilisée dans de nombreux domaines, comme la conception de circuits, les signaux de téléphone mobile, l'imagerie par résonance magnétique (IRM) et la physique quantique !
 
-## Questions for the curious
+## Questions pour les curieux
 
-I skipped most of the math stuff here, but if you're interested in the underlying principles of how it works, here are some questions you can use to guide your research:
+J'ai omis la plupart des calculs mathématiques ici, mais si vous êtes intéressés par les principes sous-jacents du fonctionnement de la transformation de Fourier, voici quelques questions que vous pouvez utiliser pour guider votre recherche :
 
-- How do you mathematically represent a Fourier transform?
-- What's the difference between a continuous time Fourier transform and a discrete time Fourier transform?
-- How do you computationally do a Fourier transform?
-- How do you do a Fourier transform of a whole song? (Rather than just a single note.)
+- Comment représentez-vous mathématiquement une transformation de Fourier ?
+- Quelle est la différence entre une transformation de Fourier en temps continu et une transformation de Fourier en temps discret ?
+- Comment calculez-vous une transformation de Fourier ?
+- Comment faites-vous la transformation de Fourier d'une chanson entière (plutôt qu'une simple note) ?
 
-## Further 'reading'
+## 'Lecture' supplémentaire
 
-To learn more, some really good resources you can check out are:
+Pour en savoir plus, voici de très bonnes ressources que vous pouvez consulter :
 
 [An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)  
-A great article that digs more into the mathematics of what happens.
+Un excellent article qui creuse de ce qui se passe mathématiquement.
 
 [But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)  
-A great Youtube video by 3Blue1Brown, also explaining the maths of Fourier transforms from an audio perspective.
+Une superbe vidéo Youtube de 3Blue1Brown, expliquant également le calcul de la transformation de Fourier d'un point de vue audio.
 
 [A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)  
-Another article explaining how you can use epicycles to draw a path, explained from a linear algebra perspective.
+Un autre article expliquant comment utiliser les épicycles pour dessiner un chemin, expliqué dans une perspective d'algèbre linéaire.
 
-[Fourier transform (Wikipedia)](https://en.wikipedia.org/wiki/Fourier_transform)  
-And of course, the Wikipedia article is pretty good too.
+[Transformation de Fourier (Wikipedia)](https://fr.wikipedia.org/wiki/Transformation_de_Fourier)  
+Et bien sûr, l'article de Wikipedia est également très bon.
 
-## The author
+## L'auteur
 
 <canvas id="its-meee" class="sketch" width=500 height=500></canvas>
 
-I'm Jez! Full time I work at a [search company](https://www.google.com/) in the Bay Area, and in my spare time I like making games and interactive code things like this!
+Je suis Jez ! Je travaille à plein temps dans une [société de recherche](https://www.google.com/) dans la région de la baie de San Francisco, et pendant mon temps libre, j'aime créer des jeux et des codes interactifs comme celui-ci !
 
-This webpage is open-source, you can check out the code on [GitHub](https://github.com/Jezzamonn/fourier)! If you have any feedback or want to ask any questions, feel free to email me at <span id="email-text">fourier [at] jezzamon [dot] com</span>, or shoot me a tweet on [Twitter](https://twitter.com/jezzamonn).
+Cette page web est open-source, vous pouvez aller regarder le code sur [GitHub](https://github.com/Jezzamonn/fourier) ! Si vous avez des commentaires ou souhaitez poser des questions, n'hésitez pas à m'envoyer un mail à <span id="email-text">fourier [at] jezzamon [dot] com</span> ou à m'envoyer un tweet sur [Twitter](https://twitter.com/jezzamonn).
 
-If you want to see more of my work, check out my [homepage](/), and if you want to see what I'm making next, you can follow my Twitter account, [@jezzamonn](https://twitter.com/jezzamonn)!
+Si vous voulez en voir plus sur mon travail, consultez ma [page d'accueil](/), et si vous voulez voir ce que je compte faire, vous pouvez suivre mon compte Twitter, [@jezzamonn](https://twitter.com/jezzamonn) !
+
+## Traduction française
+
+Proposée par Florian Richoux que vous pouvez suivre sur Twitter [@FloRicx](https://twitter.com/floricx) et GitHub [github.com/richoux](https://github.com/richoux).
