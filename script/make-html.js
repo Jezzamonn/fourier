@@ -84,6 +84,15 @@ const pageData = [
         url: '/it.html',
         translatorMarkdown: 'Tradotto da Riccardo Buah',
     },
+	{ // French
+        languageName: 'Français',
+        markdownFileName: 'content-fr.md',
+        title: 'Une introduction interactive aux transformations de Fourier',
+        description: 'Les transformations de Fourier sont un outil utilisé dans un tas de choses différentes. Ceci est une explication de ce que fait une transformation de Fourier, et des différentes manières dont elle peut être utile.',
+        outFileName: 'fr.html',
+        url: '/fr.html',
+        translatorMarkdown: 'Traduit par [Florian Richoux](http://www.richoux.fr)',
+    },
     { // Debug
         markdownFileName: 'debug.md',
         title: 'debug debug debug',

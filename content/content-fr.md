@@ -449,4 +449,4 @@ Si vous voulez en voir plus sur mon travail, consultez ma [page d'accueil](/), e
 
 ## Traduction française
 
-Proposée par Florian Richoux que vous pouvez suivre sur Twitter [@FloRicx](https://twitter.com/floricx) et GitHub [github.com/richoux](https://github.com/richoux).
+Proposée par [Florian Richoux](http://www.richoux.fr) que vous pouvez suivre sur Twitter [@FloRicx](https://twitter.com/floricx) et GitHub [github.com/richoux](https://github.com/richoux).
