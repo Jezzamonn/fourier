@@ -120,8 +120,8 @@ for (const pageDatum of pageData) {
         url: `/fourier${pageDatum.url}`,
     });
 }
-languages.sort((a, b) => {
-    a.name > b.name});
+languages.sort((a, b) => a.name > b.name);
+// And then put English at the front.
 const english = languages.splice(languages.findIndex(l => l.name == "English"), 1)[0];
 languages.unshift(english);
 
