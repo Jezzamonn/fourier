@@ -120,6 +120,10 @@ for (const pageDatum of pageData) {
         url: `/fourier${pageDatum.url}`,
     });
 }
+languages.sort((a, b) => {
+    a.name > b.name});
+const english = languages.splice(languages.findIndex(l => l.name == "English"), 1)[0];
+languages.unshift(english);
 
 for (const pageDatum of pageData) {
     console.log(`Processing ${pageDatum.markdownFileName}`)
