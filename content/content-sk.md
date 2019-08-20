@@ -1,13 +1,13 @@
-Fourierova transofrmácia je náradie používané vo veľa rôznych odvetviach. Tu máme vysvetlené, čo Furierova transformácia robí a niekoľko rôznych spôsobov ako nám môže byť užitočná. A ako pomocou nej môžete urobiť pekné veci, ako napríklad táto:
+Fourierova transformácia je náradie používané vo veľa rôznych odvetviach. Tu máme vysvetlené, čo Furierova transformácia robí a niekoľko rôznych spôsobov ako nám môže byť užitočná. A ako pomocou nej môžete urobiť pekné veci, ako napríklad táto:
 
 <canvas id="self-draw" class="sketch" width=500 height=500></canvas>
 
-Vysvetlím, ako táto animácia funguje, a popri tom vysvetlím Fourierove transformácie!
+Vysvetlím, ako táto animácia funguje, a popri tom vysvetlím Fourierovu transformáciu!
 
 Na konci by ste mali mať dobrý obraz o tom
 - čo robí Fourierova transformácia
-- niektoré praktické použitia Fourierovej transformácie
-- niektoré zbytočné, ale zaujímavé použitia Fourierových transformácií
+- niektoré praktické použitie Fourierovej transformácie
+- niektoré zbytočné, ale zaujímavé použitia Fourierovej transformácie
 
 Matematiku a rovnice z toho zatiaľ vynecháme. Je za tým veľa zaujímavej matematiky ale je lepšie najskôr začať s tým, čo to v skutočnosti robí, a prečo by ste to chceli použiť. Ak sa chcete dozvedieť viac o tom "ako", nižšie nájdete niekoľko ďalších návrhov na čítanie!
 
@@ -67,7 +67,7 @@ Tento proces funguje tak isto, pri každej opakujúcej sa krivke. Vyskúšajte s
 <div class="multi-container">
 <div class="sketch" >
     <canvas id="wave-draw" class="sketch-child" width=500 height=300></canvas>
-    <p id="wave-draw-instruction" class="instruction wave-instruction">Draw here!</p>
+    <p id="wave-draw-instruction" class="instruction wave-instruction">Tu kreslite!</p>
 </div>
 <canvas id="wave-draw-split" class="sketch" width=500 height=500></canvas>
 </div>
@@ -84,7 +84,7 @@ Normálne na počítači ukladáme vlnu ako sériu hodnôt.
 
 <canvas id="wave-samples" class="sketch" width=500 height=500></canvas>
 
-Namiesto toho ju však môžeme reprezentovať, ako skupinu sínusových vĺn. Potom môžeme vykonať kompresiu zvuku ignorovním vyžších frekvencií. Náš konečný výsledok nebude rovnaký ale pre človeka bude znieť dosť podobne.
+Namiesto toho ju však môžeme reprezentovať, ako skupinu sínusových vĺn. Potom môžeme vykonať kompresiu zvuku ignorovaním vyžších frekvencií. Náš konečný výsledok nebude rovnaký ale pre človeka bude znieť dosť podobne.
 
 <canvas id="wave-frequencies" class="sketch" width=500 height=500></canvas>
 
@@ -100,7 +100,7 @@ Na začiatku sme povedali, že rozdeľuje veci na sínusové vlny. Ide o to, že
 
 <canvas id="complex-sinusoid" class="sketch" width=500 height=500></canvas>
 
-Ak sa pozrieme z boku, vyzerajú ako sínusové vlny. Zpredu však vyzerajú ako kruhy.
+Ak sa pozrieme z boku, vyzerajú ako sínusové vlny. Spredu však vyzerajú ako kruhy.
 
 <canvas id="complex-sinusoid-turn" class="sketch" width=500 height=500></canvas>
 
@@ -112,7 +112,7 @@ Ale môžeme použiť 3D sínusové vlny, aby vytvoriť niečo zábavne vyzeraj�
 
 Čo sa tu deje?
 
-No, kresbu môžeme považovať za 3D tvar kvôli spôsobu, akým sa vytvára v čase. Ak si viete predstaviť, že ruka bola nakreslená osobou, tri súradnice predstavujú polohu, kde sa v tomto okamihu nachádzala špička ceruzky. Súradnice x a y nám hovoria o polohe v priestore a časová súradnica je čas v danom okamihu.
+No, kresbu môžeme považovať za 3D tvar kvôli spôsobu, akým sa vytvára v čase. Ak si viete predstaviť, že ruka bola nakreslená osobou, tri súradnice predstavujú polohu, kde sa v tomto okamihu nachádzala špička ceruzky. Súradnice x a y nám hovoria o polohe v priestore a tretia súradnica je čas v danom okamihu.
 
 <canvas id="peace-3d" class="sketch" width=500 height=500></canvas>
 
@@ -409,7 +409,7 @@ Zhrňme teda:
 - Dokáže komprimovať údaje iba ukladaním dôležitých frekvencií.
 - A tiež ju môžeme použiť na vytváranie zaujímavo vyzerajúcich animácií s niekoľkými kruhmi.
 
-A to je len vrcholom ľadovca. Fourierova transformácia je mimoriadne silný nástroj, pretože rozdelenie vecí na frekvencie je také zásadné. Používa sa v mnohých oblastiach vrátane návrhu integrovaných obvodov, pre signály mobilných telefónov, zobrazovanie magnetickou rezonanciou (MRI) a aj v kvantovej fyzike!
+A to je len vrchol ľadovca. Fourierova transformácia je mimoriadne silný nástroj, pretože rozdelenie vecí na frekvencie je také zásadné. Používa sa v mnohých oblastiach vrátane návrhu integrovaných obvodov, pre signály mobilných telefónov, zobrazovanie magnetickou rezonanciou (MRI) a aj v kvantovej fyzike!
 
 ## Otázky pre zvedavých
 
@@ -418,7 +418,7 @@ Preskočil som tu väčšinu matematických vecí, ale ak vás zaujímajú zákl
 - Ako matematicky reprezentuovať Fourierovu transformáciu?
 - Aký je rozdiel medzi nepretržitou Fourierovou transformáciou a diskrétnou Fourierovou transformáciou?
 - Ako vypočítate Fourierovu transformáciu?
-- Ako urobiť Fourierovu transformáciu celej piesne? (Radšej než iba jednej noty.)
+- Ako urobiť Fourierovu transformáciu celej piesne? (Skôr než iba jednej noty.)
 
 ## Ďaľšie "čítanie"
 
@@ -433,18 +433,17 @@ Skvelé YouTube video od 3Blue1Brown, ktoré tiež vysvetľuje matematiku Fourie
 [Príbeh matematiky a umenia: Vytvorenie vizualizácie harmonických kruhov Fourierovej série](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)  
 Ďalší článok, ktorý vysvetľuje, ako môžete pomocou epicyklov nakresliť cestu, je vysvetlený z pohľadu lineárnej algebry.
 
-[Fourierova transformácia (Wikipedia EN)](https://en.wikipedia.org/wiki/Fourier_transform)
-A samozrejme, článok Wikipedia je tiež celkom dobrý.
+[Fourierova transformácia (Wikipedia EN)](https://en.wikipedia.org/wiki/Fourier_transform) A samozrejme, článok Wikipedia je tiež celkom dobrý.
 
-[Fourierova transformácia (Wikipedia SK)](https://sk.wikipedia.org/wiki/Fourierova_transform%C3%A1cia)  
+[Fourierova transformácia (Wikipedia SK)](https://sk.wikipedia.org/wiki/Fourierova_transform%C3%A1cia) 
 Po Slovensky už nie tak dobrý.
 
 ## Autor
 
 <canvas id="its-meee" class="sketch" width=500 height=500></canvas>
 
-Som Jez! Na plný úväzok pracujem vo [vyhľadávacej spoločnosti](https://www.google.com/) v oblasti Bay Area, a vo svojom voľnom čase rád robím hry a interaktívne veci, ako je táto!
+Som Jez! Na plný úväzok pracujem vo [vyhľadávacej spoločnosti](https://www.google.com/) v oblasti Bay Area a vo svojom voľnom čase rád robím hry a interaktívne veci, ako je táto!
 
 Táto webová stránka je open-source, zdrojový kód si môžete pozrieť na [GitHub](https://github.com/Jezzamonn/fourier)! Ak máte akúkoľvek spätnú väzbu alebo sa chcete niečo opýtať, neváhajte a pošlite mi e-mail na adresu <span id="email-text">fourier [at] jezzamon [dot] com</span>, alebo vystrelte tweeta na [Twitter](https://twitter.com/jezzamonn).
 
-Ak chcete vidieť viac mojej práce, pozrite sa na moju [domovskú stránku](/), a ak chcete vidieť, čo budem robiť ďalej, môžete sledovať môj účet na Twitter, [@jezzamonn](https://twitter.com/jezzamonn)!
+Ak chcete vidieť viac mojej práce, pozrite sa na moju [domovskú stránku](/) a ak chcete vidieť, čo budem robiť ďalej, môžete sledovať môj účet na Twitter, [@jezzamonn](https://twitter.com/jezzamonn)!
