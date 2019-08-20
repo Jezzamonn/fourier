@@ -84,6 +84,15 @@ const pageData = [
         url: '/it.html',
         translatorMarkdown: 'Tradotto da Riccardo Buah',
     },
+    { // Sovak
+        languageName: 'Slovak',
+        markdownFileName: 'content-sk.md',
+        title: 'Interkatívny úvod do Fourierovej transformácie',
+        description: 'Fourierova transofrmácia je náradie používané vo veľa rôznych odvetviach. Tu máme vysvetlené, čo Furierova transformácia robí a niekoľko rôznych spôsobov ako nám môže byť užitočná.',
+        outFileName: 'sk.html',
+        url: '/sk.html',
+        translatorMarkdown: 'Preložil: [Jakub Mintal](https://github.com/Straaths)',
+    },
     { // Debug
         markdownFileName: 'debug.md',
         title: 'debug debug debug',
