@@ -85,7 +85,7 @@ const pageData = [
         translatorMarkdown: 'Tradotto da Riccardo Buah',
     },
     { // Sovak
-        languageName: 'Slovak',
+        languageName: 'Slovenčina',
         markdownFileName: 'content-sk.md',
         title: 'Interkatívny úvod do Fourierovej transformácie',
         description: 'Fourierova transofrmácia je náradie používané vo veľa rôznych odvetviach. Tu máme vysvetlené, čo Furierova transformácia robí a niekoľko rôznych spôsobov ako nám môže byť užitočná.',
