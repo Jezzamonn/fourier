@@ -1,68 +1,68 @@
-Fourier transforms are a tool used in a whole bunch of different things. This is an explanation of what a Fourier transform does, and some different ways it can be useful. And how you can make pretty things with it, like this thing:
+Fourierova transofrmácia je náradie používané vo veľa rôznych odvetviach. Tu máme vysvetlené, čo Furierova transformácia robí a niekoľko rôznych spôsobov ako nám môže byť užitočná. A ako pomocou nej môžete urobiť pekné veci, ako napríklad táto:
 
 <canvas id="self-draw" class="sketch" width=500 height=500></canvas>
 
-I'm going to explain how that animation works, and along the way explain Fourier transforms!
+Vysvetlím, ako táto animácia funguje, a popri tom vysvetlím Fourierove transformácie!
 
-By the end you should have a good idea about
-- What a Fourier transform does
-- Some practical uses of Fourier transforms
-- Some pointless but cool uses of Fourier transforms
+Na konci by ste mali mať dobrý obraz o tom
+- čo robí Fourierova transformácia
+- niektoré praktické použitia Fourierovej transformácie
+- niektoré zbytočné, ale zaujímavé použitia Fourierových transformácií
 
-We're going to leave the mathematics and equations out of it for now. There's a bunch of interesting maths behind it, but it's better to start with what it actually does, and why you'd want to use it first. If you want to know more about the how, there's some further reading suggestions below!
+Matematiku a rovnice z toho zatiaľ vynecháme. Je za tým veľa zaujímavej matematiky ale je lepšie najskôr začať s tým, čo to v skutočnosti robí, a prečo by ste to chceli použiť. Ak sa chcete dozvedieť viac o tom "ako", nižšie nájdete niekoľko ďalších návrhov na čítanie!
 
-## So what is this thing?
+## Tak čo to vlastne je?
 
-Put simply, the Fourier transform is a way of splitting something up into a bunch of sine waves. As usual, the name comes from some person who lived a long time ago called Fourier.
+Zjednodušene povedané, Fourierova transformácia je spôsob rozdelenia čohokoľvek na niekoľko sínusových vĺn. Ako obvykle, meno pochádza od človeka, ktorý kedysi dávno žil a nazýval sa Fourier.
 
-Let’s start with some simple examples and work our way up. First up we're going to look at waves - patterns that repeat over time.
+Začnime s niekoľkými jednoduchými príkladmi a postupne budeme pokračovať našou cestou ďalej. Najskôr sa pozrieme na vlny - vzory, ktoré sa s tokom času opakujú.
 
-Here’s an example wave:
+Tu je príklad takej vlny:
 
 <canvas id="combo-sine-wave" class="sketch" width=500 height=300></canvas>
 
-This wavy pattern here can be split up into sine waves. That is, when we add up the two sine waves we get back the original wave.
+Tento zvlnený vzor sa dá rozdeliť na sínusové vlny. To znamená, že keď zložíme dve sínusové vlny, dostaneme pôvodný zvlnený vzor.
 
 <canvas id="combo-sine-wave-split" class="sketch" width=500 height=500></canvas>
 
-The Fourier transform is a way for us to take the combined wave, and get each of the sine waves back out. In this example, you can almost do it in your head, just by looking at the original wave.
+Fourierova transformácia je spôsob, ako zobrať túto kombinovanú vlnu a dostať z nej späť všetky pôvodné sínusové vlny. V tomto príklade to takmer môžete urobiť vo svojej hlave, len pri pohľade na pôvodnú vlnu.
 
-Why? Turns out a lot of things in the real world interact based on these sine waves. We usually call them the wave's frequencies.
+Prečo? Ukázalo sa, že veľa vecí v skutočnom svete interaguje na základe týchto sínusových vĺn. Väčšinou ich nazývame frekvenciami vlny.
 
-The most obvious example is sound – when we hear a sound, we don’t hear that squiggly line, but we hear the different frequencies of the sine waves that make up the sound.
+Najzreteľnejším príkladom je zvuk - keď počujeme zvuk, nepočujeme tú krivoľakú čiaru, ale počújeme rôzne frekvencie sínusových vĺn, ktoré spolu tvoria zvuk.
 
-<button id="together-button" class="button">Play Full Wave</button>
+<button id="together-button" class="button">Zahraj celú vlnu</button>
 
-<button id="split-button-1" class="button">Play High Frequency</button>
+<button id="split-button-1" class="button">Zahraj vysokú frekvenciu</button>
 
-<button id="split-button-2" class="button">Play Low Frequency</button>
+<button id="split-button-2" class="button">Zahraj nízku frekvenciu</button>
 
-Being able to split them up on a computer can give us an understanding of what a person actually hears. We can understand how high or low a sound is, or figure out what note it is.
+To, že ich dokážeme rozdeliť na počítači, nám môže pomôcť pochopiť, čo človek skutočne počuje. Dokážeme pochopiť, aký vysoký alebo nízky je zvuk, alebo zistiť, o akú notu ide.
 
-We can also use this process on waves that don't look like they're made of sine waves.
+Tento proces môžeme použiť aj na vlnách, ktoré nevyzerajú, akoby boli vytvorené zo sínusových vĺn.
 
-Let's take a look at this guy. It’s called a square wave.
+Pozrime sa na toto. Hovorí sa tomu štvorcová vlna.
 
 <canvas id="square-wave" class="sketch" width=500 height=300></canvas>
 
-It might not look like it, but it also can be split up into sine waves.
+Možno to tak nevyzerá, ale aj tá sa dá rozdeliť na sínusové vlny.
 
 <canvas id="square-wave-split" class="sketch" width=500 height=500></canvas>
 
-We need a lot of them this time – technically an infinite amount to perfectly represent it. As we add up more and more sine waves the pattern gets closer and closer to the square wave we started with.
+Tentokrát ich technicky potrebujeme nekonečné množstvo, aby sme ju mohli dokonale reprezentovať. Keď pridávame čoraz viac sínusových vĺn, obrazec sa dostáva bližšie a bližšie k štvorcovej vlne, s ktorou sme začali.
 
 <canvas id="square-wave-build-up" class="sketch" width=500 height=500></canvas>
 <input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
 
-<button id="square-wave-button" class="button">Play Wave</button>
+<button id="square-wave-button" class="button">Zahraj vlnu</button>
 
-*Drag the slider above to play with how many sine waves there are.*
+*Posuňte vyžší posúvník pre zmenu počtu sínusových vĺn.*
 
-Visually, you'll notice that actually the first few sine waves are the ones that make the biggest difference. With the slider halfway, we have the general shape of the wave, but it's all wiggly. We just need the rest of the small ones to make the wigglyness flatten out.
+Všimnete si, že v skutočnosti prvých pár sínusových vĺn robí najväčší rozdiel. S posúvníkom v polovici máme všeobecný tvar vlny, aj keď trochu pokrivený. Tie najmenšie potrebujeme len na to, aby sa zakrivenie vyrovnalo.
 
-When you listen to the wave, you'll hear the sound get lower, because we're removing the higher frequencies.
+Keď budete počúvať vlnu, budete počuť zvuk klesajúci, pretože odstraňujeme vyššie frekvencie.
 
-This process works like that for any repeating line. Give it a go, try drawing your own!
+Tento proces funguje tak isto, pri každej opakujúcej sa krivke. Vyskúšajte si to!
 
 <div class="multi-container">
 <div class="sketch" >
@@ -72,102 +72,102 @@ This process works like that for any repeating line. Give it a go, try drawing y
 <canvas id="wave-draw-split" class="sketch" width=500 height=500></canvas>
 </div>
 <input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
-<button id="wave-draw-button" class="button">Play Wave</button>
+<button id="wave-draw-button" class="button">Zahraj vlnu</button>
 
-*Move the slider to see how as we add more sine waves, it gets closer and closer to your drawing*
+*Pohybom posuvníka uvidíte, ako pribúdajú ďalšie sínusové vlny, takže sa bude viac a viac podobať na vašu kresbu.*
 
-Again, aside from the extra wigglyness, the wave looks pretty similar with just half of the sine waves.
+Znovu, vlna vyzerá, okrem mierneho pokrivenia, veľmi podobne už len s polovicou sinusových vĺn.
 
-We can actually use the fact that the wave is pretty similar to our advantage. By using a Fourier transform, we can get the important parts of a sound, and only store those to end up with something that's pretty close to the original sound.
+V sutočnosti môžeme použiť fakt, že vlna je veľmi podobná, ako našu výhodu. Použitím Fourierovej transformácie, môžeme získať dôležité časti zvuku, uložiť len tie a nakoniec skončíme s niečím, čo je dosť blízko pôvodnému zvuku.
 
-Normally on a computer we store a wave as a series of points.
+Normálne na počítači ukladáme vlnu ako sériu hodnôt.
 
 <canvas id="wave-samples" class="sketch" width=500 height=500></canvas>
 
-What we can do instead is represent it as a bunch of sine waves. Then we can compress the sound by ignoring the smaller frequencies. Our end result won't be the same, but it'll sound pretty similar to a person.
+Namiesto toho ju však môžeme reprezentovať, ako skupinu sínusových vĺn. Potom môžeme vykonať kompresiu zvuku ignorovním vyžších frekvencií. Náš konečný výsledok nebude rovnaký ale pre človeka bude znieť dosť podobne.
 
 <canvas id="wave-frequencies" class="sketch" width=500 height=500></canvas>
 
-This is essentially what MP3s do, except they're more clever about which frequencies they keep and which ones they throw away.
+To je v podstate to, čo robia MP3ky, s výnimkou toho, že sú múdrejšie vo výberaní toho, ktoré frekvencie uchovávajú a ktoré vyhodia.
 
-So in this case, we can use Fourier transforms to get an understanding of the fundamental properties of a wave, and then we can use that for things like compression.
+Takže v tomto prípade môžeme použiť Fourierove transformácie na pochopenie základných vlastností vlny a potom ich môžeme použiť na užitočný proces, akým je kompresia.
 
-Ok, now let's dig more into the Fourier transform. This next part looks cool, but also gives you a bit more understanding of what the Fourier transform does. But mostly looks cool.
+Dobre, pozrime sa bližšie na Fourierovú transformáciu. Táto nasledujúca časť nielenže vyzerá zaujímavo, ale tiež vám dáva trochu lepšie pochopenie toho, čo robí Fourierova transformácia. Ale hlavne vyzerá zaujímavo.
 
-## Epicycles
+## Epicykly
 
-Now at the start, I said it splits things into sine waves. The thing is, the sine waves it creates are not just regular sine waves, but they’re 3D. You could call them "complex sinusoids". Or just "spirals".
+Na začiatku sme povedali, že rozdeľuje veci na sínusové vlny. Ide o to, že sínusové vlny, ktoré vytvára, nie sú iba bežné sínusové vlny, ale sú 3D. Môžete ich nazvať „komplexnými sínusoidami“. Alebo jednoducho „špirály“.
 
 <canvas id="complex-sinusoid" class="sketch" width=500 height=500></canvas>
 
-If we take a look from the side, they look like sine waves. From front on, though, these look like circles.
+Ak sa pozrieme z boku, vyzerajú ako sínusové vlny. Zpredu však vyzerajú ako kruhy.
 
 <canvas id="complex-sinusoid-turn" class="sketch" width=500 height=500></canvas>
 
-So far everything we’ve been doing has only required the regular 2D sine waves. When we do a Fourier transform on 2D waves, the complex parts cancel out so we just end up with sine waves.
+Zatiaľ všetko, čo sme robili, vyžadovalo len normálne sínusové vlny 2D. Keď robíme Fourierovu transformáciu na 2D vlnách, komplexné časti sa vynulujú, takže nakoniec skončíme so sínusovými vlnami.
 
-But we can use the 3D sine waves to make something fun looking like this:
+Ale môžeme použiť 3D sínusové vlny, aby vytvoriť niečo zábavne vyzerajúce, takéto:
 
 <canvas id="peace-epicycles" class="sketch" width=500 height=500></canvas>
 
-What’s going on here?
+Čo sa tu deje?
 
-Well, we can think of the drawing as a 3D shape because of the way it moves around in time. If you imagine the hand being drawn by a person, the three dimensions represent where the tip of their pencil is at that moment. The x and y dimensions tell us the position, and then the time dimension is the time at that moment.
+No, kresbu môžeme považovať za 3D tvar kvôli spôsobu, akým sa vytvára v čase. Ak si viete predstaviť, že ruka bola nakreslená osobou, tri súradnice predstavujú polohu, kde sa v tomto okamihu nachádzala špička ceruzky. Súradnice x a y nám hovoria o polohe v priestore a časová súradnica je čas v danom okamihu.
 
 <canvas id="peace-3d" class="sketch" width=500 height=500></canvas>
 
-Now that we have a 3D pattern, we can't use the regular 2D sine waves to represent it. No matter how many of the 2D sine waves we add up, we'll never get something 3D. So we need something else.
+Teraz, keď máme trojrozmerný vzor, nemôžeme na jeho reprezentáciu použiť normálne sínusové vlny 2D. Bez ohľadu na to, koľko 2D sínusových vĺn pridáme, nikdy nebudeme mať niečo 3D. Potrebujeme teda niečo iné.
 
-What we can use is the 3D spiral sine waves from before. If we add up lots of those, we can get something that looks like our 3D pattern.
+Môžeme použiť predchádzajúce 3D špirálové sínusové vlny. Ak zložíme veľa z nich, môžeme získať niečo, čo vyzerá ako náš trojrozmerný vzor.
 
-Remember, these waves look like circles when we look at them from front on. The name for the pattern of a circle moving around another circle is an epicycle.
+Pamätajte, že tieto vlny vyzerajú ako kruhy, keď sa na ne pozeráme spredu. Názov vzoru kruhu, ktorý sa pohybuje okolo iného kruhu, je epicyklus.
 
 <canvas id="peace-build-up" class="sketch" width=500 height=500></canvas>
 <input id="peace-build-up-slider" type="range" min="0" max="1" value="1" step="any">
 
-*Use the slider above to control how many circles there are.*
+*Pomocou posúvníka vyššie môžete ovládať počet kruhov.*
 
-Like before, we get a pretty good approximation of our pattern with just a few circles. Because this is a fairly simple shape, all the last ones do is make the edges a little sharper.
+Rovnako ako predtým, dosiahli sme celkom dobrú aproximáciu nášho modelu len s niekoľkými kruhmi. Pretože sa jedná o pomerne jednoduchý tvar, všetky posledné urobia hrany len o niečo ostrejšie.
 
-All this applies to any drawing, really! Now it’s your chance to play around with it.
+To všetko sa vzťahuje na akýkoľvek náčrtok, naozaj! Teraz máte šancu sa s tým pohrať.
 
 <div class="multi-container">
 <div class="sketch" >
     <canvas id="draw-zone" class="sketch-child" width=500 height=500></canvas>
-    <p id="draw-zone-instruction" class="instruction">Draw here!</p>
-    <button id="draw-zone-undo-button" class="button embedded-button">Undo</button>
+    <p id="draw-zone-instruction" class="instruction">Nakreslite tu!</p>
+    <button id="draw-zone-undo-button" class="button embedded-button">Krok späť</button>
 </div>
 <canvas id="circle-zone" class="sketch" width=500 height=500></canvas>
 </div>
 <input id="circle-zone-slider" type="range" min="0" max="1" value="1" step="any">
 
-*Use the slider to control how many circles are used for your drawing*
+*Pomocou posúvníka určte, koľko kruhov sa použije na kreslenie*
 
-Again, you'll see for most shapes, we can approximate them fairly well with just a small number of circles, instead of saving all the points.
+Znova ste mohli vidieť, že väčšinu tvarov dokážeme pomerne dobre napodobniť pomocou malého počtu kruhov, namiesto uloženia súradníc všetkých bodov.
 
-Can we use this for real data? Well, we could! In reality we have another data format called SVG, which probably does a better job for the types of shapes we tend to create. So for the moment, this is really just for making cool little gifs.
+Môžeme to použiť pre skutočné dáta? No, mohli by sme! V skutočnosti, tu máme ďalší dátový formát s názvom SVG, ktorý pravdepodobne vykonáva dobrú prácu pre typy tvarov, ktoré máme tendenciu vytvárať. Takže v tejto chvíli je to naozaj len pre tvorenie skvelých gifov.
 
 <canvas id="fourier-title" class="sketch" width=500 height=300></canvas>
 
-There is another type of visual data that does use Fourier transforms, however.
+Existuje však aj iný typ vizuálnych údajov, ktoré využívajú Fourierovu transformáciu.
 
 ## JPEGs
 
-Did you know Fourier transforms can also be used on images? In fact, we use it all the time, because that's how JPEGs work! We're applying the same principles to images – splitting up something into a bunch of sine waves, and then only storing the important ones.
+Vedeli ste, že Fourierove transformácie sa dajú použiť aj na obrázky? V skutočnosti ich používame stále, pretože takto fungujú súbory JPEG! Na obrázky aplikujeme rovnaké princípy - niečo rozdelíme do zväzku sínusových vĺn a potom ukladáme iba tie dôležité.
 
-Now we're dealing with images, we need a different type of sine wave. We need to have something that no matter what image we have, we can add up a bunch of these sine waves to get back to our original image.
+Teraz, keď sa zaoberáme obrázkami, potrebujeme iný typ sínusovej vlny. Potrebujeme niečo, čo bez ohľadu na to, aký obrázok máme, môžeme pridať, aby sme sa dostali späť k nášmu pôvodnému obrázku.
 
-To do that, each of our sine waves will be images too. Instead of a wave that's a line, we now have images with black and white sections. To represent the size of a wave, each image will have more or less contrast.
+Aby sme to mohli urobiť, každá z našich sínusových vĺn bude tiež obrázkom. Namiesto vlny, ktorá je čiarou, máme teraz obrázky s čiernymi a bielymi sekciami. Na vyjadrenie veľkosti vlny, bude mať každý obrázok viac alebo menej kontrastu.
 
-We can also use these to represent color in the same way, but let's start with black-and-white images for now. To represent colorless images, we need some horizontal wave images,
+Môžeme ich tiež použiť na reprezentáciu farieb rovnakým spôsobom. Ale začnime s čiernobielym obrázkom. Na zobrazenie bezfarebných obrázkov potrebujeme niekoľko obrázkov horizontálnych vĺn,
 
 <img id="img-y-component" src="img/components-4-0.png" class="sketch sketch-small">
 
-Along with some vertical wave images.
+spolu s niekoľko obrázkami zvislých vĺn.
 
 <img id="img-x-component" src="img/components-0-4.png" class="sketch sketch-small">
 
-By themselves, just horizontal and vertical images aren't enough to represent the types of images we get. We also need some extra ones that you get by multiplying the two together.
+Samotné iba vodorovné a zvislé obrázky nestačia na to, aby sme ich zložením dostali obrázky, ktoré chceme získať. Potrebujeme tiež nejaké ďalšie, ktoré získame vynásobením týchto dvoch jednotiek.
 
 <div class="multi-container">
 <img id="img-mult-x-component" src="img/components-0-4.png" class="sketch sketch-mult">
@@ -177,7 +177,7 @@ By themselves, just horizontal and vertical images aren't enough to represent th
 <img id="img-x-y-component" src="img/components-4-4.png" class="sketch sketch-mult">
 </div>
 
-For an 8x8 image, here are all the images we need.
+Tu sú všetky obrázky, ktoré potrebujeme, pre získanie akéhokoľvek obrázka 8x8.
 
 <div class="img-component-container">
     <img src="img/components-0-0.png" class="img-component">
@@ -246,13 +246,13 @@ For an 8x8 image, here are all the images we need.
     <img src="img/components-7-7.png" class="img-component">
 </div>
 
-If we take the images, adjust their contrast to the right amount, and then add them up we can create any image.
+Ak vezmeme tieto obrázky, upravíme ich kontrast na správne hodnoty a potom ich zložíme, môžeme vytvoriť akýkoľvek obrázok.
 
-Let's start with this letter 'A'. It's pretty small, but we need it to be small otherwise we'll end up with too many other images.
+Začnime týmto písmenom „A“. Je dosť malé, ale musí byť malé, inak skončíme s príliš mnohými dodatkovými obrázkami.
 
 <img src="img/a.png" class="sketch sketch-letter">
 
-As we add more and more of these images, we end up with something that becomes closer and closer to the actual image. But I think you'll see the pattern here, as we get a reasonable approximation with just a few of them.
+Keď pridávame čoraz viac z týchto obrázkov, približujeme sa do niečoho, čo sa stáva viac a viac podobné originálnemu obrázku. Myslím si, že sami uvidíte postup, pretože už s niekoľkými z nich dostaneme dobrú aproximáciu.
 
 <div class="hidden-preload">
     <img src="img/img-buildup-0-0.png">
@@ -390,58 +390,61 @@ As we add more and more of these images, we end up with something that becomes c
 </div>
 </div>
 
-For actual JPEG images there are just a few extra details.
+Pre skutočné obrázky JPEG treba už len niekoľko ďalších detailov.
 
-The image gets broken up into 8x8 chunks, and each chunk gets split up separately. We use a set of frequencies to determine how light or dark each pixel is, and then another two sets for the color, one for red-green, and another for blue-yellow. The number of frequencies that we use for each chunk determines the quality of the JPEG.
+Obrázok sa rozdelí na kúsky 8x8 a každý kúsok sa rozdelí osobitne. Na určenie toho, ako svetlý alebo tmavý je každý pixel, použijeme množinu frekvencií a potom ďalšie dve množiny pre definovanie farieb, jednu pre červeno-zelenú a druhú pre modro-žltú. Počet frekvencií, ktoré používame pre každý kúsok, určuje kvalitu JPEG.
 
-Here's a real JPEG image, zoomed in so we can see the details. When we play with the quality levels we can see this process happen.
+Toto je skutočný obrázok JPEG, priblížený, aby sme mohli vidieť podrobnosti. Keď sa hráme s úrovňou kvality, môžeme vidieť, ako tento proces prebieha.
 
 <div id="jpeg-example" class="sketch">
     <img src="img/cat.png" class="sketch-child clear-pixels">
 </div>
 
-## Conclusion
+## Zhrnutie
 
-So let's recap:
+Zhrňme teda:
 
-- Fourier transforms are things that let us take something and split it up into its frequencies.
-- The frequencies tell us about some fundamental properties of the data we have
-- And can compress data by only storing the important frequencies
-- And we can also use them to make cool looking animations with a bunch of circles
+- Fourierova transformácia je proces, ktorý nám niečo vezme a rozdelí to na svoje frekvencie.
+- Frekvencie nám hovoria o niektorých základných vlastnostiach údajov, ktoré máme.
+- Dokáže komprimovať údaje iba ukladaním dôležitých frekvencií.
+- A tiež ju môžeme použiť na vytváranie zaujímavo vyzerajúcich animácií s niekoľkými kruhmi.
 
-This is just scratching the surface into some applications. The Fourier transform is an extremely powerful tool, because splitting things up into frequencies is so fundamental. They're used in a lot of fields, including circuit design, mobile phone signals, magnetic resonance imaging (MRI), and quantum physics!
+A to je len vrcholom ľadovca. Fourierova transformácia je mimoriadne silný nástroj, pretože rozdelenie vecí na frekvencie je také zásadné. Používa sa v mnohých oblastiach vrátane návrhu integrovaných obvodov, pre signály mobilných telefónov, zobrazovanie magnetickou rezonanciou (MRI) a aj v kvantovej fyzike!
 
-## Questions for the curious
+## Otázky pre zvedavých
 
-I skipped most of the math stuff here, but if you're interested in the underlying principles of how it works, here are some questions you can use to guide your research:
+Preskočil som tu väčšinu matematických vecí, ale ak vás zaujímajú základné princípy fungovania, tu sú niektoré otázky, ktoré môžete použiť na usmernenie svojho bádania:
 
-- How do you mathematically represent a Fourier transform?
-- What's the difference between a continuous time Fourier transform and a discrete time Fourier transform?
-- How do you computationally do a Fourier transform?
-- How do you do a Fourier transform of a whole song? (Rather than just a single note.)
+- Ako matematicky reprezentuovať Fourierovu transformáciu?
+- Aký je rozdiel medzi nepretržitou Fourierovou transformáciou a diskrétnou Fourierovou transformáciou?
+- Ako vypočítate Fourierovu transformáciu?
+- Ako urobiť Fourierovu transformáciu celej piesne? (Radšej než iba jednej noty.)
 
-## Further 'reading'
+## Ďaľšie "čítanie"
 
-To learn more, some really good resources you can check out are:
+Ak sa chcete dozvedieť viac, tu si môžete pozrieť niektoré naozaj dobré zdroje:
 
-[An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)  
-A great article that digs more into the mathematics of what happens.
+[Interaktívny sprievodca po Fourierovej transformácii](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)  
+Skvelý článok, ktorý sa viac venuje matematike toho, čo sa deje.
 
-[But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)  
-A great Youtube video by 3Blue1Brown, also explaining the maths of Fourier transforms from an audio perspective.
+[Ale čo je Fourierova transformácia? Vizuálny úvod.](https://www.youtube.com/watch?v=spUNpyF58BY)  
+Skvelé YouTube video od 3Blue1Brown, ktoré tiež vysvetľuje matematiku Fourierových transformácií z audio perspektívy.
 
-[A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)  
-Another article explaining how you can use epicycles to draw a path, explained from a linear algebra perspective.
+[Príbeh matematiky a umenia: Vytvorenie vizualizácie harmonických kruhov Fourierovej série](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)  
+Ďalší článok, ktorý vysvetľuje, ako môžete pomocou epicyklov nakresliť cestu, je vysvetlený z pohľadu lineárnej algebry.
 
-[Fourier transform (Wikipedia)](https://en.wikipedia.org/wiki/Fourier_transform)  
-And of course, the Wikipedia article is pretty good too.
+[Fourierova transformácia (Wikipedia EN)](https://en.wikipedia.org/wiki/Fourier_transform)
+A samozrejme, článok Wikipedia je tiež celkom dobrý.
 
-## The author
+[Fourierova transformácia (Wikipedia SK)](https://sk.wikipedia.org/wiki/Fourierova_transform%C3%A1cia)  
+Po Slovensky už nie tak dobrý.
+
+## Autor
 
 <canvas id="its-meee" class="sketch" width=500 height=500></canvas>
 
-I'm Jez! Full time I work at a [search company](https://www.google.com/) in the Bay Area, and in my spare time I like making games and interactive code things like this!
+Som Jez! Na plný úväzok pracujem vo [vyhľadávacej spoločnosti](https://www.google.com/) v oblasti Bay Area, a vo svojom voľnom čase rád robím hry a interaktívne veci, ako je táto!
 
-This webpage is open-source, you can check out the code on [GitHub](https://github.com/Jezzamonn/fourier)! If you have any feedback or want to ask any questions, feel free to email me at <span id="email-text">fourier [at] jezzamon [dot] com</span>, or shoot me a tweet on [Twitter](https://twitter.com/jezzamonn).
+Táto webová stránka je open-source, zdrojový kód si môžete pozrieť na [GitHub](https://github.com/Jezzamonn/fourier)! Ak máte akúkoľvek spätnú väzbu alebo sa chcete niečo opýtať, neváhajte a pošlite mi e-mail na adresu <span id="email-text">fourier [at] jezzamon [dot] com</span>, alebo vystrelte tweeta na [Twitter](https://twitter.com/jezzamonn).
 
-If you want to see more of my work, check out my [homepage](/), and if you want to see what I'm making next, you can follow my Twitter account, [@jezzamonn](https://twitter.com/jezzamonn)!
+Ak chcete vidieť viac mojej práce, pozrite sa na moju [domovskú stránku](/), a ak chcete vidieť, čo budem robiť ďalej, môžete sledovať môj účet na Twitter, [@jezzamonn](https://twitter.com/jezzamonn)!
