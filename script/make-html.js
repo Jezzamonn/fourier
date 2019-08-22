@@ -93,7 +93,7 @@ const pageData = [
         url: '/fr.html',
         translatorMarkdown: 'Traduit par [Florian Richoux](http://www.richoux.fr)',
     },
-    { // Sovak
+    { // Slovak
         languageName: 'Slovenčina',
         markdownFileName: 'content-sk.md',
         title: 'Interkatívny úvod do Fourierovej transformácie',
