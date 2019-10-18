@@ -39,7 +39,8 @@ export default class EpicyclesController extends CanvasController {
         // Get the fourier data, also filter out the really small terms.
         this.fourierData = getFourierData(resample2dData(path, this.numPoints)).filter(f => f.amplitude > minAmplitude);
         this.fourierData.sort((a, b) => b.amplitude - a.amplitude);
-        console.log(this.fourierData.length + '/' + numPoints)
+        console.log(this.fourierData.length + '/' + numPoints);
+        this.jsonData();
     }
 
     setFourierAmt(amt) {
@@ -60,6 +61,7 @@ export default class EpicyclesController extends CanvasController {
         if (this.pathDirty) {
             this.recalculatePath();
             this.pathDirty = false;
+            this.jsonData();
         }
 
         if (!this.animate) {
@@ -161,5 +163,15 @@ export default class EpicyclesController extends CanvasController {
         }
         this.context.globalAlpha = 1;
     }
+	jsonData() {
+		const numFouriers = Math.round(slurp(2, this.fourierData.length, this.fourierAmt));
+		let frequency = [], phase = [], amplitude = [];
+		for (let i = 0; i < numFouriers; i++) {
+			frequency.push(this.fourierData[i].freq);
+			phase.push(this.fourierData[i].phase);
+			amplitude.push(this.fourierData[i].amplitude);
+		}
+		this.data = {"amplitude": amplitude, "phase":phase, "frequency":frequency};
+	}
 
 }
