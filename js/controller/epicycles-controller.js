@@ -166,7 +166,7 @@ export default class EpicyclesController extends CanvasController {
 	jsonData() {
 		const numFouriers = Math.round(slurp(2, this.fourierData.length, this.fourierAmt));
 		let frequency = [], phase = [], amplitude = [];
-		for (let i = 0; i < numFouriers; i ++) {
+		for (let i = 1; i < numFouriers; i ++) {
 			frequency.push(this.fourierData[i].freq);
 			phase.push(this.fourierData[i].phase);
 			amplitude.push(this.fourierData[i].amplitude);
