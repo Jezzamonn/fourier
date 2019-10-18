@@ -137,7 +137,12 @@ All this applies to any drawing, really! Now it’s your chance to play around w
     <p id="draw-zone-instruction" class="instruction">Draw here!</p>
     <button id="draw-zone-undo-button" class="button embedded-button">Undo</button>
 </div>
-<canvas id="circle-zone" class="sketch" width=500 height=500></canvas>
+<div class="sketch">
+	<canvas id="circle-zone" class="sketch-child" width=500 height=500></canvas>
+	<a id="download-elem" style="all: revert;">
+		<button id="circle-zone-download-button" class="button embedded-button">Download</button>
+	</a>
+</div>
 </div>
 <input id="circle-zone-slider" type="range" min="0" max="1" value="1" step="any">
 

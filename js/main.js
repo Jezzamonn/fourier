@@ -251,6 +251,17 @@ function init() {
 		if (circleZoneSlider) {
 			circleZoneSlider.onValueChange.push(val => epicycles.setFourierAmt(val));
 		}
+		if (hasElement('circle-zone-download-button')) {
+			const downloadButton = document.getElementById('circle-zone-download-button');
+			downloadButton.addEventListener('click', () => {
+				epicycles.jsonData();
+				var jsonData = "data:text/json;charset=utf-8,"+JSON.stringify(epicycles.data);
+				var downloadElem = document.getElementById('download-elem');
+				downloadElem.setAttribute("href", jsonData);
+				downloadElem.setAttribute("download", "fourier-data.json");
+				// console.log(jsonData);
+			});
+		}
 		controllers.push(epicycles);
 	}
 
