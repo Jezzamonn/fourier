@@ -15,7 +15,7 @@
     "img": "img/*"
   },
   "scripts": {
-    "start": "reload -b -d build",
+    "start": "npm run build && reload -b -d build",
     "webpack": "webpack || exit 1",
     "makehtml": "node script/make-html",
     "css": "cp -r css build/",
