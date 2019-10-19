@@ -15,7 +15,7 @@
     "img": "img/*"
   },
   "scripts": {
-    "start": "npm run build && reload -b -d build",
+    "start": "npm run build && npm run reload",
     "webpack": "webpack || exit 1",
     "makehtml": "node script/make-html",
     "css": "cp -r css build/",
@@ -24,7 +24,7 @@
     "build": "npm run webpack && npm run makehtml && npm run css && npm run img && npm run preview",
     "test": "jest",
     "watch": "npm-watch",
-    "reload": "reload -b -d build"
+    "reload": "reload -v -d build -p $PORT"
   },
   "author": "Jezzamon",
   "license": "ISC",
