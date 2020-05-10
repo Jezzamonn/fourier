@@ -7,7 +7,7 @@ module.exports = {
         filename: 'main.bundle.js'
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
@@ -17,5 +17,6 @@ module.exports = {
     stats: {
         colors: true
     },
+    mode: 'development',
     devtool: 'source-map'
 };
