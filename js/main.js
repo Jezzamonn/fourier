@@ -349,6 +349,8 @@ function init() {
 
 	conductor = new Conductor(controllers);
 	conductor.start();
+	// To let me play around with things in the console.
+	window.conductor = conductor;
 }
 
 function hasElement(id) {
