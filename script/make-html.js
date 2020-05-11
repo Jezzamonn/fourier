@@ -2,6 +2,13 @@ const showdown = require('showdown');
 const mustache = require('mustache');
 const fs = require('fs');
 
+const defaultPageData = {
+    author: 'Jez Swanson',
+    url: '',
+    translatorMarkdown: '',
+    textDirection: '',
+};
+
 const pageData = [
     { // English
         languageName: 'English',
@@ -9,8 +16,6 @@ const pageData = [
         title: 'An Interactive Introduction to Fourier Transforms',
         description: 'Fourier transforms are a tool used in a whole bunch of different things. This is a explanation of what a Fourier transform does, and some different ways it can be useful.',
         outFileName: 'index.html',
-        url: '',
-        translatorMarkdown: '',
     },
     { // Spanish
         languageName: 'Español',
@@ -102,13 +107,22 @@ const pageData = [
         url: '/sk.html',
         translatorMarkdown: 'Preložil: [Jakub Mintal](https://github.com/Straaths)',
     },
+    {
+        languageName: 'עברית',
+        markdownFileName: 'content-he.md',
+        title: 'מבוא אינטראקטיבי להתמרות פורייה',
+        author: "ג'ז סוונסון",
+        description: 'התמרות פורייה הן כלי שניתן להשתמש בו בתחומים רבים. כאן יינתן הסבר על מה שהתמרת פורייה עושה, ועל דרכים שונות שאפשר להשתמש בה. כמו על איך מכינים דברים יפים בעזרתה, כמו למשל הדבר הזה.',
+        outFileName: 'he.html',
+        url: '/he.html',
+        textDirection: 'dir=rtl'
+    },
     { // Debug
         markdownFileName: 'debug.md',
         title: 'debug debug debug',
         description: 'debugbugbugbugbugbugbugbug',
         outFileName: 'debug.html',
         url: '/debug.html',
-        translatorMarkdown: '',
     },
 ]
 
@@ -144,7 +158,7 @@ for (const pageDatum of pageData) {
     const translator = markdownConverter.makeHtml(pageDatum.translatorMarkdown);
 
     // Fill into template
-    const view = Object.assign({}, pageDatum);
+    const view = Object.assign({}, defaultPageData, pageDatum);
     view.content = htmlContent;
     view.translator = translator;
     view.languages = languages;

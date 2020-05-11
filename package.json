@@ -6,9 +6,10 @@
   "watch": {
     "makehtml": {
       "patterns": [
-        "content/*.md"
+        "content/*.md",
+        "script/make-html.js"
       ],
-      "extensions": "md"
+      "extensions": "md,js"
     },
     "webpack": "js/**/*.js",
     "css": "css/styles.css",
