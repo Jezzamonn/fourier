@@ -124,7 +124,7 @@ const pageData = [
         outFileName: 'debug.html',
         url: '/debug.html',
     },
-]
+].map(d => Object.assign({}, defaultPageData, d));
 
 const contentDir = 'content/'
 const buildDir = 'build/';
@@ -158,7 +158,7 @@ for (const pageDatum of pageData) {
     const translator = markdownConverter.makeHtml(pageDatum.translatorMarkdown);
 
     // Fill into template
-    const view = Object.assign({}, defaultPageData, pageDatum);
+    const view = Object.assign({}, pageDatum);
     view.content = htmlContent;
     view.translator = translator;
     view.languages = languages;
