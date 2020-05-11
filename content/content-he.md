@@ -82,11 +82,11 @@
 
 בדרך כלל, אחסון גל במחשב מתבצע כאחסון של סדרת נקודות.
 
-<canvas id="wave-samples" class="sketch" width=500 height=500></canvas>
+<canvas dir="ltr" id="wave-samples" class="sketch" width=500 height=500></canvas>
 
 מה שאפשר לעשות במקום זה, הוא לייצג את הגל על-ידי כמה גלי סינוס. לאחר מכן, אנו יכולים לצמצם את נפח האחסון שלו ע"י התעלמות מהתדרים הנמוכים. התוצאה הסופית שנקבל אמנם לא תהיה זהה לגל שהכנסנו, אבל עדיין הקול המעובד יישמע די דומה למאזין שמקשיב לו.
 
-<canvas id="wave-frequencies" class="sketch" width=500 height=500></canvas>
+<canvas dir="ltr" id="wave-frequencies" class="sketch" width=500 height=500></canvas>
 
 זאת למעשה דרך הפעולה של שמירת קול בקבצי MP3, אם כי הם יותר מתוחכמים בבחירת התדירויות שהם בוחרים להסיר או להשאיר.
 

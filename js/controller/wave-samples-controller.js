@@ -43,9 +43,6 @@ export default class WaveSamplesController extends CanvasController {
             return;
         }
 
-        // Always draw the label left-to-right, because it's not adjusted to work right-to-left.
-        this.context.direction = 'ltr';
-
         this.renderWave();
         this.renderLabel();
     }
