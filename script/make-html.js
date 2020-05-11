@@ -9,7 +9,7 @@ const defaultPageData = {
     textDirection: '',
 };
 
-const pageData = [
+const pageDatas = [
     { // English
         languageName: 'English',
         markdownFileName: 'content.md',
@@ -134,13 +134,13 @@ const markdownConverter = new showdown.Converter();
 const template = fs.readFileSync('template.html').toString();
 
 const languages = [];
-for (const pageDatum of pageData) {
-    if (!pageDatum.hasOwnProperty('languageName')) {
+for (const pageData of pageDatas) {
+    if (!pageData.hasOwnProperty('languageName')) {
         continue;
     }
     languages.push({
-        name: pageDatum.languageName,
-        url: `/fourier${pageDatum.url}`,
+        name: pageData.languageName,
+        url: `/fourier${pageData.url}`,
     });
 }
 languages.sort((a, b) => a.name > b.name);
@@ -148,24 +148,24 @@ languages.sort((a, b) => a.name > b.name);
 const english = languages.splice(languages.findIndex(l => l.name == "English"), 1)[0];
 languages.unshift(english);
 
-for (const pageDatum of pageData) {
-    console.log(`Processing ${pageDatum.markdownFileName}`)
+for (const pageData of pageDatas) {
+    console.log(`Processing ${pageData.markdownFileName}`)
     // Read in content
-    const markdown = fs.readFileSync(contentDir + pageDatum.markdownFileName).toString();
+    const markdown = fs.readFileSync(contentDir + pageData.markdownFileName).toString();
 
     // Convert to html
     const htmlContent = markdownConverter.makeHtml(markdown);
-    const translator = markdownConverter.makeHtml(pageDatum.translatorMarkdown);
+    const translator = markdownConverter.makeHtml(pageData.translatorMarkdown);
 
     // Fill into template
-    const view = Object.assign({}, pageDatum);
+    const view = Object.assign({}, pageData);
     view.content = htmlContent;
     view.translator = translator;
     view.languages = languages;
 
     const html = mustache.render(template, view)
     // We might have a string or an array of strings. Convert it so we always have an array
-    let outFileNames = pageDatum.outFileName;
+    let outFileNames = pageData.outFileName;
     if (!(outFileNames instanceof Array)) {
         // Wrap in Array
         outFileNames = [outFileNames];
