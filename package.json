@@ -18,6 +18,7 @@
   "scripts": {
     "start": "http-server",
     "webpack": "webpack || exit 1",
+    "webpack-prod": "webpack --mode=production || exit 1",
     "makehtml": "node script/make-html",
     "css": "cp -r css build/",
     "img": "cp -r img build/",
