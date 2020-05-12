@@ -424,16 +424,16 @@ Ho tralasciato la maggior parte della matematica, ma se sei interessato sui prin
 
 Per saperne di più, ci sono alcune ottime risorse a cui puoi dare un'occhiata:
 
-[An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)  
+[An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)
 Un ottimo articolo che scava più a fondo nella matematica di cosa succede.
 
-[But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)  
+[But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)
 Un fantastico video di 3Blue1Brown, che spiega anche la matematica dietro le trasformate di Fourier da una prospettiva audio.
 
-[A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)  
+[A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)
 Un altro articolo che ti spiega come puoi usare epicicli per disegnare un percorso, spiegato con l'algebra lineare.
 
-[Fourier transform (Wikipedia)](https://en.wikipedia.org/wiki/Fourier_transform)  
+[Fourier transform (Wikipedia)](https://en.wikipedia.org/wiki/Fourier_transform)
 E ovviamente, anche l'articolo Wikipedia è fatto bene.
 
 ## L'autore

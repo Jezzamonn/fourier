@@ -425,16 +425,16 @@ J'ai omis la plupart des calculs mathématiques ici, mais si vous êtes intéres
 
 Pour en savoir plus, voici de très bonnes ressources que vous pouvez consulter :
 
-[An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)  
+[An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)
 Un excellent article qui creuse de ce qui se passe mathématiquement.
 
-[But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)  
+[But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)
 Une superbe vidéo Youtube de 3Blue1Brown, expliquant également le calcul de la transformation de Fourier d'un point de vue audio.
 
-[A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)  
+[A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)
 Un autre article expliquant comment utiliser les épicycles pour dessiner un chemin, expliqué dans une perspective d'algèbre linéaire.
 
-[Transformation de Fourier (Wikipedia)](https://fr.wikipedia.org/wiki/Transformation_de_Fourier)  
+[Transformation de Fourier (Wikipedia)](https://fr.wikipedia.org/wiki/Transformation_de_Fourier)
 Et bien sûr, l'article de Wikipedia est également très bon.
 
 ## L'auteur

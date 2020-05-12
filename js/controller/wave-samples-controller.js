@@ -20,7 +20,7 @@ export default class WaveSamplesController extends CanvasController {
     }
 
     /**
-     * @param {Array<number>} wave 
+     * @param {Array<number>} wave
      */
     setWave(wave) {
         // lets filter a lot of the samples to make it easier to debug
@@ -36,7 +36,7 @@ export default class WaveSamplesController extends CanvasController {
         this.waveShiftAmt = slurp(0.1, -0.1, pos);
     }
 
-	render() {
+    render() {
         this.clear();
 
         if (this.wave == null) {
@@ -84,7 +84,7 @@ export default class WaveSamplesController extends CanvasController {
         const waveValue = this.wave[posMod(sampleIndex, this.wave.length)];
 
         const waveAmt = sampleIndex / this.wave.length;
-    
+
         const x = this.width * (waveAmt + this.waveShiftAmt);
         const y = this.yPos + this.yMultiple * waveValue;
 
@@ -96,5 +96,5 @@ export default class WaveSamplesController extends CanvasController {
         const label = `time = ${waveAmt.toFixed(2)}\nvalue = ${-waveValue.toFixed(2)}`
         renderLabel(this.context, label, x, y, 0.1 * this.height, palette.cyan, 0, this.width);
     }
-    
+
 }

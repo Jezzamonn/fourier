@@ -22,7 +22,7 @@ export function normaliseWave(wave) {
 
 /**
  * Creates a function that gives the value of a wave at a certain point. Does some interpolation.
- * @param {Array<number>} wave 
+ * @param {Array<number>} wave
  * @returns {function(number):number} A wave function (mainly to be used by the playSoundWave thing)
  */
 export function getWaveFunction(wave) {

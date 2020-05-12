@@ -6,11 +6,11 @@ import ImageSwapController from "./image-swap-controller";
 export default class ImageMultController extends Controller {
 
     /**
-     * @param {string} id 
-     * @param {!ImageSwapController} multXController 
-     * @param {!ImageSwapController} multYController 
+     * @param {string} id
+     * @param {!ImageSwapController} multXController
+     * @param {!ImageSwapController} multYController
      */
-	constructor(id, multXController, multYController) {
+    constructor(id, multXController, multYController) {
         super();
         this.id = id;
         this.imageSrcs = [];
@@ -22,13 +22,13 @@ export default class ImageMultController extends Controller {
         this.multYController = multYController;
     }
 
-	update() {
+    update() {
         if (this.multXController == null || this.multYController == null) {
             return;
         }
         this.xIndex = this.multXController.index + 1;
         this.yIndex = this.multYController.index + 1;
-        
+
         this.img.src = `img/components-${this.yIndex}-${this.xIndex}.png`;
     }
 

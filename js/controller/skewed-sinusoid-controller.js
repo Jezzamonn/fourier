@@ -6,18 +6,18 @@ import { palette } from "../color";
 
 export default class SkewedSinusoidController extends CanvasController {
 
-	constructor(id, width, height) {
+    constructor(id, width, height) {
         super(id, width, height);
 
         this.xzAngle = Math.PI / 4;
         this.yAngle = -Math.PI / 6;
-        
+
         this.sinusoidController = new ComplexSinusoidController(id, width, height);
-		this.sinusoidController.xzAngleFn = () => this.xzAngle;
-		this.sinusoidController.yAngleFn = () => this.yAngle;
+        this.sinusoidController.xzAngleFn = () => this.xzAngle;
+        this.sinusoidController.yAngleFn = () => this.yAngle;
     }
 
-	update(dt, mousePosition) {
+    update(dt, mousePosition) {
         this.sinusoidController.update(dt, mousePosition);
 
         const pos = this.getScrollPosition();
@@ -25,7 +25,7 @@ export default class SkewedSinusoidController extends CanvasController {
         this.xzAngle = Math.PI / 4 + slurp(-spinAmt, spinAmt, pos);
     }
 
-	render() {
+    render() {
         this.clear();
         this.sinusoidController.renderWave();
 

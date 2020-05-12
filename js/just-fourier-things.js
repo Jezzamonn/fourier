@@ -3,8 +3,8 @@ import { slurp } from "./util";
 
 /**
  * Do the fourier thing using a bunch of complex points
- * 
- * @param {Array<Number>} points Array of points, alternative with re, im pairs. Length must be a power of 2 
+ *
+ * @param {Array<Number>} points Array of points, alternative with re, im pairs. Length must be a power of 2
  */
 export function getFourierData(points) {
     if (points.length == 0) {
@@ -12,10 +12,10 @@ export function getFourierData(points) {
     }
     const numPoints = points.length / 2;
     const fft = new FFT(numPoints);
-    
+
     const out = fft.createComplexArray();
     fft.transform(out, points);
-    
+
     // Transform into an API of points I find friendlier.
     const fftData = [];
     for (let i = 0; i < numPoints; i ++) {
@@ -37,7 +37,7 @@ export function getFourierData(points) {
 }
 
 /**
- * 
+ *
  * @param {Array<Number>} points Array of values of some wave. Must be a power of 2.
  */
 export function getRealFourierData(points) {
@@ -49,7 +49,7 @@ export function getRealFourierData(points) {
 
     const formatedPoints = fft.createComplexArray();
     fft.toComplexArray(points, formatedPoints);
-    
+
     const out = fft.createComplexArray();
     fft.transform(out, formatedPoints);
 

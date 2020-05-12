@@ -4,7 +4,7 @@ import Controller from "./controller";
 
 export default class ImageSwapController extends Controller {
 
-	constructor(id) {
+    constructor(id) {
         super();
         this.id = id;
         this.imageSrcs = [];
@@ -18,7 +18,7 @@ export default class ImageSwapController extends Controller {
         this.scrollFocus = this.img;
     }
 
-	update() {
+    update() {
         if (this.imageSrcs.length == 0) {
             return;
         }

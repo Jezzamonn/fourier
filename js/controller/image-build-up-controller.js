@@ -3,13 +3,13 @@ import Controller from "./controller";
 
 export default class ImageBuildUpController extends Controller {
 
-	constructor(id, imageSwapController) {
+    constructor(id, imageSwapController) {
         super();
         this.container = document.getElementById(id);
         this.swapController = imageSwapController;
     }
 
-	update() {
+    update() {
         const jpegRange = loopLikeAJpeg(8);
         for (let i = 0; i < this.container.children.length; i ++) {
             const [y, x] = jpegRange[i];

@@ -4,9 +4,9 @@ import { renderWave } from "../wave-things";
 
 export default class WaveSplitController extends CanvasController {
 
-	constructor(id, width, height) {
+    constructor(id, width, height) {
         super(id, width, height);
-        
+
         this.animAmt = 0;
         this.wavePoints = [];
     }
@@ -15,13 +15,13 @@ export default class WaveSplitController extends CanvasController {
         this.wavePoints = path;
     }
 
-	update(dt, mousePosition) {
+    update(dt, mousePosition) {
         const period = 7;
         this.animAmt += dt / period;
         this.animAmt %= 1;
     }
 
-	render() {
+    render() {
         this.clear();
         this.renderWave();
     }

@@ -7,7 +7,7 @@ const originalImageSrc = "img/cat.png"
 
 export default class JpegCompressorController extends Controller {
 
-	constructor(id) {
+    constructor(id) {
         super();
         this.id = id;
         this.imageSrcs = [];
@@ -29,7 +29,7 @@ export default class JpegCompressorController extends Controller {
         });
     }
 
-	update() {
+    update() {
         if (!this.baseImage) {
             return;
         }

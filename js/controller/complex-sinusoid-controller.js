@@ -6,9 +6,9 @@ const transitionFactor = (1 / 18);
 
 export default class ComplexSinusoidController extends CanvasController {
 
-	constructor(id, width, height) {
+    constructor(id, width, height) {
         super(id, width, height);
-        
+
         this.animAmt = 0;
         // Functions so that they can be overridden elsewhere.
         this.xzAngleFn = () => this.xzAngle;
@@ -18,7 +18,7 @@ export default class ComplexSinusoidController extends CanvasController {
         this.xzAngle = 0;
     }
 
-	update(dt, mousePosition) {
+    update(dt, mousePosition) {
         const period = 7;
         this.animAmt += dt / period;
         this.animAmt %= 1;
@@ -31,7 +31,7 @@ export default class ComplexSinusoidController extends CanvasController {
         this.xzAngle += transitionFactor * (desiredAngle - this.xzAngle);
     }
 
-	render() {
+    render() {
         this.clear();
         this.renderWave();
     }
@@ -42,7 +42,7 @@ export default class ComplexSinusoidController extends CanvasController {
         this.context.strokeStyle = palette.blue;
         this.context.lineWidth = 2;
 
-    
+
         const xzAngle = this.xzAngleFn(this.animAmt);
         const yAngle = this.yAngleFn(this.animAmt);
         for (let i = 0; i < 100; i ++ ) {

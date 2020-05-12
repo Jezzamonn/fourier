@@ -1,10 +1,10 @@
 import CanvasController from "./canvas-controller";
 import { slurp } from "../util";
 import { palette } from "../color";
- 
+
 export default class WaveDrawController extends CanvasController {
 
-	constructor(id, width, height) {
+    constructor(id, width, height) {
         super(id, width, height);
         // just a list
         this.wavePoints = new Array(128).fill(this.height / 2);
@@ -39,12 +39,12 @@ export default class WaveDrawController extends CanvasController {
         if (this.drawing) {
             this.drawing = false;
             this.lastMousePoint = null;
-    
+
             this.onDrawingEnd.forEach(fn => fn());
         }
     }
 
- 	update(dt, mousePosition) {
+     update(dt, mousePosition) {
         if (!mousePosition || !this.drawing) {
             return;
         }
@@ -74,10 +74,10 @@ export default class WaveDrawController extends CanvasController {
 
         this.lastMousePoint = mousePoint;
     }
-    
+
     /**
      * Gets the nearest index in the wave array to the x coord on the screen
-     * @param {Number} x 
+     * @param {Number} x
      */
     getNearestIndex(x) {
         const xAmt = (x / this.width)
@@ -87,8 +87,8 @@ export default class WaveDrawController extends CanvasController {
         }
         return pos;
     }
-    
-	render() {
+
+    render() {
         this.clear();
 
         this.renderWave();

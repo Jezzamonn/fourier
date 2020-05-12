@@ -19,8 +19,8 @@ function getAudioContext() {
 }
 
 /**
- * 
- * @param {function(number):number|Array<number>} wave 
+ *
+ * @param {function(number):number|Array<number>} wave
  */
 export function playSoundWave(wave) {
     if (wave.length == 0) {
@@ -39,7 +39,7 @@ export function playSoundWave(wave) {
         return false;
     }
     const buffer = audioContext.createBuffer(1, SAMPLE_RATE, SAMPLE_RATE);
-    
+
     const channel = buffer.getChannelData(0);
     for (let i = 0; i < buffer.length; i ++) {
         // Where we are in the sound, in seconds.

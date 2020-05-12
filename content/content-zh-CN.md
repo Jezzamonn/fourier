@@ -424,19 +424,19 @@
 
 要了解更多信息，你可以看看这些非常好的资源（作者推荐的这些资源是英文版的）。
 
-[An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)  
+[An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)
 从数学角度更加深刻地介绍傅里叶变换。
 
-[But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)  
+[But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)
 3Blue1Brown 制作的 YouTube 视频，从音频的角度解释傅里叶变换的数学原理。
 
-[A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)  
+[A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)
 另一篇不错的文章，从线性代数的角度解释如何用周转圆来画出形状。
 
-[Fourier transform (Wikipedia)](https://en.wikipedia.org/wiki/Fourier_transform)  
+[Fourier transform (Wikipedia)](https://en.wikipedia.org/wiki/Fourier_transform)
 当然，维基百科的解释也很不错。
 
-[傅里叶变换（维基百科）](https://zh.wikipedia.org/wiki/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2)  
+[傅里叶变换（维基百科）](https://zh.wikipedia.org/wiki/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2)
 译者为你添加了中文维基的链接。
 
 

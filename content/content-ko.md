@@ -424,16 +424,16 @@ JPEG 이미지는 여러 개의 8x8 크기의 조각으로 나뉘고, 각각의 
 
 더 배우고 싶은 점이 있다면, 읽어볼 만한 정말 좋은 자료를 안내해 드리겠습니다.
 
-[An Interactive Guide To The Fourier Transform (영문)](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)  
+[An Interactive Guide To The Fourier Transform (영문)](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)
 푸리에 변환의 수학에 대해 더 자세히 파고드는 글입니다.
 
-[푸리에 변환이 대체 뭘까요? 그려서 보여드리겠습니다.](https://www.youtube.com/watch?v=spUNpyF58BY)  
+[푸리에 변환이 대체 뭘까요? 그려서 보여드리겠습니다.](https://www.youtube.com/watch?v=spUNpyF58BY)
 3Blue1Brown님의 유튜브 동영상입니다. 음향의 관점에서 푸리에 변환의 수학에 대해 설명합니다.
 
-[A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization (영문)](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)  
+[A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization (영문)](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)
 선형대수학의 관점에서 주전원을 이용한 경로 그리기에 대해 설명하는 글입니다.
 
-[Fourier transform (영문 위키백과)](https://en.wikipedia.org/wiki/Fourier_transform)  
+[Fourier transform (영문 위키백과)](https://en.wikipedia.org/wiki/Fourier_transform)
 물론 위키백과 글도 꽤 좋습니다.
 
 ## 저자 소개

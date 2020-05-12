@@ -8,9 +8,9 @@ const transitionFactor = (1 / 15);
 
 export default class WaveSplitController extends CanvasController {
 
-	constructor(id, width, height) {
+    constructor(id, width, height) {
         super(id, width, height);
-        
+
         this.animAmt = 0;
         this.wavePoints = [];
         this.partialWave = [];
@@ -52,7 +52,7 @@ export default class WaveSplitController extends CanvasController {
         this.onFourierChange.forEach(fn => fn());
     }
 
-	update(dt, mousePosition) {
+    update(dt, mousePosition) {
         const period = 7;
         this.animAmt += dt / period;
         this.animAmt %= 1;
@@ -65,7 +65,7 @@ export default class WaveSplitController extends CanvasController {
         this.splitAmt += transitionFactor * (desiredSplitAmt - this.splitAmt);
     }
 
-	render() {
+    render() {
         this.clear();
         this.renderWaves();
     }

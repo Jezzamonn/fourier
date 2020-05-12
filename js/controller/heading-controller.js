@@ -5,7 +5,7 @@ import { slurp } from "../util";
 
 export default class HeadingController extends CanvasController {
 
-	constructor(id, width, height) {
+    constructor(id, width, height) {
         super(id, width, height);
 
         this.animAmt = 0;
@@ -23,14 +23,14 @@ export default class HeadingController extends CanvasController {
         this.height = boundingBox.height;
     }
 
-	update(dt, mousePosition) {
+    update(dt, mousePosition) {
         this.animAmt += dt;
         if (mousePosition) {
             this.mousePos = Object.assign({}, mousePosition);
         }
     }
 
-	render() {
+    render() {
         this.clear();
 
         this.context.beginPath();
@@ -59,9 +59,9 @@ export default class HeadingController extends CanvasController {
                 }
                 t += speed * this.animAmt;
                 const waveAmt = 0.5 + 0.5 * Math.sin(2 * Math.PI * freq * t);
-    
+
                 const y = slurp(waveTop, waveBottom, slurp(0.1, 0.9, waveAmt));
-    
+
                 if (i == 0) {
                     this.context.moveTo(x, y);
                 }

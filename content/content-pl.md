@@ -4,7 +4,7 @@ Transformata Fouriera jest narzędziem, które znajduje zastosowanie w wielu rze
 
 Zamierzam wytłumaczyć, jak działa ta animacja i o co chodzi w transformacie Fouriera!
 
-Po przeczytaniu tego interaktywnego artykułu powinieneś/powinnaś mieć dobre rozeznanie w temacie. Poznasz następujące zagadnienia: 
+Po przeczytaniu tego interaktywnego artykułu powinieneś/powinnaś mieć dobre rozeznanie w temacie. Poznasz następujące zagadnienia:
 - co robi transformata Fouriera
 - kilka praktycznych zastosowań transformaty Fouriera
 - kilka bezcelowych, ale fajnych zastosowań transformaty Fouriera
@@ -13,7 +13,7 @@ Na razie nie będę zagłębiać się w równania i matematyczne szczegóły, kt
 
 ## Co to właściwie jest?
 
-Mówiąc krótko, transformata Fouriera jest metodą rozbijania czegoś (np. sygnału dźwiękowego) na kilka sinusoid. Jak zwykle nazwa pochodzi od gościa, który żył dawno temu i nazywał się Fourier. 
+Mówiąc krótko, transformata Fouriera jest metodą rozbijania czegoś (np. sygnału dźwiękowego) na kilka sinusoid. Jak zwykle nazwa pochodzi od gościa, który żył dawno temu i nazywał się Fourier.
 
 Zacznijmy od prostego przykładu. Na pierwszy rzut oka weźmy fale - wzory i schematy powtarzające się w czasie.
 
@@ -25,7 +25,7 @@ Ten falisty wykres może być rozbity na zwykłe sinusoidy. To oznacza, że po z
 
 <canvas id="combo-sine-wave-split" class="sketch" width=500 height=500></canvas>
 
-Transformata Fouriera jest sposobem na rozbicie złożonej fali na regularne sinusoidy składające się na ten wykres. W tym przykładzie można przeanalizować i rozbić sygnał w głowie, po prostu patrząc na falę. 
+Transformata Fouriera jest sposobem na rozbicie złożonej fali na regularne sinusoidy składające się na ten wykres. W tym przykładzie można przeanalizować i rozbić sygnał w głowie, po prostu patrząc na falę.
 
 Ale po co? Okazuje się, że wiele rzeczy wokół nas oddziałuje na siebie w oparciu o te niewinnie wyglądające sinusoidy, a ściślej mówiąc - w oparciu o częstotliwości tych fal.
 
@@ -39,7 +39,7 @@ Najbardziej oczywistym przykładem jest dźwięk. Gdy go słyszymy, ucho nie odb
 
 Dzięki temu, że można taką analizę przeprowadzić na komputerze, jesteśmy w stanie określić, co faktycznie słyszymy, jak niski lub jak wysoki jest dźwięk albo wskazać, jaka to nuta.
 
-Transformata Fouriera działa również w przypadku fal, które nie wyglądają jak złożenie sinusoid. 
+Transformata Fouriera działa również w przypadku fal, które nie wyglądają jak złożenie sinusoid.
 
 Rzućmy okiem na przykład poniżej. Jest to tzw. fala kwadratowa.
 
@@ -78,13 +78,13 @@ Ten proces zadziała dla każdej powtarzającej się linii. Daj się ponieść -
 
 I znów - poza dodatkowymi "wężykami", fala jest dość podobna jedynie w oparciu o połowę sinusoid.
 
-Możemy skorzystać z faktu wspomnianego powyżej. Dzięki transformacie Fouriera jesteśmy w stanie "wyciągnąć" interesujące nas fragmenty sygnału dźwiękowego i otrzymać ścieżkę, która różni się w niewielkim stopniu od oryginału. 
+Możemy skorzystać z faktu wspomnianego powyżej. Dzięki transformacie Fouriera jesteśmy w stanie "wyciągnąć" interesujące nas fragmenty sygnału dźwiękowego i otrzymać ścieżkę, która różni się w niewielkim stopniu od oryginału.
 
-Zazwyczaj fala przechowywana jest na komputerze w formie zbioru punktów. 
+Zazwyczaj fala przechowywana jest na komputerze w formie zbioru punktów.
 
 <canvas id="wave-samples" class="sketch" width=500 height=500></canvas>
 
-Zamiast tego można przedstawić falę jako grupę sinusoid, a następnie skompresować dźwięk poprzez eliminację niższych częstotliwości. Końcowy wynik nie będzie identyczny, ale różnicę ciężko będzie wysłyszeć. 
+Zamiast tego można przedstawić falę jako grupę sinusoid, a następnie skompresować dźwięk poprzez eliminację niższych częstotliwości. Końcowy wynik nie będzie identyczny, ale różnicę ciężko będzie wysłyszeć.
 
 <canvas id="wave-frequencies" class="sketch" width=500 height=500></canvas>
 
@@ -96,7 +96,7 @@ Ok, teraz pora zagłębić się bardziej w transformatę Fouriera. Kolejna czę�
 
 ## Epicykle
 
-Na początku powiedziałem, że transformata rozbija różne rzeczy na sinusoidy. Rzecz w tym, że fale powstałe w tym procesie nie są zwykłymi sinusoidami. Są trójwymiarowe (3D). Możesz określić je jako "złożone sinusoidy" lub po prostu "spirale". 
+Na początku powiedziałem, że transformata rozbija różne rzeczy na sinusoidy. Rzecz w tym, że fale powstałe w tym procesie nie są zwykłymi sinusoidami. Są trójwymiarowe (3D). Możesz określić je jako "złożone sinusoidy" lub po prostu "spirale".
 
 <canvas id="complex-sinusoid" class="sketch" width=500 height=500></canvas>
 
@@ -390,11 +390,11 @@ W miarę dodawania i nakładania na siebie obrazków, otrzymywany rezultat coraz
 </div>
 </div>
 
-W przypadku prawdziwych JPEGów istnieje kilka drobnych, wartych uwagi szczegółów. 
+W przypadku prawdziwych JPEGów istnieje kilka drobnych, wartych uwagi szczegółów.
 
 Wyjściowy obraz o wymiarach 8x8 zostaje rozłożony na fragmenty (siatka 8x8). Każdy fragment osobno również zostaje rozbity. Używamy pewnego zbioru częstotliwości, aby określić, jak ciemny lub jasny jest piksel, a następnie dwóch zbiorów barw - jednego zbioru dla czerwonej i zielonej, a kolejnego zbioru dla niebieskiej i żółtej. Liczba częstotliwości, która zostanie użyta do każdego fragmentu determinuje jakość obrazu.
 
-Poniżej prawdziwy obraz typu JPEG, powiększony, żeby zobaczyć detale. Przewiń stronę w dół, aby zobaczyć przebieg procesu. 
+Poniżej prawdziwy obraz typu JPEG, powiększony, żeby zobaczyć detale. Przewiń stronę w dół, aby zobaczyć przebieg procesu.
 
 <div id="jpeg-example" class="sketch">
     <img src="img/cat.png" class="sketch-child clear-pixels">
@@ -402,7 +402,7 @@ Poniżej prawdziwy obraz typu JPEG, powiększony, żeby zobaczyć detale. Przewi
 
 ## Wnioski
 
-Podsumowując: 
+Podsumowując:
 
 - Transformata Fouriera służy do rozbijania pewnych interesujących nas obiektów na fale sinusoidalne
 - Częstotliwości tych fal określają pewne istotne właściwości danych, które posiadamy, ...
@@ -424,16 +424,16 @@ Pominąłem zdecydowaną większość matematycznych zagadnień, ale jeśli inte
 
 Jeśli chcesz wiedzieć więcej, poniżej umieszczam linki do bardzo dobrych źródeł, które możesz sprawdzić (źródła umieszczone przez autora są w języku angielskim):
 
-[An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)  
+[An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)
 Świetny artykuł zgłębiający matematyczne oblicze transformaty Fouriera.
 
-[But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)  
+[But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)
 Bardzo dobry film autorstwa 3Blue1Brown objaśniający matematykę stojącą za tym procesem z perspektywy dźwięku i jego falowej natury.
 
-[A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)  
+[A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)
 Kolejny artykuł, który przybliży ci zastosowania epicykli do rysowania ścieżek od tej algebraicznej strony.
 
-[Fourier transform (Wikipedia)](https://en.wikipedia.org/wiki/Fourier_transform)  
+[Fourier transform (Wikipedia)](https://en.wikipedia.org/wiki/Fourier_transform)
 Artykuł z Wikipedii również nie ma się czego wstydzić.
 
 ## O autorze

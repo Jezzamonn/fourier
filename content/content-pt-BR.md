@@ -4,7 +4,7 @@ Transformadas de Fourier são ferramentas utilizadas em vários contextos. Essa 
 
 Irei explicar como essa animação funciona, e no caminho explicar as transformadas de Fourier!
 
-No final, você deve ter uma boa noção sobre 
+No final, você deve ter uma boa noção sobre
 - O que uma transformada de Fourier faz
 - Alguns usos práticos das transformadas de Fourier
 - Usos inúteis, mas legais das transformadas de Fourier
@@ -21,7 +21,7 @@ Um exemplo de onda:
 
 <canvas id="combo-sine-wave" class="sketch" width=500 height=300></canvas>
 
-Este padrão ondulado pode ser dividido em ondas senoidais. Isto é, quando nós adicionamos as duas ondas senoidais, obteremos a onda original novamente. 
+Este padrão ondulado pode ser dividido em ondas senoidais. Isto é, quando nós adicionamos as duas ondas senoidais, obteremos a onda original novamente.
 
 <canvas id="combo-sine-wave-split" class="sketch" width=500 height=500></canvas>
 
@@ -37,9 +37,9 @@ O exemplo mais óbvio é o som – quando ouvimos um som, só não ouvimos essa 
 
 <button id="split-button-2" class="button">Tocar a baixa frequência</button>
 
-Ser capaz de dividi-las em um computador nos dá entendimento do que uma pessoa realmente ouve. Nós podemos entender o quão alto ou baixo um som é, ou descobrir qual nota que o som está. 
+Ser capaz de dividi-las em um computador nos dá entendimento do que uma pessoa realmente ouve. Nós podemos entender o quão alto ou baixo um som é, ou descobrir qual nota que o som está.
 
-Também podemos usar este processo em ondas que não parecem que são feitas de ondas senoidais. 
+Também podemos usar este processo em ondas que não parecem que são feitas de ondas senoidais.
 
 Vamos dar uma olhada nesta. É chamada de onda quadrada.
 
@@ -49,7 +49,7 @@ Pode não parecer, mas também podemos dividi-la em ondas senoidais.
 
 <canvas id="square-wave-split" class="sketch" width=500 height=500></canvas>
 
-Nós precisamos de muitas desta vez – tecnicamente, uma quantidade infinita delas para representar. Na medida em que adicionamos mais e mais ondas senoidais, o padrão se aproxima cada vez mais da onda quadrada que começamos. 
+Nós precisamos de muitas desta vez – tecnicamente, uma quantidade infinita delas para representar. Na medida em que adicionamos mais e mais ondas senoidais, o padrão se aproxima cada vez mais da onda quadrada que começamos.
 
 <canvas id="square-wave-build-up" class="sketch" width=500 height=500></canvas>
 <input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
@@ -88,7 +88,7 @@ Em vez disso, podemos representá-la com várias ondas senoidais. Assim poderemo
 
 <canvas id="wave-frequencies" class="sketch" width=500 height=500></canvas>
 
-Isto é essencialmente o que MP3s fazem, só que eles são mais espertos sobre quais frequências manter e quais jogar fora. 
+Isto é essencialmente o que MP3s fazem, só que eles são mais espertos sobre quais frequências manter e quais jogar fora.
 
 Então, neste caso, podemos utilizar transformadas de Fourier para entender as propriedades fundamentais de uma onda, e usar este conhecimento para outras coisas, como compressão.
 
@@ -116,7 +116,7 @@ Bem, podemos pensar no desenho como uma forma 3D pelo jeito que ele se move com 
 
 <canvas id="peace-3d" class="sketch" width=500 height=500></canvas>
 
-Agora que temos um padrão 3D, não podemos usar as ondas senoidais 2D para representá-lo. Não importa quantas ondas senoidais 2D adicionarmos, nós nunca obteremos algo 3D. Então precisamos de outra coisa.	
+Agora que temos um padrão 3D, não podemos usar as ondas senoidais 2D para representá-lo. Não importa quantas ondas senoidais 2D adicionarmos, nós nunca obteremos algo 3D. Então precisamos de outra coisa.
 
 O que podemos usar são as ondas senoidais em espirais 3D de antes. Se adicionarmos várias dessas, podemos obter algo parecido com o nosso padrão 3D.
 
@@ -424,16 +424,16 @@ Pulei a maior parte da matemática aqui, mas se você estiver interessado nos pr
 
 Para aprender mais, aqui estão alguns recursos que você pode checar:
 
-[An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)  
+[An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)
 Um ótimo artigo que explora mais a parte matemática do que acontece.
 
-[But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)  
+[But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)
 Um ótimo vídeo de YouTube pelo 3Blue1Brown, também explicando a matemática das transformadas de Fourier numa perspectiva de áudio.
 
-[A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)  
+[A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)
 Outro artigo explicando como você pode usar epiciclos para desenhar uma trajetória, explicado de uma perspectiva de álgebra linear.
 
-[Fourier transform (Wikipedia)](https://en.wikipedia.org/wiki/Fourier_transform)  
+[Fourier transform (Wikipedia)](https://en.wikipedia.org/wiki/Fourier_transform)
 E claro, o artigo da Wikipédia é muito bom também.
 
 ## O autor

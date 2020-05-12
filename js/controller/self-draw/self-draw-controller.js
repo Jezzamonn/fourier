@@ -18,9 +18,9 @@ let windowMoveTime = fps;
 
 export default class SelfDrawController extends CanvasController {
 
-	constructor(id, width, height) {
+    constructor(id, width, height) {
         super(id, width, height);
-        
+
         this.circleThing = new CircleThing();
         this.pencil = new Pencil();
 

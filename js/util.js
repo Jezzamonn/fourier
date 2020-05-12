@@ -6,13 +6,13 @@ export function easeInOut(t, amt=2) {
 }
 
 export function sinEaseInOut(t) {
-	return 0.5 - 0.5 * Math.cos(Math.PI * t);
+    return 0.5 - 0.5 * Math.cos(Math.PI * t);
 }
 
 export function smallEaseInOut(t, a, b) {
     // maximum slope, during the constant part
     let m = 1 / (1 - a - b);
-    
+
     // f0
     if (t < a) {
         return 0;
@@ -22,13 +22,13 @@ export function smallEaseInOut(t, a, b) {
     if (t < b) {
         return ((m / 2) / (b - a)) * (t - a) * (t - a);
     }
-    
+
     // f2
     if (t < 1 - b) {
         return m * (t - b) + // constant line part
         (m / 2) * (b - a); // maximum value of f1
     }
-    
+
     // use symmetry powers
     return 1 - smallEaseInOut(1 - t, a, b)
 }

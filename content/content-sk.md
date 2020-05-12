@@ -424,18 +424,18 @@ Preskočil som tu väčšinu matematických vecí, ale ak vás zaujímajú zákl
 
 Ak sa chcete dozvedieť viac, tu si môžete pozrieť niektoré naozaj dobré zdroje:
 
-[Interaktívny sprievodca po Fourierovej transformácii](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)  
+[Interaktívny sprievodca po Fourierovej transformácii](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)
 Skvelý článok, ktorý sa viac venuje matematike toho, čo sa deje.
 
-[Ale čo je Fourierova transformácia? Vizuálny úvod.](https://www.youtube.com/watch?v=spUNpyF58BY)  
+[Ale čo je Fourierova transformácia? Vizuálny úvod.](https://www.youtube.com/watch?v=spUNpyF58BY)
 Skvelé YouTube video od 3Blue1Brown, ktoré tiež vysvetľuje matematiku Fourierových transformácií z audio perspektívy.
 
-[Príbeh matematiky a umenia: Vytvorenie vizualizácie harmonických kruhov Fourierovej série](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)  
+[Príbeh matematiky a umenia: Vytvorenie vizualizácie harmonických kruhov Fourierovej série](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)
 Ďalší článok, ktorý vysvetľuje, ako môžete pomocou epicyklov nakresliť cestu, je vysvetlený z pohľadu lineárnej algebry.
 
 [Fourierova transformácia (Wikipedia EN)](https://en.wikipedia.org/wiki/Fourier_transform) A samozrejme, článok Wikipedia je tiež celkom dobrý.
 
-[Fourierova transformácia (Wikipedia SK)](https://sk.wikipedia.org/wiki/Fourierova_transform%C3%A1cia) 
+[Fourierova transformácia (Wikipedia SK)](https://sk.wikipedia.org/wiki/Fourierova_transform%C3%A1cia)
 Po Slovensky už nie tak dobrý.
 
 ## Autor

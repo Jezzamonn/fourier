@@ -61,8 +61,8 @@ export default class Circle {
             scale * (this.x + xOffset),
             scale * (this.y + yOffset));
         context.lineTo(
-        	scale * (this.endX + xOffset),
-        	scale * (this.endY + yOffset));
+            scale * (this.endX + xOffset),
+            scale * (this.endY + yOffset));
         context.stroke();
     }
 

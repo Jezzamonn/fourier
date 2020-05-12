@@ -5,7 +5,7 @@ const maxDrawDist = 3;
 
 export default class DrawController extends CanvasController {
 
-	constructor(id, width, height) {
+    constructor(id, width, height) {
         super(id, width, height);
         // [ {x, y} ]
         this.points = [];
@@ -39,7 +39,7 @@ export default class DrawController extends CanvasController {
     }
 
     /**
-     * @param {KeyboardEvent} evt 
+     * @param {KeyboardEvent} evt
      */
     checkKeys(evt) {
         switch (evt.key.toLowerCase()) {
@@ -105,7 +105,7 @@ export default class DrawController extends CanvasController {
         }
    }
 
-	update(dt, mousePosition) {
+    update(dt, mousePosition) {
         if (!mousePosition || !this.drawing) {
             return;
         }
@@ -136,8 +136,8 @@ export default class DrawController extends CanvasController {
             }
         }
     }
-    
-	render() {
+
+    render() {
         this.clear();
 
         this.drawPoints(this.path);

@@ -5,7 +5,7 @@ import { palette } from "../color";
 
 export default class EpicyclesController extends CanvasController {
 
-	constructor(id, width, height) {
+    constructor(id, width, height) {
         super(id, width, height);
 
         this.animate = true;
@@ -56,7 +56,7 @@ export default class EpicyclesController extends CanvasController {
         this.niceAnimAmt -= 1;
     }
 
-	update(dt, mousePosition) {
+    update(dt, mousePosition) {
         if (this.pathDirty) {
             this.recalculatePath();
             this.pathDirty = false;
@@ -94,7 +94,7 @@ export default class EpicyclesController extends CanvasController {
             this.addToPath();
         }
     }
-    
+
     addToPath() {
         if (this.fourierData.length == 0) {
             return;
@@ -115,7 +115,7 @@ export default class EpicyclesController extends CanvasController {
         }
     }
 
-	render() {
+    render() {
         this.clear();
 
         this.renderPath(this.fourierPath);

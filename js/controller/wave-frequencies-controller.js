@@ -42,7 +42,7 @@ export default class WaveFrequenciesController extends CanvasController {
         this.selectedIndex = clamp(unclampedIndex, 0, this.fourierData.length - 1);
     }
 
-	render() {
+    render() {
         this.clear();
 
         this.renderWaves();
@@ -58,7 +58,7 @@ export default class WaveFrequenciesController extends CanvasController {
             const wave = getWave(t => waveData.amplitude * Math.cos(2 * Math.PI * waveData.freq * t + waveData.phase));
             const yPositionAmt = (1 / this.totalHeight) * (waveTop + waveData.amplitude);
             const yPosition = this.height * slurp(this.waveTopAmt, this.waveBottomAmt, yPositionAmt);
-            
+
             this.context.beginPath();
             this.context.lineWidth = 2;
             this.context.strokeStyle = palette.blue;
@@ -74,7 +74,7 @@ export default class WaveFrequenciesController extends CanvasController {
             })
             this.context.stroke();
             this.context.globalAlpha = 1;
-    
+
             waveTop += 2 * waveData.amplitude;
         }
     }
@@ -100,12 +100,12 @@ export default class WaveFrequenciesController extends CanvasController {
         renderLabel(this.context, text, x, y, 0.1 * this.height, palette.cyan, 0, this.width);
 
     }
-    
+
 }
 
 /**
  * Returns a nicely formatted number
- * @param {number} number 
+ * @param {number} number
  */
 function toScientificNotation(number) {
     // because I'm lazy and don't want to do this by tweaking the size when drawing on the canvas.

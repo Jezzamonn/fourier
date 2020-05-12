@@ -5,9 +5,9 @@ Fourier dönüşümleri birçok farklı şeyin yapılmasında kullanılabilecek 
 Fourier dönüşümlerinin işleyişini anlatırken bu animasyonu da açıklayacağım!
 
 Okumayı bitirdiğinizde:
-- Fourier dönüşümünün ne yaptığı 
-- Fourier dönüşümlerinin bazı pratik kullanımları 
-- Ve bazı amaçsız ama şık kullanımları hakkında epeyce fikir edinmiş olacaksınız. 
+- Fourier dönüşümünün ne yaptığı
+- Fourier dönüşümlerinin bazı pratik kullanımları
+- Ve bazı amaçsız ama şık kullanımları hakkında epeyce fikir edinmiş olacaksınız.
 
 Matematik ve denklemleri şimdilik bu işin dışında tutacağız. Fourier dönüşümlerinin arkasında bir sürü ilginç matematiksel işlem var ama onun aslında ne yaptığı ve onu neden kullanmak isteyeceğinizle başlamayı yeğlerim. Konu hakkında daha detaylı bilgiye ulaşmak isterseniz, bazı ileri okuma önerilerini aşağıda bulabilirsiniz!
 
@@ -92,7 +92,7 @@ MP3'lerin yaptığı da aslında budur. Yalnızca, onlar hangi frekansların kor
 
 Özetle bu durumda Fourier dönüşümlerini bir dalganın temel özellikleri hakkında fikir sahibi olmak için kullanabilir, böylece edindiğimiz fikirden, veri sıkıştırma gibi şeyler yaparken yararlanabiliriz.
 
-Evet, şimdi Fourier dönüşümünün biraz daha derinine inelim. Sıradaki bölüm, Fourier dönüşümünün işleviyle ilgili daha fazla fikir verecektir. 
+Evet, şimdi Fourier dönüşümünün biraz daha derinine inelim. Sıradaki bölüm, Fourier dönüşümünün işleviyle ilgili daha fazla fikir verecektir.
 
 ## Dış Çemberler
 
@@ -246,7 +246,7 @@ Yatay ve dikey görseller bizimki gibi görsel türlerini kendi başlarına tems
     <img src="img/components-7-7.png" class="img-component">
 </div>
 
-Bu görselleri alıp kontrastlarını boyutlarına göre ayarladıktan sonra bir araya getirirsek her görseli oluşturabiliriz. 
+Bu görselleri alıp kontrastlarını boyutlarına göre ayarladıktan sonra bir araya getirirsek her görseli oluşturabiliriz.
 
 Hadi bu "A" harfiyle başlayalım. Oldukça küçük ama bize de küçük lazım yoksa çok sayıda başka görsel elde ederiz.
 
@@ -388,7 +388,7 @@ Bu görsellerden daha çok ekledikçe, gerçek görsele gitgide daha yaklaşan b
     <img src="img/img-components-7-6.png" class="img-component">
     <img src="img/img-components-7-7.png" class="img-component">
 </div>
-</div>                                                           
+</div>
 
 Mevcut JPEG görsellerin fazladan birkaç detayı daha var.
 
@@ -404,10 +404,10 @@ JPEG'de görsel 8x8'lik parçalara ayrılır ve her parça kendi içinde sinüs 
 
 Öyleyse özetleyelim:
 
-- Fourier dönüşümleri, bir şeyleri alıp frekanslarına ayırmamızı sağlayan şeylerdir. 
-- Bu frekanslar elimizdeki verinin bazı temel özellikleri hakkında fikir verir 
-- Böylece, sadece önemli frekansları saklayarak veri sıkıştırabiliriz. 
-- Ayrıca bir grup çemberle, onları başarılı animasyonlar yapmada da kullanabiliriz. 
+- Fourier dönüşümleri, bir şeyleri alıp frekanslarına ayırmamızı sağlayan şeylerdir.
+- Bu frekanslar elimizdeki verinin bazı temel özellikleri hakkında fikir verir
+- Böylece, sadece önemli frekansları saklayarak veri sıkıştırabiliriz.
+- Ayrıca bir grup çemberle, onları başarılı animasyonlar yapmada da kullanabiliriz.
 
 Buradakiler sadece yüzeysel birkaç uygulama. Fourier dönüşümü son derece güçlü bir araçtır çünkü frekanslara ayırmak işin özüne inmektir. Devre tasarımı, cep telefonu sinyalleri, manyetik rezonans görüntüleme (MRI) ve kuantum fiziği dahil birçok alanda kullanılırlar!
 
@@ -415,10 +415,10 @@ Buradakiler sadece yüzeysel birkaç uygulama. Fourier dönüşümü son derece 
 
 Burada işin matematik kısmının çoğunu atladım ama fourier dönüşümlerinin temelinde yatan çalışma ilkelerini merak ediyorsanız, işte araştırmanıza rehber olabilecek birkaç soru:
 
-- Bir Fourier dönüşümünü matematiksel olarak nasıl gösterirsiniz? 
-- Sürekli zamanlı bir Fourier dönüşümü ile kesik zamanlı bir Fourier dönüşümü arasındaki fark nedir? 
-- Bir Fourier dönüşümünün sayısal hesabı nasıl yapılır? 
-- Bütün bir şarkının Fourier dönüşümü nasıl yapılır? (Tek bir nota yerine.) 
+- Bir Fourier dönüşümünü matematiksel olarak nasıl gösterirsiniz?
+- Sürekli zamanlı bir Fourier dönüşümü ile kesik zamanlı bir Fourier dönüşümü arasındaki fark nedir?
+- Bir Fourier dönüşümünün sayısal hesabı nasıl yapılır?
+- Bütün bir şarkının Fourier dönüşümü nasıl yapılır? (Tek bir nota yerine.)
 
 ## İleri 'okuma'
 

@@ -4,7 +4,7 @@ describe(range, () => {
     it('should work with 1 param', () => {
         expect(range(5)).toEqual([0, 1, 2, 3, 4]);
     });
-    
+
     it('should work with 2 params', () => {
         expect(range(3, 7)).toEqual([3, 4, 5, 6]);
     });

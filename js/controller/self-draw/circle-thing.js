@@ -525,7 +525,7 @@ export default class CircleThing {
                 /* frequency= */
                 datum[1]);
             if (i > 0) {
-            	newCircle.parent = this.circles[i - 1];
+                newCircle.parent = this.circles[i - 1];
                 newCircle.moveToParent();
             }
             this.totalPathLength += newCircle.length;
@@ -591,16 +591,16 @@ export default class CircleThing {
         context.globalAlpha = 1;
 
         if (this.drawnPoints.length > 0) {
-	        context.beginPath();
-	        context.moveTo(
-	        	scale * (this.drawnPoints[0].x + xOffset),
-	        	scale * (this.drawnPoints[0].y + yOffset));
-	        for (let i = 1; i < this.drawnPoints.length; i++) {
-	        	context.lineTo(
-	        		scale * (this.drawnPoints[i].x + xOffset),
-	        		scale * (this.drawnPoints[i].y + yOffset));
-	        }
-	        context.stroke();
+            context.beginPath();
+            context.moveTo(
+                scale * (this.drawnPoints[0].x + xOffset),
+                scale * (this.drawnPoints[0].y + yOffset));
+            for (let i = 1; i < this.drawnPoints.length; i++) {
+                context.lineTo(
+                    scale * (this.drawnPoints[i].x + xOffset),
+                    scale * (this.drawnPoints[i].y + yOffset));
+            }
+            context.stroke();
         }
     }
 }

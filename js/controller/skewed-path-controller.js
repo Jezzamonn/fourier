@@ -5,7 +5,7 @@ import { palette } from "../color";
 
 export default class SkewedPathController extends CanvasController {
 
-	constructor(id, width, height) {
+    constructor(id, width, height) {
         super(id, width, height);
 
         // Somehow in creating this it became backwards from what I was thinking so I just flipped the angle
@@ -35,7 +35,7 @@ export default class SkewedPathController extends CanvasController {
         this.maxZ = Math.max(...this.path.map(p => p.x));
     }
 
-	update(dt, mousePosition) {
+    update(dt, mousePosition) {
         this.animAmt += dt / this.period;
         this.animAmt %= 1;
 
@@ -44,11 +44,11 @@ export default class SkewedPathController extends CanvasController {
         this.xzAngle = -0.75 * Math.PI + slurp(-spinAmt, spinAmt, pos);
     }
 
-	render() {
+    render() {
         this.clear();
         // Render points
         this.context.translate(this.context.canvas.width / 2, this.context.canvas.height / 2);
-        
+
         this.context.strokeStyle = palette.blue;
         this.context.lineWidth = 2;
         this.renderPath(this.minX, this.maxX);

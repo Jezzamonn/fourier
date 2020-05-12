@@ -35,7 +35,7 @@ const pageDatas = [
         url: '/de.html',
         translatorMarkdown: 'Übersetzt von Joni Rousu und [Frank H. Dürkopf](http://duerkopf.de)',
     },
-	{ // Brazilian Portuguese
+    { // Brazilian Portuguese
         languageName: 'Português',
         markdownFileName: 'content-pt-BR.md',
         title: 'Uma introdução interativa às transformadas de Fourier',
@@ -44,7 +44,7 @@ const pageDatas = [
         url: '/pt-br.html',
         translatorMarkdown: 'Traduzido por [Jean Oliveira Rodrigues de Araujo](https://twitter.com/_jaraujo_)',
     },
-	{ // Chinese (simplified)
+    { // Chinese (simplified)
         languageName: '简体中文',
         markdownFileName: 'content-zh-CN.md',
         title: '傅里叶变换交互式入门',
@@ -53,7 +53,7 @@ const pageDatas = [
         url: '/zh-cn.html',
         translatorMarkdown: '由[杜尚明](https://github.com/virtualwiz)翻译',
     },
-	{ // Polish
+    { // Polish
         languageName: 'Polski',
         markdownFileName: 'content-pl.md',
         title: 'Interaktywny wstęp do transformaty Fouriera',
@@ -62,7 +62,7 @@ const pageDatas = [
         url: '/pl.html',
         translatorMarkdown: 'Przekład: [Jakub Górczyński](https://github.com/leavethevault)',
     },
-	{ // Turkish
+    { // Turkish
         languageName: 'Türkçe',
         markdownFileName: 'content-tr.md',
         title: 'Fourier Dönüşümlerine İnteraktif bir Giriş',
@@ -71,7 +71,7 @@ const pageDatas = [
         url: '/tr.html',
         translatorMarkdown: 'Çeviren: Harun Hindioğlu',
     },
-	{ // Korean
+    { // Korean
         languageName: '한국어',
         markdownFileName: 'content-ko.md',
         title: '푸리에 변환을 반응형으로 소개합니다',
@@ -80,7 +80,7 @@ const pageDatas = [
         url: '/ko.html',
         translatorMarkdown: '잇창명 번역, [RanolP](https://ranolp.github.io/) 검수',
     },
-	{ // Italian
+    { // Italian
         languageName: 'Italiano',
         markdownFileName: 'content-it.md',
         title: `Un'interazione introduttiva alle trasformate di Fourier`,
@@ -89,7 +89,7 @@ const pageDatas = [
         url: '/it.html',
         translatorMarkdown: 'Tradotto da Riccardo Buah',
     },
-	{ // French
+    { // French
         languageName: 'Français',
         markdownFileName: 'content-fr.md',
         title: 'Une introduction interactive aux transformations de Fourier',

@@ -3,7 +3,7 @@ import Controller from "./controller";
 
 export default class RangeController extends Controller {
 
-	constructor(id) {
+    constructor(id) {
         super();
         this.id = id;
         this.slider = document.getElementById(id);
