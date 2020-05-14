@@ -1,35 +1,35 @@
-Fourier transforms are a tool used in a whole bunch of different things. This is an explanation of what a Fourier transform does, and some different ways it can be useful. And how you can make pretty things with it, like this thing:
+傅立葉轉換是用於許多不同事物中的工具。這裡以不同的方式介紹了傅立葉轉換能做些什麼事情。同時，也能夠用它製作漂亮的東西，像是下面這張圖：
 
 <canvas id="self-draw" class="sketch" width=500 height=500></canvas>
 
-I'm going to explain how that animation works, and along the way explain Fourier transforms!
+接著，開始說明這個動畫的原理是什麼，並且一路讓您了解到傅立葉轉換的過程會是如何。
 
-By the end you should have a good idea about
-- What a Fourier transform does
-- Some practical uses of Fourier transforms
-- Some pointless but cool uses of Fourier transforms
+閱讀到最後，您將會有很大的收穫，像是：
+- 傅立葉轉換能做什麼
+- 傅立葉轉換的實際用途
+- 傅立葉轉換的一些毫無意義但很酷的用法
 
-We're going to leave the mathematics and equations out of it for now. There's a bunch of interesting maths behind it, but it's better to start with what it actually does, and why you'd want to use it first. If you want to know more about the how, there's some further reading suggestions below!
+我們先暫時不考慮數學和方程式。雖然它背後有許多有趣的數學運算，不過我們還是先來了解它的運作原理，以及為什麼要使用它。如果你想要了解到更多的相關參考資料，下面會有一些可以建議您閱讀的文章！
 
-## So what is this thing?
+## 所以傅立葉轉換(Fourier transform)是什麼？
 
-Put simply, the Fourier transform is a way of splitting something up into a bunch of sine waves. As usual, the name comes from some person who lived a long time ago called Fourier.
+簡而言之，傅立葉轉換是一種將某些東西分解為一堆正弦波的方法。而這個名稱，是來自一個很久以前的故人，叫做傅立葉(Fourier)。
 
-Let’s start with some simple examples and work our way up. First up we're going to look at waves - patterns that repeat over time.
+讓我們從一些簡單的示例開始，然後逐步進行。首先，我們看波形隨著時間的推移，一直按照某一規律的變化。
 
-Here’s an example wave:
+這是一個波形的例子：
 
 <canvas id="combo-sine-wave" class="sketch" width=500 height=300></canvas>
 
-This wavy pattern here can be split up into sine waves. That is, when we add up the two sine waves we get back the original wave.
+這裡的這種波形可以分為多個正弦波。也就是說，當我們將兩個正弦波相加時，我們就會得到原始的波形。
 
 <canvas id="combo-sine-wave-split" class="sketch" width=500 height=500></canvas>
 
-The Fourier transform is a way for us to take the combined wave, and get each of the sine waves back out. In this example, you can almost do it in your head, just by looking at the original wave.
+傅立葉轉換是讓我們從組合的波形中，取出每個正弦波的一種方式。在範例中，只需看著原始波形，您幾乎就可以想像得出來。
 
-Why? Turns out a lot of things in the real world interact based on these sine waves. We usually call them the wave's frequencies.
+為什麼？事實證明，現實世界中的許多事物都是基於這些正弦波進行交互的。 我們通常稱它們為波的頻率。
 
-The most obvious example is sound – when we hear a sound, we don’t hear that squiggly line, but we hear the different frequencies of the sine waves that make up the sound.
+最明顯的例子是聲音。當我們聽到聲音時，沒有聽到那條彎彎曲曲的線條，但是我們聽到了構成聲音中不同頻率的正弦波。
 
 <button id="together-button" class="button">Play Full Wave</button>
 
@@ -37,32 +37,32 @@ The most obvious example is sound – when we hear a sound, we don’t hear that
 
 <button id="split-button-2" class="button">Play Low Frequency</button>
 
-Being able to split them up on a computer can give us an understanding of what a person actually hears. We can understand how high or low a sound is, or figure out what note it is.
+在電腦上將音頻分開後，能夠使我們聽到個別實際的聲音。如此可以了解聲音的高低，也可以知道有哪些音符。
 
-We can also use this process on waves that don't look like they're made of sine waves.
+相同的處理方式，可以應用在正弦波以外的波形上。
 
-Let's take a look at this guy. It’s called a square wave.
+底下這種波形，叫做方波：
 
 <canvas id="square-wave" class="sketch" width=500 height=300></canvas>
 
-It might not look like it, but it also can be split up into sine waves.
+雖然它看起來是方方正正的波形，但實際上確實能夠分解成許多的正弦波。換句話說，方波是能夠由多個正弦波組合而成的！
 
 <canvas id="square-wave-split" class="sketch" width=500 height=500></canvas>
 
-We need a lot of them this time – technically an infinite amount to perfectly represent it. As we add up more and more sine waves the pattern gets closer and closer to the square wave we started with.
+這次我們分層解說。從技術上來說，波形可以是無限多層疊加出來的，然而隨著我們有越來越多的正弦波相加，波形會逐漸地和一開始的方波越來越接近。
 
 <canvas id="square-wave-build-up" class="sketch" width=500 height=500></canvas>
 <input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
 
 <button id="square-wave-button" class="button">Play Wave</button>
 
-*Drag the slider above to play with how many sine waves there are.*
+*試著滑動看看，觀察每層正弦波相加後得到的波形會是如何。*
 
-Visually, you'll notice that actually the first few sine waves are the ones that make the biggest difference. With the slider halfway, we have the general shape of the wave, but it's all wiggly. We just need the rest of the small ones to make the wigglyness flatten out.
+從視覺上來看，您會注意到實際上前幾個正弦波是最大的正弦波。將滑塊移到一半時，我們具有方波的大致形狀，但波形上方有許多看似小幅擺動的鋸齒狀圖案。我們只需要將其餘的小正弦波相加後就可以使方波上的擺動變得平坦。
 
-When you listen to the wave, you'll hear the sound get lower, because we're removing the higher frequencies.
+當您波放這個波形時，您會聽到很低的聲音，因為我們去除了聲音中較高的頻率。
 
-This process works like that for any repeating line. Give it a go, try drawing your own!
+這樣的方法，能夠處理任何具有週期性的波形。試試吧，嘗試自己繪製一個波形！
 
 <div class="multi-container">
 <div class="sketch" >
@@ -74,62 +74,57 @@ This process works like that for any repeating line. Give it a go, try drawing y
 <input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
 <button id="wave-draw-button" class="button">Play Wave</button>
 
-*Move the slider to see how as we add more sine waves, it gets closer and closer to your drawing*
+*試著滑動看看，隨著正弦波疊加的層數越多，圖形就會越接近您所畫的波形*
 
-Again, aside from the extra wigglyness, the wave looks pretty similar with just half of the sine waves.
+和上一個過程一樣，當滑動到中間的位置時，除了有些小幅的擺動之外，產生出來的波形已經很接近您所畫的波形了。
 
-We can actually use the fact that the wave is pretty similar to our advantage. By using a Fourier transform, we can get the important parts of a sound, and only store those to end up with something that's pretty close to the original sound.
+由此可以驗證一件事情：使用傅立葉轉換，可以將聲音中最重要的音頻成份分析出來，並且得到和原始聲音非常接近的波形。
 
-Normally on a computer we store a wave as a series of points.
-
-<canvas id="wave-samples" class="sketch" width=500 height=500></canvas>
-
-What we can do instead is represent it as a bunch of sine waves. Then we can compress the sound by ignoring the smaller frequencies. Our end result won't be the same, but it'll sound pretty similar to a person.
+在電腦中，波形會以一系列的點，來作為儲存訊號的方法。
 
 <canvas id="wave-frequencies" class="sketch" width=500 height=500></canvas>
 
-This is essentially what MP3s do, except they're more clever about which frequencies they keep and which ones they throw away.
+基本上，這就是 MP3 的工作原理，只是在演算法上面能夠更準確的保留那些音頻，以及捨棄那些音頻。
 
-So in this case, we can use Fourier transforms to get an understanding of the fundamental properties of a wave, and then we can use that for things like compression.
+所以，我們能夠使用傅立葉轉換來理解波形的基本屬性，然後將其應用在類似數據壓縮的事情。
 
-Ok, now let's dig more into the Fourier transform. This next part looks cool, but also gives you a bit more understanding of what the Fourier transform does. But mostly looks cool.
+好的，接著來更深入了解傅立葉轉換。下一個部分看起來很酷，也能更加瞭解傅立葉轉換的作用，不過大多只是看起來很酷而已。
 
-## Epicycles
+## 周轉園(均輪和本輪, Epicycle)
 
-Now at the start, I said it splits things into sine waves. The thing is, the sine waves it creates are not just regular sine waves, but they’re 3D. You could call them "complex sinusoids". Or just "spirals".
+首先，前面介紹過傅立葉轉換能將事物分析成多個正弦波。實際上，它產生出來的正弦波並不是一般的正弦波，而是3D(立體)的波形。也能稱為「複雜的正弦曲線」或「螺旋」。
 
 <canvas id="complex-sinusoid" class="sketch" width=500 height=500></canvas>
 
-If we take a look from the side, they look like sine waves. From front on, though, these look like circles.
+如果我們從側面看，它們看起來就像正弦波。從正面看，這些看起來像圓圈。
 
 <canvas id="complex-sinusoid-turn" class="sketch" width=500 height=500></canvas>
 
-So far everything we’ve been doing has only required the regular 2D sine waves. When we do a Fourier transform on 2D waves, the complex parts cancel out so we just end up with sine waves.
-
-But we can use the 3D sine waves to make something fun looking like this:
+目前為止，我們所做的一切只需要常規的2D(平面)正弦波。當我們對2D正弦波進行傅立葉轉換時，「複雜的」部分被忽略了，所以我們最終得到了正弦波。
+但是我們可以使用3D正弦波來使事情變得有趣，就像這樣：
 
 <canvas id="peace-epicycles" class="sketch" width=500 height=500></canvas>
 
-What’s going on here?
+這裡發生了什麼事情呢？
 
-Well, we can think of the drawing as a 3D shape because of the way it moves around in time. If you imagine the hand being drawn by a person, the three dimensions represent where the tip of their pencil is at that moment. The x and y dimensions tell us the position, and then the time dimension is the time at that moment.
+我們可以將一個手繪圖理解成一個3D的形狀，因為點的位置在隨著時間移動。如果您想像一個人證在繪製一隻手的圖形，那麼這三個維度就代表了某一個時刻中，鉛筆筆尖的位置。因此，除了 x 和 y 維度告訴我們筆尖得位置，還有一個 z 時間維度，構成了這樣的一個圖形。
 
 <canvas id="peace-3d" class="sketch" width=500 height=500></canvas>
 
-Now that we have a 3D pattern, we can't use the regular 2D sine waves to represent it. No matter how many of the 2D sine waves we add up, we'll never get something 3D. So we need something else.
+現在我們有了3D圖形，我們就不能使用一般2D正弦波來表示它。無論有多少個2D正弦波相加，我們都永遠不會得到3D。所以，我們還需要其他東西。
 
-What we can use is the 3D spiral sine waves from before. If we add up lots of those, we can get something that looks like our 3D pattern.
+我們可以使用的是之前的3D螺旋正弦波。如果我們將很多個螺旋相加，得到的結果就會看起來像是3D的形狀。
 
-Remember, these waves look like circles when we look at them from front on. The name for the pattern of a circle moving around another circle is an epicycle.
+請記住，當我們從正面看時，這些波形看起來像是圓圈。圍繞另一個圓圈運動的圓圈圖案，名稱就稱為「周轉園(均輪和本輪, Epicycle)」。
 
 <canvas id="peace-build-up" class="sketch" width=500 height=500></canvas>
 <input id="peace-build-up-slider" type="range" min="0" max="1" value="1" step="any">
 
-*Use the slider above to control how many circles there are.*
+*試著滑動看看，觀察到底有幾個圓圈。*
 
-Like before, we get a pretty good approximation of our pattern with just a few circles. Because this is a fairly simple shape, all the last ones do is make the edges a little sharper.
+如同前面敘述，只需要用幾個圓圈，就可以畫出很接近於原始的圖形。因為這是一個相當簡單的形狀，所以只要在最後添加小圓，就可以使邊緣更加精確。
 
-All this applies to any drawing, really! Now it’s your chance to play around with it.
+這個方法適用於任何一種圖案，現在，就是發揮您創作的機會啦！
 
 <div class="multi-container">
 <div class="sketch" >
@@ -141,33 +136,33 @@ All this applies to any drawing, really! Now it’s your chance to play around w
 </div>
 <input id="circle-zone-slider" type="range" min="0" max="1" value="1" step="any">
 
-*Use the slider to control how many circles are used for your drawing*
+*試著滑動看看，控制您要加入多少個圓圈。*
 
-Again, you'll see for most shapes, we can approximate them fairly well with just a small number of circles, instead of saving all the points.
+同樣的，您會發現對於大多數的形狀，我們可以用少量的圓圈來盡可能的表達出類似的圖形，而不必要使用所有的點。
 
-Can we use this for real data? Well, we could! In reality we have another data format called SVG, which probably does a better job for the types of shapes we tend to create. So for the moment, this is really just for making cool little gifs.
+這種方法可以應用在實際的數據嗎？答案是可以的！實際上，我們還有另一種數據格式，SVG，它對於我們所創作的圖案能夠有更好的數據呈現方式，所以，目前為止，實際上只是應用在製作酷炫的小GIF動畫。
 
 <canvas id="fourier-title" class="sketch" width=500 height=300></canvas>
 
-There is another type of visual data that does use Fourier transforms, however.
+此外，還有另一種類型的視覺數據會使用到傅立葉轉換。
 
-## JPEGs
+## JPEG
 
-Did you know Fourier transforms can also be used on images? In fact, we use it all the time, because that's how JPEGs work! We're applying the same principles to images – splitting up something into a bunch of sine waves, and then only storing the important ones.
+您知道，傅立葉轉換除了可以表達簡單的手繪線條之外，還可以應用於影像嗎？其實，我們無時無刻都在使用，因為這就是JEPG圖檔的壓縮原理！我們對圖檔，以相同的原理將某物件分析成多個正弦波，然後只儲存重要的幾個正弦波形。
 
-Now we're dealing with images, we need a different type of sine wave. We need to have something that no matter what image we have, we can add up a bunch of these sine waves to get back to our original image.
+要處理影像，需要另一種類型的正弦波。無論是什麼影像，都能將這些正弦波相加，來還原原始的圖像。
 
-To do that, each of our sine waves will be images too. Instead of a wave that's a line, we now have images with black and white sections. To represent the size of a wave, each image will have more or less contrast.
+要做到這一點，每個所使用的正弦波也將是一個個的小圖案。現在，我們使用一些黑白條紋的小圖案，這些更可以表達為「線」，而不是波。為了表示「波」的大小，每個圖案將具有或多或少的明暗對比度。
 
-We can also use these to represent color in the same way, but let's start with black-and-white images for now. To represent colorless images, we need some horizontal wave images,
+另外，也可以使用類似的方式表示顏色，但是我們先從黑白圖像開始解釋。為了表示灰階圖案，我們需要一些水平波形的圖案：
 
 <img id="img-y-component" src="img/components-4-0.png" class="sketch sketch-small">
 
-Along with some vertical wave images.
+以及垂直波形的圖案：
 
 <img id="img-x-component" src="img/components-0-4.png" class="sketch sketch-small">
 
-By themselves, just horizontal and vertical images aren't enough to represent the types of images we get. We also need some extra ones that you get by multiplying the two together.
+如果只有水平和垂直的圖案，是不足以表達我們要形成的影像。我們還需要將兩種圖案相乘，來得到一些額外的圖形。
 
 <div class="multi-container">
 <img id="img-mult-x-component" src="img/components-0-4.png" class="sketch sketch-mult">
@@ -177,7 +172,7 @@ By themselves, just horizontal and vertical images aren't enough to represent th
 <img id="img-x-y-component" src="img/components-4-4.png" class="sketch sketch-mult">
 </div>
 
-For an 8x8 image, here are all the images we need.
+將8x8大小的圖案交互相乘後，就能獲得下面所有圖案。
 
 <div class="img-component-container">
     <img src="img/components-0-0.png" class="img-component">
@@ -246,13 +241,13 @@ For an 8x8 image, here are all the images we need.
     <img src="img/components-7-7.png" class="img-component">
 </div>
 
-If we take the images, adjust their contrast to the right amount, and then add them up we can create any image.
+如果我們把這些小圖案的對比度調整到適當的值，然後再將它們相加，就可以創造出任何的圖案。
 
-Let's start with this letter 'A'. It's pretty small, but we need it to be small otherwise we'll end up with too many other images.
+讓我們從字母 "A" 開始。它非常小，但我們也需要它很小，否則拼湊時，我們會有太多其他的圖案呈現出來。
 
 <img src="img/a.png" class="sketch sketch-letter">
 
-As we add more and more of these images, we end up with something that becomes closer and closer to the actual image. But I think you'll see the pattern here, as we get a reasonable approximation with just a few of them.
+隨著這些圖案的增加，我們最後就能得到更接近實際的圖案。但我認為您只要相加少部分的圖案，就能大致看出字母 "A" 的輪廓。
 
 <div class="hidden-preload">
     <img src="img/img-buildup-0-0.png">
@@ -390,58 +385,76 @@ As we add more and more of these images, we end up with something that becomes c
 </div>
 </div>
 
-For actual JPEG images there are just a few extra details.
+對於實際的JPEG影像來說，這只是它基本的原理，剩下的只有一些額外的細節說明。
 
-The image gets broken up into 8x8 chunks, and each chunk gets split up separately. We use a set of frequencies to determine how light or dark each pixel is, and then another two sets for the color, one for red-green, and another for blue-yellow. The number of frequencies that we use for each chunk determines the quality of the JPEG.
+圖案分成8x8的小圖塊，每個圖塊分別放置。我們使用一組頻率來決定每個像素的明暗程度，然後再使用兩組頻率來決定顏色，一組用於紅、綠色，另一組用於藍、黃色。 每個圖塊所使用的頻率多寡，決定了這張JPEG圖案的品質。
 
-Here's a real JPEG image, zoomed in so we can see the details. When we play with the quality levels we can see this process happen.
+這是一張真實的JPEG圖案，經過放大後，可以看到圖塊的細節。當改變JPEG圖案的品質時(增加圖塊所使用的頻率)，就能觀察出圖案在品質上的區別。
 
 <div id="jpeg-example" class="sketch">
     <img src="img/cat.png" class="sketch-child clear-pixels">
 </div>
 
-## Conclusion
+## 結論
 
-So let's recap:
+讓我們回顧一下：
 
-- Fourier transforms are things that let us take something and split it up into its frequencies.
-- The frequencies tell us about some fundamental properties of the data we have
-- And can compress data by only storing the important frequencies
-- And we can also use them to make cool looking animations with a bunch of circles
+- 傅立葉轉換能將某些東西分解成頻率(或正弦波)。
+- 頻率告訴我們有關數據的一些基本屬性
+- 並且可以藉由著只存儲重要的頻率來壓縮數據
+- 我們還可以使用它們製作一個有很多圓圈的炫酷動畫
 
-This is just scratching the surface into some applications. The Fourier transform is an extremely powerful tool, because splitting things up into frequencies is so fundamental. They're used in a lot of fields, including circuit design, mobile phone signals, magnetic resonance imaging (MRI), and quantum physics!
+這只是應用中最基礎的一個層面。傅立葉轉換是一個非常強大的工具，因為將事物分解為多個頻率是個很重要的分析方法。它們被用於許多的領域，包括電路設計，無線通訊信號，核磁共振成像（MRI）和量子物理學！
 
-## Questions for the curious
+## 其他的問題
 
-I skipped most of the math stuff here, but if you're interested in the underlying principles of how it works, here are some questions you can use to guide your research:
+我在這裡跳過了大部分的數學運算和原理，但是如果您對數學原理感興趣的話，可以使用以下問題來幫助您的研究：
 
-- How do you mathematically represent a Fourier transform?
-- What's the difference between a continuous time Fourier transform and a discrete time Fourier transform?
-- How do you computationally do a Fourier transform?
-- How do you do a Fourier transform of a whole song? (Rather than just a single note.)
+- 您如何在數學上表示傅立葉轉換？
+- 連續時間傅立葉轉換和離散時間傅立葉轉換之間有什麼區別？
+- 如何計算傅立葉轉換？
+- 如何對整首歌曲進行傅立葉轉換？ （而不只是一個音符。）
 
-## Further 'reading'
+## 延伸問題
 
-To learn more, some really good resources you can check out are:
+小波轉換(或稱小波分析, wavelet analysis)，就是由傅立葉轉換的基礎而衍伸出來的方法。而小波轉換的不同處在於，將原本無限長度的正弦波，轉換成了有限長度，並且會衰減的小載波。
+
+簡單來說，做傅立葉轉換能夠得到頻率，而做小波轉換，能夠得到時間和頻率。
+
+目前離散小波轉換（DWT）常被用於訊號編碼，像是工程和計算機科學，而連續小波轉換（CWT）常被用於訊號分析，即科學研究類。尤其在生醫領域中，心電圖 (Electrocardiography) 與腦波圖 (Electroencephalography) 是兩項常見的生醫應用。
+
+## 延伸閱讀
+
+要瞭解到更多的訊息，這裡有一些非常好用的資源可以參考(作者推薦的資源是英文版的)：
 
 [An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)
-A great article that digs more into the mathematics of what happens.
+從數學角度更加深刻的介紹傅立葉轉換。
 
 [But what is the Fourier Transform? A visual introduction.](https://www.youtube.com/watch?v=spUNpyF58BY)
-A great Youtube video by 3Blue1Brown, also explaining the maths of Fourier transforms from an audio perspective.
+Blue1Brown 制作的 YouTube 影片，從音頻的角度解釋傅立葉轉換的數學原理。
 
 [A Tale of Math & Art: Creating the Fourier Series Harmonic Circles Visualization](https://alex.miller.im/posts/fourier-series-spinning-circles-visualization/)
-Another article explaining how you can use epicycles to draw a path, explained from a linear algebra perspective.
+從線性代數的角度解釋如何用周轉園來畫出形狀
 
 [Fourier transform (Wikipedia)](https://en.wikipedia.org/wiki/Fourier_transform)
-And of course, the Wikipedia article is pretty good too.
+當然，為基本科的解釋也很不錯的！
 
-## The author
+以下是譯者為您推薦的一些中文參考資料：
+
+[傅立葉轉換 (維基百科 中文版)](https://zh.wikipedia.org/wiki/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2)
+
+[圖解傅立葉轉換](https://hackmd.io/@sysprog/fourier-transform)
+
+## 作者
 
 <canvas id="its-meee" class="sketch" width=500 height=500></canvas>
 
-I'm Jez! Full time I work at a [search company](https://www.google.com/) in the Bay Area, and in my spare time I like making games and interactive code things like this!
+我叫Jez! 我全職在美國海灣地區的[搜尋引擎公司](https://www.google.com/) 工作，在業餘時間我喜歡製作遊戲和互相交流程式碼。
 
-This webpage is open-source, you can check out the code on [GitHub](https://github.com/Jezzamonn/fourier)! If you have any feedback or want to ask any questions, feel free to email me at <span id="email-text">fourier [at] jezzamon [dot] com</span>, or shoot me a tweet on [Twitter](https://twitter.com/jezzamonn).
+這個網頁是開源的，您可以在[GitHub](https://github.com/Jezzamonn/fourier)上查看程式碼! 如果您有任何回饋意見或想提出任何問題，請隨時透過email<span id="email-text">fourier [at] jezzamon [dot] com</span>發送電子郵件給我，或在tweetr上[Twitter](https://twitter.com/jezzamonn)發一個推文給我。
 
-If you want to see more of my work, check out my [homepage](/), and if you want to see what I'm making next, you can follow my Twitter account, [@jezzamonn](https://twitter.com/jezzamonn)!
+如果您想了解我的更多作品，請查看我的[主頁](/)，如果您想了解我下一步的工作，可以關注我的Twitter[@jezzamonn](https://twitter.com/jezzamonn)!
+
+## 譯者
+
+您好，我是培鈞！目前我是一名研究生，就讀於正修科技大學 / 電機工程所。如果有相關的知識或技術可以分享，歡迎透過email<span id="email-text">k40005238 [at] gcloud [dot] csu [dot] edu [dot] tw</span>發送電子郵件給我。
