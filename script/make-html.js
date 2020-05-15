@@ -53,6 +53,15 @@ const pageDatas = [
         url: '/zh-cn.html',
         translatorMarkdown: '由[杜尚明](https://github.com/virtualwiz)翻译',
     },
+    { // Chinese (traditional)
+        languageName: '繁體中文',
+        markdownFileName: 'content-zh-TW.md',
+        title: '互動式傅立葉轉換介紹',
+        description: '傅立葉轉換是用於許多不同事物中的工具。這裡以不同的方式介紹了傅立葉轉換能做些什麼事情。',
+        outFileName: '/zh-tw.html',
+        url: '/zh-tw.html',
+        translatorMarkdown: '由[馬培鈞](https://etc.csu.edu.tw)翻譯',
+    },
     { // Polish
         languageName: 'Polski',
         markdownFileName: 'content-pl.md',

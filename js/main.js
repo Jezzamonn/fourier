@@ -346,6 +346,13 @@ function init() {
         const emailText = `<a href="mailto:${email}">${email}</a>`;
         emailElement.innerHTML = emailText;
     }
+    // Add the email address of the Traditional Chinese translator
+    if (hasElement('email-k40005238-text')) {
+        const emailElement = document.getElementById('email-k40005238-text');
+        const email = 'k40005238' + '@' + 'gcloud.csu.edu.tw';
+        const emailText = `<a href="mailto:${email}">${email}</a>`;
+        emailElement.innerHTML = emailText;
+    }
 
     conductor = new Conductor(controllers);
     conductor.start();
