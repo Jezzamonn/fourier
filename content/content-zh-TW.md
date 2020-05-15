@@ -457,4 +457,4 @@ Blue1Brown 制作的 YouTube 影片，從音頻的角度解釋傅立葉轉換的
 
 ## 譯者
 
-您好，我是培鈞！目前我是一名研究生，就讀於正修科技大學 / 電機工程所。如果有相關的知識或技術可以分享，歡迎透過email<span id="email-text">k40005238 [at] gcloud [dot] csu [dot] edu [dot] tw</span>發送電子郵件給我。
+您好，我是培鈞！目前我是一名研究生，就讀於正修科技大學 / 電機工程所，於系上的 <a href="https://etc.csu.edu.tw" target="_blank">電機科技中心</a> 協助相關認證測試。如果有相關的知識或技術可以分享，歡迎透過email<span id="email-text">k40005238 [at] gcloud [dot] csu [dot] edu [dot] tw</span>發送電子郵件給我。
