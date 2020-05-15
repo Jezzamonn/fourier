@@ -31,11 +31,11 @@
 
 最明顯的例子是聲音。當我們聽到聲音時，沒有聽到那條彎彎曲曲的線條，但是我們聽到了構成聲音中不同頻率的正弦波。
 
-<button id="together-button" class="button">Play Full Wave</button>
+<button id="together-button" class="button">播放整個波形</button>
 
-<button id="split-button-1" class="button">Play High Frequency</button>
+<button id="split-button-1" class="button">播放高頻波形</button>
 
-<button id="split-button-2" class="button">Play Low Frequency</button>
+<button id="split-button-2" class="button">播放低頻波形</button>
 
 在電腦上將音頻分開後，能夠使我們聽到個別實際的聲音。如此可以了解聲音的高低，也可以知道有哪些音符。
 
@@ -54,7 +54,7 @@
 <canvas id="square-wave-build-up" class="sketch" width=500 height=500></canvas>
 <input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
 
-<button id="square-wave-button" class="button">Play Wave</button>
+<button id="square-wave-button" class="button">播放波形</button>
 
 *試著滑動看看，觀察每層正弦波相加後得到的波形會是如何。*
 
@@ -67,12 +67,12 @@
 <div class="multi-container">
 <div class="sketch" >
     <canvas id="wave-draw" class="sketch-child" width=500 height=300></canvas>
-    <p id="wave-draw-instruction" class="instruction wave-instruction">Draw here!</p>
+    <p id="wave-draw-instruction" class="instruction wave-instruction">試著畫一個波形！</p>
 </div>
 <canvas id="wave-draw-split" class="sketch" width=500 height=500></canvas>
 </div>
 <input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
-<button id="wave-draw-button" class="button">Play Wave</button>
+<button id="wave-draw-button" class="button">播放波形</button>
 
 *試著滑動看看，隨著正弦波疊加的層數越多，圖形就會越接近您所畫的波形*
 
@@ -129,8 +129,8 @@
 <div class="multi-container">
 <div class="sketch" >
     <canvas id="draw-zone" class="sketch-child" width=500 height=500></canvas>
-    <p id="draw-zone-instruction" class="instruction">Draw here!</p>
-    <button id="draw-zone-undo-button" class="button embedded-button">Undo</button>
+    <p id="draw-zone-instruction" class="instruction">試著畫一個波形！</p>
+    <button id="draw-zone-undo-button" class="button embedded-button">上一步</button>
 </div>
 <canvas id="circle-zone" class="sketch" width=500 height=500></canvas>
 </div>
@@ -451,7 +451,7 @@ Blue1Brown 制作的 YouTube 影片，從音頻的角度解釋傅立葉轉換的
 
 我叫Jez! 我全職在美國海灣地區的[搜尋引擎公司](https://www.google.com/) 工作，在業餘時間我喜歡製作遊戲和互相交流程式碼。
 
-這個網頁是開源的，您可以在[GitHub](https://github.com/Jezzamonn/fourier)上查看程式碼! 如果您有任何回饋意見或想提出任何問題，請隨時透過email<span id="email-text">fourier [at] jezzamon [dot] com</span>發送電子郵件給我，或在tweetr上[Twitter](https://twitter.com/jezzamonn)發一個推文給我。
+這個網頁是開源的，您可以在[GitHub](https://github.com/Jezzamonn/fourier)上查看程式碼! 如果您有任何回饋意見或想提出任何問題，請隨時透過email <span id="email-text">fourier [at] jezzamon [dot] com</span>發送電子郵件給我，或在tweetr上[Twitter](https://twitter.com/jezzamonn)發一個推文給我。
 
 如果您想了解我的更多作品，請查看我的[主頁](/)，如果您想了解我下一步的工作，可以關注我的Twitter[@jezzamonn](https://twitter.com/jezzamonn)!
 
