@@ -97,7 +97,7 @@ Ok, maintenant creusons plus loin le sujet. La partie suivante à l'air cool, ma
 
 ## Épicycles
 
-Au début, j’ai dit que la transformation de Fourier décomposer quelque chose en ondes sinusoïdales. Le problème, c’est que les ondes sinusoïdales qu’elle crée ne sont pas simplement des ondes sinusoïdales classiques, mais elles sont en 3D. Vous pouvez les appeler "sinusoïdes complexes". Ou simplement "spirales".
+Au début, j’ai dit que la transformation de Fourier décomposait quelque chose en ondes sinusoïdales. Le problème, c’est que les ondes sinusoïdales qu’elle crée ne sont pas simplement des ondes sinusoïdales classiques, mais elles sont en 3D. Vous pouvez les appeler "sinusoïdes complexes". Ou simplement "spirales".
 
 <canvas id="complex-sinusoid" class="sketch" width=500 height=500></canvas>
 
