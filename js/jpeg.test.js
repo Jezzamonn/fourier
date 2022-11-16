@@ -1,4 +1,4 @@
-import { loopLikeAJpeg, range } from '../jpeg'
+import { loopLikeAJpeg, range } from './jpeg'
 
 describe(range, () => {
     it('should work with 1 param', () => {
