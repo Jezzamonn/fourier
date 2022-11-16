@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`exportAllLanguages outputs the correct HTML for each language: de.html 1`] = `
+exports[`exportAllLanguages has the correct contents for de.html: de.html 1`] = `
 "<!DOCTYPE html>
 <html >
 <head>
@@ -427,7 +427,7 @@ Hier nochmal auf Deutsch.</p>
 "
 `;
 
-exports[`exportAllLanguages outputs the correct HTML for each language: debug.html 1`] = `
+exports[`exportAllLanguages has the correct contents for debug.html: debug.html 1`] = `
 "<!DOCTYPE html>
 <html >
 <head>
@@ -512,7 +512,7 @@ exports[`exportAllLanguages outputs the correct HTML for each language: debug.ht
 "
 `;
 
-exports[`exportAllLanguages outputs the correct HTML for each language: es.html 1`] = `
+exports[`exportAllLanguages has the correct contents for es.html: es.html 1`] = `
 "<!DOCTYPE html>
 <html >
 <head>
@@ -937,7 +937,7 @@ Y, por supuesto, el artículo de Wikipedia también es bastante bueno.</p>
 "
 `;
 
-exports[`exportAllLanguages outputs the correct HTML for each language: fr.html 1`] = `
+exports[`exportAllLanguages has the correct contents for fr.html: fr.html 1`] = `
 "<!DOCTYPE html>
 <html >
 <head>
@@ -1364,7 +1364,7 @@ Et bien sûr, l'article de Wikipedia est également très bon.</p>
 "
 `;
 
-exports[`exportAllLanguages outputs the correct HTML for each language: he.html 1`] = `
+exports[`exportAllLanguages has the correct contents for he.html: he.html 1`] = `
 "<!DOCTYPE html>
 <html dir=rtl>
 <head>
@@ -1790,7 +1790,7 @@ exports[`exportAllLanguages outputs the correct HTML for each language: he.html 
 "
 `;
 
-exports[`exportAllLanguages outputs the correct HTML for each language: index.html 1`] = `
+exports[`exportAllLanguages has the correct contents for index.html: index.html 1`] = `
 "<!DOCTYPE html>
 <html >
 <head>
@@ -2215,7 +2215,7 @@ And of course, the Wikipedia article is pretty good too.</p>
 "
 `;
 
-exports[`exportAllLanguages outputs the correct HTML for each language: it.html 1`] = `
+exports[`exportAllLanguages has the correct contents for it.html: it.html 1`] = `
 "<!DOCTYPE html>
 <html >
 <head>
@@ -2640,7 +2640,7 @@ E ovviamente, anche l'articolo Wikipedia è fatto bene.</p>
 "
 `;
 
-exports[`exportAllLanguages outputs the correct HTML for each language: ko.html 1`] = `
+exports[`exportAllLanguages has the correct contents for ko.html: ko.html 1`] = `
 "<!DOCTYPE html>
 <html >
 <head>
@@ -3065,7 +3065,7 @@ exports[`exportAllLanguages outputs the correct HTML for each language: ko.html 
 "
 `;
 
-exports[`exportAllLanguages outputs the correct HTML for each language: pl.html 1`] = `
+exports[`exportAllLanguages has the correct contents for pl.html: pl.html 1`] = `
 "<!DOCTYPE html>
 <html >
 <head>
@@ -3490,7 +3490,7 @@ Artykuł z Wikipedii również nie ma się czego wstydzić.</p>
 "
 `;
 
-exports[`exportAllLanguages outputs the correct HTML for each language: pt_br.html 1`] = `
+exports[`exportAllLanguages has the correct contents for pt_br.html: pt_br.html 1`] = `
 "<!DOCTYPE html>
 <html >
 <head>
@@ -3915,7 +3915,7 @@ E claro, o artigo da Wikipédia é muito bom também.</p>
 "
 `;
 
-exports[`exportAllLanguages outputs the correct HTML for each language: pt-br.html 1`] = `
+exports[`exportAllLanguages has the correct contents for pt-br.html: pt-br.html 1`] = `
 "<!DOCTYPE html>
 <html >
 <head>
@@ -4340,7 +4340,7 @@ E claro, o artigo da Wikipédia é muito bom também.</p>
 "
 `;
 
-exports[`exportAllLanguages outputs the correct HTML for each language: sk.html 1`] = `
+exports[`exportAllLanguages has the correct contents for sk.html: sk.html 1`] = `
 "<!DOCTYPE html>
 <html >
 <head>
@@ -4766,7 +4766,7 @@ Po Slovensky už nie tak dobrý.</p>
 "
 `;
 
-exports[`exportAllLanguages outputs the correct HTML for each language: tr.html 1`] = `
+exports[`exportAllLanguages has the correct contents for tr.html: tr.html 1`] = `
 "<!DOCTYPE html>
 <html >
 <head>
@@ -5190,7 +5190,7 @@ Ve tabi ki Vikipedi makalesi de oldukça iyi.</p>
 "
 `;
 
-exports[`exportAllLanguages outputs the correct HTML for each language: zh-cn.html 1`] = `
+exports[`exportAllLanguages has the correct contents for zh-cn.html: zh-cn.html 1`] = `
 "<!DOCTYPE html>
 <html >
 <head>
@@ -5618,7 +5618,7 @@ exports[`exportAllLanguages outputs the correct HTML for each language: zh-cn.ht
 "
 `;
 
-exports[`exportAllLanguages outputs the correct HTML for each language: zh-tw.html 1`] = `
+exports[`exportAllLanguages has the correct contents for zh-tw.html: zh-tw.html 1`] = `
 "<!DOCTYPE html>
 <html >
 <head>
