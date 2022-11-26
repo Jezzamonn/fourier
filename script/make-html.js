@@ -126,6 +126,16 @@ const pageDatas = [
         url: '/he.html',
         textDirection: 'dir=rtl'
     },
+    { // Persian
+        languageName: 'Persian',
+        markdownFileName: 'content-fa.md',
+        title: 'مقدمه ای تعاملی بر تبدیل فوریه',
+        description: 'تبدیل فوریه ابزاری است که کاربرد های گوناگونی دارد. این  مقاله توضیحی است از اینکه تبدیل فوریه چه کاری انجام می دهد، و کجا می تواند مفید واقع شود و چگونه می توانید با آن چیزهای زیبایی بسازید.',
+        outFileName: 'fa.html',
+        url: '/fa.html',
+        translatorMarkdown: 'ترجمه شده توسط [حسین نودهی](https://www.nothehi.ir)',
+        textDirection: 'dir=rtl'
+    },
     { // Debug
         markdownFileName: 'debug.md',
         title: 'debug debug debug',
