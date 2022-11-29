@@ -127,7 +127,7 @@ const pageDatas = [
         textDirection: 'dir=rtl'
     },
     { // Persian
-        languageName: 'Persian',
+        languageName: 'فارسی',
         markdownFileName: 'content-fa.md',
         title: 'مقدمه ای تعاملی بر تبدیل فوریه',
         description: 'تبدیل فوریه ابزاری است که کاربرد های گوناگونی دارد. این  مقاله توضیحی است از اینکه تبدیل فوریه چه کاری انجام می دهد، و کجا می تواند مفید واقع شود و چگونه می توانید با آن چیزهای زیبایی بسازید.',
