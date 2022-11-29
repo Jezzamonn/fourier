@@ -39,7 +39,7 @@
     "http-server": "^0.12.3",
     "jest": "^26.0.1",
     "mustache": "^4.0.1",
-    "npm-watch": "^0.6.0",
+    "npm-watch": "^0.11.0",
     "regenerator-runtime": "^0.13.5",
     "reload": "^3.2.0",
     "showdown": "^1.9.1",
