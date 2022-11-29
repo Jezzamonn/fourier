@@ -44,7 +44,7 @@
     "reload": "^3.2.0",
     "showdown": "^1.9.1",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "browser-image-compression": "1.0.11",
