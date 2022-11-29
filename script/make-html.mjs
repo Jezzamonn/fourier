@@ -1,7 +1,9 @@
-const showdown = require('showdown');
-const mustache = require('mustache');
-const fs = require('fs');
-const path = require('path');
+import showdown from 'showdown';
+import fm from 'front-matter';
+import mustache from 'mustache';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from "url";
 
 const defaultPageData = {
     author: 'Jez Swanson',
@@ -10,23 +12,7 @@ const defaultPageData = {
     textDirection: '',
 };
 
-export const pageDatas = [
-    { // English
-        languageName: 'English',
-        markdownFileName: 'content.md',
-        title: 'An Interactive Introduction to Fourier Transforms',
-        description: 'Fourier transforms are a tool used in a whole bunch of different things. This is a explanation of what a Fourier transform does, and some different ways it can be useful.',
-        outFileName: 'index.html',
-    },
-    { // Spanish
-        languageName: 'Español',
-        markdownFileName: 'content-es.md',
-        title: 'Una introducción interactiva a las transformadas de Fourier',
-        description: 'Las transformadas de Fourier son una herramienta utilizada en un montón de cosas diferentes. Esta es una explicación de lo que hace una transformada de Fourier, algunas formas diferentes en que puede ser útil y cómo puedes hacer cosas bonitas con ella, como esta cosa:',
-        outFileName: 'es.html',
-        url: '/es.html',
-        translatorMarkdown: 'Traducido por [Juan Carlos Ponce Campuzano](https://www.jcponce.com)',
-    },
+const oldPageDatas = [
     { // German
         languageName: 'Deutsch',
         markdownFileName: 'content-de.md',
@@ -170,6 +156,30 @@ const markdownConverter = new showdown.Converter();
 const template = fs.readFileSync('template.html').toString();
 
 export function exportAllLanguages({outputDir}) {
+    // Read the metadata from all the markdown files.
+    const pageDatas = oldPageDatas;
+    // Set the 'markdown' property for all the old page data.
+    for (const pageData of pageDatas) {
+        const markdownPath = path.join(contentDir, pageData.markdownFileName);
+        const markdown = fs.readFileSync(markdownPath, 'utf-8');
+        pageData.markdown = markdown;
+    }
+
+    // Read all the markdown files starting with "content" and ending with ".md".
+    const markdownFiles = fs.readdirSync(contentDir)
+        .filter(f => f.startsWith('content') && f.endsWith('.md'));
+    for (const file of markdownFiles) {
+        const content = fs.readFileSync(path.join(contentDir, file), 'utf-8');
+
+        // Read the metadata from the top of the file.
+        const frontMatterParsed = fm(content);
+        const pageData = Object.assign(
+            {},
+            frontMatterParsed.attributes,
+            {markdown: frontMatterParsed.body});
+        pageDatas.push(pageData);
+    }
+
     const languages = [];
     for (const pageData of pageDatas) {
         if (!pageData.hasOwnProperty('languageName')) {
@@ -207,7 +217,7 @@ export function exportAllLanguages({outputDir}) {
 
 function createHtml(pageData, languages) {
     // Read in content
-    const markdown = fs.readFileSync(contentDir + pageData.markdownFileName).toString();
+    const markdown = pageData.markdown;
 
     // Convert to html
     const htmlContent = markdownConverter.makeHtml(markdown);
@@ -223,6 +233,10 @@ function createHtml(pageData, languages) {
     return html;
 }
 
-if (typeof require !== 'undefined' && require.main === module) {
+function isMain() {
+    return process.argv[1] === fileURLToPath(import.meta.url);
+}
+
+if (isMain()) {
     exportAllLanguages({outputDir: 'build/'});
 }

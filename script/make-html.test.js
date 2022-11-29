@@ -1,4 +1,4 @@
-import { exportAllLanguages } from './make-html';
+import { exportAllLanguages } from './make-html.mjs';
 import { promises as fs } from 'fs';
 import os from 'os';
 import path from 'path';
