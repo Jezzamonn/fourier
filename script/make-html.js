@@ -13,6 +13,22 @@ const defaultPageData = {
 };
 
 const oldPageDatas = [
+    { // English
+        languageName: 'English',
+        markdownFileName: 'content.md',
+        title: 'An Interactive Introduction to Fourier Transforms',
+        description: 'Fourier transforms are a tool used in a whole bunch of different things. This is a explanation of what a Fourier transform does, and some different ways it can be useful.',
+        outFileName: 'index.html',
+    },
+    { // Spanish
+        languageName: 'Español',
+        markdownFileName: 'content-es.md',
+        title: 'Una introducción interactiva a las transformadas de Fourier',
+        description: 'Las transformadas de Fourier son una herramienta utilizada en un montón de cosas diferentes. Esta es una explicación de lo que hace una transformada de Fourier, algunas formas diferentes en que puede ser útil y cómo puedes hacer cosas bonitas con ella, como esta cosa:',
+        outFileName: 'es.html',
+        url: '/es.html',
+        translatorMarkdown: 'Traducido por [Juan Carlos Ponce Campuzano](https://www.jcponce.com)',
+    },
     { // German
         languageName: 'Deutsch',
         markdownFileName: 'content-de.md',
@@ -165,20 +181,20 @@ export function exportAllLanguages({outputDir}) {
         pageData.markdown = markdown;
     }
 
-    // Read all the markdown files starting with "content" and ending with ".md".
-    const markdownFiles = fs.readdirSync(contentDir)
-        .filter(f => f.startsWith('content') && f.endsWith('.md'));
-    for (const file of markdownFiles) {
-        const content = fs.readFileSync(path.join(contentDir, file), 'utf-8');
+    // // Read all the markdown files starting with "content" and ending with ".md".
+    // const markdownFiles = fs.readdirSync(contentDir)
+    //     .filter(f => f.startsWith('content') && f.endsWith('.md'));
+    // for (const file of markdownFiles) {
+    //     const content = fs.readFileSync(path.join(contentDir, file), 'utf-8');
 
-        // Read the metadata from the top of the file.
-        const frontMatterParsed = fm(content);
-        const pageData = Object.assign(
-            {},
-            frontMatterParsed.attributes,
-            {markdown: frontMatterParsed.body});
-        pageDatas.push(pageData);
-    }
+    //     // Read the metadata from the top of the file.
+    //     const frontMatterParsed = fm(content);
+    //     const pageData = Object.assign(
+    //         {},
+    //         frontMatterParsed.attributes,
+    //         {markdown: frontMatterParsed.body});
+    //     pageDatas.push(pageData);
+    // }
 
     const languages = [];
     for (const pageData of pageDatas) {

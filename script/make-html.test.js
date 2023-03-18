@@ -1,9 +1,11 @@
-import { exportAllLanguages } from './make-html.mjs';
+import { exportAllLanguages } from './make-html.js';
 import { promises as fs } from 'fs';
 import os from 'os';
 import path from 'path';
-import * as matchers from 'jest-extended';
-expect.extend(matchers);
+import chai, { expect } from 'chai';
+import { jestSnapshotPlugin } from "mocha-chai-jest-snapshot";
+
+chai.use(jestSnapshotPlugin());
 
 async function tmpDir() {
     return await fs.mkdtemp(path.join(os.tmpdir(), 'make-html-'));
@@ -16,6 +18,7 @@ describe('exportAllLanguages', () => {
         "de.html",
         "debug.html",
         "es.html",
+        "fa.html",
         "fr.html",
         "he.html",
         "index.html",
@@ -37,7 +40,7 @@ describe('exportAllLanguages', () => {
         const files = await fs.readdir(dir);
         files.sort();
 
-        expect(files).toEqual(expectedFiles);
+        expect(files).to.deep.equal(expectedFiles);
     });
 
     // Generate tests for each file.

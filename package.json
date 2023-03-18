@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "watch": {
     "makehtml": {
       "patterns": [
@@ -24,7 +25,7 @@
     "img": "cp -r img build/",
     "preview": "cp preview.png build/",
     "build": "npm run webpack && npm run makehtml && npm run css && npm run img && npm run preview",
-    "test": "jest",
+    "test": "mocha ./**/*.test.*js",
     "watch": "npm-watch",
     "reload": "reload -b -d build"
   },
@@ -34,12 +35,12 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
-    "babel-jest": "^26.0.1",
     "babel-loader": "^8.1.0",
+    "chai": "^4.3.7",
     "front-matter": "^4.0.2",
     "http-server": "^0.12.3",
-    "jest": "^29.3.1",
-    "jest-extended": "^3.1.0",
+    "mocha": "^10.2.0",
+    "mocha-chai-jest-snapshot": "^1.1.4",
     "mustache": "^4.0.1",
     "npm-watch": "^0.6.0",
     "regenerator-runtime": "^0.13.5",
