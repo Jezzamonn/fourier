@@ -53,19 +53,19 @@ exports[`exportAllLanguages has the correct contents for de.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -481,19 +481,19 @@ exports[`exportAllLanguages has the correct contents for debug.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -567,19 +567,19 @@ exports[`exportAllLanguages has the correct contents for es.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -993,19 +993,19 @@ exports[`exportAllLanguages has the correct contents for fa.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -1420,19 +1420,19 @@ exports[`exportAllLanguages has the correct contents for fr.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -1848,19 +1848,19 @@ exports[`exportAllLanguages has the correct contents for he.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -2275,19 +2275,19 @@ exports[`exportAllLanguages has the correct contents for index.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -2701,19 +2701,19 @@ exports[`exportAllLanguages has the correct contents for it.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -3127,19 +3127,19 @@ exports[`exportAllLanguages has the correct contents for ko.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -3553,19 +3553,19 @@ exports[`exportAllLanguages has the correct contents for pl.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -3979,19 +3979,19 @@ exports[`exportAllLanguages has the correct contents for pt_br.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -4405,19 +4405,19 @@ exports[`exportAllLanguages has the correct contents for pt-br.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -4831,19 +4831,19 @@ exports[`exportAllLanguages has the correct contents for sk.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -5258,19 +5258,19 @@ exports[`exportAllLanguages has the correct contents for tr.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -5683,19 +5683,19 @@ exports[`exportAllLanguages has the correct contents for zh-cn.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
@@ -6112,19 +6112,19 @@ exports[`exportAllLanguages has the correct contents for zh-tw.html 1`] = `
 <nav id=\\"languages\\">
 	<ul>
 		<li><a href=\\"&#x2F;fourier\\">English</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;de.html\\">Deutsch</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
-		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;es.html\\">Español</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fr.html\\">Français</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;it.html\\">Italiano</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pl.html\\">Polski</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;pt-br.html\\">Português</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;sk.html\\">Slovenčina</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;tr.html\\">Türkçe</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;he.html\\">עברית</a></li>
 		<li><a href=\\"&#x2F;fourier&#x2F;fa.html\\">فارسی</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;ko.html\\">한국어</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-cn.html\\">简体中文</a></li>
+		<li><a href=\\"&#x2F;fourier&#x2F;zh-tw.html\\">繁體中文</a></li>
 		<li><a href=\\"https://github.com/Jezzamonn/fourier/tree/master/content\\">Add a translation</a></li>
 	</ul>
 </nav>
