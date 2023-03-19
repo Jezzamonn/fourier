@@ -25,7 +25,7 @@
     "img": "cp -r img build/",
     "preview": "cp preview.png build/",
     "build": "npm run webpack && npm run makehtml && npm run css && npm run img && npm run preview",
-    "test": "mocha ./**/*.test.*js",
+    "test": "CI=true mocha ./**/*.test.*js",
     "watch": "npm-watch",
     "reload": "reload -b -d build"
   },
