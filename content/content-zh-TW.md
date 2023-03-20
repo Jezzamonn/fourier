@@ -437,7 +437,7 @@ Blue1Brown 制作的 YouTube 影片，從音頻的角度解釋傅立葉轉換的
 從線性代數的角度解釋如何用周轉園來畫出形狀
 
 [Fourier transform (Wikipedia)](https://en.wikipedia.org/wiki/Fourier_transform)
-當然，為基本科的解釋也很不錯的！
+當然，維基百科的解釋也很不錯的！
 
 以下是譯者為您推薦的一些中文參考資料：
 
@@ -457,4 +457,4 @@ Blue1Brown 制作的 YouTube 影片，從音頻的角度解釋傅立葉轉換的
 
 ## 譯者
 
-您好，我是培鈞！我畢業於正修科技大學電機工程所，目前開了一間工作室 [金昶電子行](https://jinchang-electro.com) 專門協助中小企業，以及學生們開發一些小專案。如果有相關的知識或技術可以分享或研討，歡迎透過email <span id="email-mark-text">mark [at] jinchang-electro [dot] com</span>發送電子郵件給我。
+您好，我是培鈞！我畢業於正修科技大學電機工程所，目前開了一間工作室 [金昶電子行](https://jinchang-electro.com) 專門協助中小企業，以及學生們開發一些小專案。如果有相關的知識或技術可以分享或研討，歡迎透過email <span id="email-mark-text">mark@jinchang-electro.com</span>發送電子郵件給我。
