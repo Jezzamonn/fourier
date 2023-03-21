@@ -12,15 +12,7 @@ const defaultPageData = {
     textDirection: '',
 };
 
-const oldPageDatas = Object.freeze([
-    { // Debug
-        markdownFileName: 'debug.md',
-        title: 'debug debug debug',
-        description: 'debugbugbugbugbugbugbugbug',
-        outFileName: 'debug.html',
-        url: '/debug.html',
-    },
-].map(d => Object.assign({}, defaultPageData, d)));
+const oldPageDatas = Object.freeze([]);
 
 const contentDir = 'content/'
 
@@ -37,9 +29,9 @@ export function exportAllLanguages({outputDir}) {
         pageData.markdown = markdown;
     }
 
-    // Read all the markdown files starting with "content" and ending with ".md".
+    // Filter out the readme file. All the rest are good..
     const markdownFiles = fs.readdirSync(contentDir)
-        .filter(f => f.startsWith('content') && f.endsWith('.md'));
+        .filter(f => !f.startsWith('README'));
     for (const file of markdownFiles) {
         const content = fs.readFileSync(path.join(contentDir, file), 'utf-8');
 
