@@ -12,8 +12,6 @@ const defaultPageData = {
     textDirection: '',
 };
 
-const oldPageDatas = Object.freeze([]);
-
 const contentDir = 'content/'
 
 const markdownConverter = new showdown.Converter();
@@ -21,15 +19,8 @@ const template = fs.readFileSync('template.html').toString();
 
 export function exportAllLanguages({outputDir}) {
     // Read the metadata from all the markdown files.
-    const pageDatas = structuredClone(oldPageDatas);
-    // Set the 'markdown' property for all the old page data.
-    for (const pageData of pageDatas) {
-        const markdownPath = path.join(contentDir, pageData.markdownFileName);
-        const markdown = fs.readFileSync(markdownPath, 'utf-8');
-        pageData.markdown = markdown;
-    }
-
-    // Filter out the readme file. All the rest are good..
+    const pageDatas = [];
+    // Filter out the README file. All the rest are contents of the page for different languages and such.
     const markdownFiles = fs.readdirSync(contentDir)
         .filter(f => !f.startsWith('README'));
     for (const file of markdownFiles) {
