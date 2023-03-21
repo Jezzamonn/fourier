@@ -57,6 +57,14 @@ export function exportAllLanguages({outputDir}) {
         }
         pageData.url = url;
 
+        // Replace the textDirection with a string that can be inserted directly into the HTML.
+        if (pageData.textDirection.includes('rtl')) {
+            pageData.textDirection = 'dir=rtl'
+        }
+        else {
+            pageData.textDirection = '';
+        }
+
         pageDatas.push(pageData);
     }
 
