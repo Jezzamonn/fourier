@@ -7,7 +7,6 @@ import { fileURLToPath } from "url";
 
 const defaultPageData = {
     author: 'Jez Swanson',
-    url: '',
     translatorMarkdown: '',
     textDirection: '',
 };
@@ -39,6 +38,25 @@ export function exportAllLanguages({outputDir}) {
             frontMatterParsed.attributes,
             {markdown: frontMatterParsed.body, markdownFileName: file}
         );
+
+        // Some extra data calculated from the other data:
+
+        // We might have a string or an array of strings. Convert it so we always have an array
+        let outFileNames = pageData.outFileName;
+        if (!(outFileNames instanceof Array)) {
+            // Wrap in Array
+            outFileNames = [outFileNames];
+        }
+        pageData.outFileNames = outFileNames;
+
+        // The URL of the page is just calculated from the (first) output filename.
+        // index.html is exceptional, as we we want to link to the base path.
+        let url = '/' + pageData.outFileNames[0];
+        if (pageData.outFileNames[0] == 'index.html') {
+            url = '';
+        }
+        pageData.url = url;
+
         pageDatas.push(pageData);
     }
 
@@ -62,14 +80,8 @@ export function exportAllLanguages({outputDir}) {
 
         const html = createHtml(pageData, languages);
 
-        // We might have a string or an array of strings. Convert it so we always have an array
-        let outFileNames = pageData.outFileName;
-        if (!(outFileNames instanceof Array)) {
-            // Wrap in Array
-            outFileNames = [outFileNames];
-        }
         // Output to build directory.
-        for (const outFileName of outFileNames) {
+        for (const outFileName of pageData.outFileNames) {
             console.log(`Writing to ${outFileName}`)
             const outFilePath = path.join(outputDir, outFileName);
             fs.writeFileSync(outFilePath, html)

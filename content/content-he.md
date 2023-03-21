@@ -4,7 +4,6 @@ title: מבוא אינטראקטיבי להתמרות פורייה
 description: התמרות פורייה הן כלי שניתן להשתמש בו בתחומים רבים. כאן יינתן הסבר על מה שהתמרת פורייה עושה, ועל דרכים שונות שאפשר להשתמש בה. כמו על איך מכינים דברים יפים בעזרתה, כמו למשל הדבר הזה.
 author: "ג'ז סוונסון" # ?? I don't have the translator markdown for some reason?
 outFileName: he.html
-url: /he.html
 textDirection: 'dir=rtl'
 ---
 
