@@ -35,7 +35,7 @@ Bunun ən bariz nümunəsi səsdir. Səsi eşitdiyimiz zaman onu dalğalı xətt
 
 <button id="split-button-1" class="button">Yüksək tezliyi eşit</button>
 
-<button id="split-button-2" class="button">Aşağı tezliyi eşir</button>
+<button id="split-button-2" class="button">Aşağı tezliyi eşit</button>
 
 Bu dalğaları kompüter vasitəsilə ayırdığımız zaman, insanların əslində nə eşitdiyi barədə fikir formalaşır. Səsin nə qədər yüksək və ya sakit olduğunu deyə bilirik və ya onun hansı not olduğunu təxmin edə bilirik.
 
@@ -438,7 +438,7 @@ Və əlbəttə ki, Vikipediya məqaləsi də yaxşıdır.
 
 ## Müəllif
 
-Mən Jez! Bay bölgəsində yerləşən tədqiqat şirkətində tam iş günü işləyirəm və asudə vaxtımı bu kimi oyunlar yaratmaq və interaktiv kod yazmaqla keçirməyi sevirəm!
+Mən Jez! Bay bölgəsində axtarış şirkətində tam iş günü işləyirəm və asudə vaxtımı bu kimi oyunlar yaratmaq və interaktiv kod yazmaqla keçirməyi sevirəm!
 
 Bu veb səhifə açıq mənbə səhifəsidir, kodları [GitHub](https://github.com/Jezzamonn/fourier)-da mövcuddur! Hər hansı təklif və ya sualınız varsa, [Twitter] (https://twitter.com/jezzamonn) səhifəsində mənə tvit yazın.
 
