@@ -31,11 +31,11 @@
 
 Самый простой пример это звук — когда мы воспринимаем его, мы не слышим сложную изогнутую волну, а разные частоты синусоид, которые вместе составляют звук.
 
-<button id="together-button" class="button">Play Full Wave</button>
+<button id="together-button" class="button">Воспроизвести звук целиком</button>
 
-<button id="split-button-1" class="button">Play High Frequency</button>
+<button id="split-button-1" class="button">Воспроизвести высокую частоту</button>
 
-<button id="split-button-2" class="button">Play Low Frequency</button>
+<button id="split-button-2" class="button">Воспроизвести низкую частоту</button>
 
 Имея возможность разделить их на компьютере, мы можем понять, что на самом деле слышит человек, насколько звук низкий или высокий, или какая это нота.
 
@@ -54,7 +54,7 @@
 <canvas id="square-wave-build-up" class="sketch" width=500 height=500></canvas>
 <input id="square-wave-build-up-slider" type="range" min="0" max="1" value="0" step="any" >
 
-<button id="square-wave-button" class="button">Play Wave</button>
+<button id="square-wave-button" class="button">Воспроизвести звук</button>
 
 *Перемещайте ползунок, чтобы изменить количество синусоид*
 
@@ -72,7 +72,7 @@
 <canvas id="wave-draw-split" class="sketch" width=500 height=500></canvas>
 </div>
 <input id="wave-draw-slider" type="range" min="0" max="1" value="1" step="any">
-<button id="wave-draw-button" class="button">Play Wave</button>
+<button id="wave-draw-button" class="button">Воспроизвести звук</button>
 
 *Перемещайте ползунок, чтобы увидеть, как по мере увеличения количества синусоид картинка ставится всё более похожей на ваш рисунок*
 
@@ -134,8 +134,8 @@
 <div class="multi-container">
 <div class="sketch" >
     <canvas id="draw-zone" class="sketch-child" width=500 height=500></canvas>
-    <p id="draw-zone-instruction" class="instruction">Draw here!</p>
-    <button id="draw-zone-undo-button" class="button embedded-button">Undo</button>
+    <p id="draw-zone-instruction" class="instruction">Рисуйте здесь!</p>
+    <button id="draw-zone-undo-button" class="button embedded-button">Стереть</button>
 </div>
 <canvas id="circle-zone" class="sketch" width=500 height=500></canvas>
 </div>
