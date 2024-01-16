@@ -136,6 +136,15 @@ const pageDatas = [
         translatorMarkdown: 'ترجمه شده توسط [حسین نودهی](https://www.nothehi.ir)',
         textDirection: 'dir=rtl'
     },
+    { // Azerbaijani
+        languageName: 'Azərbaycanca',
+        markdownFileName: 'content-az.md',
+        title: 'Furye transformasiyalarına interaktiv giriş',
+        description: 'Furye transformasiyaları müxtəlif işlərin hazırlanmasında istifadə edilə bilən bir vasitədir. Bu səhifədə Furye transformasiyasının necə işlədiyini izah edilir və bəzi faydalı istifadə nümunələri göstərilir.',
+        outFileName: 'az.html',
+        url: '/az.html',
+        translatorMarkdown: 'Tərcümə edən: [Abbas Məcidov](https://github.com/absmj)',
+    },
     { // Russian
         languageName: 'Русский',
         markdownFileName: 'content-ru.md',
@@ -151,7 +160,7 @@ const pageDatas = [
         description: 'debugbugbugbugbugbugbugbug',
         outFileName: 'debug.html',
         url: '/debug.html',
-    },
+    }
 ].map(d => Object.assign({}, defaultPageData, d));
 
 const contentDir = 'content/'
