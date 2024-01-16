@@ -1,3 +1,12 @@
+---
+languageName: Polski
+title: Interaktywny wstęp do transformaty Fouriera
+description: Transformata Fouriera jest narzędziem, które znajduje zastosowanie w wielu rzeczach. Znajdziesz tu wyjaśnienie, co robi transformata Fouriera i kiedy bywa użyteczna. Dowiesz się też, jak za jej pomocą możesz tworzyć ciekawe i piękne rzeczy.
+translatorMarkdown: 'Przekład: [Jakub Górczyński](https://github.com/leavethevault)'
+outFileName: pl.html
+url: /pl.html
+---
+
 Transformata Fouriera jest narzędziem, które znajduje zastosowanie w wielu rzeczach. Znajdziesz tu wyjaśnienie, co robi transformata Fouriera i kiedy bywa użyteczna. Dowiesz się też, jak za jej pomocą możesz tworzyć ciekawie wyglądające rzeczy, np. tą wizualizację:
 
 <canvas id="self-draw" class="sketch" width=500 height=500></canvas>

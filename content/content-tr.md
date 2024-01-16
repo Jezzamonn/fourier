@@ -1,3 +1,12 @@
+---
+languageName: Türkçe
+title: Fourier Dönüşümlerine İnteraktif bir Giriş
+description: Fourier dönüşümleri birçok farklı şeyin yapılmasında kullanılabilecek bir araçtır. Bu sayfa Fourier dönüşümlerinin işleyişini açıklamakta ve yararlı olabilecek bazı kullanım yollarını göstermektedir.
+translatorMarkdown: 'Çeviren: Harun Hindioğlu'
+outFileName: tr.html
+url: /tr.html
+---
+
 Fourier dönüşümleri birçok farklı şeyin yapılmasında kullanılabilecek bir araçtır. Bu sayfa Fourier dönüşümlerinin işleyişini açıklamakta ve yararlı olabilecek bazı kullanım yollarını göstermektedir. Bir de bu dönüşümlerle bunun gibi eğlenceli şeyleri nasıl yapacağınızı gösterir:
 
 <canvas id="self-draw" class="sketch" width=500 height=500></canvas>

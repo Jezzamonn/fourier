@@ -1,3 +1,12 @@
+---
+languageName: Français
+title: Une introduction interactive aux transformations de Fourier
+description: Les transformations de Fourier sont un outil utilisé dans un tas de choses différentes. Ceci est une explication de ce que fait une transformation de Fourier, et des différentes manières dont elle peut être utile.
+translatorMarkdown: Traduit par [Florian Richoux](http://www.richoux.fr)
+outFileName: fr.html
+url: /fr.html
+---
+
 Les transformations de Fourier sont un outil utilisé dans un tas de choses différentes. Ceci est une explication de ce que fait une transformation de Fourier, et des différentes manières dont elle peut être utile. Et comment faire de jolies choses avec, comme ceci:
 
 <canvas id="self-draw" class="sketch" width=500 height=500></canvas>

@@ -1,3 +1,10 @@
+---
+languageName: "Azərbaycanca"
+title: "Furye transformasiyalarına interaktiv giriş"
+description: "Furye transformasiyaları müxtəlif işlərin hazırlanmasında istifadə edilə bilən bir vasitədir. Bu səhifədə Furye transformasiyasının necə işlədiyini izah edilir və bəzi faydalı istifadə nümunələri göstərilir."
+translatorMarkdown: "Tərcümə edən: [Abbas Məcidov](https://github.com/absmj)"
+outFileName: "az.html"
+---
 Furye transformasiyaları müxtəlif işlərin hazırlanmasında istifadə edilə bilən bir vasitədir. Bu səhifədə Furye transformasiyasının necə işlədiyini izah edilir və bəzi faydalı istifadə nümunələri göstərilir:
 
 <canvas id="self-draw" class="sketch" width=500 height=500></canvas>

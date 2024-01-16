@@ -1,3 +1,14 @@
+---
+languageName: Português
+title: Uma introdução interativa às transformadas de Fourier
+description: Transformadas de Fourier são ferramentas utilizadas em vários contextos. Essa é uma explicação do que uma transformada de Fourier faz, e algumas maneiras diferentes que elas podem ser úteis.
+translatorMarkdown: Traduzido por [Jean Oliveira Rodrigues de Araujo](https://twitter.com/_jaraujo_)
+outFileName:
+- pt-br.html
+- pt_br.html # Backward compatibility with old links
+url: /pt-br.html
+---
+
 Transformadas de Fourier são ferramentas utilizadas em vários contextos. Essa é uma explicação do que uma transformada de Fourier faz, e algumas maneiras diferentes que elas podem ser úteis. E como você pode fazer coisas bonitas com elas, como isto:
 
 <canvas id="self-draw" class="sketch" width=500 height=500></canvas>
