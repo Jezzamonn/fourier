@@ -145,6 +145,15 @@ const pageDatas = [
         url: '/az.html',
         translatorMarkdown: 'Tərcümə edən: [Abbas Məcidov](https://github.com/absmj)',
     },
+    { // Russian
+        languageName: 'Русский',
+        markdownFileName: 'content-ru.md',
+        title: 'Интерактивное введение в преобразования Фурье',
+        description: 'Преобразования Фурье - инструмент, который используется в самых разных сферах. Здесь приведено объяснение того, что делает преобразование Фурье, и чем оно может быть полезно.',
+        outFileName: 'ru.html',
+        url: '/ru.html',
+        translatorMarkdown: 'Перевод: Дмитрий Берестовой ([GitHub](https://github.com/ye11owmonster))',
+    },
     { // Debug
         markdownFileName: 'debug.md',
         title: 'debug debug debug',
