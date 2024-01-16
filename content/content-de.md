@@ -1,9 +1,9 @@
 ---
-languageName: Deutsch
-title: Eine interaktive Einführung in die Fouriertransformation
-description: Die Fouriertransformation ist ein Werkzeug, das für eine Vielzahl verschiedener Anwendungen genutzt werden kann. Diese Seite ist eine Einführung in die Funktionsweise und Anwendung der Fouriertransformation.
-translatorMarkdown: Übersetzt von Joni Rousu und [Frank H. Dürkopf](http://duerkopf.de)
-outFileName: de.html
+languageName: "Deutsch"
+title: "Eine interaktive Einführung in die Fouriertransformation"
+description: "Die Fouriertransformation ist ein Werkzeug, das für eine Vielzahl verschiedener Anwendungen genutzt werden kann. Diese Seite ist eine Einführung in die Funktionsweise und Anwendung der Fouriertransformation."
+translatorMarkdown: "Übersetzt von Joni Rousu und [Frank H. Dürkopf](http://duerkopf.de)"
+outFileName: "de.html"
 ---
 
 Die Fouriertransformation ist ein Werkzeug, das für eine Vielzahl verschiedener Anwendungen genutzt werden kann. Diese Seite ist eine Einführung in die Funktionsweise und Anwendung der Fouriertransformation. Sie zeigt außerdem, wie man damit schöne Dinge machen kann, wie zum Beispiel das hier:

@@ -1,9 +1,9 @@
 ---
-languageName: 简体中文
-title: 傅里叶变换交互式入门
-description: 傅里叶变换是一种在各个领域都经常使用的数学工具。这个网站将为你介绍傅里叶变换能干什么，为什么傅里叶变换非常有用，以及你如何利用傅里叶变换干漂亮的事。
-translatorMarkdown: 由[杜尚明](https://github.com/virtualwiz)翻译
-outFileName: zh-cn.html
+languageName: "简体中文"
+title: "傅里叶变换交互式入门"
+description: "傅里叶变换是一种在各个领域都经常使用的数学工具。这个网站将为你介绍傅里叶变换能干什么，为什么傅里叶变换非常有用，以及你如何利用傅里叶变换干漂亮的事。"
+translatorMarkdown: "由[杜尚明](https://github.com/virtualwiz)翻译"
+outFileName: "zh-cn.html"
 ---
 
 傅里叶变换是一种在各个领域都经常使用的数学工具。这个网站将为你介绍傅里叶变换能干什么，为什么傅里叶变换非常有用，以及你如何利用傅里叶变换干漂亮的事。就像下面这样：

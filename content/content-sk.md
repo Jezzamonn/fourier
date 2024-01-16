@@ -1,9 +1,9 @@
 ---
-languageName: Slovenčina
-title: Interkatívny úvod do Fourierovej transformácie
-description: Fourierova transofrmácia je náradie používané vo veľa rôznych odvetviach. Tu máme vysvetlené, čo Furierova transformácia robí a niekoľko rôznych spôsobov ako nám môže byť užitočná.
-translatorMarkdown: 'Preložil: [Jakub Mintal](https://github.com/Straaths)'
-outFileName: sk.html
+languageName: "Slovenčina"
+title: "Interkatívny úvod do Fourierovej transformácie"
+description: "Fourierova transofrmácia je náradie používané vo veľa rôznych odvetviach. Tu máme vysvetlené, čo Furierova transformácia robí a niekoľko rôznych spôsobov ako nám môže byť užitočná."
+translatorMarkdown: "Preložil: [Jakub Mintal](https://github.com/Straaths)"
+outFileName: "sk.html"
 ---
 
 Fourierova transformácia je náradie používané vo veľa rôznych odvetviach. Tu máme vysvetlené, čo Furierova transformácia robí a niekoľko rôznych spôsobov ako nám môže byť užitočná. A ako pomocou nej môžete urobiť pekné veci, ako napríklad táto:

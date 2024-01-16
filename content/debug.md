@@ -1,7 +1,7 @@
 ---
-title: debug debug debug
-description: debugbugbugbugbugbugbugbug
-outFileName: debug.html
+title: "debug debug debug"
+description: "debugbugbugbugbugbugbugbug"
+outFileName: "debug.html"
 ---
 
 <div class="multi-container">

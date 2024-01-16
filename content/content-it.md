@@ -1,9 +1,9 @@
 ---
-languageName: Italiano
-title: Un'interazione introduttiva alle trasformate di Fourier
-description: Le trasformate di Fourier sono uno strumento usato in molti campi diversi. Questa è una spiegazione su cosa fa una trasformata di Fourier e di alcuni modi in cui può essere utile.
-translatorMarkdown: Tradotto da Riccardo Buah
-outFileName: it.html
+languageName: "Italiano"
+title: "Un'interazione introduttiva alle trasformate di" Fourier
+description: "Le trasformate di Fourier sono uno strumento" usato in molti campi diversi. Questa è una spiegazione su cosa fa una trasformata di Fourier e di alcuni modi in cui può essere utile.
+translatorMarkdown: "Tradotto da Riccardo Buah"
+outFileName: "it.html"
 ---
 
 Le trasformate di Fourier sono uno strumento usato in molti campi diversi. Questa è una spiegazione su cosa fa una trasformata di Fourier e di alcuni modi in cui può essere utile. E su come ci puoi realizzare belle cose, come questo:

@@ -1,9 +1,9 @@
 ---
-languageName: 繁體中文
-title: 互動式傅立葉轉換介紹
-description: 傅立葉轉換是用於許多不同事物中的工具。這裡以不同的方式介紹了傅立葉轉換能做些什麼事情。
-translatorMarkdown: 由[馬培鈞](https://etc.csu.edu.tw)翻譯
-outFileName: zh-tw.html
+languageName: "繁體中文"
+title: "互動式傅立葉轉換介紹"
+description: "傅立葉轉換是用於許多不同事物中的工具。這裡以不同的方式介紹了傅立葉轉換能做些什麼事情。"
+translatorMarkdown: "由[馬培鈞](https://etc.csu.edu.tw)翻譯"
+outFileName: "zh-tw.html"
 ---
 
 傅立葉轉換是用於許多不同事物中的工具。這裡以不同的方式介紹了傅立葉轉換能做些什麼事情。同時，也能夠用它製作漂亮的東西，像是下面這張圖：
