@@ -15,6 +15,7 @@ async function tmpDir() {
 describe('exportAllLanguages', () => {
 
     const expectedFiles = [
+        "az.html",
         "de.html",
         "debug.html",
         "es.html",
@@ -27,6 +28,7 @@ describe('exportAllLanguages', () => {
         "pl.html",
         "pt-br.html",
         "pt_br.html",
+        "ru.html",
         "sk.html",
         "tr.html",
         "zh-cn.html",
