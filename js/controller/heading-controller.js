@@ -1,7 +1,7 @@
-import CanvasController from "./canvas-controller";
-import { palette } from "../color";
-import { renderWave, getWave } from "../wave-things";
-import { slurp } from "../util";
+import CanvasController from './canvas-controller.js';
+import { palette } from '../color.js';
+import { renderWave, getWave } from '../wave-things.js';
+import { slurp } from '../util.js';
 
 export default class HeadingController extends CanvasController {
 

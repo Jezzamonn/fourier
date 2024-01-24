@@ -1,4 +1,4 @@
-import { slurp } from "./util";
+import { slurp } from './util.js';
 
 // Generates a wave from a function in the range [0, 1)
 export function getWave(fn, numSamples = 128) {

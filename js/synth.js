@@ -1,5 +1,5 @@
-import { slurp } from "./util";
-import { normaliseWave, getWaveFunction } from "./wave-things";
+import { slurp } from './util.js';
+import { normaliseWave, getWaveFunction } from './wave-things.js';
 
 export const SAMPLE_RATE = 44100;
 export const baseFrequency = 220;

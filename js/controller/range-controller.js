@@ -1,5 +1,5 @@
-import { slurp, easeInOut } from "../util";
-import Controller from "./controller";
+import { slurp, easeInOut } from '../util.js';
+import Controller from './controller.js';
 
 export default class RangeController extends Controller {
 

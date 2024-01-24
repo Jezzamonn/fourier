@@ -1,5 +1,5 @@
 import FFT from 'fft.js';
-import { slurp } from "./util";
+import { slurp } from './util.js';
 
 /**
  * Do the fourier thing using a bunch of complex points

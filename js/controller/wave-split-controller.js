@@ -1,8 +1,8 @@
-import CanvasController from "./canvas-controller";
-import { easeInOut, clamp, slurp, clampedSlurp } from "../util";
-import { getRealFourierData } from "../just-fourier-things";
-import { palette } from "../color";
-import { renderWave } from "../wave-things";
+import CanvasController from './canvas-controller.js';
+import { easeInOut, clamp, slurp, clampedSlurp } from '../util.js';
+import { getRealFourierData } from '../just-fourier-things.js';
+import { palette } from '../color.js';
+import { renderWave } from '../wave-things.js';
 
 const transitionFactor = (1 / 15);
 

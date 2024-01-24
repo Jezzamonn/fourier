@@ -1,6 +1,6 @@
-import { elementInView, getScrollPosition } from "./controller-util";
-import { clamp, slurp, divideInterval } from "../util";
-import Controller from "./controller";
+import { elementInView, getScrollPosition } from './controller-util.js';
+import { clamp, slurp, divideInterval } from '../util.js';
+import Controller from './controller.js';
 
 export default class ImageSwapController extends Controller {
 

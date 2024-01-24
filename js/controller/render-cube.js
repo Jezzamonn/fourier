@@ -1,4 +1,4 @@
-import { to2dIsometric } from "../util";
+import { to2dIsometric } from '../util.js';
 
 export function renderBoundingCube(context, minX, maxX, minY, maxY, minZ, maxZ, xzAngle, yAngle) {
     const xs = [minX, maxX];

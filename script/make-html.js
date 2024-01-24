@@ -3,7 +3,7 @@ import fm from 'front-matter';
 import mustache from 'mustache';
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from "url";
+import { fileURLToPath } from 'url';
 
 const defaultPageData = {
     author: 'Jez Swanson',
@@ -116,7 +116,9 @@ function createHtml(pageData, languages) {
 }
 
 function isMain() {
-    return process.argv[1] === fileURLToPath(import.meta.url);
+    const filename = fileURLToPath(import.meta.url); // Includes the .js
+    const processArg = process.argv[1]; // Sometimes doesn't include the .js ?
+    return filename.startsWith(processArg)
 }
 
 if (isMain()) {

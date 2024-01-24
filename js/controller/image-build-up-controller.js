@@ -1,5 +1,5 @@
-import { loopLikeAJpeg } from "../jpeg";
-import Controller from "./controller";
+import { loopLikeAJpeg } from '../jpeg.js';
+import Controller from './controller.js';
 
 export default class ImageBuildUpController extends Controller {
 

@@ -1,7 +1,7 @@
-import CanvasController from "./canvas-controller";
-import { getFourierData, resample2dData } from "../just-fourier-things";
-import { slurp, clampedSlurp } from "../util";
-import { palette } from "../color";
+import CanvasController from './canvas-controller.js';
+import { getFourierData, resample2dData } from '../just-fourier-things.js';
+import { slurp, clampedSlurp } from '../util.js';
+import { palette } from '../color.js';
 
 export default class EpicyclesController extends CanvasController {
 

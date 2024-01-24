@@ -1,6 +1,6 @@
-import CanvasController from "./canvas-controller";
-import { palette } from "../color";
-import { renderWave } from "../wave-things";
+import CanvasController from './canvas-controller.js';
+import { palette } from '../color.js';
+import { renderWave } from '../wave-things.js';
 
 export default class WaveSplitController extends CanvasController {
 

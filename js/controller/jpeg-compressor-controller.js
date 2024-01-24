@@ -1,7 +1,7 @@
-import { elementInView, getScrollPosition } from "./controller-util";
-import { clamp, slurp, divideInterval } from "../util";
+import { elementInView, getScrollPosition } from './controller-util.js';
+import { clamp, slurp, divideInterval } from '../util.js';
 import imageCompression from 'browser-image-compression';
-import Controller from "./controller";
+import Controller from './controller.js';
 
 const originalImageSrc = "img/cat.png"
 

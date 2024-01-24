@@ -1,6 +1,6 @@
-import CanvasController from "./canvas-controller";
-import { slurp } from "../util";
-import { palette } from "../color";
+import CanvasController from './canvas-controller.js';
+import { slurp } from '../util.js';
+import { palette } from '../color.js';
 
 export default class WaveDrawController extends CanvasController {
 

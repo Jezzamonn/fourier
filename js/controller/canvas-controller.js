@@ -1,5 +1,5 @@
-import { elementInView, getScrollPosition } from "./controller-util";
-import Controller from "./controller";
+import { elementInView, getScrollPosition } from './controller-util.js';
+import Controller from './controller.js';
 
 export default class CanvasController extends Controller {
 

@@ -1,6 +1,6 @@
-import CanvasController from "./canvas-controller";
-import { to2dIsometric, easeInOut, sinEaseInOut, slurp } from "../util";
-import { palette } from "../color";
+import CanvasController from './canvas-controller.js';
+import { to2dIsometric, easeInOut, sinEaseInOut, slurp } from '../util.js';
+import { palette } from '../color.js';
 
 const transitionFactor = (1 / 18);
 

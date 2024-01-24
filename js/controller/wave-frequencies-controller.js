@@ -1,9 +1,9 @@
-import CanvasController from "./canvas-controller";
-import { palette } from "../color";
-import { renderWave, normaliseWave, getWaveFunction, getWave } from "../wave-things";
-import { slurp, clamp, posMod, divideInterval } from "../util";
-import { renderLabel } from "./render-label";
-import { baseFrequency } from "../synth";
+import CanvasController from './canvas-controller.js';
+import { palette } from '../color.js';
+import { renderWave, normaliseWave, getWaveFunction, getWave } from '../wave-things.js';
+import { slurp, clamp, posMod, divideInterval } from '../util.js';
+import { renderLabel } from './render-label.js';
+import { baseFrequency } from '../synth.js';
 
 
 export default class WaveFrequenciesController extends CanvasController {

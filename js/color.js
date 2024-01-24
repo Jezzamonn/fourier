@@ -1,4 +1,4 @@
-import { clamp } from "./util";
+import { clamp } from './util.js';
 
 export function rgb(r, g, b) {
     return 'rgb('+r+','+g+','+b+')';

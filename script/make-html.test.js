@@ -1,9 +1,9 @@
 import { exportAllLanguages } from './make-html.js';
-import { promises as fs } from 'fs';
-import os from 'os';
-import path from 'path';
-import chai, { expect } from 'chai';
-import { jestSnapshotPlugin } from "mocha-chai-jest-snapshot";
+import { promises as fs } from 'fs.js';
+import os from 'os.js';
+import path from 'path.js';
+import chai, { expect } from 'chai.js';
+import { jestSnapshotPlugin } from 'mocha-chai-jest-snapshot.js';
 
 chai.use(jestSnapshotPlugin());
 

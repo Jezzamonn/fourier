@@ -1,7 +1,7 @@
-import CanvasController from "./canvas-controller";
-import { to2dIsometric, slurp, sinEaseInOut } from "../util";
-import { renderBoundingCube } from "./render-cube";
-import { palette } from "../color";
+import CanvasController from './canvas-controller.js';
+import { to2dIsometric, slurp, sinEaseInOut } from '../util.js';
+import { renderBoundingCube } from './render-cube.js';
+import { palette } from '../color.js';
 
 export default class SkewedPathController extends CanvasController {
 
