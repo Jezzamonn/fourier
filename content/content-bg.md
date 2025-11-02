@@ -104,40 +104,40 @@ Being able to split them up on a computer can give us an understanding of what a
 
 ## Епицикли
 
-Now at the start, I said it splits things into sine waves. The thing is, the sine waves it creates are not just regular sine waves, but they’re 3D. You could call them "complex sinusoids". Or just "spirals".
+В началото казах, че разделя неща на синусови вълни. Работата е там, че синусовите вълни, които създава не са обикновени синусови вълни, а 3Д. Можеш да ги наречеш "комплексни синусодии". Или просто "спирали".
 
 <canvas id="complex-sinusoid" class="sketch" width=500 height=500></canvas>
 
-If we take a look from the side, they look like sine waves. From front on, though, these look like circles.
+Ако погледнем от тази страна, приличат на синусови вълни. А отпред като кръгове.
 
 <canvas id="complex-sinusoid-turn" class="sketch" width=500 height=500></canvas>
 
-So far everything we’ve been doing has only required the regular 2D sine waves. When we do a Fourier transform on 2D waves, the complex parts cancel out so we just end up with sine waves.
+Досега всичко, което правихме изискваше само обикновените 2Д синусови вълни. Когато правим преобразование на Фурие на 2Д вълни, комплексните части се анулират, така че да ни останат синусовите вълни.
 
-But we can use the 3D sine waves to make something fun looking like this:
+Но можем да използваме 3Д синусовите вълни, за да направим нещо забавно, което изглежда така:
 
 <canvas id="peace-epicycles" class="sketch" width=500 height=500></canvas>
 
-What’s going on here?
+Какво се случва тук?
 
-Well, we can think of the drawing as a 3D shape because of the way it moves around in time. If you imagine the hand being drawn by a person, the three dimensions represent where the tip of their pencil is at that moment. The x and y dimensions tell us the position, and then the time dimension is the time at that moment.
+Еми, можем да си мислим за тази рисунка като 3Д фигура поради начинът по който се движи във времето. Ако си представиш ръката като да бъде рисувана от човек, трите измерения представят къде върхът на молива е в даден момент. Х и Y измеренията ни казват позицията и времевото измерение е времето в този момент.
 
 <canvas id="peace-3d" class="sketch" width=500 height=500></canvas>
 
-Now that we have a 3D pattern, we can't use the regular 2D sine waves to represent it. No matter how many of the 2D sine waves we add up, we'll never get something 3D. So we need something else.
+Сега като имаме 3Д модел не можем да използваме нормалните 2Д синусови вълни, за да го представим. Колкото и 2Д синусови вълни да добавяме, никога няма да стигнем нещо 3Д. Затова ни трябва нещо друго.
 
-What we can use is the 3D spiral sine waves from before. If we add up lots of those, we can get something that looks like our 3D pattern.
+Това, което можем да използваме, е 3Д спиралата на синусовите вълни от преди. Ако съберем много от тях, можем да получим нещо, което изглежда на нашия 3Д модел.
 
-Remember, these waves look like circles when we look at them from front on. The name for the pattern of a circle moving around another circle is an epicycle.
+Спомни си, че тези вълни изглеждат като кръгове, когато ги погледнем от отпред. Този модел на кръг, движещ се около друг кръг, се нарича епицикъл.
 
 <canvas id="peace-build-up" class="sketch" width=500 height=500></canvas>
 <input id="peace-build-up-slider" type="range" min="0" max="1" value="1" step="any">
 
-*Use the slider above to control how many circles there are.*
+*Използвай слайдерът по-горе, за да контролираш колко кръгове има.*
 
-Like before, we get a pretty good approximation of our pattern with just a few circles. Because this is a fairly simple shape, all the last ones do is make the edges a little sharper.
+Както преди, получаваме доста добро приближение на нашия модел само с няколко кръга. Тъй като това е доста проста форма, това което правят последните кръгове е да направят ръбовете малко по-остри.
 
-All this applies to any drawing, really! Now it’s your chance to play around with it.
+Всичко това важи за всяка рисунка, наистина! Сега е твоят шанс да си поиграеш с него.
 
 <div class="multi-container">
 <div class="sketch" >
@@ -151,13 +151,13 @@ All this applies to any drawing, really! Now it’s your chance to play around w
 
 *Използвай слайдерът, за да контролираш колко кръгчета са използвани за рисунката ти*
 
-Again, you'll see for most shapes, we can approximate them fairly well with just a small number of circles, instead of saving all the points.
+Отново, ще видиш, че за повечето фигури можем да ги приближим сравнително точно само с малък брой кръгове, вместо да пазим всички точки.
 
-Can we use this for real data? Well, we could! In reality we have another data format called SVG, which probably does a better job for the types of shapes we tend to create. So for the moment, this is really just for making cool little gifs.
+Можем ли да използваме това за истински данни? Ами, да можем! В действителност имаме друг формат данни, наречен SVG, който вероятно се справя по-добре с видовете рисунки, които обикновено правим. Засега, това е просто начин да правим готини малки gif-чета.
 
 <canvas id="fourier-title" class="sketch" width=500 height=300></canvas>
 
-There is another type of visual data that does use Fourier transforms, however.
+Има друг вид визуални данни, които използват преобразованието на Фурие, все пак.
 
 ## JPEGs
 
